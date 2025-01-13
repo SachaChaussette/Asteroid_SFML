@@ -1,8 +1,13 @@
 #include "CoreMinimal.h"
 
+void InitConfig()
+{
+    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+}
+
 int main()
 {
-	Config();
+    InitConfig();
 
     RenderWindow window(VideoMode({ 200, 200 }), "SFML works!");
     CircleShape shape(100.f);

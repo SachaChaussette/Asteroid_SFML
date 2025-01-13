@@ -22,6 +22,18 @@
     <Filter Include="Main">
       <UniqueIdentifier>{665f6e7c-538b-4110-82d8-32b51e358ed1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Main\Menus">
+      <UniqueIdentifier>{1b43bcd9-9250-4b2c-9f4b-bbb2aa84f9a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\Menus\MainMenu">
+      <UniqueIdentifier>{cd45e1ad-12a0-40a9-afd1-b4005ccbebc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\Menus\StartMenu">
+      <UniqueIdentifier>{4cf1954e-7dc2-4291-a466-24f3047371da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\Menus\Upgrade">
+      <UniqueIdentifier>{b53a65d3-49e5-44b3-bf11-5f199db40745}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Macro.h">
@@ -30,10 +42,23 @@
     <ClInclude Include="CoreMinimal.h">
       <Filter>CoreMinimal</Filter>
     </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Singleton.h" />
   </ItemGroup>
 </Project>
