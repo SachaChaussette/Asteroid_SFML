@@ -1,7 +1,10 @@
-#include "CoreMinimal.h"
+﻿#include "CoreMinimal.h"
+#include "Game.h"
+#include "TimerManager.h"
 
 void InitConfig()
 {
+    Logger::Reset();
     _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 }
 
@@ -9,22 +12,16 @@ int main()
 {
     InitConfig();
 
-    RenderWindow window(VideoMode({ 200, 200 }), "SFML works!");
-    CircleShape shape(100.f);
-    shape.setFillColor(Color::Green);
 
-    while (window.isOpen())
-    {
-        while (const optional event = window.pollEvent())
-        {
-            if (event->is<Event::Closed>())
-                window.close();
-        }
+    M_GAME.Launch();
 
-        window.clear();
-        window.draw(shape);
-        window.display();
-    }
+    /*LOG(Error, "Erreur");
+    LOG(Warning, "Attention");
+    LOG(Display, "Affichage");
+    LOG(Log, "Enregistrement");
+    LOG(Log, "Aled");
+    LOG(Fatal, "Fatal Error");*/
+   
 
 	return EXIT_SUCCESS;
 }
