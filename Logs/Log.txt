@@ -1,1 +1,8 @@
-Display :Draw d'un Text
+[24/1/2025 16:58:34] Error: Cannot open file with an empty path ! (File: TextureManager::Load | Line: 68)
+[24/1/2025 16:58:34] Error: Cannot open file with the following path : 'Assets/Textures/.png' ! (File: TextureManager::LoadTexture | Line: 28)
+[24/1/2025 16:58:34] Error: Cannot open file with an empty path ! (File: TextureManager::Load | Line: 68)
+[24/1/2025 16:58:34] Error: Cannot open file with the following path : 'Assets/Textures/.png' ! (File: TextureManager::LoadTexture | Line: 28)
+[24/1/2025 16:58:34] Error: Cannot open file with an empty path ! (File: TextureManager::Load | Line: 68)
+[24/1/2025 16:58:34] Error: Cannot open file with the following path : 'Assets/Textures/.png' ! (File: TextureManager::LoadTexture | Line: 28)
+[24/1/2025 16:58:34] Error: Cannot open file with an empty path ! (File: TextureManager::Load | Line: 68)
+[24/1/2025 16:58:34] Error: Cannot open file with the following path : 'Assets/Textures/.png' ! (File: TextureManager::LoadTexture | Line: 28)

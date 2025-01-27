@@ -1,27 +1,17 @@
-﻿#include "CoreMinimal.h"
 #include "Game.h"
-#include "TimerManager.h"
+#include "GameManager.h"
+#include "DuckHuntGame.h"
 
 void InitConfig()
 {
-    Logger::Reset();
     _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+    Logger::Reset();
 }
 
 int main()
 {
     InitConfig();
-
-
-    M_GAME.Launch();
-
-    /*LOG(Error, "Erreur");
-    LOG(Warning, "Attention");
-    LOG(Display, "Affichage");
-    LOG(Log, "Enregistrement");
-    LOG(Log, "Aled");
-    LOG(Fatal, "Fatal Error");*/
-   
+    M_GAME.Launch(new DuckHuntGame());
 
 	return EXIT_SUCCESS;
 }

@@ -1,11 +1,11 @@
 #include "Menu.h"
-#include "Game.h"
+#include "GameManager.h"
 #include "MeshActor.h"
 
 Menu::Menu(const string& _title)
 {
 	title = _title;
-	token = M_GAME.BindOnRenderWindow(bind(&Menu::RenderText, this, placeholders::_1));
+	//token = M_GAME.BindOnRenderWindow(bind(&Menu::RenderText, this, placeholders::_1));
 
 }
 
@@ -42,7 +42,7 @@ void Menu::Hide()
 {
 	queue.pop();
 	if (Menu* _previous = queue.back()) _previous->Show(false);
-	M_GAME.UnbindOnRenderWindow(token);
+	//M_GAME.UnbindOnRenderWindow(token);
 }
 
 void Menu::Close()

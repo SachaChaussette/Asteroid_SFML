@@ -1,64 +1,54 @@
 #pragma once
+#include "Sample.h"
 
-#include "CoreMinimal.h"
-
-
-
-class SoundSample
+class SoundSample : public Sample
 {
 	using SoundStatus = SoundSource::Status;
 
-	float volume;
-	string path;
 	Sound* sound;
 	SoundBuffer buffer;
 
-private:
-	FORCEINLINE void UpdateVolume(const float _volume)
+	#pragma region Sample
+
+	FORCEINLINE virtual void UpdateVolume(const float _volume) override
 	{
 		sound->setVolume(_volume);
 	}
-	FORCEINLINE SoundStatus GetStatus() const
+	FORCEINLINE virtual int GetStatus() const override
 	{
-		return sound->getStatus();
+		return CAST(int, sound->getStatus());
 	}
-
 public:
-	FORCEINLINE void SetMuteStatus(const bool _status)
+	FORCEINLINE virtual bool IsAvailable() const override
 	{
-		sound->setVolume(_status ? 0.0f : volume);
+		return CAST(SoundStatus, GetStatus()) != SoundStatus::Playing;
 	}
-	FORCEINLINE void SetVolume(const float _volume)
-	{
-		sound->setVolume(volume = _volume);
-	}
-	FORCEINLINE void SetLoop(const bool _isLoop)
+	FORCEINLINE virtual void SetLoop(const bool _isLoop) override
 	{
 		sound->setLooping(_isLoop);
 	}
-	FORCEINLINE void SetPitch(const float _pitch)
+	FORCEINLINE virtual bool AddPitch(const float _pitchOffset) override
 	{
-		sound->setPitch(_pitch);
+		float _newPitch = sound->getPitch() + _pitchOffset;
+		if (_newPitch > 100.0f || _newPitch < 0.0f) return false;
+
+		sound->setPitch(_newPitch);
+		return true;
 	}
+
+	#pragma endregion
+
+public:
 	FORCEINLINE float GetVolume() const
 	{
 		return sound->getVolume();
 	}
-	FORCEINLINE string GetPath() const
-	{
-		return path;
-	}
-	FORCEINLINE bool IsAvailable() const
-	{
-		return GetStatus() != SoundStatus::Playing;
-	}
+
 public:
 	SoundSample(const string& _path);
 	~SoundSample();
-public:
-	void Play(const Time& _time = Time());
-	void Pause();
-	void Stop();
-	void Mute();
-};
 
+	virtual void Play(const Time& _time = Time()) override;
+	virtual void Pause() override;
+	virtual void Stop() override;
+};

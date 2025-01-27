@@ -4,5 +4,8 @@
 
 class MusicManager : public Singleton<MusicManager>
 {
+	
+
+
 };
 

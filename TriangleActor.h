@@ -1,12 +1,8 @@
 #pragma once
+#include "MeshActor.h"
 
-#include "CircleActor.h"
-
-class TriangleActor : public CircleActor
+class TriangleActor : public MeshActor
 {
-
-
 public:
-	TriangleActor(const float _radius, const string& _path = "", const IntRect& _rect = IntRect());
+	TriangleActor(const float _radius, const string& _path = "", const IntRect& _rect = {});
 };
-

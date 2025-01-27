@@ -1,33 +1,28 @@
 #include "Logger.h"
 #include "TimerManager.h"
 
-string VerbosityData::GetFullText(const bool _useColor) const
+/// VerbosityData
+string VerbosityData::RetrieveFullText(const bool _useColor, const bool _useTime) const
 {
-    const string& _reset = _useColor ? RESET : "";
-	string _fullText;
+    string _fullText;
 
-    if (useTime)
+    if (_useTime)
     {
-		_fullText += TimerManager<Seconds>::GetInstance().GetCurrentRealTime();
-	}
-
-	_fullText += GetPrefix(_useColor) + (_useColor ? color.GradientString(text) : text);
-    if (USE_DEBUG || useDebug)
-    {
-        _fullText += debug;
+        _fullText += "[" + M_TIMER.GetCurrentRealTime() + "]";
     }
 
-    _fullText += _reset;
+    _fullText += " " + prefix + ": " + text;
 
-    return _fullText;
+    if (USE_DEBUG || useDebug)
+    {
+        _fullText += " " + debug;
+    }
+
+    return _useColor ? color.GradientString(_fullText) : _fullText;
 }
 
-string Logger::logsPath = "Logs/Log.txt";
-
-Logger::Logger()
-{
-
-}
+/// Logger
+string Logger::logsPath = "Logs/log.txt";
 
 void Logger::WriteInConsole(const string& _text)
 {
@@ -36,13 +31,13 @@ void Logger::WriteInConsole(const string& _text)
 
 void Logger::WriteInLogs(const string& _text)
 {
-	ofstream _stream = ofstream(logsPath, ios_base::app | ios_base::binary);
-	_stream << _text << "\n";
+    ofstream _stream = ofstream(logsPath, ios_base::app);
+    _stream << _text << endl;
 }
 
 void Logger::Reset()
 {
-	ofstream(logsPath, ios_base::trunc | ios_base::binary);
+    ofstream(logsPath, ios_base::trunc);
 }
 
 void Logger::PrintLog(const VerbosityType& _type, const string& _text, const string& _debug)
@@ -50,15 +45,16 @@ void Logger::PrintLog(const VerbosityType& _type, const string& _text, const str
 	if (WRITE_IN_LOG(_type))
 	{
 		const VerbosityData& _verbosity = VerbosityData(_type, _text, _debug);
-		WriteInLogs(_verbosity.GetFullText(false));
+		WriteInLogs(_verbosity.RetrieveFullText(false));
 
 		if (WRITE_IN_CONSOLE(_type))
 		{
-			WriteInConsole(_verbosity.GetFullText(true));
+			WriteInConsole(_verbosity.RetrieveFullText(true));
 		}
 	}
-	if (_type == Fatal)
-	{
-		assert(false);
-	}
+}
+void Logger::PrintLog(const VerbosityType& _type, const Vector2f& _vector, const string& _debug)
+{
+	const string& _vectorString = "X: " + to_string(_vector.x) + " Y: " + to_string(_vector.y);
+	PrintLog(_type, _vectorString, _debug);
 }

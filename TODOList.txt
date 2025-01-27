@@ -1,0 +1,2 @@
+
+- Refaire Sprite Sheet pour avoir plusieurs textures d'un astéroid de la même taille

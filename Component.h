@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Core.h"
 
 class Component : public Core
@@ -8,16 +7,17 @@ protected:
 	class Actor* owner;
 
 public:
-	FORCEINLINE Actor* GetActor() const
+	FORCEINLINE Actor* GetOwner() const
 	{
 		return owner;
 	}
+
 public:
 	Component(Actor* _owner);
-	~Component();
+	virtual ~Component() = default;
+
 public:
 	virtual void BeginPlay() override {};
 	virtual void Tick(const float _deltaTime) override {};
-	virtual void BeginDestoy() override {};
+	virtual void BeginDestroy() override {};
 };
-
