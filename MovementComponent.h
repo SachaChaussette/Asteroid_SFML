@@ -22,6 +22,8 @@ public:
 	MovementComponent(Actor* _owner);
 	MovementComponent(Actor* _owner, const MovementComponent* _other);
 
+public:
+	void RotateDirection(const float _degree);
 protected:
 	virtual void Tick(const float _deltaTime) override;
 

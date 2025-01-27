@@ -11,6 +11,10 @@ public:
 	{
 		return !window.isOpen();
 	}
+	FORCEINLINE virtual Vector2u GetWindowSize() const
+	{
+		return window.getSize();
+	}
 
 public:
 	Game();
