@@ -4,5 +4,5 @@
 class RectangleActor : public MeshActor
 {
 public:
-	RectangleActor(const RectangleShapeData& _data);
+	RectangleActor(const Vector2f& _size, const string& _path, const TextureExtensionType& _textureType, const IntRect& _rect);
 };

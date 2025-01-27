@@ -1,16 +1,27 @@
 #include "MeshActor.h"
 #include "CameraManager.h"
 
-MeshActor::MeshActor(const float _radius, const size_t& _pointCount, const string& _path,
-					 const IntRect& _rect, const string& _name) : Actor(_name)
+MeshActor::MeshActor(const float _radius, const string& _path
+					,const TextureExtensionType& _textureType, const IntRect& _rect
+					,bool _isRepeated, bool _isSmooth, const size_t& _pointCount ,const string& _name) : Actor(_name)
 {
-	mesh = CreateComponent<MeshComponent>(_radius, _pointCount, _path, _rect);
+	mesh = CreateComponent<MeshComponent>(_radius, _path, _textureType, _rect, _isRepeated, _isSmooth, _pointCount);
 	renderMeshToken = -1;
 }
 
-MeshActor::MeshActor(const RectangleShapeData& _data, const string& _name) : Actor(_name)
+MeshActor::MeshActor(const Vector2f& _size, const string& _path, const TextureExtensionType& _textureType
+					,const IntRect& _rect, bool _isRepeated, bool _isSmooth
+					,const string& _name) : Actor(_name)
 {
-	mesh = CreateComponent<MeshComponent>(_data);
+	mesh = CreateComponent<MeshComponent>(_size, _path, _textureType, _rect, _isRepeated, _isSmooth);
+	renderMeshToken = -1;
+}
+
+MeshActor::MeshActor(const vector<Vector2f> point, const string& _path,const TextureExtensionType& _textureType
+					,const IntRect& _rect, bool _isRepeated, bool _isSmooth
+					,const string& _name) : Actor(_name)
+{
+	mesh = CreateComponent<MeshComponent>(point, _path, _textureType, _rect, _isRepeated, _isSmooth);
 	renderMeshToken = -1;
 }
 
