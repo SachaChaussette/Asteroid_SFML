@@ -17,13 +17,13 @@ void TEST::Construct()
 
 	M_INPUT.BindAction([&]() 
 	{
-		movement->RotateDirection(-3);
+		movement->RotateDirection(-5);
 		LOG(Display, "Left or Q Pressed"); 
 	}, { Code::Left, Code::Q 
 	});
 	M_INPUT.BindAction([&]() 
 	{
-		movement->RotateDirection(3);
+		movement->RotateDirection(5);
 		LOG(Display, "Right or D Pressed");
 	}, { Code::Right, Code::D });
 	M_INPUT.BindAction([&]() 
@@ -39,4 +39,14 @@ void TEST::Construct()
 void TEST::Deconstruct()
 {
 	Super::Deconstruct();
+}
+
+void TEST::BeginPlay()
+{
+	Super::BeginPlay();
+}
+
+void TEST::Tick(const float _deltaTime)
+{
+	Super::Tick(_deltaTime);
 }

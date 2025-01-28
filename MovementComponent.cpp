@@ -5,7 +5,7 @@ MovementComponent::MovementComponent(Actor* _owner) : Component(_owner)
 {
 	speed = 100.0f;
 	rotateSpeed = 30.0f;
-	direction = Vector2f();
+	direction = Vector2f(1.0f, 0.0f);
 	target = nullptr;
 }
 
@@ -51,17 +51,11 @@ void MovementComponent::RotateAround(const float _deltaTime)
 
 void MovementComponent::RotateDirection(const float _degree)
 {
-	Vector2f _result = Vector2f(_degree / 90.0f, _degree / 90.0f);
-	direction.x += _result.x;
-	direction.y += _result.y;
+	float _cos = cos(DegToRad(_degree));
+	float _sin = sin(DegToRad(_degree));
+
+	direction.x = direction.x * _cos - direction.y * _sin;
+	direction.y = direction.x * _sin + direction.y * _cos;
+
 	owner->Rotate(Angle(degrees(_degree)));
-
-	auto angle = atan2f(90 / 360.0f, 90 / 360.0f);
-
-	if (direction.x > 1.0f || direction.x < -1.0f) direction.x *= -1;
-	if (direction.y > 1.0f || direction.y < -1.0f) direction.y *= -1;
-
-	LOG(Display, to_string(angle * 360.0f / pi));
-	LOG(Warning, direction);
-	//LOG(Error, _result);
 }

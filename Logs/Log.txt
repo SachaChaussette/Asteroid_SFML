@@ -1,888 +1,404 @@
-[27/1/2025 16:52:39] Display: 90.000000
-[27/1/2025 16:52:39] Warning: X: 0.033333 Y: 0.033333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:39] Display: Right or D Pressed
-[27/1/2025 16:52:39] Display: 90.000000
-[27/1/2025 16:52:39] Warning: X: 0.066667 Y: 0.066667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:39] Display: Right or D Pressed
-[27/1/2025 16:52:39] Display: 90.000000
-[27/1/2025 16:52:39] Warning: X: 0.100000 Y: 0.100000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:39] Display: Right or D Pressed
-[27/1/2025 16:52:39] Display: 90.000000
-[27/1/2025 16:52:39] Warning: X: 0.133333 Y: 0.133333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:39] Display: Right or D Pressed
-[27/1/2025 16:52:39] Display: 90.000000
-[27/1/2025 16:52:39] Warning: X: 0.166667 Y: 0.166667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:39] Display: Right or D Pressed
-[27/1/2025 16:52:39] Display: 90.000000
-[27/1/2025 16:52:39] Warning: X: 0.200000 Y: 0.200000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:39] Display: Right or D Pressed
-[27/1/2025 16:52:39] Display: 90.000000
-[27/1/2025 16:52:39] Warning: X: 0.233333 Y: 0.233333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:39] Display: Right or D Pressed
-[27/1/2025 16:52:39] Display: 90.000000
-[27/1/2025 16:52:39] Warning: X: 0.266667 Y: 0.266667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:39] Display: Right or D Pressed
-[27/1/2025 16:52:39] Display: 90.000000
-[27/1/2025 16:52:39] Warning: X: 0.300000 Y: 0.300000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:39] Display: Right or D Pressed
-[27/1/2025 16:52:40] Display: 90.000000
-[27/1/2025 16:52:40] Warning: X: 0.333333 Y: 0.333333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:40] Display: Right or D Pressed
-[27/1/2025 16:52:40] Display: 90.000000
-[27/1/2025 16:52:40] Warning: X: 0.366667 Y: 0.366667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:40] Display: Right or D Pressed
-[27/1/2025 16:52:40] Display: 90.000000
-[27/1/2025 16:52:40] Warning: X: 0.400000 Y: 0.400000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:40] Display: Right or D Pressed
-[27/1/2025 16:52:40] Display: 90.000000
-[27/1/2025 16:52:40] Warning: X: 0.433333 Y: 0.433333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:40] Display: Right or D Pressed
-[27/1/2025 16:52:40] Display: 90.000000
-[27/1/2025 16:52:40] Warning: X: 0.466667 Y: 0.466667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:40] Display: Right or D Pressed
-[27/1/2025 16:52:40] Display: 90.000000
-[27/1/2025 16:52:40] Warning: X: 0.500000 Y: 0.500000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:40] Display: Right or D Pressed
-[27/1/2025 16:52:40] Display: 90.000000
-[27/1/2025 16:52:40] Warning: X: 0.533333 Y: 0.533333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:40] Display: Right or D Pressed
-[27/1/2025 16:52:40] Display: 90.000000
-[27/1/2025 16:52:40] Warning: X: 0.566667 Y: 0.566667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:40] Display: Right or D Pressed
-[27/1/2025 16:52:40] Display: 90.000000
-[27/1/2025 16:52:40] Warning: X: 0.600000 Y: 0.600000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:40] Display: Right or D Pressed
-[27/1/2025 16:52:40] Display: 90.000000
-[27/1/2025 16:52:40] Warning: X: 0.633333 Y: 0.633333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:40] Display: Right or D Pressed
-[27/1/2025 16:52:40] Display: 90.000000
-[27/1/2025 16:52:40] Warning: X: 0.666667 Y: 0.666667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:40] Display: Right or D Pressed
-[27/1/2025 16:52:40] Display: 90.000000
-[27/1/2025 16:52:40] Warning: X: 0.700000 Y: 0.700000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:40] Display: Right or D Pressed
-[27/1/2025 16:52:40] Display: 90.000000
-[27/1/2025 16:52:40] Warning: X: 0.733334 Y: 0.733334 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:40] Display: Right or D Pressed
-[27/1/2025 16:52:40] Display: 90.000000
-[27/1/2025 16:52:40] Warning: X: 0.766667 Y: 0.766667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:40] Display: Right or D Pressed
-[27/1/2025 16:52:40] Display: 90.000000
-[27/1/2025 16:52:40] Warning: X: 0.800000 Y: 0.800000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:40] Display: Right or D Pressed
-[27/1/2025 16:52:40] Display: 90.000000
-[27/1/2025 16:52:40] Warning: X: 0.833334 Y: 0.833334 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:40] Display: Right or D Pressed
-[27/1/2025 16:52:40] Display: 90.000000
-[27/1/2025 16:52:40] Warning: X: 0.866667 Y: 0.866667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:40] Display: Right or D Pressed
-[27/1/2025 16:52:40] Display: 90.000000
-[27/1/2025 16:52:40] Warning: X: 0.900000 Y: 0.900000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:40] Display: Right or D Pressed
-[27/1/2025 16:52:40] Display: 90.000000
-[27/1/2025 16:52:40] Warning: X: 0.933334 Y: 0.933334 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:40] Display: Right or D Pressed
-[27/1/2025 16:52:40] Display: 90.000000
-[27/1/2025 16:52:40] Warning: X: 0.966667 Y: 0.966667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:40] Display: Right or D Pressed
-[27/1/2025 16:52:40] Display: 90.000000
-[27/1/2025 16:52:40] Warning: X: -1.000000 Y: -1.000000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:40] Display: Right or D Pressed
-[27/1/2025 16:52:40] Display: 90.000000
-[27/1/2025 16:52:40] Warning: X: -0.966667 Y: -0.966667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:40] Display: Right or D Pressed
-[27/1/2025 16:52:41] Display: 90.000000
-[27/1/2025 16:52:41] Warning: X: 1.000000 Y: 1.000000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:41] Display: Left or Q Pressed
-[27/1/2025 16:52:41] Display: 90.000000
-[27/1/2025 16:52:41] Warning: X: 0.966667 Y: 0.966667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:41] Display: Left or Q Pressed
-[27/1/2025 16:52:42] Display: 90.000000
-[27/1/2025 16:52:42] Warning: X: 0.933334 Y: 0.933334 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:42] Display: Left or Q Pressed
-[27/1/2025 16:52:42] Display: 90.000000
-[27/1/2025 16:52:42] Warning: X: 0.900000 Y: 0.900000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:42] Display: Left or Q Pressed
-[27/1/2025 16:52:42] Display: 90.000000
-[27/1/2025 16:52:42] Warning: X: 0.933334 Y: 0.933334 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:42] Display: Right or D Pressed
-[27/1/2025 16:52:42] Display: 90.000000
-[27/1/2025 16:52:42] Warning: X: 0.966667 Y: 0.966667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:42] Display: Right or D Pressed
-[27/1/2025 16:52:43] Display: 90.000000
-[27/1/2025 16:52:43] Warning: X: -1.000000 Y: -1.000000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:43] Display: Right or D Pressed
-[27/1/2025 16:52:43] Display: 90.000000
-[27/1/2025 16:52:43] Warning: X: -0.966667 Y: -0.966667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:43] Display: Right or D Pressed
-[27/1/2025 16:52:44] Display: 90.000000
-[27/1/2025 16:52:44] Warning: X: 1.000000 Y: 1.000000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:44] Display: Left or Q Pressed
-[27/1/2025 16:52:44] Display: 90.000000
-[27/1/2025 16:52:44] Warning: X: 0.966667 Y: 0.966667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:52:44] Display: Left or Q Pressed
-[27/1/2025 16:53:2] Display: 90.000000
-[27/1/2025 16:53:2] Warning: X: 0.933334 Y: 0.933334 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:2] Display: Left or Q Pressed
-[27/1/2025 16:53:3] Display: 90.000000
-[27/1/2025 16:53:3] Warning: X: 0.900000 Y: 0.900000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:3] Display: Left or Q Pressed
-[27/1/2025 16:53:3] Display: 90.000000
-[27/1/2025 16:53:3] Warning: X: 0.866667 Y: 0.866667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:3] Display: Left or Q Pressed
-[27/1/2025 16:53:3] Display: 90.000000
-[27/1/2025 16:53:3] Warning: X: 0.833334 Y: 0.833334 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:3] Display: Left or Q Pressed
-[27/1/2025 16:53:3] Display: 90.000000
-[27/1/2025 16:53:3] Warning: X: 0.800000 Y: 0.800000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:3] Display: Left or Q Pressed
-[27/1/2025 16:53:3] Display: 90.000000
-[27/1/2025 16:53:3] Warning: X: 0.766667 Y: 0.766667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:3] Display: Left or Q Pressed
-[27/1/2025 16:53:3] Display: 90.000000
-[27/1/2025 16:53:3] Warning: X: 0.733333 Y: 0.733333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:3] Display: Left or Q Pressed
-[27/1/2025 16:53:3] Display: 90.000000
-[27/1/2025 16:53:3] Warning: X: 0.700000 Y: 0.700000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:3] Display: Left or Q Pressed
-[27/1/2025 16:53:3] Display: 90.000000
-[27/1/2025 16:53:3] Warning: X: 0.666667 Y: 0.666667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:3] Display: Left or Q Pressed
-[27/1/2025 16:53:3] Display: 90.000000
-[27/1/2025 16:53:3] Warning: X: 0.633333 Y: 0.633333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:3] Display: Left or Q Pressed
-[27/1/2025 16:53:3] Display: 90.000000
-[27/1/2025 16:53:3] Warning: X: 0.600000 Y: 0.600000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:3] Display: Left or Q Pressed
-[27/1/2025 16:53:3] Display: 90.000000
-[27/1/2025 16:53:3] Warning: X: 0.566667 Y: 0.566667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:3] Display: Left or Q Pressed
-[27/1/2025 16:53:3] Display: 90.000000
-[27/1/2025 16:53:3] Warning: X: 0.533333 Y: 0.533333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:3] Display: Left or Q Pressed
-[27/1/2025 16:53:3] Display: 90.000000
-[27/1/2025 16:53:3] Warning: X: 0.500000 Y: 0.500000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:3] Display: Left or Q Pressed
-[27/1/2025 16:53:3] Display: 90.000000
-[27/1/2025 16:53:3] Warning: X: 0.466667 Y: 0.466667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:3] Display: Left or Q Pressed
-[27/1/2025 16:53:3] Display: 90.000000
-[27/1/2025 16:53:3] Warning: X: 0.433333 Y: 0.433333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:3] Display: Left or Q Pressed
-[27/1/2025 16:53:3] Display: 90.000000
-[27/1/2025 16:53:3] Warning: X: 0.400000 Y: 0.400000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:3] Display: Left or Q Pressed
-[27/1/2025 16:53:3] Display: 90.000000
-[27/1/2025 16:53:3] Warning: X: 0.366667 Y: 0.366667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:3] Display: Left or Q Pressed
-[27/1/2025 16:53:3] Display: 90.000000
-[27/1/2025 16:53:3] Warning: X: 0.333333 Y: 0.333333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:3] Display: Left or Q Pressed
-[27/1/2025 16:53:3] Display: 90.000000
-[27/1/2025 16:53:3] Warning: X: 0.300000 Y: 0.300000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:3] Display: Left or Q Pressed
-[27/1/2025 16:53:3] Display: 90.000000
-[27/1/2025 16:53:3] Warning: X: 0.266667 Y: 0.266667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:3] Display: Left or Q Pressed
-[27/1/2025 16:53:3] Display: 90.000000
-[27/1/2025 16:53:3] Warning: X: 0.233333 Y: 0.233333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:3] Display: Left or Q Pressed
-[27/1/2025 16:53:3] Display: 90.000000
-[27/1/2025 16:53:3] Warning: X: 0.200000 Y: 0.200000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:3] Display: Left or Q Pressed
-[27/1/2025 16:53:3] Display: 90.000000
-[27/1/2025 16:53:3] Warning: X: 0.166667 Y: 0.166667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:3] Display: Left or Q Pressed
-[27/1/2025 16:53:4] Display: 90.000000
-[27/1/2025 16:53:4] Warning: X: 0.133333 Y: 0.133333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:4] Display: Left or Q Pressed
-[27/1/2025 16:53:4] Display: 90.000000
-[27/1/2025 16:53:4] Warning: X: 0.100000 Y: 0.100000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:4] Display: Left or Q Pressed
-[27/1/2025 16:53:4] Display: 90.000000
-[27/1/2025 16:53:4] Warning: X: 0.066667 Y: 0.066667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:4] Display: Left or Q Pressed
-[27/1/2025 16:53:4] Display: 90.000000
-[27/1/2025 16:53:4] Warning: X: 0.033333 Y: 0.033333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:4] Display: Left or Q Pressed
-[27/1/2025 16:53:8] Display: 90.000000
-[27/1/2025 16:53:8] Warning: X: -0.000000 Y: -0.000000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:8] Display: Left or Q Pressed
-[27/1/2025 16:53:8] Display: 90.000000
-[27/1/2025 16:53:8] Warning: X: -0.033333 Y: -0.033333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:8] Display: Left or Q Pressed
-[27/1/2025 16:53:9] Display: 90.000000
-[27/1/2025 16:53:9] Warning: X: -0.000000 Y: -0.000000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:9] Display: Right or D Pressed
-[27/1/2025 16:53:9] Display: 90.000000
-[27/1/2025 16:53:10] Warning: X: 0.033333 Y: 0.033333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:10] Display: Right or D Pressed
-[27/1/2025 16:53:24] Display: 90.000000
-[27/1/2025 16:53:24] Warning: X: 0.066667 Y: 0.066667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:24] Display: Right or D Pressed
-[27/1/2025 16:53:25] Display: 90.000000
-[27/1/2025 16:53:25] Warning: X: 0.100000 Y: 0.100000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:25] Display: Right or D Pressed
-[27/1/2025 16:53:25] Display: 90.000000
-[27/1/2025 16:53:25] Warning: X: 0.133333 Y: 0.133333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:25] Display: Right or D Pressed
-[27/1/2025 16:53:25] Display: 90.000000
-[27/1/2025 16:53:25] Warning: X: 0.166667 Y: 0.166667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:25] Display: Right or D Pressed
-[27/1/2025 16:53:25] Display: 90.000000
-[27/1/2025 16:53:25] Warning: X: 0.200000 Y: 0.200000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:25] Display: Right or D Pressed
-[27/1/2025 16:53:25] Display: 90.000000
-[27/1/2025 16:53:25] Warning: X: 0.233333 Y: 0.233333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:25] Display: Right or D Pressed
-[27/1/2025 16:53:25] Display: 90.000000
-[27/1/2025 16:53:25] Warning: X: 0.266667 Y: 0.266667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:25] Display: Right or D Pressed
-[27/1/2025 16:53:25] Display: 90.000000
-[27/1/2025 16:53:25] Warning: X: 0.300000 Y: 0.300000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:25] Display: Right or D Pressed
-[27/1/2025 16:53:25] Display: 90.000000
-[27/1/2025 16:53:25] Warning: X: 0.333333 Y: 0.333333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:25] Display: Right or D Pressed
-[27/1/2025 16:53:25] Display: 90.000000
-[27/1/2025 16:53:25] Warning: X: 0.366667 Y: 0.366667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:25] Display: Right or D Pressed
-[27/1/2025 16:53:25] Display: 90.000000
-[27/1/2025 16:53:25] Warning: X: 0.400000 Y: 0.400000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:25] Display: Right or D Pressed
-[27/1/2025 16:53:25] Display: 90.000000
-[27/1/2025 16:53:25] Warning: X: 0.433333 Y: 0.433333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:25] Display: Right or D Pressed
-[27/1/2025 16:53:25] Display: 90.000000
-[27/1/2025 16:53:25] Warning: X: 0.466667 Y: 0.466667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:25] Display: Right or D Pressed
-[27/1/2025 16:53:25] Display: 90.000000
-[27/1/2025 16:53:25] Warning: X: 0.500000 Y: 0.500000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:25] Display: Right or D Pressed
-[27/1/2025 16:53:25] Display: 90.000000
-[27/1/2025 16:53:25] Warning: X: 0.533333 Y: 0.533333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:25] Display: Right or D Pressed
-[27/1/2025 16:53:25] Display: 90.000000
-[27/1/2025 16:53:25] Warning: X: 0.566667 Y: 0.566667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:25] Display: Right or D Pressed
-[27/1/2025 16:53:25] Display: 90.000000
-[27/1/2025 16:53:25] Warning: X: 0.600000 Y: 0.600000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:25] Display: Right or D Pressed
-[27/1/2025 16:53:25] Display: 90.000000
-[27/1/2025 16:53:25] Warning: X: 0.633333 Y: 0.633333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:25] Display: Right or D Pressed
-[27/1/2025 16:53:25] Display: 90.000000
-[27/1/2025 16:53:25] Warning: X: 0.666667 Y: 0.666667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:25] Display: Right or D Pressed
-[27/1/2025 16:53:25] Display: 90.000000
-[27/1/2025 16:53:25] Warning: X: 0.700000 Y: 0.700000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:25] Display: Right or D Pressed
-[27/1/2025 16:53:25] Display: 90.000000
-[27/1/2025 16:53:25] Warning: X: 0.733333 Y: 0.733333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:25] Display: Right or D Pressed
-[27/1/2025 16:53:25] Display: 90.000000
-[27/1/2025 16:53:25] Warning: X: 0.766667 Y: 0.766667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:25] Display: Right or D Pressed
-[27/1/2025 16:53:25] Display: 90.000000
-[27/1/2025 16:53:25] Warning: X: 0.800000 Y: 0.800000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:25] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: 0.833334 Y: 0.833334 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: 0.866667 Y: 0.866667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: 0.900000 Y: 0.900000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: 0.933334 Y: 0.933334 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: 0.966667 Y: 0.966667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: -1.000000 Y: -1.000000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: -0.966667 Y: -0.966667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: -0.933334 Y: -0.933334 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: -0.900000 Y: -0.900000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: -0.866667 Y: -0.866667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: -0.833334 Y: -0.833334 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: -0.800000 Y: -0.800000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: -0.766667 Y: -0.766667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: -0.733333 Y: -0.733333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: -0.700000 Y: -0.700000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: -0.666667 Y: -0.666667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: -0.633333 Y: -0.633333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: -0.600000 Y: -0.600000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: -0.566667 Y: -0.566667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: -0.533333 Y: -0.533333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: -0.500000 Y: -0.500000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: -0.466667 Y: -0.466667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: -0.433333 Y: -0.433333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: -0.400000 Y: -0.400000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: -0.366667 Y: -0.366667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: -0.333333 Y: -0.333333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: -0.300000 Y: -0.300000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: -0.266667 Y: -0.266667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: -0.233333 Y: -0.233333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:26] Display: 90.000000
-[27/1/2025 16:53:26] Warning: X: -0.200000 Y: -0.200000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:26] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: -0.166667 Y: -0.166667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: -0.133333 Y: -0.133333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: -0.100000 Y: -0.100000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: -0.066667 Y: -0.066667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: -0.033333 Y: -0.033333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: 0.000000 Y: 0.000000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: 0.033333 Y: 0.033333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: 0.066667 Y: 0.066667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: 0.100000 Y: 0.100000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: 0.133333 Y: 0.133333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: 0.166667 Y: 0.166667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: 0.200000 Y: 0.200000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: 0.233333 Y: 0.233333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: 0.266667 Y: 0.266667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: 0.300000 Y: 0.300000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: 0.333333 Y: 0.333333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: 0.366667 Y: 0.366667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: 0.400000 Y: 0.400000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: 0.433333 Y: 0.433333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: 0.466667 Y: 0.466667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: 0.500000 Y: 0.500000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: 0.533333 Y: 0.533333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: 0.566667 Y: 0.566667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: 0.600000 Y: 0.600000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: 0.633333 Y: 0.633333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: 0.666667 Y: 0.666667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: 0.700000 Y: 0.700000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: 0.733334 Y: 0.733334 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: 0.766667 Y: 0.766667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:27] Display: 90.000000
-[27/1/2025 16:53:27] Warning: X: 0.800000 Y: 0.800000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:27] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: 0.833334 Y: 0.833334 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: 0.866667 Y: 0.866667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: 0.900000 Y: 0.900000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: 0.933334 Y: 0.933334 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: 0.966667 Y: 0.966667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: -1.000000 Y: -1.000000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: -0.966667 Y: -0.966667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: -0.933334 Y: -0.933334 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: -0.900000 Y: -0.900000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: -0.866667 Y: -0.866667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: -0.833334 Y: -0.833334 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: -0.800000 Y: -0.800000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: -0.766667 Y: -0.766667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: -0.733333 Y: -0.733333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: -0.700000 Y: -0.700000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: -0.666667 Y: -0.666667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: -0.633333 Y: -0.633333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: -0.600000 Y: -0.600000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: -0.566667 Y: -0.566667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: -0.533333 Y: -0.533333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: -0.500000 Y: -0.500000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: -0.466667 Y: -0.466667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: -0.433333 Y: -0.433333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: -0.400000 Y: -0.400000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: -0.366667 Y: -0.366667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: -0.333333 Y: -0.333333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: -0.300000 Y: -0.300000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: -0.266667 Y: -0.266667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: -0.233333 Y: -0.233333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: -0.200000 Y: -0.200000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:28] Display: 90.000000
-[27/1/2025 16:53:28] Warning: X: -0.166667 Y: -0.166667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:28] Display: Right or D Pressed
-[27/1/2025 16:53:29] Display: 90.000000
-[27/1/2025 16:53:29] Warning: X: -0.133333 Y: -0.133333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:29] Display: Right or D Pressed
-[27/1/2025 16:53:29] Display: 90.000000
-[27/1/2025 16:53:29] Warning: X: -0.100000 Y: -0.100000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:29] Display: Right or D Pressed
-[27/1/2025 16:53:29] Display: 90.000000
-[27/1/2025 16:53:29] Warning: X: -0.066667 Y: -0.066667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:29] Display: Right or D Pressed
-[27/1/2025 16:53:29] Display: 90.000000
-[27/1/2025 16:53:29] Warning: X: -0.033333 Y: -0.033333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:29] Display: Right or D Pressed
-[27/1/2025 16:53:29] Display: 90.000000
-[27/1/2025 16:53:29] Warning: X: 0.000000 Y: 0.000000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:29] Display: Right or D Pressed
-[27/1/2025 16:53:29] Display: 90.000000
-[27/1/2025 16:53:29] Warning: X: 0.033333 Y: 0.033333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:29] Display: Right or D Pressed
-[27/1/2025 16:53:29] Display: 90.000000
-[27/1/2025 16:53:29] Warning: X: 0.000000 Y: 0.000000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:29] Display: Left or Q Pressed
-[27/1/2025 16:53:30] Display: 90.000000
-[27/1/2025 16:53:30] Warning: X: -0.033333 Y: -0.033333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:30] Display: Left or Q Pressed
-[27/1/2025 16:53:33] Display: 90.000000
-[27/1/2025 16:53:33] Warning: X: 0.000000 Y: 0.000000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:33] Display: Right or D Pressed
-[27/1/2025 16:53:33] Display: 90.000000
-[27/1/2025 16:53:33] Warning: X: 0.033333 Y: 0.033333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:33] Display: Right or D Pressed
-[27/1/2025 16:53:34] Display: 90.000000
-[27/1/2025 16:53:34] Warning: X: 0.000000 Y: 0.000000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:34] Display: Left or Q Pressed
-[27/1/2025 16:53:34] Display: 90.000000
-[27/1/2025 16:53:34] Warning: X: -0.033333 Y: -0.033333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:34] Display: Left or Q Pressed
-[27/1/2025 16:53:35] Display: 90.000000
-[27/1/2025 16:53:35] Warning: X: 0.000000 Y: 0.000000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:35] Display: Right or D Pressed
-[27/1/2025 16:53:35] Display: 90.000000
-[27/1/2025 16:53:35] Warning: X: 0.033333 Y: 0.033333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:35] Display: Right or D Pressed
-[27/1/2025 16:53:36] Display: 90.000000
-[27/1/2025 16:53:36] Warning: X: 0.066667 Y: 0.066667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:36] Display: Right or D Pressed
-[27/1/2025 16:53:36] Display: 90.000000
-[27/1/2025 16:53:36] Warning: X: 0.100000 Y: 0.100000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:36] Display: Right or D Pressed
-[27/1/2025 16:53:36] Display: 90.000000
-[27/1/2025 16:53:36] Warning: X: 0.133333 Y: 0.133333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:36] Display: Right or D Pressed
-[27/1/2025 16:53:36] Display: 90.000000
-[27/1/2025 16:53:36] Warning: X: 0.166667 Y: 0.166667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:36] Display: Right or D Pressed
-[27/1/2025 16:53:36] Display: 90.000000
-[27/1/2025 16:53:36] Warning: X: 0.200000 Y: 0.200000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:36] Display: Right or D Pressed
-[27/1/2025 16:53:36] Display: 90.000000
-[27/1/2025 16:53:36] Warning: X: 0.233333 Y: 0.233333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:36] Display: Right or D Pressed
-[27/1/2025 16:53:36] Display: 90.000000
-[27/1/2025 16:53:36] Warning: X: 0.266667 Y: 0.266667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:36] Display: Right or D Pressed
-[27/1/2025 16:53:36] Display: 90.000000
-[27/1/2025 16:53:36] Warning: X: 0.300000 Y: 0.300000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:36] Display: Right or D Pressed
-[27/1/2025 16:53:37] Display: 90.000000
-[27/1/2025 16:53:37] Warning: X: 0.333333 Y: 0.333333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:37] Display: Right or D Pressed
-[27/1/2025 16:53:37] Display: 90.000000
-[27/1/2025 16:53:37] Warning: X: 0.366667 Y: 0.366667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:37] Display: Right or D Pressed
-[27/1/2025 16:53:37] Display: 90.000000
-[27/1/2025 16:53:37] Warning: X: 0.400000 Y: 0.400000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:37] Display: Right or D Pressed
-[27/1/2025 16:53:37] Display: 90.000000
-[27/1/2025 16:53:37] Warning: X: 0.433333 Y: 0.433333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:37] Display: Right or D Pressed
-[27/1/2025 16:53:37] Display: 90.000000
-[27/1/2025 16:53:37] Warning: X: 0.466667 Y: 0.466667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:37] Display: Right or D Pressed
-[27/1/2025 16:53:37] Display: 90.000000
-[27/1/2025 16:53:37] Warning: X: 0.500000 Y: 0.500000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:37] Display: Right or D Pressed
-[27/1/2025 16:53:37] Display: 90.000000
-[27/1/2025 16:53:37] Warning: X: 0.533333 Y: 0.533333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:37] Display: Right or D Pressed
-[27/1/2025 16:53:38] Display: 90.000000
-[27/1/2025 16:53:38] Warning: X: 0.566667 Y: 0.566667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:38] Display: Right or D Pressed
-[27/1/2025 16:53:38] Display: 90.000000
-[27/1/2025 16:53:38] Warning: X: 0.600000 Y: 0.600000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:38] Display: Right or D Pressed
-[27/1/2025 16:53:38] Display: 90.000000
-[27/1/2025 16:53:38] Warning: X: 0.633333 Y: 0.633333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:38] Display: Right or D Pressed
-[27/1/2025 16:53:38] Display: 90.000000
-[27/1/2025 16:53:38] Warning: X: 0.666667 Y: 0.666667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:38] Display: Right or D Pressed
-[27/1/2025 16:53:38] Display: 90.000000
-[27/1/2025 16:53:38] Warning: X: 0.700000 Y: 0.700000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:38] Display: Right or D Pressed
-[27/1/2025 16:53:38] Display: 90.000000
-[27/1/2025 16:53:38] Warning: X: 0.733334 Y: 0.733334 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:38] Display: Right or D Pressed
-[27/1/2025 16:53:38] Display: 90.000000
-[27/1/2025 16:53:38] Warning: X: 0.766667 Y: 0.766667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:38] Display: Right or D Pressed
-[27/1/2025 16:53:38] Display: 90.000000
-[27/1/2025 16:53:38] Warning: X: 0.800000 Y: 0.800000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:38] Display: Right or D Pressed
-[27/1/2025 16:53:39] Display: 90.000000
-[27/1/2025 16:53:39] Warning: X: 0.833334 Y: 0.833334 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:39] Display: Right or D Pressed
-[27/1/2025 16:53:39] Display: 90.000000
-[27/1/2025 16:53:39] Warning: X: 0.866667 Y: 0.866667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:39] Display: Right or D Pressed
-[27/1/2025 16:53:39] Display: 90.000000
-[27/1/2025 16:53:39] Warning: X: 0.900000 Y: 0.900000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:39] Display: Right or D Pressed
-[27/1/2025 16:53:39] Display: 90.000000
-[27/1/2025 16:53:39] Warning: X: 0.933334 Y: 0.933334 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:39] Display: Right or D Pressed
-[27/1/2025 16:53:39] Display: 90.000000
-[27/1/2025 16:53:39] Warning: X: 0.966667 Y: 0.966667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:39] Display: Right or D Pressed
-[27/1/2025 16:53:40] Display: 90.000000
-[27/1/2025 16:53:40] Warning: X: -1.000000 Y: -1.000000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:40] Display: Right or D Pressed
-[27/1/2025 16:53:40] Display: 90.000000
-[27/1/2025 16:53:40] Warning: X: -0.966667 Y: -0.966667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:40] Display: Right or D Pressed
-[27/1/2025 16:53:41] Display: 90.000000
-[27/1/2025 16:53:41] Warning: X: 1.000000 Y: 1.000000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:41] Display: Left or Q Pressed
-[27/1/2025 16:53:42] Display: 90.000000
-[27/1/2025 16:53:42] Warning: X: 0.966667 Y: 0.966667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:42] Display: Left or Q Pressed
-[27/1/2025 16:53:58] Display: 90.000000
-[27/1/2025 16:53:58] Warning: X: 0.933334 Y: 0.933334 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:58] Display: Left or Q Pressed
-[27/1/2025 16:53:58] Display: 90.000000
-[27/1/2025 16:53:58] Warning: X: 0.900000 Y: 0.900000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:58] Display: Left or Q Pressed
-[27/1/2025 16:53:58] Display: 90.000000
-[27/1/2025 16:53:58] Warning: X: 0.866667 Y: 0.866667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:58] Display: Left or Q Pressed
-[27/1/2025 16:53:58] Display: 90.000000
-[27/1/2025 16:53:58] Warning: X: 0.833334 Y: 0.833334 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:58] Display: Left or Q Pressed
-[27/1/2025 16:53:58] Display: 90.000000
-[27/1/2025 16:53:58] Warning: X: 0.800000 Y: 0.800000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:58] Display: Left or Q Pressed
-[27/1/2025 16:53:58] Display: 90.000000
-[27/1/2025 16:53:58] Warning: X: 0.766667 Y: 0.766667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:58] Display: Left or Q Pressed
-[27/1/2025 16:53:58] Display: 90.000000
-[27/1/2025 16:53:58] Warning: X: 0.733333 Y: 0.733333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:58] Display: Left or Q Pressed
-[27/1/2025 16:53:58] Display: 90.000000
-[27/1/2025 16:53:58] Warning: X: 0.700000 Y: 0.700000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:58] Display: Left or Q Pressed
-[27/1/2025 16:53:58] Display: 90.000000
-[27/1/2025 16:53:58] Warning: X: 0.666667 Y: 0.666667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:58] Display: Left or Q Pressed
-[27/1/2025 16:53:58] Display: 90.000000
-[27/1/2025 16:53:58] Warning: X: 0.633333 Y: 0.633333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:58] Display: Left or Q Pressed
-[27/1/2025 16:53:59] Display: 90.000000
-[27/1/2025 16:53:59] Warning: X: 0.600000 Y: 0.600000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:59] Display: Left or Q Pressed
-[27/1/2025 16:53:59] Display: 90.000000
-[27/1/2025 16:53:59] Warning: X: 0.566667 Y: 0.566667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:59] Display: Left or Q Pressed
-[27/1/2025 16:53:59] Display: 90.000000
-[27/1/2025 16:53:59] Warning: X: 0.533333 Y: 0.533333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:59] Display: Left or Q Pressed
-[27/1/2025 16:53:59] Display: 90.000000
-[27/1/2025 16:53:59] Warning: X: 0.500000 Y: 0.500000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:59] Display: Left or Q Pressed
-[27/1/2025 16:53:59] Display: 90.000000
-[27/1/2025 16:53:59] Warning: X: 0.466667 Y: 0.466667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:59] Display: Left or Q Pressed
-[27/1/2025 16:53:59] Display: 90.000000
-[27/1/2025 16:53:59] Warning: X: 0.433333 Y: 0.433333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:59] Display: Left or Q Pressed
-[27/1/2025 16:53:59] Display: 90.000000
-[27/1/2025 16:53:59] Warning: X: 0.400000 Y: 0.400000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:59] Display: Left or Q Pressed
-[27/1/2025 16:53:59] Display: 90.000000
-[27/1/2025 16:53:59] Warning: X: 0.366667 Y: 0.366667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:59] Display: Left or Q Pressed
-[27/1/2025 16:53:59] Display: 90.000000
-[27/1/2025 16:53:59] Warning: X: 0.333333 Y: 0.333333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:59] Display: Left or Q Pressed
-[27/1/2025 16:53:59] Display: 90.000000
-[27/1/2025 16:53:59] Warning: X: 0.300000 Y: 0.300000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:59] Display: Left or Q Pressed
-[27/1/2025 16:53:59] Display: 90.000000
-[27/1/2025 16:53:59] Warning: X: 0.266667 Y: 0.266667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:59] Display: Left or Q Pressed
-[27/1/2025 16:53:59] Display: 90.000000
-[27/1/2025 16:53:59] Warning: X: 0.233333 Y: 0.233333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:59] Display: Left or Q Pressed
-[27/1/2025 16:53:59] Display: 90.000000
-[27/1/2025 16:53:59] Warning: X: 0.200000 Y: 0.200000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:59] Display: Left or Q Pressed
-[27/1/2025 16:53:59] Display: 90.000000
-[27/1/2025 16:53:59] Warning: X: 0.166667 Y: 0.166667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:59] Display: Left or Q Pressed
-[27/1/2025 16:53:59] Display: 90.000000
-[27/1/2025 16:53:59] Warning: X: 0.133333 Y: 0.133333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:53:59] Display: Left or Q Pressed
-[27/1/2025 16:54:0] Display: 90.000000
-[27/1/2025 16:54:0] Warning: X: 0.100000 Y: 0.100000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:0] Display: Left or Q Pressed
-[27/1/2025 16:54:0] Display: 90.000000
-[27/1/2025 16:54:0] Warning: X: 0.066667 Y: 0.066667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:0] Display: Left or Q Pressed
-[27/1/2025 16:54:0] Display: 90.000000
-[27/1/2025 16:54:0] Warning: X: 0.033333 Y: 0.033333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:0] Display: Left or Q Pressed
-[27/1/2025 16:54:0] Display: 90.000000
-[27/1/2025 16:54:0] Warning: X: -0.000000 Y: -0.000000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:0] Display: Left or Q Pressed
-[27/1/2025 16:54:7] Display: 90.000000
-[27/1/2025 16:54:7] Warning: X: -0.033333 Y: -0.033333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:7] Display: Left or Q Pressed
-[27/1/2025 16:54:7] Display: 90.000000
-[27/1/2025 16:54:7] Warning: X: -0.066667 Y: -0.066667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:7] Display: Left or Q Pressed
-[27/1/2025 16:54:7] Display: 90.000000
-[27/1/2025 16:54:7] Warning: X: -0.100000 Y: -0.100000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:7] Display: Left or Q Pressed
-[27/1/2025 16:54:8] Display: 90.000000
-[27/1/2025 16:54:8] Warning: X: -0.133333 Y: -0.133333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:8] Display: Left or Q Pressed
-[27/1/2025 16:54:10] Display: 90.000000
-[27/1/2025 16:54:10] Warning: X: -0.166667 Y: -0.166667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:10] Display: Left or Q Pressed
-[27/1/2025 16:54:10] Display: 90.000000
-[27/1/2025 16:54:10] Warning: X: -0.200000 Y: -0.200000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:10] Display: Left or Q Pressed
-[27/1/2025 16:54:10] Display: 90.000000
-[27/1/2025 16:54:10] Warning: X: -0.233333 Y: -0.233333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:10] Display: Left or Q Pressed
-[27/1/2025 16:54:10] Display: 90.000000
-[27/1/2025 16:54:10] Warning: X: -0.266667 Y: -0.266667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:10] Display: Left or Q Pressed
-[27/1/2025 16:54:10] Display: 90.000000
-[27/1/2025 16:54:10] Warning: X: -0.300000 Y: -0.300000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:10] Display: Left or Q Pressed
-[27/1/2025 16:54:10] Display: 90.000000
-[27/1/2025 16:54:10] Warning: X: -0.333333 Y: -0.333333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:10] Display: Left or Q Pressed
-[27/1/2025 16:54:10] Display: 90.000000
-[27/1/2025 16:54:10] Warning: X: -0.366667 Y: -0.366667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:10] Display: Left or Q Pressed
-[27/1/2025 16:54:10] Display: 90.000000
-[27/1/2025 16:54:10] Warning: X: -0.400000 Y: -0.400000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:10] Display: Left or Q Pressed
-[27/1/2025 16:54:10] Display: 90.000000
-[27/1/2025 16:54:10] Warning: X: -0.433333 Y: -0.433333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:10] Display: Left or Q Pressed
-[27/1/2025 16:54:10] Display: 90.000000
-[27/1/2025 16:54:10] Warning: X: -0.466667 Y: -0.466667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:10] Display: Left or Q Pressed
-[27/1/2025 16:54:10] Display: 90.000000
-[27/1/2025 16:54:10] Warning: X: -0.500000 Y: -0.500000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:10] Display: Left or Q Pressed
-[27/1/2025 16:54:10] Display: 90.000000
-[27/1/2025 16:54:10] Warning: X: -0.533333 Y: -0.533333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:10] Display: Left or Q Pressed
-[27/1/2025 16:54:10] Display: 90.000000
-[27/1/2025 16:54:10] Warning: X: -0.566667 Y: -0.566667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:10] Display: Left or Q Pressed
-[27/1/2025 16:54:10] Display: 90.000000
-[27/1/2025 16:54:10] Warning: X: -0.600000 Y: -0.600000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:10] Display: Left or Q Pressed
-[27/1/2025 16:54:10] Display: 90.000000
-[27/1/2025 16:54:10] Warning: X: -0.633333 Y: -0.633333 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:10] Display: Left or Q Pressed
-[27/1/2025 16:54:11] Display: 90.000000
-[27/1/2025 16:54:11] Warning: X: -0.666667 Y: -0.666667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:11] Display: Left or Q Pressed
-[27/1/2025 16:54:11] Display: 90.000000
-[27/1/2025 16:54:11] Warning: X: -0.700000 Y: -0.700000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:11] Display: Left or Q Pressed
-[27/1/2025 16:54:11] Display: 90.000000
-[27/1/2025 16:54:11] Warning: X: -0.733334 Y: -0.733334 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:11] Display: Left or Q Pressed
-[27/1/2025 16:54:11] Display: 90.000000
-[27/1/2025 16:54:11] Warning: X: -0.766667 Y: -0.766667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:11] Display: Left or Q Pressed
-[27/1/2025 16:54:11] Display: 90.000000
-[27/1/2025 16:54:11] Warning: X: -0.800000 Y: -0.800000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:11] Display: Left or Q Pressed
-[27/1/2025 16:54:11] Display: 90.000000
-[27/1/2025 16:54:11] Warning: X: -0.833334 Y: -0.833334 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:11] Display: Left or Q Pressed
-[27/1/2025 16:54:11] Display: 90.000000
-[27/1/2025 16:54:11] Warning: X: -0.866667 Y: -0.866667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:11] Display: Left or Q Pressed
-[27/1/2025 16:54:11] Display: 90.000000
-[27/1/2025 16:54:11] Warning: X: -0.900000 Y: -0.900000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:11] Display: Left or Q Pressed
-[27/1/2025 16:54:11] Display: 90.000000
-[27/1/2025 16:54:11] Warning: X: -0.933334 Y: -0.933334 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:11] Display: Left or Q Pressed
-[27/1/2025 16:54:11] Display: 90.000000
-[27/1/2025 16:54:11] Warning: X: -0.966667 Y: -0.966667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:11] Display: Left or Q Pressed
-[27/1/2025 16:54:12] Display: 90.000000
-[27/1/2025 16:54:12] Warning: X: 1.000000 Y: 1.000000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:12] Display: Left or Q Pressed
-[27/1/2025 16:54:14] Display: 90.000000
-[27/1/2025 16:54:14] Warning: X: -1.033334 Y: -1.033334 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:14] Display: Right or D Pressed
-[27/1/2025 16:54:14] Display: 90.000000
-[27/1/2025 16:54:14] Warning: X: 1.000000 Y: 1.000000 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:14] Display: Right or D Pressed
-[27/1/2025 16:54:14] Display: 90.000000
-[27/1/2025 16:54:14] Warning: X: 0.966667 Y: 0.966667 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:14] Display: Left or Q Pressed
-[27/1/2025 16:54:14] Display: 90.000000
-[27/1/2025 16:54:14] Warning: X: 0.933334 Y: 0.933334 (File: MovementComponent::RotateDirection | Line: 65)
-[27/1/2025 16:54:14] Display: Left or Q Pressed
+[27/1/2025 21:39:22] Display: Left or Q Pressed
+[27/1/2025 21:39:22] Display: Left or Q Pressed
+[27/1/2025 21:39:22] Display: Left or Q Pressed
+[27/1/2025 21:39:22] Display: Left or Q Pressed
+[27/1/2025 21:39:22] Display: Left or Q Pressed
+[27/1/2025 21:39:22] Display: Left or Q Pressed
+[27/1/2025 21:39:22] Display: Left or Q Pressed
+[27/1/2025 21:39:22] Display: Left or Q Pressed
+[27/1/2025 21:39:22] Display: Left or Q Pressed
+[27/1/2025 21:39:22] Display: Left or Q Pressed
+[27/1/2025 21:39:22] Display: Left or Q Pressed
+[27/1/2025 21:39:22] Display: Left or Q Pressed
+[27/1/2025 21:39:23] Display: Left or Q Pressed
+[27/1/2025 21:39:23] Display: Left or Q Pressed
+[27/1/2025 21:39:23] Display: Left or Q Pressed
+[27/1/2025 21:39:23] Display: Left or Q Pressed
+[27/1/2025 21:39:23] Display: Left or Q Pressed
+[27/1/2025 21:39:23] Display: Left or Q Pressed
+[27/1/2025 21:39:23] Display: Left or Q Pressed
+[27/1/2025 21:39:23] Display: Left or Q Pressed
+[27/1/2025 21:39:23] Display: Left or Q Pressed
+[27/1/2025 21:39:23] Display: Left or Q Pressed
+[27/1/2025 21:39:23] Display: Left or Q Pressed
+[27/1/2025 21:39:23] Display: Left or Q Pressed
+[27/1/2025 21:39:23] Display: Left or Q Pressed
+[27/1/2025 21:39:23] Display: Left or Q Pressed
+[27/1/2025 21:39:23] Display: Left or Q Pressed
+[27/1/2025 21:39:24] Display: Left or Q Pressed
+[27/1/2025 21:39:24] Display: Left or Q Pressed
+[27/1/2025 21:39:24] Display: Left or Q Pressed
+[27/1/2025 21:39:24] Display: Left or Q Pressed
+[27/1/2025 21:39:24] Display: Left or Q Pressed
+[27/1/2025 21:39:24] Display: Left or Q Pressed
+[27/1/2025 21:39:24] Display: Left or Q Pressed
+[27/1/2025 21:39:24] Display: Left or Q Pressed
+[27/1/2025 21:39:24] Display: Left or Q Pressed
+[27/1/2025 21:39:24] Display: Left or Q Pressed
+[27/1/2025 21:39:24] Display: Left or Q Pressed
+[27/1/2025 21:39:25] Display: Right or D Pressed
+[27/1/2025 21:39:25] Display: Right or D Pressed
+[27/1/2025 21:39:25] Display: Left or Q Pressed
+[27/1/2025 21:39:26] Display: Left or Q Pressed
+[27/1/2025 21:39:26] Display: Left or Q Pressed
+[27/1/2025 21:39:26] Display: Left or Q Pressed
+[27/1/2025 21:39:26] Display: Left or Q Pressed
+[27/1/2025 21:39:26] Display: Left or Q Pressed
+[27/1/2025 21:39:26] Display: Left or Q Pressed
+[27/1/2025 21:39:26] Display: Left or Q Pressed
+[27/1/2025 21:39:26] Display: Left or Q Pressed
+[27/1/2025 21:39:26] Display: Left or Q Pressed
+[27/1/2025 21:39:26] Display: Left or Q Pressed
+[27/1/2025 21:39:26] Display: Left or Q Pressed
+[27/1/2025 21:39:26] Display: Left or Q Pressed
+[27/1/2025 21:39:26] Display: Left or Q Pressed
+[27/1/2025 21:39:26] Display: Left or Q Pressed
+[27/1/2025 21:39:26] Display: Left or Q Pressed
+[27/1/2025 21:39:26] Display: Left or Q Pressed
+[27/1/2025 21:39:26] Display: Left or Q Pressed
+[27/1/2025 21:39:26] Display: Left or Q Pressed
+[27/1/2025 21:39:26] Display: Left or Q Pressed
+[27/1/2025 21:39:26] Display: Left or Q Pressed
+[27/1/2025 21:39:26] Display: Left or Q Pressed
+[27/1/2025 21:39:26] Display: Left or Q Pressed
+[27/1/2025 21:39:26] Display: Left or Q Pressed
+[27/1/2025 21:39:26] Display: Left or Q Pressed
+[27/1/2025 21:39:26] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:27] Display: Left or Q Pressed
+[27/1/2025 21:39:28] Display: Left or Q Pressed
+[27/1/2025 21:39:28] Display: Left or Q Pressed
+[27/1/2025 21:39:28] Display: Left or Q Pressed
+[27/1/2025 21:39:28] Display: Left or Q Pressed
+[27/1/2025 21:39:28] Display: Left or Q Pressed
+[27/1/2025 21:39:28] Display: Left or Q Pressed
+[27/1/2025 21:39:28] Display: Left or Q Pressed
+[27/1/2025 21:39:28] Display: Left or Q Pressed
+[27/1/2025 21:39:28] Display: Left or Q Pressed
+[27/1/2025 21:39:28] Display: Left or Q Pressed
+[27/1/2025 21:39:28] Display: Left or Q Pressed
+[27/1/2025 21:39:28] Display: Left or Q Pressed
+[27/1/2025 21:39:28] Display: Left or Q Pressed
+[27/1/2025 21:39:28] Display: Left or Q Pressed
+[27/1/2025 21:39:28] Display: Left or Q Pressed
+[27/1/2025 21:39:28] Display: Left or Q Pressed
+[27/1/2025 21:39:28] Display: Left or Q Pressed
+[27/1/2025 21:39:28] Display: Left or Q Pressed
+[27/1/2025 21:39:28] Display: Left or Q Pressed
+[27/1/2025 21:39:29] Display: Right or D Pressed
+[27/1/2025 21:39:29] Display: Right or D Pressed
+[27/1/2025 21:39:29] Display: Right or D Pressed
+[27/1/2025 21:39:29] Display: Right or D Pressed
+[27/1/2025 21:39:29] Display: Right or D Pressed
+[27/1/2025 21:39:29] Display: Right or D Pressed
+[27/1/2025 21:39:29] Display: Right or D Pressed
+[27/1/2025 21:39:29] Display: Right or D Pressed
+[27/1/2025 21:39:29] Display: Right or D Pressed
+[27/1/2025 21:39:29] Display: Right or D Pressed
+[27/1/2025 21:39:29] Display: Right or D Pressed
+[27/1/2025 21:39:29] Display: Right or D Pressed
+[27/1/2025 21:39:29] Display: Right or D Pressed
+[27/1/2025 21:39:29] Display: Right or D Pressed
+[27/1/2025 21:39:29] Display: Right or D Pressed
+[27/1/2025 21:39:30] Display: Right or D Pressed
+[27/1/2025 21:39:30] Display: Right or D Pressed
+[27/1/2025 21:39:30] Display: Right or D Pressed
+[27/1/2025 21:39:30] Display: Right or D Pressed
+[27/1/2025 21:39:30] Display: Right or D Pressed
+[27/1/2025 21:39:30] Display: Right or D Pressed
+[27/1/2025 21:39:30] Display: Right or D Pressed
+[27/1/2025 21:39:30] Display: Left or Q Pressed
+[27/1/2025 21:39:30] Display: Left or Q Pressed
+[27/1/2025 21:39:31] Display: Left or Q Pressed
+[27/1/2025 21:39:31] Display: Left or Q Pressed
+[27/1/2025 21:39:31] Display: Left or Q Pressed
+[27/1/2025 21:39:31] Display: Left or Q Pressed
+[27/1/2025 21:39:31] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:32] Display: Left or Q Pressed
+[27/1/2025 21:39:33] Display: Left or Q Pressed
+[27/1/2025 21:39:33] Display: Left or Q Pressed
+[27/1/2025 21:39:34] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:35] Display: Right or D Pressed
+[27/1/2025 21:39:36] Display: Left or Q Pressed
+[27/1/2025 21:39:36] Display: Left or Q Pressed
+[27/1/2025 21:39:36] Display: Left or Q Pressed
+[27/1/2025 21:39:36] Display: Left or Q Pressed
+[27/1/2025 21:39:36] Display: Left or Q Pressed
+[27/1/2025 21:39:36] Display: Left or Q Pressed
+[27/1/2025 21:39:36] Display: Left or Q Pressed
+[27/1/2025 21:39:36] Display: Left or Q Pressed
+[27/1/2025 21:39:36] Display: Left or Q Pressed
+[27/1/2025 21:39:36] Display: Left or Q Pressed
+[27/1/2025 21:39:36] Display: Left or Q Pressed
+[27/1/2025 21:39:36] Display: Left or Q Pressed
+[27/1/2025 21:39:36] Display: Left or Q Pressed
+[27/1/2025 21:39:36] Display: Left or Q Pressed
+[27/1/2025 21:39:36] Display: Left or Q Pressed
+[27/1/2025 21:39:36] Display: Left or Q Pressed
+[27/1/2025 21:39:36] Display: Left or Q Pressed
+[27/1/2025 21:39:36] Display: Left or Q Pressed
+[27/1/2025 21:39:36] Display: Left or Q Pressed
+[27/1/2025 21:39:36] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:37] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:38] Display: Left or Q Pressed
+[27/1/2025 21:39:39] Display: Left or Q Pressed
+[27/1/2025 21:39:39] Display: Left or Q Pressed
+[27/1/2025 21:39:39] Display: Up or Z Pressed
+[27/1/2025 21:39:39] Display: Up or Z Pressed
+[27/1/2025 21:39:39] Display: Up or Z Pressed
+[27/1/2025 21:39:39] Display: Up or Z Pressed
+[27/1/2025 21:39:39] Display: Up or Z Pressed
+[27/1/2025 21:39:39] Display: Up or Z Pressed
+[27/1/2025 21:39:39] Display: Up or Z Pressed
+[27/1/2025 21:39:39] Display: Up or Z Pressed
+[27/1/2025 21:39:39] Display: Up or Z Pressed
+[27/1/2025 21:39:39] Display: Up or Z Pressed
+[27/1/2025 21:39:43] Display: Left or Q Pressed
+[27/1/2025 21:39:43] Display: Left or Q Pressed
+[27/1/2025 21:39:44] Display: Left or Q Pressed
+[27/1/2025 21:39:44] Display: Left or Q Pressed
+[27/1/2025 21:39:44] Display: Left or Q Pressed
+[27/1/2025 21:39:44] Display: Left or Q Pressed
+[27/1/2025 21:39:44] Display: Left or Q Pressed
+[27/1/2025 21:39:44] Display: Left or Q Pressed
+[27/1/2025 21:39:44] Display: Left or Q Pressed
+[27/1/2025 21:39:44] Display: Left or Q Pressed
+[27/1/2025 21:39:45] Display: Left or Q Pressed
+[27/1/2025 21:39:45] Display: Left or Q Pressed
+[27/1/2025 21:39:45] Display: Left or Q Pressed
+[27/1/2025 21:39:45] Display: Left or Q Pressed
+[27/1/2025 21:39:45] Display: Left or Q Pressed
+[27/1/2025 21:39:45] Display: Left or Q Pressed
+[27/1/2025 21:39:45] Display: Left or Q Pressed
+[27/1/2025 21:39:45] Display: Left or Q Pressed
+[27/1/2025 21:39:49] Display: Left or Q Pressed
+[27/1/2025 21:39:49] Display: Left or Q Pressed
+[27/1/2025 21:39:49] Display: Left or Q Pressed
+[27/1/2025 21:39:49] Display: Left or Q Pressed
+[27/1/2025 21:39:49] Display: Left or Q Pressed
+[27/1/2025 21:39:49] Display: Left or Q Pressed
+[27/1/2025 21:39:49] Display: Left or Q Pressed
+[27/1/2025 21:39:49] Display: Left or Q Pressed
+[27/1/2025 21:39:49] Display: Left or Q Pressed
+[27/1/2025 21:39:49] Display: Left or Q Pressed
+[27/1/2025 21:39:49] Display: Left or Q Pressed
+[27/1/2025 21:39:49] Display: Left or Q Pressed
+[27/1/2025 21:39:49] Display: Left or Q Pressed
+[27/1/2025 21:39:50] Display: Left or Q Pressed
+[27/1/2025 21:39:50] Display: Left or Q Pressed
+[27/1/2025 21:39:50] Display: Left or Q Pressed
+[27/1/2025 21:39:50] Display: Left or Q Pressed
+[27/1/2025 21:39:50] Display: Left or Q Pressed
+[27/1/2025 21:39:50] Display: Left or Q Pressed
+[27/1/2025 21:39:50] Display: Left or Q Pressed
+[27/1/2025 21:39:51] Display: Right or D Pressed
+[27/1/2025 21:39:51] Display: Right or D Pressed
+[27/1/2025 21:39:51] Display: Right or D Pressed
+[27/1/2025 21:39:51] Display: Right or D Pressed
+[27/1/2025 21:39:52] Display: Right or D Pressed
+[27/1/2025 21:39:52] Display: Right or D Pressed
+[27/1/2025 21:39:52] Display: Right or D Pressed
+[27/1/2025 21:39:52] Display: Right or D Pressed
+[27/1/2025 21:39:52] Display: Right or D Pressed
+[27/1/2025 21:39:52] Display: Right or D Pressed
+[27/1/2025 21:39:52] Display: Right or D Pressed
+[27/1/2025 21:39:52] Display: Right or D Pressed
+[27/1/2025 21:39:52] Display: Right or D Pressed
+[27/1/2025 21:39:52] Display: Right or D Pressed
+[27/1/2025 21:39:52] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:53] Display: Right or D Pressed
+[27/1/2025 21:39:54] Display: Right or D Pressed
+[27/1/2025 21:39:54] Display: Right or D Pressed
+[27/1/2025 21:39:54] Display: Right or D Pressed
+[27/1/2025 21:39:54] Display: Right or D Pressed
+[27/1/2025 21:39:54] Display: Right or D Pressed
+[27/1/2025 21:39:54] Display: Right or D Pressed
+[27/1/2025 21:39:54] Display: Right or D Pressed
+[27/1/2025 21:39:54] Display: Right or D Pressed
+[27/1/2025 21:39:54] Display: Right or D Pressed
+[27/1/2025 21:39:54] Display: Right or D Pressed
+[27/1/2025 21:39:54] Display: Right or D Pressed
+[27/1/2025 21:39:54] Display: Right or D Pressed
+[27/1/2025 21:39:54] Display: Right or D Pressed
+[27/1/2025 21:39:54] Display: Right or D Pressed
+[27/1/2025 21:39:54] Display: Right or D Pressed
+[27/1/2025 21:39:54] Display: Right or D Pressed
+[27/1/2025 21:39:54] Display: Right or D Pressed
+[27/1/2025 21:39:54] Display: Right or D Pressed
+[27/1/2025 21:39:54] Display: Right or D Pressed
+[27/1/2025 21:39:54] Display: Right or D Pressed
+[27/1/2025 21:39:54] Display: Right or D Pressed
+[27/1/2025 21:39:54] Display: Right or D Pressed
+[27/1/2025 21:39:54] Display: Right or D Pressed
+[27/1/2025 21:39:54] Display: Right or D Pressed
+[27/1/2025 21:39:54] Display: Right or D Pressed
