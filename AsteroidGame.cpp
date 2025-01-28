@@ -26,7 +26,7 @@ void AsteroidGame::Start()
 	_asteroid->GetMovement()->SetDirection(Vector2f(
 		GetRandomNumberInRange(0.01f, 1.0f), 
 		GetRandomNumberInRange(-1.0f, 1.0f)));},
-		seconds(1.0f), true, true);
+		seconds(1.0f), true, false);
 
 	//SpawnMeshActor();
 }

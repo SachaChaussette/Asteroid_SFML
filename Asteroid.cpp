@@ -1,4 +1,5 @@
 #include "Asteroid.h"
+#include "GameManager.h"
 
 Asteroid::Asteroid(const SizeType& _size, const vector<Vector2f>& _point, const string& _path
 	, const TextureExtensionType& _textureType, const IntRect& _rect)
@@ -15,6 +16,30 @@ Asteroid::Asteroid(const Asteroid& _other) : MeshActor(_other)
 	animation = CreateComponent<AnimationComponent>(_other.animation);
 	movement = CreateComponent<MovementComponent>(_other.movement);
 	size = _other.size;
+}
+
+void Asteroid::ComputeNewPositionIfNotInWindow()
+{
+	const Vector2f& _windowSize = M_GAME.GetCurrent()->GetWindowSize();
+	const Vector2f& _asteroidPosition= GetPosition();
+	const Vector2f& _asteroidScale = GetScale();
+	const Vector2f& _asteroidSize = Vector2f(200.0f * _asteroidScale.x, 200.0f * _asteroidScale.y) / 2.0f; //TODO tweak la valeur je pense car 200 / 200 c'ets au feeling
+	if ((_asteroidPosition.x + _asteroidSize.x) < 0.0f )
+	{
+		SetPosition({ _windowSize.x + _asteroidSize.x, _asteroidPosition.y });
+	}
+	else if ((_asteroidPosition.x - _asteroidSize.x) > _windowSize.x)
+	{
+		SetPosition({0.0f - _asteroidSize.x, _asteroidPosition.y });
+	}
+	if ((_asteroidPosition.y + _asteroidSize.y) < 0.0f)
+	{
+		SetPosition({ _asteroidPosition.x , _windowSize.y + _asteroidSize.y});
+	}
+	else if ((_asteroidPosition.y - _asteroidSize.y) > _windowSize.y)
+	{
+		SetPosition({ _asteroidPosition.x, 0.0f - _asteroidSize.y });
+	}
 }
 
 void Asteroid::Construct()
@@ -34,6 +59,12 @@ void Asteroid::Construct()
 	animation->AddAnimation(_move);
 	animation->SetCurrentAnimation("Movement");
 	animation->StartAnimation();
+}
+
+void Asteroid::Tick(const float _deltaTime)
+{
+	Super::Tick(_deltaTime);
+	ComputeNewPositionIfNotInWindow();
 }
 
 void Asteroid::Deconstruct()

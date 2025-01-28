@@ -310,7 +310,7 @@
       <Filter>Script\Game\AsteroidGame</Filter>
     </ClInclude>
     <ClInclude Include="Asteroid.h">
-      <Filter>Header Files</Filter>
+      <Filter>Asteroid\AsteroidMesh</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -453,7 +453,7 @@
       <Filter>Script\Game\AsteroidGame</Filter>
     </ClCompile>
     <ClCompile Include="Asteroid.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Asteroid\AsteroidMesh</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

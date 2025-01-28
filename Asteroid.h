@@ -22,6 +22,7 @@ public:
 	{
 		return movement;
 	}
+
 public:
 	Asteroid(const SizeType& _size = MEDIUM, const vector<Vector2f>& point =
 		{{30.0f, 20.0f}, {80.0f, 0.0f}, {220.0f, 20.0f}, {260.0f, 60.0f}, {260.0f, 120.0f},
@@ -30,9 +31,13 @@ public:
 		const TextureExtensionType& _textureType = PNG, const IntRect& _rect = {});
 	Asteroid(const Asteroid& _other);
 
+
+private:
+	void ComputeNewPositionIfNotInWindow();
 public: 
 
 	virtual void Construct() override;
+	virtual void Tick(const float _deltaTime) override;
 	virtual void Deconstruct() override;
 };
 
