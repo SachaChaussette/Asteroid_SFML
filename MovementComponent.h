@@ -9,6 +9,10 @@ class MovementComponent : public Component
 	Actor* target;
 
 public:
+	FORCEINLINE void SetDirection(const Vector2f& _direction)
+	{
+		direction = _direction;
+	}
 	FORCEINLINE void SetRotateSpeed(const float _rotateSpeed)
 	{
 		rotateSpeed = _rotateSpeed;

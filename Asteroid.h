@@ -16,10 +16,20 @@ class Asteroid : public MeshActor
 	AnimationComponent* animation;
 	SizeType size;
 
+
 public:
-	Asteroid(const vector<Vector2f> point, const SizeType& _size = MEDIUM, const string& _path = "asteroid"
-			,const TextureExtensionType& _textureType = PNG, const IntRect& _rect = {});
+	FORCEINLINE MovementComponent* GetMovement() const
+	{
+		return movement;
+	}
+public:
+	Asteroid(const SizeType& _size = MEDIUM, const vector<Vector2f>& point =
+		{{30.0f, 20.0f}, {80.0f, 0.0f}, {220.0f, 20.0f}, {260.0f, 60.0f}, {260.0f, 120.0f},
+		{230.0f, 180.0f}, {80.0f, 190.0f}, {60.0f, 180.0f}, {40.0f, 180.0f}, {0.0f, 100.0f},}, 
+		const string& _path = "AsteroidSpriteSheet_" + to_string(GetRandomNumberInRange(1, 2)),
+		const TextureExtensionType& _textureType = PNG, const IntRect& _rect = {});
 	Asteroid(const Asteroid& _other);
+
 public: 
 
 	virtual void Construct() override;

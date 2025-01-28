@@ -7,6 +7,10 @@ protected:
 	RenderWindow window;
 
 public:
+	FORCEINLINE Vector2f GetWindowSize() const
+	{
+		return CAST(Vector2f, window.getSize());
+	}
 	FORCEINLINE virtual bool IsOver() const
 	{
 		return !window.isOpen();

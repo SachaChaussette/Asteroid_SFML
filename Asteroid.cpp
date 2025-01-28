@@ -1,6 +1,6 @@
 #include "Asteroid.h"
 
-Asteroid::Asteroid(const vector<Vector2f> _point, const SizeType& _size, const string& _path
+Asteroid::Asteroid(const SizeType& _size, const vector<Vector2f>& _point, const string& _path
 	, const TextureExtensionType& _textureType, const IntRect& _rect)
 	: MeshActor(_point, _path,
 		_textureType, _rect, false, false)
@@ -20,7 +20,7 @@ Asteroid::Asteroid(const Asteroid& _other) : MeshActor(_other)
 void Asteroid::Construct()
 {
 	Super::Construct();
-	const float _scaleFactor = 0.25f * CAST(float,size);
+	const float _scaleFactor = 0.15f * CAST(float,size);
 	SetScale({ _scaleFactor , _scaleFactor });
 	vector<SpriteData> _spritesMove;
 	const Vector2i& _moveSriteSize = Vector2i( 32,32 );
