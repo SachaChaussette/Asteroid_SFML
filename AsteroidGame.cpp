@@ -2,7 +2,7 @@
 #include "Level.h"
 #include "MeshActor.h"
 #include "InputManager.h"
-#include "TEST.h"
+#include "Player.h"
 
 AsteroidGame::AsteroidGame()
 {
@@ -11,10 +11,10 @@ AsteroidGame::AsteroidGame()
 void AsteroidGame::Start()
 {
 	Super::Start();
-	Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(GetWindowSize()), "image")));
-	TEST* _TEST = Level::SpawnActor(TEST(RectangleShapeData(Vector2f(50.0f, 50.0f), "images",JPG)));
-	_TEST->SetOriginAtMiddle();
-	_TEST->SetPosition(Vector2f( GetWindowSize().x / 2, GetWindowSize().y / 2 ));
+	//Level::SpawnActor(MeshActor(RectangleShapeData(Vector2f(GetWindowSize()), "image")));
+	Player* _player = Level::SpawnActor(Player(RectangleShapeData(Vector2f(50.0f, 50.0f), "player", PNG, false, IntRect(Vector2i(), Vector2i(32, 32)))));
+	_player->SetOriginAtMiddle();
+	_player->SetPosition(Vector2f( GetWindowSize().x / 2, GetWindowSize().y / 2 ));
 }
 
 bool AsteroidGame::Update()

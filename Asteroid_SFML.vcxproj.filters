@@ -285,7 +285,7 @@
     <ClInclude Include="AsteroidGame.h">
       <Filter>Script\AsteroidGame</Filter>
     </ClInclude>
-    <ClInclude Include="TEST.h">
+    <ClInclude Include="Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MusicSample.h">
@@ -434,7 +434,7 @@
     <ClCompile Include="AsteroidGame.cpp">
       <Filter>Script\AsteroidGame</Filter>
     </ClCompile>
-    <ClCompile Include="TEST.cpp">
+    <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MusicSample.cpp">

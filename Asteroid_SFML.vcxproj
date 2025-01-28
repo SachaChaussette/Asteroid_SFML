@@ -180,7 +180,7 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClCompile Include="Spawner.cpp" />
     <ClCompile Include="SquareActor.cpp" />
     <ClCompile Include="SubclassOf.cpp" />
-    <ClCompile Include="TEST.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="TextObject.cpp" />
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="TimerManager.cpp" />
@@ -232,7 +232,7 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClInclude Include="Spawner.h" />
     <ClInclude Include="SquareActor.h" />
     <ClInclude Include="SubclassOf.h" />
-    <ClInclude Include="TEST.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="TextObject.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="TimerManager.h" />

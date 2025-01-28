@@ -1,404 +1,60 @@
-[27/1/2025 21:39:22] Display: Left or Q Pressed
-[27/1/2025 21:39:22] Display: Left or Q Pressed
-[27/1/2025 21:39:22] Display: Left or Q Pressed
-[27/1/2025 21:39:22] Display: Left or Q Pressed
-[27/1/2025 21:39:22] Display: Left or Q Pressed
-[27/1/2025 21:39:22] Display: Left or Q Pressed
-[27/1/2025 21:39:22] Display: Left or Q Pressed
-[27/1/2025 21:39:22] Display: Left or Q Pressed
-[27/1/2025 21:39:22] Display: Left or Q Pressed
-[27/1/2025 21:39:22] Display: Left or Q Pressed
-[27/1/2025 21:39:22] Display: Left or Q Pressed
-[27/1/2025 21:39:22] Display: Left or Q Pressed
-[27/1/2025 21:39:23] Display: Left or Q Pressed
-[27/1/2025 21:39:23] Display: Left or Q Pressed
-[27/1/2025 21:39:23] Display: Left or Q Pressed
-[27/1/2025 21:39:23] Display: Left or Q Pressed
-[27/1/2025 21:39:23] Display: Left or Q Pressed
-[27/1/2025 21:39:23] Display: Left or Q Pressed
-[27/1/2025 21:39:23] Display: Left or Q Pressed
-[27/1/2025 21:39:23] Display: Left or Q Pressed
-[27/1/2025 21:39:23] Display: Left or Q Pressed
-[27/1/2025 21:39:23] Display: Left or Q Pressed
-[27/1/2025 21:39:23] Display: Left or Q Pressed
-[27/1/2025 21:39:23] Display: Left or Q Pressed
-[27/1/2025 21:39:23] Display: Left or Q Pressed
-[27/1/2025 21:39:23] Display: Left or Q Pressed
-[27/1/2025 21:39:23] Display: Left or Q Pressed
-[27/1/2025 21:39:24] Display: Left or Q Pressed
-[27/1/2025 21:39:24] Display: Left or Q Pressed
-[27/1/2025 21:39:24] Display: Left or Q Pressed
-[27/1/2025 21:39:24] Display: Left or Q Pressed
-[27/1/2025 21:39:24] Display: Left or Q Pressed
-[27/1/2025 21:39:24] Display: Left or Q Pressed
-[27/1/2025 21:39:24] Display: Left or Q Pressed
-[27/1/2025 21:39:24] Display: Left or Q Pressed
-[27/1/2025 21:39:24] Display: Left or Q Pressed
-[27/1/2025 21:39:24] Display: Left or Q Pressed
-[27/1/2025 21:39:24] Display: Left or Q Pressed
-[27/1/2025 21:39:25] Display: Right or D Pressed
-[27/1/2025 21:39:25] Display: Right or D Pressed
-[27/1/2025 21:39:25] Display: Left or Q Pressed
-[27/1/2025 21:39:26] Display: Left or Q Pressed
-[27/1/2025 21:39:26] Display: Left or Q Pressed
-[27/1/2025 21:39:26] Display: Left or Q Pressed
-[27/1/2025 21:39:26] Display: Left or Q Pressed
-[27/1/2025 21:39:26] Display: Left or Q Pressed
-[27/1/2025 21:39:26] Display: Left or Q Pressed
-[27/1/2025 21:39:26] Display: Left or Q Pressed
-[27/1/2025 21:39:26] Display: Left or Q Pressed
-[27/1/2025 21:39:26] Display: Left or Q Pressed
-[27/1/2025 21:39:26] Display: Left or Q Pressed
-[27/1/2025 21:39:26] Display: Left or Q Pressed
-[27/1/2025 21:39:26] Display: Left or Q Pressed
-[27/1/2025 21:39:26] Display: Left or Q Pressed
-[27/1/2025 21:39:26] Display: Left or Q Pressed
-[27/1/2025 21:39:26] Display: Left or Q Pressed
-[27/1/2025 21:39:26] Display: Left or Q Pressed
-[27/1/2025 21:39:26] Display: Left or Q Pressed
-[27/1/2025 21:39:26] Display: Left or Q Pressed
-[27/1/2025 21:39:26] Display: Left or Q Pressed
-[27/1/2025 21:39:26] Display: Left or Q Pressed
-[27/1/2025 21:39:26] Display: Left or Q Pressed
-[27/1/2025 21:39:26] Display: Left or Q Pressed
-[27/1/2025 21:39:26] Display: Left or Q Pressed
-[27/1/2025 21:39:26] Display: Left or Q Pressed
-[27/1/2025 21:39:26] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:27] Display: Left or Q Pressed
-[27/1/2025 21:39:28] Display: Left or Q Pressed
-[27/1/2025 21:39:28] Display: Left or Q Pressed
-[27/1/2025 21:39:28] Display: Left or Q Pressed
-[27/1/2025 21:39:28] Display: Left or Q Pressed
-[27/1/2025 21:39:28] Display: Left or Q Pressed
-[27/1/2025 21:39:28] Display: Left or Q Pressed
-[27/1/2025 21:39:28] Display: Left or Q Pressed
-[27/1/2025 21:39:28] Display: Left or Q Pressed
-[27/1/2025 21:39:28] Display: Left or Q Pressed
-[27/1/2025 21:39:28] Display: Left or Q Pressed
-[27/1/2025 21:39:28] Display: Left or Q Pressed
-[27/1/2025 21:39:28] Display: Left or Q Pressed
-[27/1/2025 21:39:28] Display: Left or Q Pressed
-[27/1/2025 21:39:28] Display: Left or Q Pressed
-[27/1/2025 21:39:28] Display: Left or Q Pressed
-[27/1/2025 21:39:28] Display: Left or Q Pressed
-[27/1/2025 21:39:28] Display: Left or Q Pressed
-[27/1/2025 21:39:28] Display: Left or Q Pressed
-[27/1/2025 21:39:28] Display: Left or Q Pressed
-[27/1/2025 21:39:29] Display: Right or D Pressed
-[27/1/2025 21:39:29] Display: Right or D Pressed
-[27/1/2025 21:39:29] Display: Right or D Pressed
-[27/1/2025 21:39:29] Display: Right or D Pressed
-[27/1/2025 21:39:29] Display: Right or D Pressed
-[27/1/2025 21:39:29] Display: Right or D Pressed
-[27/1/2025 21:39:29] Display: Right or D Pressed
-[27/1/2025 21:39:29] Display: Right or D Pressed
-[27/1/2025 21:39:29] Display: Right or D Pressed
-[27/1/2025 21:39:29] Display: Right or D Pressed
-[27/1/2025 21:39:29] Display: Right or D Pressed
-[27/1/2025 21:39:29] Display: Right or D Pressed
-[27/1/2025 21:39:29] Display: Right or D Pressed
-[27/1/2025 21:39:29] Display: Right or D Pressed
-[27/1/2025 21:39:29] Display: Right or D Pressed
-[27/1/2025 21:39:30] Display: Right or D Pressed
-[27/1/2025 21:39:30] Display: Right or D Pressed
-[27/1/2025 21:39:30] Display: Right or D Pressed
-[27/1/2025 21:39:30] Display: Right or D Pressed
-[27/1/2025 21:39:30] Display: Right or D Pressed
-[27/1/2025 21:39:30] Display: Right or D Pressed
-[27/1/2025 21:39:30] Display: Right or D Pressed
-[27/1/2025 21:39:30] Display: Left or Q Pressed
-[27/1/2025 21:39:30] Display: Left or Q Pressed
-[27/1/2025 21:39:31] Display: Left or Q Pressed
-[27/1/2025 21:39:31] Display: Left or Q Pressed
-[27/1/2025 21:39:31] Display: Left or Q Pressed
-[27/1/2025 21:39:31] Display: Left or Q Pressed
-[27/1/2025 21:39:31] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:32] Display: Left or Q Pressed
-[27/1/2025 21:39:33] Display: Left or Q Pressed
-[27/1/2025 21:39:33] Display: Left or Q Pressed
-[27/1/2025 21:39:34] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:35] Display: Right or D Pressed
-[27/1/2025 21:39:36] Display: Left or Q Pressed
-[27/1/2025 21:39:36] Display: Left or Q Pressed
-[27/1/2025 21:39:36] Display: Left or Q Pressed
-[27/1/2025 21:39:36] Display: Left or Q Pressed
-[27/1/2025 21:39:36] Display: Left or Q Pressed
-[27/1/2025 21:39:36] Display: Left or Q Pressed
-[27/1/2025 21:39:36] Display: Left or Q Pressed
-[27/1/2025 21:39:36] Display: Left or Q Pressed
-[27/1/2025 21:39:36] Display: Left or Q Pressed
-[27/1/2025 21:39:36] Display: Left or Q Pressed
-[27/1/2025 21:39:36] Display: Left or Q Pressed
-[27/1/2025 21:39:36] Display: Left or Q Pressed
-[27/1/2025 21:39:36] Display: Left or Q Pressed
-[27/1/2025 21:39:36] Display: Left or Q Pressed
-[27/1/2025 21:39:36] Display: Left or Q Pressed
-[27/1/2025 21:39:36] Display: Left or Q Pressed
-[27/1/2025 21:39:36] Display: Left or Q Pressed
-[27/1/2025 21:39:36] Display: Left or Q Pressed
-[27/1/2025 21:39:36] Display: Left or Q Pressed
-[27/1/2025 21:39:36] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:37] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:38] Display: Left or Q Pressed
-[27/1/2025 21:39:39] Display: Left or Q Pressed
-[27/1/2025 21:39:39] Display: Left or Q Pressed
-[27/1/2025 21:39:39] Display: Up or Z Pressed
-[27/1/2025 21:39:39] Display: Up or Z Pressed
-[27/1/2025 21:39:39] Display: Up or Z Pressed
-[27/1/2025 21:39:39] Display: Up or Z Pressed
-[27/1/2025 21:39:39] Display: Up or Z Pressed
-[27/1/2025 21:39:39] Display: Up or Z Pressed
-[27/1/2025 21:39:39] Display: Up or Z Pressed
-[27/1/2025 21:39:39] Display: Up or Z Pressed
-[27/1/2025 21:39:39] Display: Up or Z Pressed
-[27/1/2025 21:39:39] Display: Up or Z Pressed
-[27/1/2025 21:39:43] Display: Left or Q Pressed
-[27/1/2025 21:39:43] Display: Left or Q Pressed
-[27/1/2025 21:39:44] Display: Left or Q Pressed
-[27/1/2025 21:39:44] Display: Left or Q Pressed
-[27/1/2025 21:39:44] Display: Left or Q Pressed
-[27/1/2025 21:39:44] Display: Left or Q Pressed
-[27/1/2025 21:39:44] Display: Left or Q Pressed
-[27/1/2025 21:39:44] Display: Left or Q Pressed
-[27/1/2025 21:39:44] Display: Left or Q Pressed
-[27/1/2025 21:39:44] Display: Left or Q Pressed
-[27/1/2025 21:39:45] Display: Left or Q Pressed
-[27/1/2025 21:39:45] Display: Left or Q Pressed
-[27/1/2025 21:39:45] Display: Left or Q Pressed
-[27/1/2025 21:39:45] Display: Left or Q Pressed
-[27/1/2025 21:39:45] Display: Left or Q Pressed
-[27/1/2025 21:39:45] Display: Left or Q Pressed
-[27/1/2025 21:39:45] Display: Left or Q Pressed
-[27/1/2025 21:39:45] Display: Left or Q Pressed
-[27/1/2025 21:39:49] Display: Left or Q Pressed
-[27/1/2025 21:39:49] Display: Left or Q Pressed
-[27/1/2025 21:39:49] Display: Left or Q Pressed
-[27/1/2025 21:39:49] Display: Left or Q Pressed
-[27/1/2025 21:39:49] Display: Left or Q Pressed
-[27/1/2025 21:39:49] Display: Left or Q Pressed
-[27/1/2025 21:39:49] Display: Left or Q Pressed
-[27/1/2025 21:39:49] Display: Left or Q Pressed
-[27/1/2025 21:39:49] Display: Left or Q Pressed
-[27/1/2025 21:39:49] Display: Left or Q Pressed
-[27/1/2025 21:39:49] Display: Left or Q Pressed
-[27/1/2025 21:39:49] Display: Left or Q Pressed
-[27/1/2025 21:39:49] Display: Left or Q Pressed
-[27/1/2025 21:39:50] Display: Left or Q Pressed
-[27/1/2025 21:39:50] Display: Left or Q Pressed
-[27/1/2025 21:39:50] Display: Left or Q Pressed
-[27/1/2025 21:39:50] Display: Left or Q Pressed
-[27/1/2025 21:39:50] Display: Left or Q Pressed
-[27/1/2025 21:39:50] Display: Left or Q Pressed
-[27/1/2025 21:39:50] Display: Left or Q Pressed
-[27/1/2025 21:39:51] Display: Right or D Pressed
-[27/1/2025 21:39:51] Display: Right or D Pressed
-[27/1/2025 21:39:51] Display: Right or D Pressed
-[27/1/2025 21:39:51] Display: Right or D Pressed
-[27/1/2025 21:39:52] Display: Right or D Pressed
-[27/1/2025 21:39:52] Display: Right or D Pressed
-[27/1/2025 21:39:52] Display: Right or D Pressed
-[27/1/2025 21:39:52] Display: Right or D Pressed
-[27/1/2025 21:39:52] Display: Right or D Pressed
-[27/1/2025 21:39:52] Display: Right or D Pressed
-[27/1/2025 21:39:52] Display: Right or D Pressed
-[27/1/2025 21:39:52] Display: Right or D Pressed
-[27/1/2025 21:39:52] Display: Right or D Pressed
-[27/1/2025 21:39:52] Display: Right or D Pressed
-[27/1/2025 21:39:52] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:53] Display: Right or D Pressed
-[27/1/2025 21:39:54] Display: Right or D Pressed
-[27/1/2025 21:39:54] Display: Right or D Pressed
-[27/1/2025 21:39:54] Display: Right or D Pressed
-[27/1/2025 21:39:54] Display: Right or D Pressed
-[27/1/2025 21:39:54] Display: Right or D Pressed
-[27/1/2025 21:39:54] Display: Right or D Pressed
-[27/1/2025 21:39:54] Display: Right or D Pressed
-[27/1/2025 21:39:54] Display: Right or D Pressed
-[27/1/2025 21:39:54] Display: Right or D Pressed
-[27/1/2025 21:39:54] Display: Right or D Pressed
-[27/1/2025 21:39:54] Display: Right or D Pressed
-[27/1/2025 21:39:54] Display: Right or D Pressed
-[27/1/2025 21:39:54] Display: Right or D Pressed
-[27/1/2025 21:39:54] Display: Right or D Pressed
-[27/1/2025 21:39:54] Display: Right or D Pressed
-[27/1/2025 21:39:54] Display: Right or D Pressed
-[27/1/2025 21:39:54] Display: Right or D Pressed
-[27/1/2025 21:39:54] Display: Right or D Pressed
-[27/1/2025 21:39:54] Display: Right or D Pressed
-[27/1/2025 21:39:54] Display: Right or D Pressed
-[27/1/2025 21:39:54] Display: Right or D Pressed
-[27/1/2025 21:39:54] Display: Right or D Pressed
-[27/1/2025 21:39:54] Display: Right or D Pressed
-[27/1/2025 21:39:54] Display: Right or D Pressed
-[27/1/2025 21:39:54] Display: Right or D Pressed
+[28/1/2025 16:53:19] Warning: X: -1.985379 Y: -0.241392 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:19] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:19] Warning: X: -3.777184 Y: -0.459249 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:19] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:19] Warning: X: -5.762563 Y: -0.700641 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:19] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:19] Warning: X: -7.747942 Y: -0.942034 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:19] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:19] Warning: X: -9.733321 Y: -1.183426 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:19] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:19] Warning: X: -11.718700 Y: -1.424819 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:19] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:19] Warning: X: -13.704080 Y: -1.666211 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:19] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:20] Warning: X: -15.004254 Y: -1.824293 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:20] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:20] Warning: X: -16.989634 Y: -2.065685 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:20] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:20] Warning: X: -18.975012 Y: -2.307077 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:20] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:20] Warning: X: -20.960390 Y: -2.548470 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:20] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:20] Warning: X: -22.945768 Y: -2.789862 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:20] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:20] Warning: X: -24.931147 Y: -3.031255 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:20] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:20] Warning: X: -26.916525 Y: -3.272647 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:20] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:20] Warning: X: -28.901903 Y: -3.514039 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:20] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:20] Warning: X: -29.442186 Y: -3.579730 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:20] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:20] Warning: X: -31.427565 Y: -3.821122 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:20] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:20] Warning: X: -33.412945 Y: -4.062514 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:20] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:20] Warning: X: -35.398323 Y: -4.303906 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:20] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:20] Warning: X: -37.383701 Y: -4.545299 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:20] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:20] Warning: X: -39.369080 Y: -4.786691 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:20] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:20] Warning: X: -41.354458 Y: -5.028083 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:20] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:20] Warning: X: -41.272114 Y: -5.018071 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:20] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:20] Warning: X: -43.257492 Y: -5.259463 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:20] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:20] Warning: X: -45.242870 Y: -5.500855 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:20] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:20] Warning: X: -47.228249 Y: -5.742248 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:20] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:20] Warning: X: -49.213627 Y: -5.983640 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:20] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:20] Warning: X: -51.199005 Y: -6.225032 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:20] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:20] Warning: X: -53.184383 Y: -6.466424 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:20] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)
+[28/1/2025 16:53:20] Warning: X: -55.169762 Y: -6.707816 (File: MovementComponent::ComputeAcceleration | Line: 87)
+[28/1/2025 16:53:20] Error: X: 1.000000 Y: 1.000000 (File: MovementComponent::ComputeAcceleration | Line: 88)

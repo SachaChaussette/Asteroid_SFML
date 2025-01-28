@@ -1,34 +1,34 @@
-#include "TEST.h"
+#include "Player.h"
 #include "InputManager.h"
+#include "TimerManager.h"
 
-TEST::TEST(const RectangleShapeData& _data, const string& _name) : MeshActor(_data, _name)
+Player::Player(const RectangleShapeData& _data, const string& _name) : MeshActor(_data, _name)
 {
 	movement = CreateComponent<MovementComponent>();
 }
 
-TEST::TEST(const TEST& _other) : MeshActor(_other)
+Player::Player(const Player& _other) : MeshActor(_other)
 {
 	movement = CreateComponent<MovementComponent>(_other.movement);
 }
 
-void TEST::Construct()
+void Player::Construct()
 {
 	Super::Construct();
 
 	M_INPUT.BindAction([&]() 
 	{
-		movement->RotateDirection(-5);
-		LOG(Display, "Left or Q Pressed"); 
+		movement->Rotate(-5);
 	}, { Code::Left, Code::Q 
 	});
 	M_INPUT.BindAction([&]() 
 	{
-		movement->RotateDirection(5);
-		LOG(Display, "Right or D Pressed");
+		movement->Rotate(5);
 	}, { Code::Right, Code::D });
 	M_INPUT.BindAction([&]() 
 	{
-		LOG(Display, "Up or Z Pressed"); 
+		//LOG(Display, "Up or Z Pressed");
+		movement->ComputeAcceleration();
 	}, { Code::Up, Code::Z });
 	M_INPUT.BindAction([&]() 
 	{
@@ -36,17 +36,23 @@ void TEST::Construct()
 	}, Code::Space);
 }
 
-void TEST::Deconstruct()
+void Player::Deconstruct()
 {
 	Super::Deconstruct();
 }
 
-void TEST::BeginPlay()
+void Player::BeginPlay()
 {
 	Super::BeginPlay();
+
+	new Timer([&]() 
+	{ 
+		movement->ApplyFriction(); 
+	}, seconds(0.25), true, true);
+
 }
 
-void TEST::Tick(const float _deltaTime)
+void Player::Tick(const float _deltaTime)
 {
 	Super::Tick(_deltaTime);
 }

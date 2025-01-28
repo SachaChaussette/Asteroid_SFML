@@ -3,14 +3,14 @@
 #include "MeshActor.h"
 #include "MovementComponent.h"
 
-class TEST : public MeshActor
+class Player : public MeshActor
 {
 	MovementComponent* movement;
 
 
 public:
-	TEST(const RectangleShapeData& _data, const string& _name = "TEST");
-	TEST(const TEST& _other);
+	Player(const RectangleShapeData& _data, const string& _name = "TEST");
+	Player(const Player& _other);
 public:
 
 	virtual void Construct() override;
