@@ -20,8 +20,8 @@ void MovementComponent::Tick(const float _deltaTime)
 {
 	Super::Tick(_deltaTime);
 
-	//Move(_deltaTime);
-	RotateAround(_deltaTime);
+	Move(_deltaTime);
+	//RotateAround(_deltaTime);
 }
 
 

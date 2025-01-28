@@ -33,32 +33,35 @@ void AsteroidGame::SpawnMeshActor()
 {
 	const vector<Vector2f>& _convexPoint =
 	{
-		{0.0f, 0.0f},
-		{100.0f, -60.0f},
-		{260.0f, -60.0f},
-		{320.0f, 110.0f},
-		{320.0f, 190.0f},
-		{250.0f, 260.0f},
-		{140.0f, 260.0f},
-		{110.0f, 250.0f},
-		{60.0f, 250.0f},
-		{0.0f, 150.0f},
+		{30.0f, 20.0f},
+		{80.0f, 0.0f},
+		{240.0f, 20.0f},
+		{260.0f, 60.0f},
+		{260.0f, 120.0f},
+		{230.0f, 180.0f},
+		{100.0f, 190.0f},
+		{90.0f, 180.0f},
+		{40.0f, 180.0f},
+		{0.0f, 100.0f},
 
 	};
 
-	MeshActor* _convex = Level::SpawnActor(Asteroid(_convexPoint, "green", PNG));
+	MeshActor* _convex = Level::SpawnActor(Asteroid(_convexPoint, MEDIUM, "green", PNG));
 	_convex->SetOriginAtMiddle();
 	_convex->SetPosition({ 400.0f, 400.0f });
 
 
 	Vector2f _AsteroidSize = { 320.0f,320.0f };
 
-	MeshActor* _rectangle = Level::SpawnActor(Asteroid(_convexPoint, "asteroid", PNG, IntRect({ 0,0 },{32,32})));
-	_rectangle->SetOriginAtMiddle();
-	_rectangle->SetPosition({ 400.0f, 400.0f });
+	MeshActor* _medium = Level::SpawnActor(Asteroid(_convexPoint, MEDIUM, "AsteroidSpriteSheet_" + to_string(GetRandomNumberInRange(1, 2))/*, IntRect({ 0,0 },{32,32})*/));
+	_medium->SetOriginAtMiddle();
+	_medium->SetPosition({ 400.0f, 400.0f });
 
+	MeshActor* _small = Level::SpawnActor(Asteroid(_convexPoint, SMALL, "AsteroidSpriteSheet_" + to_string(GetRandomNumberInRange(1, 2))/*, IntRect({ 0,0 },{32,32})*/));
+	_small->SetOriginAtMiddle();
+	_small->SetPosition({ 100.0f, 100.0f });
 
-
-
-
+	MeshActor* _big = Level::SpawnActor(Asteroid(_convexPoint, BIG, "AsteroidSpriteSheet_" + to_string(GetRandomNumberInRange(1, 2))/*, IntRect({ 0,0 },{32,32})*/));
+	_big->SetOriginAtMiddle();
+	_big->SetPosition({ 600.0f, 600.0f });
 }
