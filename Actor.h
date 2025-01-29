@@ -3,6 +3,7 @@
 #include "ITransformableModifier.h"
 #include "ITransformableViewer.h"
 #include "Component.h"
+#include "MovementComponent.h"
 #include "RootComponent.h"
 
 class Actor : public Core, public ITransformableModifier, public ITransformableViewer
@@ -172,14 +173,15 @@ public:
 
 	void AddComponent(Component* _component);
 	void RemoveComponent(Component* _component);
-	template <typename T>
+	template <typename T, IS_BASE_OF(Component, T)>
 	T* GetComponent()
 	{
 		for (Component* _component : components)
 		{
 			if (is_same_v<decltype(_component), T*>)
 			{
-				return dynamic_cast<T*>(_component);
+				LOG(Display, "Return Compoenent");
+				return Cast<T>(_component);
 			}
 		}
 
