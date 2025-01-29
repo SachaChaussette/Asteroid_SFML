@@ -7,9 +7,9 @@ class MovementComponent : public Component
 	float rotateSpeed;
 	float currentAngle;
 	float friction;
+	Vector2f speedLimit;
 	Vector2f direction;
 	Vector2f acceleration;
-	Vector2f offset;
 	Actor* target;
 
 public:
@@ -35,7 +35,7 @@ protected:
 	virtual void Tick(const float _deltaTime) override;
 
 private:
-	void UpdateDirection(const float _degree);
+	void UpdateDirection();
 	void Move(const float _deltaTime);
 	void RotateAround(const float _deltaTime);
 };

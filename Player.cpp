@@ -18,12 +18,12 @@ void Player::Construct()
 
 	M_INPUT.BindAction([&]() 
 	{
-		movement->Rotate(-5);
+		movement->Rotate(-10);
 	}, { Code::Left, Code::Q 
 	});
 	M_INPUT.BindAction([&]() 
 	{
-		movement->Rotate(5);
+		movement->Rotate(10);
 	}, { Code::Right, Code::D });
 	M_INPUT.BindAction([&]() 
 	{
