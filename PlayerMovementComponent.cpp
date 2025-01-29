@@ -11,7 +11,7 @@ PlayerMovementComponent::PlayerMovementComponent(Actor* _owner) : Component(_own
 	friction = 0.9f;
 	currentAngle = 270.0f;
 	rotateSpeed = 30.0f;
-	speedLimit = Vector2f(0.05f, 0.05f);
+	maxVelocity = Vector2f(0.05f, 0.05f);
 	acceleration = Vector2f();
 	direction = Vector2f(1.0f, 1.0f);
 	target = nullptr;
@@ -25,7 +25,7 @@ PlayerMovementComponent::PlayerMovementComponent(Actor* _owner, const PlayerMove
 	friction = _other->friction;
 	currentAngle = _other->currentAngle;
 	rotateSpeed = _other->rotateSpeed;
-	speedLimit = _other->speedLimit;
+	maxVelocity = _other->maxVelocity;
 	acceleration = _other->acceleration;
 	direction = _other->direction;
 	target = _other->target;
@@ -52,11 +52,11 @@ void PlayerMovementComponent::Move(const float _deltaTime)
 {
 	deltaTime = _deltaTime;
 
-	if (velocity.x > speedLimit.x) velocity.x = speedLimit.x;
-	else if (velocity.x < -speedLimit.x) velocity.x = -speedLimit.x;
+	if (velocity.x > maxVelocity.x) velocity.x = maxVelocity.x;
+	else if (velocity.x < -maxVelocity.x) velocity.x = -maxVelocity.x;
 
-	if (velocity.y > speedLimit.y) velocity.y = speedLimit.y;
-	else if (velocity.y < -speedLimit.y) velocity.y = -speedLimit.y;
+	if (velocity.y > maxVelocity.y) velocity.y = maxVelocity.y;
+	else if (velocity.y < -maxVelocity.y) velocity.y = -maxVelocity.y;
 
 	owner->Move(velocity);
 	//acceleration = Vector2f();

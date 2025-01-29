@@ -172,7 +172,7 @@ public:
 
 	void AddComponent(Component* _component);
 	void RemoveComponent(Component* _component);
-	template <typename T>
+	template <typename T, IS_BASE_OF(Component, T)>
 	T* GetComponent()
 	{
 		for (Component* _component : components)

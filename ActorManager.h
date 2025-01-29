@@ -22,7 +22,7 @@ public:
 	{
 		allActors.erase(_actor);
 
-		const string& _actorName = _actor->GetName();
+		/*const string& _actorName = _actor->GetName();
 		using Iterator = multimap<string, Actor*>::iterator;
 		const pair<Iterator, Iterator>& _results = actorsID.equal_range(_actorName);
 
@@ -32,7 +32,7 @@ public:
 			{
 				actorsID.erase(_it);
 			}
-		}
+		}*/
 
 		_actor->BeginDestroy();
 	}

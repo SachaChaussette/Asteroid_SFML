@@ -19,8 +19,16 @@ public:
 	}
 
 public:
-	MeshComponent(Actor* _owner, const float _radius, const size_t& _pointCount = 30, const string& _path = "", const IntRect& _rect = {});
-	MeshComponent(Actor* _owner, const RectangleShapeData& _data);
+	MeshComponent(Actor* _owner, const float _radius, const string& _path = "",
+		const TextureExtensionType& _textureType = PNG, const IntRect& _rect = {},
+		bool _isRepeated = false, bool _isSmooth = true, const size_t& _pointCount = 30U);
+	MeshComponent(Actor* _owner, const Vector2f& _size, const string& _path = "",
+		const TextureExtensionType& _textureType = PNG, const IntRect& _rect = {},
+		bool _isRepeated = false, bool _isSmooth = true);
+	MeshComponent(Actor* _owner, const vector<Vector2f> point, const string& _path = "",
+		const TextureExtensionType& _textureType = PNG, const IntRect& _rect = {},
+		bool _isRepeated = false, bool _isSmooth = true);
+
 	MeshComponent(Actor* _owner, const MeshComponent* _other);
 	~MeshComponent();
 };

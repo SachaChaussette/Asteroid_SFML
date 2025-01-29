@@ -8,7 +8,7 @@ class PlayerMovementComponent : public Component
 	float currentAngle;
 	float friction;
 	float deltaTime;
-	Vector2f speedLimit;
+	Vector2f maxVelocity;
 	Vector2f direction;
 	Vector2f acceleration;
 	Vector2f velocity;
