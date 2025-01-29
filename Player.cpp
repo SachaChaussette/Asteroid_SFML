@@ -4,12 +4,12 @@
 
 Player::Player(const RectangleShapeData& _data, const string& _name) : MeshActor(_data, _name)
 {
-	movement = CreateComponent<MovementComponent>();
+	movement = CreateComponent<PlayerMovementComponent>();
 }
 
 Player::Player(const Player& _other) : MeshActor(_other)
 {
-	movement = CreateComponent<MovementComponent>(_other.movement);
+	movement = CreateComponent<PlayerMovementComponent>(_other.movement);
 }
 
 void Player::Construct()

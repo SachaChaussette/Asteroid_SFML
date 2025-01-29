@@ -306,7 +306,7 @@
     <ClInclude Include="CameraComponent.h">
       <Filter>Script\Core\Components\Camera</Filter>
     </ClInclude>
-    <ClInclude Include="MovementComponent.h">
+    <ClInclude Include="PlayerMovementComponent.h">
       <Filter>Script\Core\Components\Movement</Filter>
     </ClInclude>
     <ClInclude Include="RootComponent.h">
@@ -458,7 +458,7 @@
     <ClCompile Include="CameraComponent.cpp">
       <Filter>Script\Core\Components\Camera</Filter>
     </ClCompile>
-    <ClCompile Include="MovementComponent.cpp">
+    <ClCompile Include="PlayerMovementComponent.cpp">
       <Filter>Script\Core\Components\Movement</Filter>
     </ClCompile>
     <ClCompile Include="RootComponent.cpp">

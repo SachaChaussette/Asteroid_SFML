@@ -1,11 +1,11 @@
 #pragma once
 
 #include "MeshActor.h"
-#include "MovementComponent.h"
+#include "PlayerMovementComponent.h"
 
 class Player : public MeshActor
 {
-	MovementComponent* movement;
+	PlayerMovementComponent* movement;
 	// TODO Shoot Component
 
 public:

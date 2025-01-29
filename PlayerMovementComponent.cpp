@@ -1,11 +1,11 @@
-#include "MovementComponent.h"
+#include "PlayerMovementComponent.h"
 #include "Actor.h"
 #include "GameManager.h"
 #include "TimerManager.h"
 
-MovementComponent::MovementComponent(Actor* _owner) : Component(_owner)
+PlayerMovementComponent::PlayerMovementComponent(Actor* _owner) : Component(_owner)
 {
-	_offset = Vector2f();
+	velocity = Vector2f();
 	speed = 1.0f;
 	deltaTime = 0.0f;
 	friction = 0.9f;
@@ -17,9 +17,9 @@ MovementComponent::MovementComponent(Actor* _owner) : Component(_owner)
 	target = nullptr;
 }
 
-MovementComponent::MovementComponent(Actor* _owner, const MovementComponent* _other) : Component(_owner)
+PlayerMovementComponent::PlayerMovementComponent(Actor* _owner, const PlayerMovementComponent* _other) : Component(_owner)
 {
-	_offset = _other->_offset;
+	velocity = _other->velocity;
 	deltaTime = _other->deltaTime;
 	speed = _other->speed;
 	friction = _other->friction;
@@ -31,7 +31,7 @@ MovementComponent::MovementComponent(Actor* _owner, const MovementComponent* _ot
 	target = _other->target;
 }
 
-void MovementComponent::Tick(const float _deltaTime)
+void PlayerMovementComponent::Tick(const float _deltaTime)
 {
 	Super::Tick(_deltaTime);
 
@@ -40,29 +40,29 @@ void MovementComponent::Tick(const float _deltaTime)
 	//RotateAround(_deltaTime);
 }
 
-void MovementComponent::BeginPlay()
+void PlayerMovementComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
-	//new Timer([&]() { LOG(Warning, _offset); }, seconds(0.5f), true, true);
+	//new Timer([&]() { LOG(Warning, velocity); }, seconds(0.5f), true, true);
 }
 
 
-void MovementComponent::Move(const float _deltaTime)
+void PlayerMovementComponent::Move(const float _deltaTime)
 {
 	deltaTime = _deltaTime;
 
-	if (_offset.x > speedLimit.x) _offset.x = speedLimit.x;
-	else if (_offset.x < -speedLimit.x) _offset.x = -speedLimit.x;
+	if (velocity.x > speedLimit.x) velocity.x = speedLimit.x;
+	else if (velocity.x < -speedLimit.x) velocity.x = -speedLimit.x;
 
-	if (_offset.y > speedLimit.y) _offset.y = speedLimit.y;
-	else if (_offset.y < -speedLimit.y) _offset.y = -speedLimit.y;
+	if (velocity.y > speedLimit.y) velocity.y = speedLimit.y;
+	else if (velocity.y < -speedLimit.y) velocity.y = -speedLimit.y;
 
-	owner->Move(_offset);
+	owner->Move(velocity);
 	//acceleration = Vector2f();
 }
 
-void MovementComponent::RotateAround(const float _deltaTime)
+void PlayerMovementComponent::RotateAround(const float _deltaTime)
 {
 	if (!target) return;
 
@@ -77,7 +77,7 @@ void MovementComponent::RotateAround(const float _deltaTime)
 	owner->SetPosition(_newPosition);
 }
 
-void MovementComponent::Rotate(const float _degree)
+void PlayerMovementComponent::Rotate(const float _degree)
 {
 	currentAngle += _degree;
 	if (currentAngle > 360.0f)
@@ -92,14 +92,14 @@ void MovementComponent::Rotate(const float _degree)
 	owner->Rotate(Angle(degrees(_degree)));
 }
 
-void MovementComponent::UpdateDirection()
+void PlayerMovementComponent::UpdateDirection()
 {
 	const float _rad = DegToRad(currentAngle);
 	direction.x = cos(_rad);
 	direction.y = sin(_rad);
 }
 
-void MovementComponent::ComputeAcceleration()
+void PlayerMovementComponent::ComputeAcceleration()
 {
 	UpdateDirection();
 
@@ -107,6 +107,6 @@ void MovementComponent::ComputeAcceleration()
 	acceleration.y += 0.5f;
 
 	// Calcul l'offset et le cap pour ne pas aller au dela de la vitesse max
-	_offset.x += direction.x * acceleration.x * deltaTime;
-	_offset.y += direction.y * acceleration.y * deltaTime;
+	velocity.x += direction.x * acceleration.x * deltaTime;
+	velocity.y += direction.y * acceleration.y * deltaTime;
 }
