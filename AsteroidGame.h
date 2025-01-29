@@ -5,6 +5,7 @@
 class AsteroidGame : public Game
 {
 
+
 public:
 	AsteroidGame();
 public:

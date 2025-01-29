@@ -157,6 +157,9 @@
     <Filter Include="Script\Core\Components\Root">
       <UniqueIdentifier>{0dba8a8a-93e5-4915-933a-69034921e80f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Script\Core\Components\Shoot">
+      <UniqueIdentifier>{3d8aae30-02ca-458c-b77b-92fde4e3def4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CoreMinimal.h">
@@ -312,6 +315,12 @@
     <ClInclude Include="ViewComponent.h">
       <Filter>Script\Core\Components\View</Filter>
     </ClInclude>
+    <ClInclude Include="ShootComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Projectile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -457,6 +466,12 @@
     </ClCompile>
     <ClCompile Include="ViewComponent.cpp">
       <Filter>Script\Core\Components\View</Filter>
+    </ClCompile>
+    <ClCompile Include="ShootComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Projectile.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

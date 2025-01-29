@@ -1,20 +1,26 @@
 #include "MovementComponent.h"
 #include "Actor.h"
+#include "GameManager.h"
+#include "TimerManager.h"
 
 MovementComponent::MovementComponent(Actor* _owner) : Component(_owner)
 {
+	_offset = Vector2f();
 	speed = 1.0f;
-	friction = 0.95f;
+	deltaTime = 0.0f;
+	friction = 0.9f;
 	currentAngle = 270.0f;
 	rotateSpeed = 30.0f;
-	speedLimit = Vector2f(200.0f, 200.0f);
-	acceleration = Vector2f(1.0f, 1.0f);
+	speedLimit = Vector2f(0.05f, 0.05f);
+	acceleration = Vector2f();
 	direction = Vector2f(1.0f, 1.0f);
 	target = nullptr;
 }
 
 MovementComponent::MovementComponent(Actor* _owner, const MovementComponent* _other) : Component(_owner)
 {
+	_offset = _other->_offset;
+	deltaTime = _other->deltaTime;
 	speed = _other->speed;
 	friction = _other->friction;
 	currentAngle = _other->currentAngle;
@@ -34,15 +40,24 @@ void MovementComponent::Tick(const float _deltaTime)
 	//RotateAround(_deltaTime);
 }
 
+void MovementComponent::BeginPlay()
+{
+	Super::BeginPlay();
+
+	//new Timer([&]() { LOG(Warning, _offset); }, seconds(0.5f), true, true);
+}
+
 
 void MovementComponent::Move(const float _deltaTime)
 {
-	Vector2f _offset;
+	deltaTime = _deltaTime;
 
-	// Calcul l'offset et le cap pour ne pas aller au dela de la vitesse max
-	_offset.x = acceleration.x < speedLimit.x ? direction.x * acceleration.x * _deltaTime : direction.x * speedLimit.x * _deltaTime;
-	_offset.y = acceleration.y < speedLimit.x ? direction.y * acceleration.y * _deltaTime : direction.y * speedLimit.y * _deltaTime;
-	
+	if (_offset.x > speedLimit.x) _offset.x = speedLimit.x;
+	else if (_offset.x < -speedLimit.x) _offset.x = -speedLimit.x;
+
+	if (_offset.y > speedLimit.y) _offset.y = speedLimit.y;
+	else if (_offset.y < -speedLimit.y) _offset.y = -speedLimit.y;
+
 	owner->Move(_offset);
 	//acceleration = Vector2f();
 }
@@ -64,8 +79,6 @@ void MovementComponent::RotateAround(const float _deltaTime)
 
 void MovementComponent::Rotate(const float _degree)
 {
-	UpdateDirection();
-
 	currentAngle += _degree;
 	if (currentAngle > 360.0f)
 	{
@@ -88,6 +101,12 @@ void MovementComponent::UpdateDirection()
 
 void MovementComponent::ComputeAcceleration()
 {
-	acceleration.x *= 1.1f;
-	acceleration.y *= 1.1f;
+	UpdateDirection();
+
+	acceleration.x += 0.5f;
+	acceleration.y += 0.5f;
+
+	// Calcul l'offset et le cap pour ne pas aller au dela de la vitesse max
+	_offset.x += direction.x * acceleration.x * deltaTime;
+	_offset.y += direction.y * acceleration.y * deltaTime;
 }

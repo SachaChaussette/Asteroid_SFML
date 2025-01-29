@@ -6,7 +6,7 @@
 class Player : public MeshActor
 {
 	MovementComponent* movement;
-
+	// TODO Shoot Component
 
 public:
 	Player(const RectangleShapeData& _data, const string& _name = "TEST");

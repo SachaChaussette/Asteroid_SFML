@@ -7,16 +7,18 @@ class MovementComponent : public Component
 	float rotateSpeed;
 	float currentAngle;
 	float friction;
+	float deltaTime;
 	Vector2f speedLimit;
 	Vector2f direction;
 	Vector2f acceleration;
+	Vector2f _offset;
 	Actor* target;
 
 public:
 
 	FORCEINLINE void ApplyFriction()
 	{
-		acceleration *= friction;
+		_offset *= friction;
 	}
 
 	FORCEINLINE void SetTarget(Actor* _target)
@@ -33,6 +35,7 @@ public:
 	void ComputeAcceleration();
 protected:
 	virtual void Tick(const float _deltaTime) override;
+	virtual void BeginPlay() override;
 
 private:
 	void UpdateDirection();

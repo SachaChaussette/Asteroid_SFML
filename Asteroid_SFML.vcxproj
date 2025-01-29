@@ -170,10 +170,12 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClCompile Include="MusicManager.cpp" />
     <ClCompile Include="MusicSample.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="RectangleActor.cpp" />
     <ClCompile Include="RootComponent.cpp" />
     <ClCompile Include="Sample.cpp" />
     <ClCompile Include="ShapeObject.cpp" />
+    <ClCompile Include="ShootComponent.cpp" />
     <ClCompile Include="Singleton.h" />
     <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="SoundSample.cpp" />
@@ -223,10 +225,12 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClInclude Include="MusicManager.h" />
     <ClInclude Include="MusicSample.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="Projectile.h" />
     <ClInclude Include="RectangleActor.h" />
     <ClInclude Include="RootComponent.h" />
     <ClInclude Include="Sample.h" />
     <ClInclude Include="ShapeObject.h" />
+    <ClInclude Include="ShootComponent.h" />
     <ClInclude Include="SoundManager.h" />
     <ClInclude Include="SoundSample.h" />
     <ClInclude Include="Spawner.h" />
