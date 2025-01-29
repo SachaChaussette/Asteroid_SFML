@@ -11,6 +11,7 @@ void InitConfig()
 int main()
 {
     InitConfig();
+  
     M_GAME.Launch(new AsteroidGame());
 
 	return EXIT_SUCCESS;
