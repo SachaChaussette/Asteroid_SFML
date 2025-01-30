@@ -7,17 +7,23 @@ namespace UI
 	{
 		set<Widget*> allWidgets;
 	public:
-		template <typename Type = Widget, IS_BASE_OF(Widget, Type)>
+		/*template <typename Type = Widget, IS_BASE_OF(Widget, Type)>
 		FORCEINLINE void AddWidget(Type* _widget)
 		{
 			AddChild(_widget, AT_KEEP_RELATIVE);
-			allWidgets.insert(_widget);
 		}
 		template <typename Type = Widget, IS_BASE_OF(Widget, Type)>
 		FORCEINLINE void RemoveWidget(Type* _widget)
 		{
-			if (!allWidgets.contains(_widget)) return;
 			RemoveChild(_widget);
+		}*/
+
+		FORCEINLINE void AddWidget(Widget* _widget)
+		{
+			allWidgets.insert(_widget);
+		}
+		FORCEINLINE void RemoveWidget(Widget* _widget)
+		{
 			allWidgets.erase(_widget);
 		}
 
@@ -26,6 +32,8 @@ namespace UI
 
 	public:
 		virtual void Render(RenderWindow& _window) override;
+		void UpdateWidgets();
+		virtual void Construct() override;
 	};
 }
 

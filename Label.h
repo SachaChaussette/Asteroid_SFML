@@ -46,6 +46,10 @@ namespace UI
 			Super::Scale(_factor);
 			text->Scale(_factor);
 		}
+		FORCEINLINE void SetCharacterSize(const u_int& _size)
+		{
+			text->GetDrawable()->setCharacterSize(_size);
+		}
 
 #pragma endregion
 

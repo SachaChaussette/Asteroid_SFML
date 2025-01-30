@@ -63,6 +63,10 @@ public:
 		Super::Scale(_factor);
 		mesh->GetShape()->Scale(_factor);
 	}
+	FORCEINLINE void SetFillColor(const Color& _color)
+	{
+		mesh->GetShape()->GetDrawable()->setFillColor(_color);
+	}
 
 	#pragma endregion
 
