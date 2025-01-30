@@ -1,15 +1,13 @@
 #pragma once
-#include "MeshActor.h"
+
 #include "AnimationComponent.h"
 #include "EnemyMovementComponent.h"
 #include "SizeType.h"
+#include "Entity.h"
 
-class UFO : public MeshActor
+class UFO : public Entity
 {
 	EnemyMovementComponent* movement;
-	AnimationComponent* animation;
-	u_int spriteCount;
-	SizeType size;
 
 	//Servira pour la CollisionBox !
 	vector<Vector2f> convexShapePoints;
@@ -19,22 +17,14 @@ public:
 	{
 		return movement;
 	}
-
-	void ComputeNewDirection();
-
 public:
-
 	//point servira à la ConvexShape de la CollisionBox !
-	UFO(const SizeType& _size = MEDIUM,
-		const string& _path = "UFOSpriteSheet_" + to_string(GetRandomNumberInRange(1, 3)),
+	UFO(const float _radius, const SizeType& _size = MEDIUM, const string& _path = "",
 		const TextureExtensionType& _textureType = PNG, const IntRect& _rect = {});
 	UFO(const UFO& _other);
 
-
-protected:
-	void ComputeNewPositionIfNotInWindow();
 public:
-
+	void ComputeNewDirection();
 	virtual void Construct() override;
 	virtual void Tick(const float _deltaTime) override;
 	virtual void BeginPlay() override;

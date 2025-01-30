@@ -1,0 +1,4 @@
+[30/1/2025 16:54:58] Error: Cannot open file with the following path : 'Assets/Textures/laser.png' ! (File: TextureManager::LoadTexture | Line: 28)
+[30/1/2025 16:54:59] Warning: X: 600.000000 Y: 399.000000 (File: ShootComponent::Shoot | Line: 26)
+[30/1/2025 16:54:59] Error: Cannot open file with the following path : 'Assets/Textures/laser.png' ! (File: TextureManager::LoadTexture | Line: 28)
+[30/1/2025 16:54:59] Error: Cannot open file with the following path : 'Assets/Textures/laser.png' ! (File: TextureManager::LoadTexture | Line: 28)

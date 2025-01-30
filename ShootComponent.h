@@ -5,11 +5,11 @@
 
 class ShootComponent : public Component
 {
-	Vector2f currentDirection;
 	Projectile* projectile;
 
 public:
 	ShootComponent(Actor* _owner);
+	ShootComponent(Actor* _owner, const ShootComponent* _other);
 
 public:
 	void Shoot();

@@ -6,29 +6,23 @@
 PlayerMovementComponent::PlayerMovementComponent(Actor* _owner) : Component(_owner)
 {
 	velocity = Vector2f();
-	speed = 1.0f;
 	deltaTime = 0.0f;
 	friction = 0.9f;
 	currentAngle = 270.0f;
-	rotateSpeed = 30.0f;
-	maxVelocity = Vector2f(0.05f, 0.05f);
+	maxVelocity = Vector2f(0.1f, 0.1f);
 	acceleration = Vector2f();
 	direction = Vector2f(1.0f, 1.0f);
-	target = nullptr;
 }
 
 PlayerMovementComponent::PlayerMovementComponent(Actor* _owner, const PlayerMovementComponent* _other) : Component(_owner)
 {
 	velocity = _other->velocity;
 	deltaTime = _other->deltaTime;
-	speed = _other->speed;
 	friction = _other->friction;
 	currentAngle = _other->currentAngle;
-	rotateSpeed = _other->rotateSpeed;
 	maxVelocity = _other->maxVelocity;
 	acceleration = _other->acceleration;
 	direction = _other->direction;
-	target = _other->target;
 }
 
 void PlayerMovementComponent::Tick(const float _deltaTime)
@@ -60,21 +54,6 @@ void PlayerMovementComponent::Move(const float _deltaTime)
 
 	owner->Move(velocity);
 	//acceleration = Vector2f();
-}
-
-void PlayerMovementComponent::RotateAround(const float _deltaTime)
-{
-	if (!target) return;
-
-	const Vector2f& _center = target->GetPosition();
-	const Vector2f& _relativePos = owner->GetPosition() - _center;
-	const float _radAngle = DegToRad(rotateSpeed * _deltaTime);
-
-	const float _newPosX = _relativePos.x * cos(_radAngle) - _relativePos.y * sin(_radAngle);
-	const float _newPosY = _relativePos.x * sin(_radAngle) + _relativePos.y * cos(_radAngle);
-	const Vector2f& _newPosition = _center + Vector2f(_newPosX, _newPosY);
-
-	owner->SetPosition(_newPosition);
 }
 
 void PlayerMovementComponent::Rotate(const float _degree)

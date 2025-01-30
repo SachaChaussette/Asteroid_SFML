@@ -345,6 +345,9 @@
     <ClInclude Include="SizeType.h">
       <Filter>Script\Resource Files</Filter>
     </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -505,6 +508,9 @@
     </ClCompile>
     <ClCompile Include="ShootComponent.cpp">
       <Filter>Script\Core\Components\Shoot</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

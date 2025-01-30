@@ -1,19 +1,31 @@
 #include "ShootComponent.h"
-#include "Actor.h"
 #include "Level.h"
+#include "PlayerMovementComponent.h"
 
 ShootComponent::ShootComponent(Actor* _owner) : Component(_owner)
 {
+	projectile = new Projectile(20.0f, "laser", PNG, IntRect(Vector2i(), Vector2i(16, 16)));
+}
+
+ShootComponent::ShootComponent(Actor* _owner, const ShootComponent* _other) : Component(_owner)
+{
+	projectile = _other->projectile;
 }
 
 void ShootComponent::Shoot()
 {
 	// On prend un offset qui sera appliquer à la direction + centre de l'actor qui shoot
-	const float _offset = 2.0f;
+	const float _offset = 10.0f;
+
+	const float& _currentAngle = owner->GetComponent<PlayerMovementComponent>()->GetCurrentAngle();
+	const float _rad = DegToRad(_currentAngle);
+	const Vector2f& _direction = Vector2f(cos(_rad), sin(_rad));
 
 	// Calcule la nouvelle pos
-	Vector2f _newPos = (owner->GetPosition() / 2.0f + currentDirection) * _offset;
-
+	const Vector2f& _newPos = owner->GetPosition() + _direction;
+	LOG(Warning, _newPos);
 	// On spawn le projectile aux nouvelles coordonées et on lui donne la direction du tir
-	//Level::SpawnActor<Projectile>(_newPos, currentDirection);
+	Level::SpawnActor(Projectile(*projectile));
+	//_projectile->SetPosition(_newPos);
+	//_projectile->GetMovement()->SetDirection(_direction);
 }

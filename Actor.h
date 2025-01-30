@@ -181,6 +181,10 @@ public:
 			{
 				return dynamic_cast<T*>(_component);
 			}
+			if (T* _newComponent = dynamic_cast<T*>(_component))
+			{
+				return _newComponent;
+			}
 		}
 
 		return nullptr;
