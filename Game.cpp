@@ -4,6 +4,8 @@
 #include "TimerManager.h"
 #include "InputManager.h"
 
+using namespace Camera;
+
 Game::Game()
 {
 	window = RenderWindow();
@@ -12,7 +14,12 @@ Game::Game()
 
 void Game::Start()
 {
-    window.create(VideoMode({ 1200, 800 }), "SFML works!");
+    const Vector2u& _size = { 1270, 720 };
+    window.create(VideoMode(_size), "SFML works!");
+    const Vector2f& _center = Vector2f(CAST(Vector2f, window.getSize()) / 2.0f);
+    M_CAMERA.CreateCamera(_center, CAST(Vector2f, _size), "DefaultCamera");
+
+    M_ACTOR.BeginPlay();
 };
 
 bool Game::Update()

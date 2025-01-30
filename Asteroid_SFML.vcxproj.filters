@@ -172,6 +172,21 @@
     <Filter Include="Script\Core\Actor\Asteroid">
       <UniqueIdentifier>{273f6ec6-872f-4749-8ea4-efca5559b828}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Script\Core\Actor\Widget">
+      <UniqueIdentifier>{9474a54d-79c3-42f9-b381-6262b27ed413}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\Widget\Canvas">
+      <UniqueIdentifier>{f9b52915-40a7-49c1-a747-634774efc6f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\Widget\Image">
+      <UniqueIdentifier>{33252e5a-63d1-4476-9a9d-5418977497ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Manager\HUD">
+      <UniqueIdentifier>{92efc720-8d26-4088-8d54-74487cb6213f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\MenuGame">
+      <UniqueIdentifier>{42de4b01-f768-42a9-8acd-9da2d6542fe6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CoreMinimal.h">
@@ -345,6 +360,24 @@
     <ClInclude Include="SizeType.h">
       <Filter>Script\Resource Files</Filter>
     </ClInclude>
+    <ClInclude Include="Widget.h">
+      <Filter>Script\Core\Actor\Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="Canvas.h">
+      <Filter>Script\Core\Actor\Widget\Canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="Image.h">
+      <Filter>Script\Core\Actor\Widget\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="HUD.h">
+      <Filter>Script\Manager\HUD</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderType.h">
+      <Filter>Script\Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -505,6 +538,21 @@
     </ClCompile>
     <ClCompile Include="ShootComponent.cpp">
       <Filter>Script\Core\Components\Shoot</Filter>
+    </ClCompile>
+    <ClCompile Include="Widget.cpp">
+      <Filter>Script\Core\Actor\Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="Canvas.cpp">
+      <Filter>Script\Core\Actor\Widget\Canvas</Filter>
+    </ClCompile>
+    <ClCompile Include="Image.cpp">
+      <Filter>Script\Core\Actor\Widget\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="HUD.cpp">
+      <Filter>Script\Manager\HUD</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuGame.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
