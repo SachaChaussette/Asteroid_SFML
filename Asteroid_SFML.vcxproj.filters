@@ -160,6 +160,18 @@
     <Filter Include="Script\Core\Components\Shoot">
       <UniqueIdentifier>{3d8aae30-02ca-458c-b77b-92fde4e3def4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Script\Core\Actor\Player">
+      <UniqueIdentifier>{da40dfb7-bbad-4618-b1a4-4d909f7f9644}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\Projectile">
+      <UniqueIdentifier>{57e1dab3-8231-4634-b36d-331c30562f28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\UFO">
+      <UniqueIdentifier>{9f889804-435a-4869-8bb4-57ae995b924f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\Asteroid">
+      <UniqueIdentifier>{273f6ec6-872f-4749-8ea4-efca5559b828}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CoreMinimal.h">
@@ -288,9 +300,6 @@
     <ClInclude Include="AsteroidGame.h">
       <Filter>Script\AsteroidGame</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="MusicSample.h">
       <Filter>Script\Audio\Music</Filter>
     </ClInclude>
@@ -306,7 +315,7 @@
     <ClInclude Include="CameraComponent.h">
       <Filter>Script\Core\Components\Camera</Filter>
     </ClInclude>
-    <ClInclude Include="MovementComponent.h">
+    <ClInclude Include="PlayerMovementComponent.h">
       <Filter>Script\Core\Components\Movement</Filter>
     </ClInclude>
     <ClInclude Include="RootComponent.h">
@@ -315,11 +324,26 @@
     <ClInclude Include="ViewComponent.h">
       <Filter>Script\Core\Components\View</Filter>
     </ClInclude>
+    <ClInclude Include="EnemyMovementComponent.h">
+      <Filter>Script\Core\Components\Movement</Filter>
+    </ClInclude>
     <ClInclude Include="ShootComponent.h">
-      <Filter>Header Files</Filter>
+      <Filter>Script\Core\Components\Shoot</Filter>
+    </ClInclude>
+    <ClInclude Include="UFO.h">
+      <Filter>Script\Core\Actor\UFO</Filter>
+    </ClInclude>
+    <ClInclude Include="Asteroid.h">
+      <Filter>Script\Core\Actor\Asteroid</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Script\Core\Actor\Player</Filter>
     </ClInclude>
     <ClInclude Include="Projectile.h">
-      <Filter>Header Files</Filter>
+      <Filter>Script\Core\Actor\Projectile</Filter>
+    </ClInclude>
+    <ClInclude Include="SizeType.h">
+      <Filter>Script\Resource Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -443,9 +467,6 @@
     <ClCompile Include="AsteroidGame.cpp">
       <Filter>Script\AsteroidGame</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MusicSample.cpp">
       <Filter>Script\Audio\Music</Filter>
     </ClCompile>
@@ -458,7 +479,7 @@
     <ClCompile Include="CameraComponent.cpp">
       <Filter>Script\Core\Components\Camera</Filter>
     </ClCompile>
-    <ClCompile Include="MovementComponent.cpp">
+    <ClCompile Include="PlayerMovementComponent.cpp">
       <Filter>Script\Core\Components\Movement</Filter>
     </ClCompile>
     <ClCompile Include="RootComponent.cpp">
@@ -467,11 +488,23 @@
     <ClCompile Include="ViewComponent.cpp">
       <Filter>Script\Core\Components\View</Filter>
     </ClCompile>
-    <ClCompile Include="ShootComponent.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="EnemyMovementComponent.cpp">
+      <Filter>Script\Core\Components\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="UFO.cpp">
+      <Filter>Script\Core\Actor\UFO</Filter>
+    </ClCompile>
+    <ClCompile Include="Asteroid.cpp">
+      <Filter>Script\Core\Actor\Asteroid</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Script\Core\Actor\Player</Filter>
     </ClCompile>
     <ClCompile Include="Projectile.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Script\Core\Actor\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="ShootComponent.cpp">
+      <Filter>Script\Core\Components\Shoot</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

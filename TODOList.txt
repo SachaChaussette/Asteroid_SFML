@@ -13,7 +13,7 @@ Sacha :
 Romain : 
 
 - Projectile												
-	- implémenter le movementComponent de l'asteroid		
+	- implémenter le PlayerEnemyMovementComponent de l'asteroid		
 
 //////////////////////////////////////////////////////////////////////////////////
 

@@ -1,24 +1,24 @@
 #pragma once
 #include "Component.h"
 
-class MovementComponent : public Component
+class PlayerMovementComponent : public Component
 { 
 	float speed;
 	float rotateSpeed;
 	float currentAngle;
 	float friction;
 	float deltaTime;
-	Vector2f speedLimit;
+	Vector2f maxVelocity;
 	Vector2f direction;
 	Vector2f acceleration;
-	Vector2f _offset;
+	Vector2f velocity;
 	Actor* target;
 
 public:
 
 	FORCEINLINE void ApplyFriction()
 	{
-		_offset *= friction;
+		velocity *= friction;
 	}
 
 	FORCEINLINE void SetTarget(Actor* _target)
@@ -27,8 +27,8 @@ public:
 	}
 	
 public:
-	MovementComponent(Actor* _owner);
-	MovementComponent(Actor* _owner, const MovementComponent* _other);
+	PlayerMovementComponent(Actor* _owner);
+	PlayerMovementComponent(Actor* _owner, const PlayerMovementComponent* _other);
 
 public:
 	void Rotate(const float _degree);
