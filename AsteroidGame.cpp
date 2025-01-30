@@ -8,8 +8,13 @@
 #include "TimerManager.h"
 #include "GameManager.h"
 
+#include "Image.h"
+#include "Label.h"
+
 AsteroidGame::AsteroidGame()
 {
+	canvas = nullptr;
+	windowSize = Vector2f();
 }
 
 void AsteroidGame::GeneratePlayer()
@@ -38,11 +43,17 @@ void AsteroidGame::GenerateUFO()
 void AsteroidGame::Start()
 {
 	Super::Start();
+	windowSize = CAST(Vector2f, M_GAME.GetCurrent()->GetWindowSize());
 
 	new Timer<Seconds>([&]() { GenerateAsteroid(); }, seconds(1.0f), true, false);
 	new Timer<Seconds>([&]() { GenerateUFO(); }, seconds(1.0f), true, false);
 
 	GeneratePlayer();
+
+	//TODO Temp
+	canvas = new Canvas("Upgrade");
+	InitUpgradeCanvas();
+	M_HUD.AddToViewport(canvas);
 }
 
 bool AsteroidGame::Update()
@@ -54,4 +65,78 @@ bool AsteroidGame::Update()
 void AsteroidGame::Stop()
 {
 	Super::Stop();
+}
+
+void AsteroidGame::InitUpgradeCanvas()
+{
+	//TODO Change
+	Label* _player = M_HUD.CreateWidget<Label>("Player 1", Screen, "Daydream", TTF);
+	_player->SetPosition(Vector2f(windowSize.x * 0.42, windowSize.y * 0.15));
+	_player->SetCharacterSize(25);
+	_player->SetZOrder(2);
+
+
+	UI::Image* _speedFrame = M_HUD.CreateWidget<UI::Image>("SpeedFrame", RectangleShapeData(Vector2f(192.0f, 192.0f), "Frame"));
+	_speedFrame->SetPosition(Vector2f(windowSize.x * 0.21, windowSize.y * 0.34));
+	_speedFrame->SetZOrder(0);
+
+	UI::Image* _speedIcon = M_HUD.CreateWidget<UI::Image>("SpeedIcon", RectangleShapeData(Vector2f(92.0f, 92.0f), "Speed"));
+	_speedIcon->SetPosition(Vector2f(windowSize.x * 0.25, windowSize.y * 0.4));
+	_speedIcon->SetZOrder(1);
+
+	Label* _speedText = M_HUD.CreateWidget<Label>("Speed++", Screen, "Daydream", TTF);
+	_speedText->SetPosition(Vector2f(windowSize.x * 0.24, windowSize.y * 0.52));
+	_speedText->SetCharacterSize(15);
+	_speedText->SetZOrder(2);
+
+
+	UI::Image* _pvFrame = M_HUD.CreateWidget<UI::Image>("PvFrame", RectangleShapeData(Vector2f(192.0f, 192.0f), "Frame"));
+	_pvFrame->SetPosition(Vector2f(windowSize.x * 0.41, windowSize.y * 0.34));
+	_pvFrame->SetZOrder(0);
+
+	UI::Image* _pvIcon = M_HUD.CreateWidget<UI::Image>("PvIcon", RectangleShapeData(Vector2f(92.0f, 92.0f), "Life"));
+	_pvIcon->SetPosition(Vector2f(windowSize.x * 0.45, windowSize.y * 0.4));
+	_pvIcon->SetZOrder(1);
+
+	Label* _pvText = M_HUD.CreateWidget<Label>("Pv++", Screen, "Daydream", TTF);
+	_pvText->SetPosition(Vector2f(windowSize.x * 0.46, windowSize.y * 0.52));
+	_pvText->SetCharacterSize(15);
+	_pvText->SetZOrder(2);
+
+
+	UI::Image* _shootFrame = M_HUD.CreateWidget<UI::Image>("ShootFrame", RectangleShapeData(Vector2f(192.0f, 192.0f), "Frame"));
+	_shootFrame->SetPosition(Vector2f(windowSize.x * 0.61, windowSize.y * 0.34));
+	_shootFrame->SetZOrder(0);
+
+	UI::Image* _shootIcon = M_HUD.CreateWidget<UI::Image>("ShootIcon", RectangleShapeData(Vector2f(92.0f, 92.0f), "Shoot"));
+	_shootIcon->SetPosition(Vector2f(windowSize.x * 0.65, windowSize.y * 0.4));
+	_shootIcon->SetZOrder(1);
+
+	Label* _shootText = M_HUD.CreateWidget<Label>("Shoot++", Screen, "Daydream", TTF);
+	_shootText->SetPosition(Vector2f(windowSize.x * 0.64, windowSize.y * 0.52));
+	_shootText->SetCharacterSize(15);
+	_shootText->SetZOrder(2);
+
+
+	Label* _powerPickup = M_HUD.CreateWidget<Label>("Pickup Power Up", Screen, "Daydream", TTF);
+	_powerPickup->SetPosition(Vector2f(windowSize.x * 0.35, windowSize.y * 0.7));
+	_powerPickup->SetCharacterSize(25);
+	_powerPickup->SetZOrder(2);
+
+
+	canvas->AddWidget(_player);
+
+	canvas->AddWidget(_speedFrame);
+	canvas->AddWidget(_speedText);
+	canvas->AddWidget(_speedIcon);
+
+	canvas->AddWidget(_pvFrame);
+	canvas->AddWidget(_pvIcon);
+	canvas->AddWidget(_pvText);
+
+	canvas->AddWidget(_shootFrame);
+	canvas->AddWidget(_shootIcon);
+	canvas->AddWidget(_shootText);
+
+	canvas->AddWidget(_powerPickup);
 }
