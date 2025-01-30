@@ -14,6 +14,7 @@ Projectile::Projectile(const Projectile& _other) : MeshActor(_other)
 
 void Projectile::BeginPlay()
 {
+	SetLifeSpan(5.0f);
 	Super::BeginPlay();
 }
 
@@ -44,12 +45,14 @@ void Projectile::ComputeNewPositionIfNotInWindow()
 void Projectile::Construct()
 {
 	Super::Construct();
+	movement->SetSpeed(150.0f);
+
 }
 
 void Projectile::Tick(const float _deltaTime)
 {
 	Super::Tick(_deltaTime);
-	
+	ComputeNewPositionIfNotInWindow();
 }
 
 void Projectile::Deconstruct()

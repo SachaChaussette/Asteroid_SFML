@@ -44,7 +44,6 @@ void Asteroid::Construct()
 void Asteroid::Tick(const float _deltaTime)
 {
 	Super::Tick(_deltaTime);
-	ComputeNewPositionIfNotInWindow();
 }
 
 void Asteroid::Deconstruct()

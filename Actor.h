@@ -8,7 +8,6 @@
 class Actor : public Core, public ITransformableModifier, public ITransformableViewer
 {
 	bool isToDelete;
-	float lifeSpan;
 	u_int id;
 	string name;
 	string displayName;
@@ -16,6 +15,7 @@ class Actor : public Core, public ITransformableModifier, public ITransformableV
 	RootComponent* root;
 	Actor* parent;
 	set<Actor*> children;
+	float lifeSpan;
 
 protected:
 	template <typename Type, typename ...Args, IS_BASE_OF(Component, Type)>

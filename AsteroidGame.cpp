@@ -41,10 +41,13 @@ void AsteroidGame::Start()
 {
 	Super::Start();
 
+	Level::SpawnActor(MeshActor(CAST(Vector2f, GetWindowSize()), "InGameBackground"));
+
 	new Timer<Seconds>([&]() { GenerateAsteroid(); }, seconds(1.0f), true, false);
 	new Timer<Seconds>([&]() { GenerateUFO(); }, seconds(1.0f), true, false);
 
 	GeneratePlayer();
+
 }
 
 bool AsteroidGame::Update()

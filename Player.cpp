@@ -62,6 +62,6 @@ void Player::BeginPlay()
 void Player::Tick(const float _deltaTime)
 {
 	Super::Tick(_deltaTime);
-	ComputeNewPositionIfNotInWindow();
 }
+
 

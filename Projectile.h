@@ -8,9 +8,7 @@
 class Projectile : public MeshActor
 {
 	EnemyMovementComponent* movement;
-	AnimationComponent* animation;
-	u_int spriteCount;
-	SizeType size;
+
 public:
 	FORCEINLINE EnemyMovementComponent* GetMovement() const
 	{

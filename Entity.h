@@ -21,6 +21,7 @@ public:
 		const string& _name = "Entity");
 	Entity(const Entity& _other);
 protected:
+	virtual void Tick(const float _deltaTime) override;
 	void ComputeNewPositionIfNotInWindow();
 	virtual void Construct() override;
 };

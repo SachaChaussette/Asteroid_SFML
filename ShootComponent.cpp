@@ -4,7 +4,7 @@
 
 ShootComponent::ShootComponent(Actor* _owner) : Component(_owner)
 {
-	projectile = new Projectile(20.0f, "laser", PNG, IntRect(Vector2i(), Vector2i(16, 16)));
+	projectile = new Projectile(20.0f, "Shoot/laser", PNG, IntRect(Vector2i(), Vector2i(16, 16)));
 }
 
 ShootComponent::ShootComponent(Actor* _owner, const ShootComponent* _other) : Component(_owner)
@@ -23,9 +23,9 @@ void ShootComponent::Shoot()
 
 	// Calcule la nouvelle pos
 	const Vector2f& _newPos = owner->GetPosition() + _direction;
-	LOG(Warning, _newPos);
+
 	// On spawn le projectile aux nouvelles coordonées et on lui donne la direction du tir
-	Level::SpawnActor(Projectile(*projectile));
-	//_projectile->SetPosition(_newPos);
-	//_projectile->GetMovement()->SetDirection(_direction);
+	Projectile* _projectile = Level::SpawnActor(Projectile(*projectile));
+	_projectile->SetPosition(_newPos);
+	_projectile->GetMovement()->SetDirection(_direction);
 }

@@ -25,6 +25,12 @@ Entity::Entity(const Entity& _other) : MeshActor(_other)
 	size = _other.size;
 }
 
+void Entity::Tick(const float _deltaTime)
+{
+	Super::Tick(_deltaTime);
+	ComputeNewPositionIfNotInWindow();
+}
+
 void Entity::ComputeNewPositionIfNotInWindow()
 {
 	const Vector2f& _windowSize = CAST(Vector2f, M_GAME.GetCurrent()->GetWindowSize());
@@ -52,23 +58,22 @@ void Entity::ComputeNewPositionIfNotInWindow()
 void Entity::Construct()
 {
 	Super::Construct();
-
 	
 
 	// Animation / Sprite
-	vector<SpriteData> _sprites;
 	const Vector2i& _spriteSize = Vector2i(32, 32);
+	vector<SpriteData> _sprites;
 
 	for (u_int _index = 0; _index < spriteCount; _index++)
 	{
 		const Vector2i& _currentPos = Vector2i(_spriteSize.x * (_index), 0);
 		_sprites.push_back(SpriteData(_currentPos, _spriteSize));
 	}
-	AnimationData _data = AnimationData(50.0f, _sprites, true, RD_ROW);
-	Animation* _move = new Animation("aled", GetMesh()->GetShape(), _data);
+	AnimationData _data = AnimationData(100.0f, _sprites, true, true, RD_ROW);
+	Animation* _move = new Animation("Movement", GetMesh()->GetShape(), _data);
 
 	animation->AddAnimation(_move);
-	animation->SetCurrentAnimation("aled");
+	animation->SetCurrentAnimation("Movement");
 	animation->StartAnimation();
 }
 
