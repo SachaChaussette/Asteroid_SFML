@@ -10,6 +10,9 @@
 
 AsteroidGame::AsteroidGame()
 {
+	difficultyFactor = 1.4f;
+	wavesCount = 0;
+	baseAsteroidCount = 5;
 }
 
 void AsteroidGame::GeneratePlayer()

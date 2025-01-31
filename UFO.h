@@ -2,12 +2,15 @@
 
 #include "AnimationComponent.h"
 #include "EnemyMovementComponent.h"
+#include "ShootComponent.h"
 #include "SizeType.h"
 #include "Entity.h"
 
 class UFO : public Entity
 {
 	EnemyMovementComponent* movement;
+	ShootComponent* shoot;
+
 
 	//Servira pour la CollisionBox !
 	vector<Vector2f> convexShapePoints;

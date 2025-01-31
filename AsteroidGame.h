@@ -5,6 +5,9 @@
 class AsteroidGame : public Game
 {
 
+	float difficultyFactor;
+	u_int wavesCount;
+	u_int baseAsteroidCount;
 
 public:
 	AsteroidGame();

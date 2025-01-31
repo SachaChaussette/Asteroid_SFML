@@ -2,9 +2,10 @@
 #include "GameManager.h"
 
 UFO::UFO(const float _radius, const SizeType& _size, const string& _path, const TextureExtensionType& _textureType,
-	const IntRect& _rect) : Entity(_radius, 4, "UFO/" + _path, _textureType, _rect, false, false)
+	const IntRect& _rect) : Entity(1, _radius, 4, "UFO/" + _path, _textureType, _rect, false, false)
 {
 	movement = CreateComponent<EnemyMovementComponent>();
+	shoot = CreateComponent<ShootComponent>();
 	convexShapePoints =
 	{ 
 		{170.0f, 70.0f},	{220.0f, 120.0f}, 
@@ -19,6 +20,7 @@ UFO::UFO(const float _radius, const SizeType& _size, const string& _path, const 
 UFO::UFO(const UFO& _other) : Entity(_other)
 {
 	movement = CreateComponent<EnemyMovementComponent>(_other.movement);
+	shoot = CreateComponent<ShootComponent>(_other.shoot);
 	size = _other.size;
 
 }
@@ -50,6 +52,7 @@ void UFO::BeginPlay()
 {
 	Super::BeginPlay();
 	new Timer<Seconds>([&]() { ComputeNewDirection(); }, seconds(3.0f), true, true);
+	new Timer<Seconds>([&]() { shoot->Shoot(); }, seconds(5.0f), true, true);
 }
 
 void UFO::Deconstruct()

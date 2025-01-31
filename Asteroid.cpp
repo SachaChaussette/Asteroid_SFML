@@ -4,7 +4,7 @@
 
 Asteroid::Asteroid(const float _radius, const SizeType& _size, const string& _path
 	, const TextureExtensionType& _textureType, const IntRect& _rect)
-	: Entity(_radius, 26, "Asteroid/" + _path, _textureType, _rect)
+	: Entity(1, _radius, 26, "Asteroid/" + _path, _textureType, _rect)
 {
 	movement = CreateComponent<EnemyMovementComponent>();
 	size = _size;
