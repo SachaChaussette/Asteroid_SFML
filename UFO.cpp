@@ -6,6 +6,7 @@ UFO::UFO(const SizeType& _size, const string& _path, const TextureExtensionType&
 {
 	animation = CreateComponent<AnimationComponent>();
 	movement = CreateComponent<EnemyMovementComponent>();
+	collision = CreateComponent<CollisionComponent>(CT_BLOCK);
 	size = _size;
 	convexShapePoints =
 	{ 
@@ -22,6 +23,7 @@ UFO::UFO(const UFO& _other) : MeshActor(_other)
 {
 	animation = CreateComponent<AnimationComponent>(_other.animation);
 	movement = CreateComponent<EnemyMovementComponent>(_other.movement);
+	collision = CreateComponent<CollisionComponent>(_other.collision);
 	size = _other.size;
 	spriteCount = _other.spriteCount;
 }

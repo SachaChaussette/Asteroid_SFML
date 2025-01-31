@@ -9,6 +9,7 @@ Asteroid::Asteroid(const SizeType& _size, const string& _path
 {
 	animation = CreateComponent<AnimationComponent>();
 	movement = CreateComponent<EnemyMovementComponent>();
+	collision = CreateComponent<CollisionComponent>(CT_BLOCK);
 	size = _size;
 	convexShapePoints =
 	{ 
@@ -25,6 +26,7 @@ Asteroid::Asteroid(const Asteroid& _other) : MeshActor(_other)
 {
 	animation = CreateComponent<AnimationComponent>(_other.animation);
 	movement = CreateComponent<EnemyMovementComponent>(_other.movement);
+	collision = CreateComponent<CollisionComponent>(_other.collision);
 	size = _other.size;
 	spriteCount = _other.spriteCount;
 }
@@ -91,15 +93,21 @@ void Asteroid::Tick(const float _deltaTime)
 
 void Asteroid::Deconstruct()
 {
+
+	Super::Deconstruct();
+}
+
+void Asteroid::Divide(set<Asteroid*>& _objects)
+{
 	if (size > SMALL)
 	{
 		for (size_t _i = 0; _i < 2; _i++)
 		{
-			Asteroid* _smallerAsteroid1 = Level::SpawnActor(Asteroid(SizeType(size - 1)));
-			_smallerAsteroid1->ComputeNewDirection();
-			_smallerAsteroid1->SetOriginAtMiddle();
-			_smallerAsteroid1->SetPosition(GetPosition());
+			Asteroid* _smallerAsteroid = Level::SpawnActor(Asteroid(SizeType(size - 1)));
+			_smallerAsteroid->ComputeNewDirection();
+			_smallerAsteroid->SetOriginAtMiddle();
+			_smallerAsteroid->SetPosition(GetPosition());
+			_objects.insert(_smallerAsteroid);
 		}
 	}
-	Super::Deconstruct();
 }

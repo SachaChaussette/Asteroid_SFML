@@ -2,9 +2,15 @@
 
 #include "Game.h"
 
+#include "Player.h"
+#include "UFO.h"
+#include "Asteroid.h"
+
 class AsteroidGame : public Game
 {
-
+	Player* player;
+	set<Asteroid*> asteroids;
+	set<UFO*> ufos;
 
 public:
 	AsteroidGame();

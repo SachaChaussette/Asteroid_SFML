@@ -2,6 +2,7 @@
 #include "MeshActor.h"
 #include "AnimationComponent.h"
 #include "EnemyMovementComponent.h"
+#include "CollisionComponent.h"
 #include "SizeType.h"
 
 class Asteroid : public MeshActor
@@ -16,6 +17,7 @@ class Asteroid : public MeshActor
 
 
 public:
+	CollisionComponent* collision;
 	FORCEINLINE EnemyMovementComponent* GetMovement() const
 	{
 		return movement;
@@ -34,5 +36,7 @@ public:
 	virtual void Construct() override;
 	virtual void Tick(const float _deltaTime) override;
 	virtual void Deconstruct() override;
+
+	void Divide(set<Asteroid*>& _objects);
 };
 

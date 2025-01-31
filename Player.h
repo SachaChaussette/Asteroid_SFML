@@ -2,6 +2,7 @@
 
 #include "MeshActor.h"
 #include "PlayerMovementComponent.h"
+#include "CollisionComponent.h"
 
 class Player : public MeshActor
 {
@@ -9,6 +10,7 @@ class Player : public MeshActor
 	// TODO Shoot Component
 
 public:
+	CollisionComponent* collision;
 	Player(const Vector2f& _size, const string& _path = "", const TextureExtensionType& _textureType = PNG,
 		const IntRect& _rect = {}, bool _isRepeated = false, bool _isSmooth = true,
 		const string& _name = "Player");

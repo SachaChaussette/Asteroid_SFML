@@ -7,6 +7,8 @@ Player::Player(const Vector2f& _size, const string& _path, const TextureExtensio
 	: MeshActor(_size, _path, _textureType, _rect, _isRepeated, _isSmooth, _name)
 {
 	movement = CreateComponent<PlayerMovementComponent>();
+	collision = CreateComponent<CollisionComponent>();
+
 }
 
 Player::Player(const Player& _other) : MeshActor(_other)

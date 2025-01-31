@@ -2,6 +2,7 @@
 #include "MeshActor.h"
 #include "AnimationComponent.h"
 #include "EnemyMovementComponent.h"
+#include "CollisionComponent.h"
 #include "SizeType.h"
 
 class UFO : public MeshActor
@@ -15,6 +16,8 @@ class UFO : public MeshActor
 	vector<Vector2f> convexShapePoints;
 
 public:
+	CollisionComponent* collision;
+
 	FORCEINLINE EnemyMovementComponent* GetMovement() const
 	{
 		return movement;
