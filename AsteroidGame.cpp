@@ -28,7 +28,7 @@ void AsteroidGame::GenerateAsteroid()
 {
 	Asteroid* _asteroid = Level::SpawnActor(Asteroid(BIG));
 	_asteroid->SetOriginAtMiddle();
-	_asteroid->SetPosition({ 0.0f, GetRandomNumberInRange(0.0f, CAST(float, GetWindowSize().y))});
+	_asteroid->SetPosition(Vector2f(GetRandomNumberInRange(0, GetWindowSize().x), GetRandomNumberInRange(0.0f, CAST(float, GetWindowSize().y))));
 	_asteroid->ComputeNewDirection();
 }
 
@@ -43,16 +43,29 @@ void AsteroidGame::GenerateUFO()
 void AsteroidGame::Start()
 {
 	Super::Start();
+
+	MenuGame _menus;
+	_menus.Start();
+
 	windowSize = CAST(Vector2f, M_GAME.GetCurrent()->GetWindowSize());
 
-	new Timer<Seconds>([&]() { GenerateAsteroid(); }, seconds(1.0f), true, false);
-	new Timer<Seconds>([&]() { GenerateUFO(); }, seconds(1.0f), true, false);
+	for (u_int _index = 0; _index < 25; _index++)
+	{
+		GenerateAsteroid();
+	}
+	for (u_int _index = 0; _index < 5; _index++)
+	{
+		GenerateUFO();
+	}
+	/*new Timer<Seconds>([&]() {  }, seconds(1.0f), true, false);
+	new Timer<Seconds>([&]() { GenerateUFO(); }, seconds(1.0f), true, false);*/
 
 	GeneratePlayer();
 
+
 	//TODO Temp
 	canvas = new Canvas("Upgrade");
-	InitUpgradeCanvas();
+	
 	M_HUD.AddToViewport(canvas);
 }
 
@@ -76,11 +89,11 @@ void AsteroidGame::InitUpgradeCanvas()
 	_player->SetZOrder(2);
 
 
-	UI::Image* _speedFrame = M_HUD.CreateWidget<UI::Image>("SpeedFrame", RectangleShapeData(Vector2f(192.0f, 192.0f), "Frame"));
+	UI::Image* _speedFrame = M_HUD.CreateWidget<UI::Image>(RectangleShapeData(Vector2f(192.0f, 192.0f), "Frame"),"SpeedFrame");
 	_speedFrame->SetPosition(Vector2f(windowSize.x * 0.21, windowSize.y * 0.34));
 	_speedFrame->SetZOrder(0);
 
-	UI::Image* _speedIcon = M_HUD.CreateWidget<UI::Image>("SpeedIcon", RectangleShapeData(Vector2f(92.0f, 92.0f), "Speed"));
+	UI::Image* _speedIcon = M_HUD.CreateWidget<UI::Image>(RectangleShapeData(Vector2f(92.0f, 92.0f), "Speed"), "SpeedIcon");
 	_speedIcon->SetPosition(Vector2f(windowSize.x * 0.25, windowSize.y * 0.4));
 	_speedIcon->SetZOrder(1);
 
@@ -90,11 +103,11 @@ void AsteroidGame::InitUpgradeCanvas()
 	_speedText->SetZOrder(2);
 
 
-	UI::Image* _pvFrame = M_HUD.CreateWidget<UI::Image>("PvFrame", RectangleShapeData(Vector2f(192.0f, 192.0f), "Frame"));
+	UI::Image* _pvFrame = M_HUD.CreateWidget<UI::Image>( RectangleShapeData(Vector2f(192.0f, 192.0f), "Frame"), "PvFrame");
 	_pvFrame->SetPosition(Vector2f(windowSize.x * 0.41, windowSize.y * 0.34));
 	_pvFrame->SetZOrder(0);
 
-	UI::Image* _pvIcon = M_HUD.CreateWidget<UI::Image>("PvIcon", RectangleShapeData(Vector2f(92.0f, 92.0f), "Life"));
+	UI::Image* _pvIcon = M_HUD.CreateWidget<UI::Image>(RectangleShapeData(Vector2f(92.0f, 92.0f), "Life"), "PvIcon");
 	_pvIcon->SetPosition(Vector2f(windowSize.x * 0.45, windowSize.y * 0.4));
 	_pvIcon->SetZOrder(1);
 
@@ -104,11 +117,11 @@ void AsteroidGame::InitUpgradeCanvas()
 	_pvText->SetZOrder(2);
 
 
-	UI::Image* _shootFrame = M_HUD.CreateWidget<UI::Image>("ShootFrame", RectangleShapeData(Vector2f(192.0f, 192.0f), "Frame"));
+	UI::Image* _shootFrame = M_HUD.CreateWidget<UI::Image>(RectangleShapeData(Vector2f(192.0f, 192.0f), "Frame"), "ShootFrame");
 	_shootFrame->SetPosition(Vector2f(windowSize.x * 0.61, windowSize.y * 0.34));
 	_shootFrame->SetZOrder(0);
 
-	UI::Image* _shootIcon = M_HUD.CreateWidget<UI::Image>("ShootIcon", RectangleShapeData(Vector2f(92.0f, 92.0f), "Shoot"));
+	UI::Image* _shootIcon = M_HUD.CreateWidget<UI::Image>(RectangleShapeData(Vector2f(92.0f, 92.0f), "Shoot"), "ShootIcon");
 	_shootIcon->SetPosition(Vector2f(windowSize.x * 0.65, windowSize.y * 0.4));
 	_shootIcon->SetZOrder(1);
 

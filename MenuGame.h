@@ -6,10 +6,11 @@ using namespace UI;
 
 class MenuGame : public Game
 {
-	vector<Canvas*> allCanvas;
+	Canvas* canva;
 	Vector2f windowSize;
 public:
 	MenuGame();
+	MenuGame(const MenuGame& _other);
 
 public:
 	virtual void Start() override;
@@ -17,9 +18,11 @@ public:
 	virtual void Stop() override;
 
 private:
-	void InitMainMenu();
-	void InitStartMenu();
-	void InitLeaderBoard();
-	void InitCredits();
+	void InitMainMenu(Canvas* _canva);
+	void InitStartMenu(Canvas* _canva);
+	void InitLeaderBoard(Canvas* _canva);
+	void InitCredits(Canvas* _canva);
+	void Reset();
+	void ApplyCanva(Canvas* _canva);
 };
 

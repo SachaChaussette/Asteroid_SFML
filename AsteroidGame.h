@@ -5,6 +5,9 @@
 
 #include "Canvas.h"
 
+#include "MenuGame.h"
+
+
 using namespace UI;
 
 class AsteroidGame : public Game

@@ -6,20 +6,23 @@
 
 #include "MeshActor.h"
 #include "Label.h"
+#include "Button.h"
+#include "Image.h"
+#include "AudioManager.h"
 
 using namespace Camera;
+using namespace UI;
 
 MenuGame::MenuGame() : Game()
 {
-	allCanvas =
-	{
-		M_HUD.CreateWidget<Canvas>("Main Menu"),
-		M_HUD.CreateWidget<Canvas>("Start Menu"),
-		M_HUD.CreateWidget<Canvas>("LeaderBoard Menu"),
-		M_HUD.CreateWidget<Canvas>("Credits Menu"),
-	};
-
+	canva = M_HUD.CreateWidget<Canvas>("Main Menu"),
 	windowSize = Vector2f();
+}
+
+MenuGame::MenuGame(const MenuGame& _other)
+{
+	canva = _other.canva;
+	windowSize = _other.windowSize;
 }
 
 void MenuGame::Start()
@@ -30,14 +33,14 @@ void MenuGame::Start()
 	MeshActor* _background = Level::SpawnActor(MeshActor(RectangleShapeData(windowSize, "Sky", PNG)));
 	_background->SetFillColor(Color(255, 255, 255, 100));
 
-	InitMainMenu();
-	InitStartMenu();
-	InitLeaderBoard();
-	InitCredits();
+	M_AUDIO.PlaySample<MusicSample>("MainMenu");
 
-	Canvas* _currentCanvas = allCanvas[3];
-	_currentCanvas->UpdateWidgets();
-	M_HUD.AddToViewport(_currentCanvas);
+	InitMainMenu(canva);
+	/*InitStartMenu(1);
+	InitLeaderBoard(2);
+	InitCredits(3);*/
+
+	ApplyCanva(canva);
 }
 
 bool MenuGame::Update()
@@ -52,42 +55,98 @@ void MenuGame::Stop()
 	Super::Stop();
 }
 
-void MenuGame::InitMainMenu()
+void MenuGame::InitMainMenu(Canvas* _canva)
 {
 	Label* _title = M_HUD.CreateWidget<Label>("ASTEROID", Screen, "Daydream", TTF);
 	_title->SetPosition(Vector2f(windowSize.x * 0.33, windowSize.y * 0.2));
-	_title->SetCharacterSize(50);
+	_title->SetCharacterSize(75);
 	_title->SetZOrder(1);
 
+	canva->AddWidget(_title);
+
+	//////////////////////////
+	///		Play
+	//////////////////////////
+
 	Label* _play = M_HUD.CreateWidget<Label>("Play", Screen, "Daydream", TTF);
-	_play->SetPosition(Vector2f(windowSize.x * 0.2, windowSize.y * 0.8));
+	_play->SetPosition(Vector2f(windowSize.x * 0.15, windowSize.y * 0.8));
 	_play->SetCharacterSize(25);
 	_play->SetZOrder(2);
+
+	UI::Image* _playImage = new UI::Image(Vector2f(100.0f, 30.0f), "PixelTransparent");
+	const ButtonData& _playData = ButtonData([&]() {}, [&]() {}, [&]() 
+	{ 
+		Canvas* _canva = M_HUD.CreateWidget<Canvas>("Start Menu");
+		InitStartMenu(_canva);
+		_canva->UpdateWidgets();
+		ApplyCanva(_canva);
+		Reset();
+	}, [&]() {}, [&]() {});
+	Button* _playButton = M_HUD.CreateWidget<Button>(_playImage, _playData, "PlayButton");
+	_playButton->SetPosition(Vector2f(windowSize.x * 0.15, windowSize.y * 0.8));
+	_playButton->SetZOrder(3);
+	
+
+	//////////////////////////
+	///		LeaderBoard
+	//////////////////////////
 
 	Label* _leaderBoard = M_HUD.CreateWidget<Label>("LeaderBoard", Screen, "Daydream", TTF);
 	_leaderBoard->SetPosition(Vector2f(windowSize.x * 0.3, windowSize.y * 0.8));
 	_leaderBoard->SetCharacterSize(25);
 	_leaderBoard->SetZOrder(2);
 
+	UI::Image* _leaderBoardImage = new UI::Image(Vector2f(300.0f, 30.0f), "PixelTransparent");
+	const ButtonData& _leaderBoardData = ButtonData([&]() {}, [&]() {}, [&]() { LOG(Display, "LeaderBoard"); }, [&]() {}, [&]() {});
+	Button* _leaderBoardButton = M_HUD.CreateWidget<Button>(_leaderBoardImage, _leaderBoardData, "LeaderBoardButton");
+	_leaderBoardButton->SetPosition(Vector2f(windowSize.x * 0.3, windowSize.y * 0.8));
+	_leaderBoardButton->SetZOrder(3);
+	
+	//////////////////////////
+	///		Credits
+	//////////////////////////
+
 	Label* _credits = M_HUD.CreateWidget<Label>("Credits", Screen, "Daydream", TTF);
-	_credits->SetPosition(Vector2f(windowSize.x * 0.55, windowSize.y * 0.8));
+	_credits->SetPosition(Vector2f(windowSize.x * 0.57, windowSize.y * 0.8));
 	_credits->SetCharacterSize(25);
 	_credits->SetZOrder(2);
 
+	UI::Image* _creditImage = new UI::Image(Vector2f(170.0f, 30.0f), "PixelTransparent");
+	const ButtonData& _creditsData = ButtonData([&]() {}, [&]() {}, [&]() { LOG(Display, "Credits"); }, [&]() {}, [&]() {});
+	Button* _creditsButton = M_HUD.CreateWidget<Button>(_creditImage, _creditsData, "CreditsButton");
+	_creditsButton->SetPosition(Vector2f(windowSize.x * 0.57, windowSize.y * 0.8));
+	_creditsButton->SetZOrder(3);
+
+	
+
+	//////////////////////////
+	///		Quit
+	//////////////////////////
+
 	Label* _quit = M_HUD.CreateWidget<Label>("Quit", Screen, "Daydream", TTF);
-	_quit->SetPosition(Vector2f(windowSize.x * 0.7, windowSize.y * 0.8));
+	_quit->SetPosition(Vector2f(windowSize.x * 0.8, windowSize.y * 0.8));
 	_quit->SetCharacterSize(25);
 	_quit->SetZOrder(2);
 
+	UI::Image* _quitImage = new UI::Image(Vector2f(100.0f, 30.0f), "PixelTransparent");
+	const ButtonData& _quitData = ButtonData([&]() {}, [&]() {}, [&]() { LOG(Display, "Quit"); }, [&]() {}, [&]() {});
+	Button* _quitButton = M_HUD.CreateWidget<Button>(_quitImage, _quitData, "QuitButton");
+	_quitButton->SetPosition(Vector2f(windowSize.x * 0.8, windowSize.y * 0.8));
+	_quitButton->SetZOrder(3);
 
-	allCanvas[0]->AddWidget(_title);
-	allCanvas[0]->AddWidget(_play);
-	allCanvas[0]->AddWidget(_leaderBoard);
-	allCanvas[0]->AddWidget(_credits);
-	allCanvas[0]->AddWidget(_quit);
+	canva->AddWidget(_playButton);
+	canva->AddWidget(_leaderBoardButton);
+	canva->AddWidget(_creditsButton);
+	canva->AddWidget(_quitButton);
+
+	canva->AddWidget(_play);
+	canva->AddWidget(_leaderBoard);
+	canva->AddWidget(_credits);
+	canva->AddWidget(_quit);
+
 }
 
-void MenuGame::InitStartMenu()
+void MenuGame::InitStartMenu(Canvas* _canva)
 {
 	Label* _solo = M_HUD.CreateWidget<Label>("SOLO", Screen, "Daydream", TTF);
 	_solo->SetPosition(Vector2f(windowSize.x * 0.2, windowSize.y * 0.25));
@@ -130,17 +189,17 @@ void MenuGame::InitStartMenu()
 	_back->SetCharacterSize(30);
 	_back->SetZOrder(3);
 
-	allCanvas[1]->AddWidget(_solo);
-	allCanvas[1]->AddWidget(_coop);
-	allCanvas[1]->AddWidget(_controls);
-	allCanvas[1]->AddWidget(_up);
-	allCanvas[1]->AddWidget(_left);
-	allCanvas[1]->AddWidget(_right);
-	allCanvas[1]->AddWidget(_shoot);
-	allCanvas[1]->AddWidget(_back);
+	_canva->AddWidget(_solo);
+	_canva->AddWidget(_coop);
+	_canva->AddWidget(_controls);
+	_canva->AddWidget(_up);
+	_canva->AddWidget(_left);
+	_canva->AddWidget(_right);
+	_canva->AddWidget(_shoot);
+	_canva->AddWidget(_back);
 }
 
-void MenuGame::InitLeaderBoard()
+void MenuGame::InitLeaderBoard(Canvas* _canva)
 {
 	Label* _leaderBoard = M_HUD.CreateWidget<Label>("LeaderBoard", Screen, "Daydream", TTF);
 	_leaderBoard->SetPosition(Vector2f(windowSize.x * 0.32, windowSize.y * 0.1));
@@ -184,17 +243,17 @@ void MenuGame::InitLeaderBoard()
 	_back->SetCharacterSize(30);
 	_back->SetZOrder(3);
 
-	allCanvas[2]->AddWidget(_leaderBoard);
-	allCanvas[2]->AddWidget(_score1);
-	allCanvas[2]->AddWidget(_score2);
-	allCanvas[2]->AddWidget(_score3);
-	allCanvas[2]->AddWidget(_score4);
-	allCanvas[2]->AddWidget(_score5);
-	allCanvas[2]->AddWidget(_score6);
-	allCanvas[2]->AddWidget(_back);
+	canva->AddWidget(_leaderBoard);
+	canva->AddWidget(_score1);
+	canva->AddWidget(_score2);
+	canva->AddWidget(_score3);
+	canva->AddWidget(_score4);
+	canva->AddWidget(_score5);
+	canva->AddWidget(_score6);
+	canva->AddWidget(_back);
 }
 
-void MenuGame::InitCredits()
+void MenuGame::InitCredits(Canvas* _canva)
 {
 	Label* _credits = M_HUD.CreateWidget<Label>("Credits", Screen, "Daydream", TTF);
 	_credits->SetPosition(Vector2f(windowSize.x * 0.38, windowSize.y * 0.1));
@@ -218,8 +277,19 @@ void MenuGame::InitCredits()
 	_back->SetCharacterSize(30);
 	_back->SetZOrder(3);
 
-	allCanvas[3]->AddWidget(_credits);
-	allCanvas[3]->AddWidget(_sacha);
-	allCanvas[3]->AddWidget(_etc);
-	allCanvas[3]->AddWidget(_back);
+	canva->AddWidget(_credits);
+	canva->AddWidget(_sacha);
+	canva->AddWidget(_etc);
+	canva->AddWidget(_back);
+}
+
+void MenuGame::Reset()
+{
+	M_HUD.RemoveFromViewport(canva);
+}
+
+void MenuGame::ApplyCanva(Canvas* _canva)
+{
+	canva = _canva;
+	M_HUD.AddToViewport(canva);
 }
