@@ -14,7 +14,7 @@ class AsteroidGame : public Game
 {
 	Canvas* canvas;
 	Vector2f windowSize;
-
+	MenuGame* menus;
 public:
 	AsteroidGame();
 public:
@@ -23,6 +23,7 @@ public:
 	void GenerateUFO();
 
 	virtual void Start() override;
+	virtual void LaunchGame();
 	virtual bool Update() override;
 	virtual void Stop() override;
 

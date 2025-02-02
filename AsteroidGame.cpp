@@ -15,6 +15,7 @@ AsteroidGame::AsteroidGame()
 {
 	canvas = nullptr;
 	windowSize = Vector2f();
+	menus = new MenuGame();
 }
 
 void AsteroidGame::GeneratePlayer()
@@ -44,8 +45,8 @@ void AsteroidGame::Start()
 {
 	Super::Start();
 
-	MenuGame _menus;
-	_menus.Start();
+	
+	menus->Start();
 
 	windowSize = CAST(Vector2f, M_GAME.GetCurrent()->GetWindowSize());
 
@@ -57,16 +58,22 @@ void AsteroidGame::Start()
 	{
 		GenerateUFO();
 	}
+
 	/*new Timer<Seconds>([&]() {  }, seconds(1.0f), true, false);
 	new Timer<Seconds>([&]() { GenerateUFO(); }, seconds(1.0f), true, false);*/
 
-	GeneratePlayer();
+	//GeneratePlayer();
 
 
 	//TODO Temp
-	canvas = new Canvas("Upgrade");
+	//canvas = new Canvas("Upgrade");
 	
-	M_HUD.AddToViewport(canvas);
+	//M_HUD.AddToViewport(canvas);
+}
+
+void AsteroidGame::LaunchGame()
+{
+	menus->Reset();
 }
 
 bool AsteroidGame::Update()

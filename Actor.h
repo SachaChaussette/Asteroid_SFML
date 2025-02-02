@@ -260,7 +260,7 @@ public:
 	virtual void Tick(const float _deltaTime) override;
 	virtual void BeginDestroy() override;
 
-	void Destroy();
+	virtual void Destroy();
 
 #pragma region Components
 

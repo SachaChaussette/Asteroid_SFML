@@ -26,14 +26,29 @@ namespace UI
 		{
 			allWidgets.erase(_widget);
 		}
-
+		FORCEINLINE void RemoveWidgets()
+		{
+			using Iterator = set<Widget*>::iterator;
+				
+			for (Iterator _it = allWidgets.begin(); _it != allWidgets.end(); )
+			{
+				Widget* _widget = *_it;
+				++_it;
+				allWidgets.erase(_widget);
+				_widget->Deconstruct();
+			}
+		}
 	public:
 		Canvas(const string& _name, const RenderType& _type = Screen);
+		Canvas(const Canvas& _other);
 
 	public:
 		virtual void Render(RenderWindow& _window) override;
 		void UpdateWidgets();
 		virtual void Construct() override;
+		virtual void BeginDestroy() override;
+		virtual void Destroy() override;
+		
 	};
 }
 

@@ -5,6 +5,11 @@ UI::Canvas::Canvas(const string& _name, const RenderType& _type) : Widget(_name,
 	allWidgets = set<Widget*>();
 }
 
+UI::Canvas::Canvas(const Canvas& _other) : Widget(_other)
+{
+	allWidgets = _other.allWidgets;
+}
+
 void UI::Canvas::Render(RenderWindow& _window)
 {
 	for (Actor* _actor : allWidgets)
@@ -35,6 +40,30 @@ void UI::Canvas::Construct()
 		if (Widget* _widget = Cast<Widget>(_actor))
 		{
 			_widget->Construct();
+		}
+	}
+}
+
+void UI::Canvas::BeginDestroy()
+{
+	Super::BeginDestroy();
+	for (Actor* _actor : allWidgets)
+	{
+		if (Widget* _widget = Cast<Widget>(_actor))
+		{
+			_widget->BeginDestroy();
+		}
+	}
+}
+
+void UI::Canvas::Destroy()
+{
+	Super::Destroy();
+	for (Actor* _actor : allWidgets)
+	{
+		if (Widget* _widget = Cast<Widget>(_actor))
+		{
+			_widget->SetToDelete();
 		}
 	}
 }

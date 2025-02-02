@@ -27,7 +27,16 @@ namespace UI
 			if (!allWidgets.contains(_widget)) return;
 			allWidgets.erase(_widget);
 		}
-
+		FORCEINLINE void SetCurrentWidget(Widget* _widget)
+		{
+			if (!allWidgets.contains(_widget)) return;
+			if (currentWidget == _widget) return;
+			currentWidget = _widget;
+		}
+		FORCEINLINE Widget* GetCurrentWidget() const
+		{
+			return currentWidget;
+		}
 	public:
 		HUD();
 		~HUD();
