@@ -6,12 +6,14 @@
 PlayerMovementComponent::PlayerMovementComponent(Actor* _owner) : Component(_owner)
 {
 	velocity = Vector2f();
+
 	deltaTime = 0.0f;
 	friction = 0.9f;
 	currentAngle = 270.0f;
 	maxVelocity = Vector2f(0.1f, 0.1f);
 	acceleration = Vector2f();
 	direction = Vector2f(1.0f, 1.0f);
+
 }
 
 PlayerMovementComponent::PlayerMovementComponent(Actor* _owner, const PlayerMovementComponent* _other) : Component(_owner)

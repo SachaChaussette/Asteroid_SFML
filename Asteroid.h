@@ -1,14 +1,14 @@
 #pragma once
+#include "MeshActor.h"
 #include "Entity.h"
 #include "AnimationComponent.h"
 #include "EnemyMovementComponent.h"
 #include "SizeType.h"
 
-class Asteroid : public Entity
+
+class Asteroid : public MeshActor
 {
 	EnemyMovementComponent* movement;
-
-
 	//Servira pour la CollisionBox !
 	vector<Vector2f> convexShapePoints;
 

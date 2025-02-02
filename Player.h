@@ -1,8 +1,10 @@
 #pragma once
 
+
 #include "Entity.h"
 #include "PlayerMovementComponent.h"
 #include "ShootComponent.h"
+
 
 class Player : public Entity
 {
@@ -21,5 +23,4 @@ public:
 	virtual void BeginPlay() override;
 	virtual void Tick(const float _deltaTime) override;
 	virtual void BeginDestroy() override {};
-
 };

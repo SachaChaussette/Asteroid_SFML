@@ -20,6 +20,13 @@ MeshComponent::MeshComponent(Actor* _owner, const vector<Vector2f> point, const 
 	shape = new ShapeObject(point, _path, _textureType, _rect, _isRepeated, _isSmooth);
 }
 
+MeshComponent::MeshComponent(Actor* _owner, const vector<Vector2f> point, const string& _path, 
+	const TextureExtensionType& _textureType, const IntRect& _rect,
+	bool _isRepeated, bool _isSmooth) : Component(_owner)
+{
+	shape = new ShapeObject(point, _path, _textureType, _rect, _isRepeated, _isSmooth);
+}
+
 MeshComponent::MeshComponent(Actor* _owner, const MeshComponent* _other) : Component(_owner) 
 {
 	shape = new ShapeObject(*_other->shape);

@@ -11,7 +11,6 @@ class UFO : public Entity
 	EnemyMovementComponent* movement;
 	ShootComponent* shoot;
 
-
 	//Servira pour la CollisionBox !
 	vector<Vector2f> convexShapePoints;
 
@@ -21,7 +20,7 @@ public:
 		return movement;
 	}
 public:
-	//point servira à la ConvexShape de la CollisionBox !
+	//point servira Ã  la ConvexShape de la CollisionBox !
 	UFO(const float _radius, const SizeType& _size = MEDIUM, const string& _path = "",
 		const TextureExtensionType& _textureType = PNG, const IntRect& _rect = {});
 	UFO(const UFO& _other);

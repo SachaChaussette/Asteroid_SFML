@@ -26,7 +26,6 @@ UFO::UFO(const UFO& _other) : Entity(_other)
 }
 
 
-
 void UFO::ComputeNewDirection()
 {
 	GetMovement()->SetDirection(Vector2f(

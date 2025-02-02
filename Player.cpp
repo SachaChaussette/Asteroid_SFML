@@ -13,7 +13,9 @@ Player::Player(const Vector2f& _size, const string& _path, const TextureExtensio
 Player::Player(const Player& _other) : Entity(_other)
 {
 	movement = CreateComponent<PlayerMovementComponent>(_other.movement);
+
 	shoot = CreateComponent<ShootComponent>(_other.shoot);
+
 }
 
 void Player::Construct()
@@ -32,6 +34,7 @@ void Player::Construct()
 		movement->Rotate(10);
 		SetOriginAtMiddle();
 		}, { Code::Right, Code::D });
+
 
 	M_INPUT.BindAction([&]() 
 	{
@@ -62,6 +65,7 @@ void Player::BeginPlay()
 void Player::Tick(const float _deltaTime)
 {
 	Super::Tick(_deltaTime);
+	ComputeNewPositionIfNotInWindow();
 }
 
 

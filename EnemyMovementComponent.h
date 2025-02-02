@@ -17,10 +17,12 @@ public:
 	{
 		rotateSpeed = _rotateSpeed;
 	}
+
 	FORCEINLINE void SetSpeed(const float _speed)
 	{
 		speed = _speed;
 	}
+
 	FORCEINLINE void SetTarget(Actor* _target)
 	{
 		target = _target;

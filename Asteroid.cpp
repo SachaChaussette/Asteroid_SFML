@@ -2,6 +2,7 @@
 #include "GameManager.h"
 #include "Level.h"
 
+
 Asteroid::Asteroid(const float _radius, const SizeType& _size, const string& _path
 	, const TextureExtensionType& _textureType, const IntRect& _rect)
 	: Entity(1, _radius, 26, "Asteroid/" + _path, _textureType, _rect)
@@ -16,8 +17,6 @@ Asteroid::Asteroid(const float _radius, const SizeType& _size, const string& _pa
 		{80.0f, 190.0f},	{60.0f, 180.0f}, 
 		{40.0f, 180.0f},	{0.0f, 100.0f}, 
 	};
-	
-}
 
 Asteroid::Asteroid(const Asteroid& _other) : Entity(_other)
 {
@@ -31,7 +30,6 @@ void Asteroid::ComputeNewDirection()
 	GetRandomNumberInRange(-1.0f, 1.0f)));
 }
 
-
 void Asteroid::Construct()
 {
 	Super::Construct();
@@ -44,6 +42,7 @@ void Asteroid::Construct()
 void Asteroid::Tick(const float _deltaTime)
 {
 	Super::Tick(_deltaTime);
+
 }
 
 void Asteroid::Deconstruct()

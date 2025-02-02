@@ -36,4 +36,5 @@ protected:
 private:
 	void UpdateDirection();
 	void Move(const float _deltaTime);
+
 };

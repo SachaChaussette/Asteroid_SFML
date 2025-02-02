@@ -1,0 +1,1 @@
+[1/2/2025 22:50:20] Error: Cannot open file with the following path : 'Assets/Textures/PixelTransparenta.png' ! (File: TextureManager::LoadTexture | Line: 28)

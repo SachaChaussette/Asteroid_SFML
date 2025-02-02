@@ -345,11 +345,16 @@
     <ClInclude Include="SizeType.h">
       <Filter>Script\Resource Files</Filter>
     </ClInclude>
+
     <ClInclude Include="Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="LifeComponent.h">
+
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Script</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -505,6 +510,7 @@
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Script\Core\Actor\Player</Filter>
+
     </ClCompile>
     <ClCompile Include="Projectile.cpp">
       <Filter>Script\Core\Actor\Player</Filter>
@@ -516,7 +522,11 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="LifeComponent.cpp">
+
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Script</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

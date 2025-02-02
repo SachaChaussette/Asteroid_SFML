@@ -25,6 +25,9 @@ public:
 	MeshComponent(Actor* _owner, const Vector2f& _size, const string& _path = "",
 		const TextureExtensionType& _textureType = PNG, const IntRect& _rect = {},
 		bool _isRepeated = false, bool _isSmooth = true);
+
+	MeshComponent(Actor* _owner, const RectangleShapeData& _data); // Rectangle v2
+
 	MeshComponent(Actor* _owner, const vector<Vector2f> point, const string& _path = "",
 		const TextureExtensionType& _textureType = PNG, const IntRect& _rect = {},
 		bool _isRepeated = false, bool _isSmooth = true);
