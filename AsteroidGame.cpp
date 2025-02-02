@@ -8,6 +8,7 @@
 #include "TimerManager.h"
 #include "GameManager.h"
 
+
 #include "Image.h"
 #include "Label.h"
 
@@ -16,6 +17,11 @@ AsteroidGame::AsteroidGame()
 	canvas = nullptr;
 	windowSize = Vector2f();
 	menus = new MenuGame();
+
+	difficultyFactor = 1.4f;
+	wavesCount = 0;
+	baseAsteroidCount = 5;
+
 }
 
 void AsteroidGame::GeneratePlayer()
@@ -27,15 +33,18 @@ void AsteroidGame::GeneratePlayer()
 
 void AsteroidGame::GenerateAsteroid()
 {
-	Asteroid* _asteroid = Level::SpawnActor(Asteroid(BIG));
+
+	const string& _finalPath = "AsteroidSpriteSheet_" + to_string(GetRandomNumberInRange(1, 2));
+	Asteroid* _asteroid = Level::SpawnActor(Asteroid(110.0f, BIG, _finalPath));
 	_asteroid->SetOriginAtMiddle();
-	_asteroid->SetPosition(Vector2f(GetRandomNumberInRange(0, GetWindowSize().x), GetRandomNumberInRange(0.0f, CAST(float, GetWindowSize().y))));
+	_asteroid->SetPosition({ 0.0f, GetRandomNumberInRange(0.0f, CAST(float, GetWindowSize().y))});
 	_asteroid->ComputeNewDirection();
 }
 
 void AsteroidGame::GenerateUFO()
 {
-	UFO* _ufo = Level::SpawnActor(UFO(MEDIUM));
+	const string& _finalPath = "UFOSpriteSheet_" + to_string(GetRandomNumberInRange(1, 3));
+	UFO* _ufo = Level::SpawnActor(UFO(110.0f, MEDIUM, _finalPath));
 	_ufo->SetOriginAtMiddle();
 	_ufo->SetPosition({ 0.0f, GetRandomNumberInRange(0.0f, CAST(float, GetWindowSize().y))});
 	_ufo->ComputeNewDirection();
@@ -44,7 +53,6 @@ void AsteroidGame::GenerateUFO()
 void AsteroidGame::Start()
 {
 	Super::Start();
-
 	
 	menus->Start();
 
@@ -74,6 +82,12 @@ void AsteroidGame::Start()
 void AsteroidGame::LaunchGame()
 {
 	menus->Reset();
+	Level::SpawnActor(MeshActor(CAST(Vector2f, GetWindowSize()), "InGameBackground"));
+
+	new Timer<Seconds>([&]() { GenerateAsteroid(); }, seconds(1.0f), true, false);
+	new Timer<Seconds>([&]() { GenerateUFO(); }, seconds(1.0f), true, false);
+
+	GeneratePlayer();
 }
 
 bool AsteroidGame::Update()

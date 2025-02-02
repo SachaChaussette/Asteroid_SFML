@@ -15,12 +15,6 @@ ShapeObject::ShapeObject(const Vector2f& _size, const string& _path, const Textu
 	InitRectangle(*objectData.data.rectangleData);
 }
 
-ShapeObject::ShapeObject(const RectangleShapeData& _data)
-{
-	objectData = ShapeObjectData(SOT_RECTANGLE, _data);
-	InitRectangle(*objectData.data.rectangleData);
-}
-
 ShapeObject::ShapeObject(const vector<Vector2f> point, const string& _path, const TextureExtensionType& _textureType,
 	const IntRect& _rect, bool _isRepeated, bool _isSmooth)
 {

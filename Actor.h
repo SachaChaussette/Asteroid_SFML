@@ -17,6 +17,7 @@ class Actor : public Core, public ITransformableModifier, public ITransformableV
 	Actor* parent;
 	AttachmentType attachment;
 	set<Actor*> children;
+
 protected:
 	float lifeSpan;
 
@@ -74,9 +75,9 @@ private:
 	{
 		const vector<function<Vector2f()>>& _computePosition =
 		{
-			// Keep the child’s relative position to the parent.
+			// Keep the childï¿½s relative position to the parent.
 			[&]() { return _child->GetPosition() - GetPosition(); },
-			// Keep the child’s world position.
+			// Keep the childï¿½s world position.
 			[&]() { return _child->GetPosition(); },
 			// Snap the child to the parent's position.
 			[&]() { return GetPosition(); },
@@ -89,9 +90,9 @@ private:
 	{
 		const vector<function<Angle()>>& _computeRotation =
 		{
-			// Keep the child’s relative rotation to the parent.
+			// Keep the childï¿½s relative rotation to the parent.
 			[&]() { return _child->GetRotation() - GetRotation(); },
-			// Keep the child’s world rotation.
+			// Keep the childï¿½s world rotation.
 			[&]() { return _child->GetRotation(); },
 			// Snap the child to the parent's rotation.
 			[&]() { return GetRotation(); },
@@ -104,9 +105,9 @@ private:
 	{
 		const vector<function<Vector2f()>>& _computeScale =
 		{
-			// Keep the child’s relative scale to the parent.
+			// Keep the childï¿½s relative scale to the parent.
 			[&]() { return _child->GetScale() - GetScale(); },
-			// Keep the child’s world scale.
+			// Keep the childï¿½s world scale.
 			[&]() { return _child->GetScale(); },
 			// Snap the child to the parent's scale.
 			[&]() { return GetScale(); },
@@ -266,7 +267,7 @@ public:
 
 	void AddComponent(Component* _component);
 	void RemoveComponent(Component* _component);
-	template <typename T>
+	template <typename T, IS_BASE_OF(Component, T)>
 	T* GetComponent()
 	{
 		for (Component* _component : components)
@@ -274,6 +275,10 @@ public:
 			if (is_same_v<decltype(_component), T*>)
 			{
 				return dynamic_cast<T*>(_component);
+			}
+			if (T* _newComponent = dynamic_cast<T*>(_component))
+			{
+				return _newComponent;
 			}
 		}
 

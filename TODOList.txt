@@ -3,17 +3,15 @@
 
 Sacha :
 
-- Merge 
-- Mettre a jour le travail de romain + sev + yoan
-- Séparé le movement component du player et des enemies
-
+- Patch Position Projectile		
+- Boutons
 
 //////////////////////////////////////////////////////////////////////////////////
 
-Romain : 
+Alexandre : 
 
-- Projectile												
-	- implémenter le PlayerEnemyMovementComponent de l'asteroid		
+- collision
+
 
 //////////////////////////////////////////////////////////////////////////////////
 

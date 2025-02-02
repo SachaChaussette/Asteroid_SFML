@@ -226,7 +226,6 @@ public:
 		bool _isSmooth = true, const size_t& _pointCount = 30U); // Circle
 	ShapeObject(const Vector2f& _size, const string& _path = "", const TextureExtensionType& _textureType = PNG,
 		const IntRect& _rect = IntRect(), bool _isRepeated = false, bool _isSmooth = true); // Rectangle
-	ShapeObject(const RectangleShapeData& _data); // Rectangle v2
 	ShapeObject(const vector<Vector2f> point, const string& _path = "", const TextureExtensionType& _textureType = PNG,
 		const IntRect& _rect = IntRect(), bool _isRepeated = false, bool _isSmooth = true); // convex
 	ShapeObject(const ShapeObject& _other);

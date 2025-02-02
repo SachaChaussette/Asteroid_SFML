@@ -13,10 +13,11 @@ MeshComponent::MeshComponent(Actor* _owner, const Vector2f& _size, const string&
 {
 	shape = new ShapeObject(_size, _path, _textureType, _rect, _isRepeated, _isSmooth);
 }
-
-MeshComponent::MeshComponent(Actor* _owner, const RectangleShapeData& _data) : Component(_owner)
+MeshComponent::MeshComponent(Actor* _owner, const vector<Vector2f> point, const string& _path, 
+	const TextureExtensionType& _textureType, const IntRect& _rect,
+	bool _isRepeated, bool _isSmooth) : Component(_owner)
 {
-	shape = new ShapeObject(_data);
+	shape = new ShapeObject(point, _path, _textureType, _rect, _isRepeated, _isSmooth);
 }
 
 MeshComponent::MeshComponent(Actor* _owner, const vector<Vector2f> point, const string& _path, 
