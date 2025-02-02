@@ -10,7 +10,7 @@ class Player : public Entity
 {
 	ShootComponent* shoot;
 	PlayerMovementComponent* movement;
-
+  CollisionComponent* collision;
 public:
 	Player(const Vector2f& _size, const string& _path = "", const TextureExtensionType& _textureType = PNG,
 		const IntRect& _rect = {}, bool _isRepeated = false, bool _isSmooth = false,

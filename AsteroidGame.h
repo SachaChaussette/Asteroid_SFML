@@ -12,6 +12,10 @@ using namespace UI;
 
 class AsteroidGame : public Game
 {
+  Player* player;
+	set<Asteroid*> asteroids;
+	set<UFO*> ufos;
+
   float difficultyFactor;
 	u_int wavesCount;
 	u_int baseAsteroidCount;
@@ -33,4 +37,3 @@ public:
 private:
 	void InitUpgradeCanvas();
 };
-

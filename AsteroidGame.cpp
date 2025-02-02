@@ -1,3 +1,4 @@
+#include "CollisionComponent.h"
 #include "AsteroidGame.h"
 #include "Level.h"
 #include "MeshActor.h"
@@ -14,6 +15,10 @@
 
 AsteroidGame::AsteroidGame()
 {
+  player = nullptr;
+	asteroids = set<Asteroid*>();
+	ufos = set<UFO*>();
+  
 	canvas = nullptr;
 	windowSize = Vector2f();
 	menus = new MenuGame();
@@ -93,6 +98,37 @@ void AsteroidGame::LaunchGame()
 bool AsteroidGame::Update()
 {
 	Super::Update();
+
+	set<MeshActor*> _objects;
+	for (Asteroid* _asteroid : asteroids)
+	{
+		_objects.insert(_asteroid);
+	}
+	set<MeshActor*> _ufos;
+	for (UFO* _ufo : ufos)
+	{
+		_ufos.insert(_ufo);
+	}
+
+
+	player->collision->CheckCollide(player->GetMesh()->GetShape()->GetDrawable(), _objects, false);
+	player->collision->CheckCollide(player->GetMesh()->GetShape()->GetDrawable(), _ufos, true);
+	
+
+	set<Asteroid*> _asteroids;
+	for (MeshActor* _mesh : _objects)
+	{
+		_asteroids.insert(CAST(Asteroid*, _mesh));
+	}
+	set<UFO*> _newUfos;
+	for (MeshActor* _mesh : _ufos)
+	{
+		_newUfos.insert(CAST(UFO*, _mesh));
+	}
+
+	asteroids = _asteroids;
+	ufos = _newUfos;
+
 	return IsOver();
 }
 
@@ -174,3 +210,4 @@ void AsteroidGame::InitUpgradeCanvas()
 
 	canvas->AddWidget(_powerPickup);
 }
+

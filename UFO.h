@@ -32,5 +32,3 @@ public:
 	virtual void BeginPlay() override;
 	virtual void Deconstruct() override;
 };
-
-
