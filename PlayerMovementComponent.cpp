@@ -10,7 +10,7 @@ PlayerMovementComponent::PlayerMovementComponent(Actor* _owner) : Component(_own
 	deltaTime = 0.0f;
 	friction = 0.9f;
 	currentAngle = 270.0f;
-	maxVelocity = Vector2f(0.1f, 0.1f);
+	maxVelocity = Vector2f(0.5f, 0.5f);
 	acceleration = Vector2f();
 	direction = Vector2f(1.0f, 1.0f);
 

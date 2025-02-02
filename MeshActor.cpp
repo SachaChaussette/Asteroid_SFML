@@ -18,16 +18,10 @@ MeshActor::MeshActor(const Vector2f& _size, const string& _path, const TextureEx
 	mesh = CreateComponent<MeshComponent>(_size, _path, _textureType, _rect, _isRepeated, _isSmooth);
 	renderMeshToken = -1;
 }
-MeshActor::MeshActor(const RectangleShapeData& _data, const string& _name) : Actor(_name)
 
+MeshActor::MeshActor(const RectangleShapeData& _data, const string& _name) : Actor(_name)
 {
-	mesh = CreateComponent<MeshComponent>(_size, _path, _textureType, _rect, _isRepeated, _isSmooth);
-	renderMeshToken = -1;
-}
-MeshActor::MeshActor(const vector<Vector2f> point, const string& _path, const TextureExtensionType& _textureType,
-	const IntRect& _rect, bool _isRepeated, bool _isSmooth,const string& _name) : Actor(_name)
-{
-	mesh = CreateComponent<MeshComponent>(point, _path, _textureType, _rect, _isRepeated, _isSmooth);
+	mesh = CreateComponent<MeshComponent>(_data);
 	renderMeshToken = -1;
 }
 MeshActor::MeshActor(const vector<Vector2f> point, const string& _path, const TextureExtensionType& _textureType,

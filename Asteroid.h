@@ -6,7 +6,7 @@
 #include "SizeType.h"
 
 
-class Asteroid : public MeshActor
+class Asteroid : public Entity
 {
 	EnemyMovementComponent* movement;
 	//Servira pour la CollisionBox !

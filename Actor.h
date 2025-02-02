@@ -4,6 +4,7 @@
 #include "ITransformableViewer.h"
 #include "Component.h"
 #include "RootComponent.h"
+#include "LifeComponent.h"
 #include "TimerManager.h"
 
 class Actor : public Core, public ITransformableModifier, public ITransformableViewer
@@ -22,13 +23,6 @@ protected:
 	float lifeSpan;
 
 protected:
-	template <typename Type, typename ...Args, IS_BASE_OF(Component, Type)>
-	FORCEINLINE Type* CreateComponent(Args... _args)
-	{
-		Type* _component = new Type(this, _args...);
-		AddComponent(_component);
-		return _component;
-	}
 	FORCEINLINE void CreateSocket(const string& _name, const TransformData& _transform = TransformData(),
 		const AttachmentType& _type = AT_SNAP_TO_TARGET)
 	{
@@ -37,6 +31,17 @@ protected:
 	}
 
 public:
+	template <typename Type, typename ...Args, IS_BASE_OF(Component, Type)>
+	FORCEINLINE Type* CreateComponent(Args... _args)
+	{
+		Type* _component = new Type(this, _args...);
+		AddComponent(_component);
+		return _component;
+	}
+	FORCEINLINE void SetLifeSpan(const float _lifeSpan)
+	{
+		lifeSpan = _lifeSpan;
+	}
 	FORCEINLINE void SetToDelete()
 	{
 		isToDelete = true;

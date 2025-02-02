@@ -70,7 +70,7 @@ void AsteroidGame::Start()
 	/*new Timer<Seconds>([&]() {  }, seconds(1.0f), true, false);
 	new Timer<Seconds>([&]() { GenerateUFO(); }, seconds(1.0f), true, false);*/
 
-	//GeneratePlayer();
+	GeneratePlayer();
 
 
 	//TODO Temp

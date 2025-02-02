@@ -22,6 +22,12 @@ ShapeObject::ShapeObject(const vector<Vector2f> point, const string& _path, cons
 	InitConvex(*objectData.data.convexData);
 }
 
+ShapeObject::ShapeObject(const RectangleShapeData& _data)
+{
+	objectData = ShapeObjectData(SOT_RECTANGLE, _data);
+	InitRectangle(*objectData.data.rectangleData);
+}
+
 
 ShapeObject::ShapeObject(const ShapeObject& _other)
 {

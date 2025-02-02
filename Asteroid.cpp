@@ -10,14 +10,14 @@ Asteroid::Asteroid(const float _radius, const SizeType& _size, const string& _pa
 	movement = CreateComponent<EnemyMovementComponent>();
 	size = _size;
 	convexShapePoints =
-	{ 
-		{30.0f, 20.0f},		{80.0f, 0.0f}, 
-		{220.0f, 20.0f},	{260.0f, 60.0f}, 
-		{260.0f, 120.0f},	{230.0f, 180.0f}, 
-		{80.0f, 190.0f},	{60.0f, 180.0f}, 
-		{40.0f, 180.0f},	{0.0f, 100.0f}, 
+	{
+		{30.0f, 20.0f},		{80.0f, 0.0f},
+		{220.0f, 20.0f},	{260.0f, 60.0f},
+		{260.0f, 120.0f},	{230.0f, 180.0f},
+		{80.0f, 190.0f},	{60.0f, 180.0f},
+		{40.0f, 180.0f},	{0.0f, 100.0f},
 	};
-
+}
 Asteroid::Asteroid(const Asteroid& _other) : Entity(_other)
 {
 	movement = CreateComponent<EnemyMovementComponent>(_other.movement);

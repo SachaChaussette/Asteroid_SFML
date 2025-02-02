@@ -8,7 +8,7 @@ Entity::Entity(const u_int& _lifeCount, const float _radius, const u_int& _sprit
 {
 	spriteCount = _spriteCount;
 	animation = CreateComponent<AnimationComponent>();
-	life = CreateComponent<LifeComponent>(_lifeCount);
+	//life = CreateComponent<LifeComponent>(_lifeCount);
 }
 
 Entity::Entity(const u_int& _lifeCount, const Vector2f& _size, const u_int& _spriteCount, const string& _path, const TextureExtensionType& _textureType,
@@ -17,13 +17,13 @@ Entity::Entity(const u_int& _lifeCount, const Vector2f& _size, const u_int& _spr
 {
 	spriteCount = _spriteCount;
 	animation = CreateComponent<AnimationComponent>();
-	life = CreateComponent<LifeComponent>(_lifeCount);
+	//life = CreateComponent<LifeComponent>(_lifeCount);
 }
 
 Entity::Entity(const Entity& _other) : MeshActor(_other)
 {
 	animation = CreateComponent<AnimationComponent>(_other.animation);
-	life = CreateComponent<LifeComponent>(_other.life);
+	//life = CreateComponent<LifeComponent>(_other.life);
 	spriteCount = _other.spriteCount;
 	size = _other.size;
 }

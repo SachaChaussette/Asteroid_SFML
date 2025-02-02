@@ -21,8 +21,7 @@ UI::Image::Image(const Vector2f& _size, const string& _path,
 	gradient = VertexArray(PrimitiveType::TriangleStrip, 4);
 }
 
-UI::Image::Image(const RectangleShapeData& _data, const string& _name, const RenderType& _type)
-		: Widget(_name, _type)
+UI::Image::Image(const RectangleShapeData& _data, const string& _name, const RenderType& _type) : Widget(_name, _type)
 {
 	shape = new ShapeObject(_data);
 	sizeToContent = false;
