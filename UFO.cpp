@@ -6,7 +6,6 @@ UFO::UFO(const float _radius, const SizeType& _size, const string& _path, const 
 {
 	movement = CreateComponent<EnemyMovementComponent>();
 	shoot = CreateComponent<ShootComponent>();
-	collision = CreateComponent<CollisionComponent>();
 	convexShapePoints =
 	{ 
 		{170.0f, 70.0f},	{220.0f, 120.0f}, 
@@ -22,7 +21,6 @@ UFO::UFO(const UFO& _other) : Entity(_other)
 {
 	movement = CreateComponent<EnemyMovementComponent>(_other.movement);
 	shoot = CreateComponent<ShootComponent>(_other.shoot);
-	collision = CreateComponent<CollisionComponent>(_other.collision);
 	size = _other.size;
 
 }

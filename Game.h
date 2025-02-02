@@ -24,5 +24,7 @@ public:
 	virtual void Start();
 	virtual bool Update();
 	void UpdateWindow();
+	virtual void LaunchGame() {};
+
 	virtual void Stop();
 };

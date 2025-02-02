@@ -7,14 +7,13 @@ Player::Player(const Vector2f& _size, const string& _path, const TextureExtensio
 	: Entity(3, _size, 1, _path, _textureType, _rect, _isRepeated, _isSmooth, _name)
 {
 	movement = CreateComponent<PlayerMovementComponent>();
-  collision = CreateComponent<CollisionComponent>();
 	shoot = CreateComponent<ShootComponent>();
 }
 
 Player::Player(const Player& _other) : Entity(_other)
 {
 	movement = CreateComponent<PlayerMovementComponent>(_other.movement);
-collision = CreateComponent<CollisionComponent>(_other.collision);
+
 	shoot = CreateComponent<ShootComponent>(_other.shoot);
 
 }
@@ -68,3 +67,5 @@ void Player::Tick(const float _deltaTime)
 	Super::Tick(_deltaTime);
 	ComputeNewPositionIfNotInWindow();
 }
+
+

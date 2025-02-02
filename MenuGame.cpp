@@ -77,11 +77,12 @@ void MenuGame::InitMainMenu(Canvas* _canva)
 		if (Canvas* _canva = dynamic_cast<Canvas*>(M_HUD.GetCurrentWidget()))
 		{
 			_canva->RemoveWidgets();
+			M_GAME.GetCurrent()->LaunchGame();
 			//_canva = M_HUD.CreateWidget<Canvas>("Play Canva");
-			InitStartMenu(_canva);
+			/*InitStartMenu(_canva);
 			_canva->UpdateWidgets();
 			ApplyCanva(_canva);
-			M_HUD.SetCurrentWidget(_canva);
+			M_HUD.SetCurrentWidget(_canva);*/
 		}
 		else
 		{
@@ -330,16 +331,35 @@ void MenuGame::InitCredits(Canvas* _canva)
 	_credits->SetZOrder(3);
 
 	//TODO Add People
-	Label* _sacha = M_HUD.CreateWidget<Label>("Sasha - Leader (le goat)", Screen, "Daydream", TTF);
+	Label* _sacha = M_HUD.CreateWidget<Label>("Sacha - Lead", Screen, "Daydream", TTF);
 	_sacha->SetPosition(Vector2f(_windowSize.x * 0.33, _windowSize.y * 0.3));
 	_sacha->SetCharacterSize(20);
 	_sacha->SetZOrder(3);
 
-	Label* _etc = M_HUD.CreateWidget<Label>("...", Screen, "Daydream", TTF);
-	_etc->SetPosition(Vector2f(_windowSize.x * 0.48, _windowSize.y * 0.4));
-	_etc->SetCharacterSize(20);
-	_etc->SetZOrder(3);
+	Label* _alexandre = M_HUD.CreateWidget<Label>("Alexandre - Demarrage du Projet & Collisions", Screen, "Daydream", TTF);
+	_alexandre->SetPosition(Vector2f(_windowSize.x * 0.33, _windowSize.y * 0.4));
+	_alexandre->SetCharacterSize(20);
+	_alexandre->SetZOrder(3);
 
+	Label* _yoan = M_HUD.CreateWidget<Label>("Yoan - Shape & Convex", Screen, "Daydream", TTF);
+	_yoan->SetPosition(Vector2f(_windowSize.x * 0.33, _windowSize.y * 0.5));
+	_yoan->SetCharacterSize(20);
+	_yoan->SetZOrder(3);
+
+	Label* _sev = M_HUD.CreateWidget<Label>("Sev - Asteroides & Animations", Screen, "Daydream", TTF);
+	_sev->SetPosition(Vector2f(_windowSize.x * 0.33, _windowSize.y * 0.6));
+	_sev->SetCharacterSize(20);
+	_sev->SetZOrder(3);
+
+	Label* _romain = M_HUD.CreateWidget<Label>("Romain - UFOs", Screen, "Daydream", TTF);
+	_romain->SetPosition(Vector2f(_windowSize.x * 0.33, _windowSize.y * 0.7));
+	_romain->SetCharacterSize(20);
+	_romain->SetZOrder(3);
+
+	Label* _quentin = M_HUD.CreateWidget<Label>("Quentin - Menus", Screen, "Daydream", TTF);
+	_quentin->SetPosition(Vector2f(_windowSize.x * 0.33, _windowSize.y * 0.8));
+	_quentin->SetCharacterSize(20);
+	_quentin->SetZOrder(3);
 
 	Label* _back = M_HUD.CreateWidget<Label>("Back", Screen, "Daydream", TTF);
 	_back->SetPosition(Vector2f(_windowSize.x * 0.05, _windowSize.y * 0.9));
@@ -348,7 +368,11 @@ void MenuGame::InitCredits(Canvas* _canva)
 
 	_canva->AddWidget(_credits);
 	_canva->AddWidget(_sacha);
-	_canva->AddWidget(_etc);
+	_canva->AddWidget(_alexandre);
+	_canva->AddWidget(_yoan);
+	_canva->AddWidget(_sev);
+	_canva->AddWidget(_romain);
+	_canva->AddWidget(_quentin);
 	_canva->AddWidget(_back);
 }
 
