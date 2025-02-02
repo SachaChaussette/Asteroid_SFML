@@ -1,3 +1,4 @@
+
 #include "Asteroid.h"
 #include "GameManager.h"
 #include "Level.h"
@@ -36,30 +37,6 @@ void Asteroid::ComputeNewDirection()
 	GetMovement()->SetDirection(Vector2f(
 	GetRandomNumberInRange(0.01f, 1.0f),
 	GetRandomNumberInRange(-1.0f, 1.0f)));
-}
-
-void Asteroid::ComputeNewPositionIfNotInWindow()
-{
-	const Vector2f& _windowSize = CAST(Vector2f, M_GAME.GetCurrent()->GetWindowSize());
-	const Vector2f& _asteroidPosition= GetPosition();
-	const Vector2f& _asteroidScale = GetScale();
-	const Vector2f& _asteroidSize = Vector2f(_asteroidScale.x, _asteroidScale.y) / 2.0f;
-	if ((_asteroidPosition.x + _asteroidSize.x) < 0.0f )
-	{
-		SetPosition({ _windowSize.x + _asteroidSize.x, _asteroidPosition.y });
-	}
-	else if ((_asteroidPosition.x - _asteroidSize.x) > _windowSize.x)
-	{
-		SetPosition({0.0f - _asteroidSize.x, _asteroidPosition.y });
-	}
-	if ((_asteroidPosition.y + _asteroidSize.y) < 0.0f)
-	{
-		SetPosition({ _asteroidPosition.x , _windowSize.y + _asteroidSize.y});
-	}
-	else if ((_asteroidPosition.y - _asteroidSize.y) > _windowSize.y)
-	{
-		SetPosition({ _asteroidPosition.x, 0.0f - _asteroidSize.y });
-	}
 }
 
 void Asteroid::Construct()

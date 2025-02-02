@@ -63,6 +63,10 @@ public:
 		Super::Scale(_factor);
 		mesh->GetShape()->Scale(_factor);
 	}
+	FORCEINLINE void SetFillColor(const Color& _color)
+	{
+		mesh->GetShape()->GetDrawable()->setFillColor(_color);
+	}
 
 	#pragma endregion
 
@@ -74,6 +78,9 @@ public:
 	MeshActor(const Vector2f& _size, const string& _path = "", const TextureExtensionType& _textureType = PNG,
 			const IntRect& _rect = {}, bool _isRepeated = false, bool _isSmooth = true, 
 			const string& _name = "MeshActor");
+
+	MeshActor(const RectangleShapeData& _data, const string& _name = "MeshActor"); // Rectangle v2
+
 	MeshActor(const vector<Vector2f> point, const string& _path = "", const TextureExtensionType& _textureType = PNG, 
 			const IntRect& _rect = {}, bool _isRepeated = false, bool _isSmooth = true, 
 			const string& _name = "MeshActor");

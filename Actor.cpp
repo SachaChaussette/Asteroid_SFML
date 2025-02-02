@@ -68,6 +68,10 @@ void Actor::BeginDestroy()
 	{
 		_component->BeginDestroy();
 	}
+	for (Actor* _child : children)
+	{
+		_child->BeginDestroy();
+	}
 }
 
 void Actor::Destroy()

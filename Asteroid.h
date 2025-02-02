@@ -8,10 +8,6 @@
 class Asteroid : public MeshActor
 {
 	EnemyMovementComponent* movement;
-	AnimationComponent* animation;
-	u_int spriteCount;
-	SizeType size;
-
 	//Servira pour la CollisionBox !
 	vector<Vector2f> convexShapePoints;
 
@@ -29,8 +25,6 @@ public:
 		const TextureExtensionType& _textureType = PNG, const IntRect& _rect = {});
 	Asteroid(const Asteroid& _other);
 
-protected:
-	void ComputeNewPositionIfNotInWindow();
 public: 
 
 	virtual void Construct() override;

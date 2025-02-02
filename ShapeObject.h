@@ -228,6 +228,7 @@ public:
 		const IntRect& _rect = IntRect(), bool _isRepeated = false, bool _isSmooth = true); // Rectangle
 	ShapeObject(const vector<Vector2f> point, const string& _path = "", const TextureExtensionType& _textureType = PNG,
 		const IntRect& _rect = IntRect(), bool _isRepeated = false, bool _isSmooth = true); // convex
+	ShapeObject(const RectangleShapeData& _data); 
 	ShapeObject(const ShapeObject& _other);
 	~ShapeObject();
 

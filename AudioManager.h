@@ -2,6 +2,7 @@
 #include "Singleton.h"
 #include "Sample.h"
 #include "SoundSample.h"
+#include "MusicSample.h"
 
 enum AudioExtensionType
 {
