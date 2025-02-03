@@ -19,9 +19,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Script\Menus">
-      <UniqueIdentifier>{1b43bcd9-9250-4b2c-9f4b-bbb2aa84f9a2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Script\Game">
       <UniqueIdentifier>{6ffc15a9-349c-4401-8cea-a25b0015ee19}</UniqueIdentifier>
     </Filter>
@@ -82,9 +79,6 @@
     <Filter Include="Script\Manager\Timer">
       <UniqueIdentifier>{094c05c5-8387-4ced-8e16-e382291f3ce8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Script\Manager\Menu">
-      <UniqueIdentifier>{48178117-4ef0-438b-8d2b-3acd00858d2c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Script\Animation">
       <UniqueIdentifier>{6ef10bbf-8443-4440-8f38-c1e0235bbcf6}</UniqueIdentifier>
     </Filter>
@@ -108,9 +102,6 @@
     </Filter>
     <Filter Include="Script\Manager\Font">
       <UniqueIdentifier>{e8d5ab2b-17ab-4998-9744-35e28e1aa780}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Script\Core\Actor\Label">
-      <UniqueIdentifier>{c9825337-b29c-47a7-aec4-ccc05e905467}</UniqueIdentifier>
     </Filter>
     <Filter Include="Script\Level">
       <UniqueIdentifier>{a5b0ded4-8981-4d0e-a0d6-a583b1a11a2c}</UniqueIdentifier>
@@ -183,9 +174,6 @@
     <ClInclude Include="Game.h">
       <Filter>Script\Game</Filter>
     </ClInclude>
-    <ClInclude Include="Menu.h">
-      <Filter>Script\Menus</Filter>
-    </ClInclude>
     <ClInclude Include="Actor.h">
       <Filter>Script\Core\Actor</Filter>
     </ClInclude>
@@ -252,9 +240,6 @@
     <ClInclude Include="TimerManager.h">
       <Filter>Script\Manager\Timer</Filter>
     </ClInclude>
-    <ClInclude Include="MenuManager.h">
-      <Filter>Script\Manager\Menu</Filter>
-    </ClInclude>
     <ClInclude Include="Sample.h">
       <Filter>Script\Audio</Filter>
     </ClInclude>
@@ -284,9 +269,6 @@
     </ClInclude>
     <ClInclude Include="AudioManager.h">
       <Filter>Script\Manager\Audio</Filter>
-    </ClInclude>
-    <ClInclude Include="Label.h">
-      <Filter>Script\Core\Actor\Label</Filter>
     </ClInclude>
     <ClInclude Include="Spawner.h">
       <Filter>Script\Core\Actor\Spawner</Filter>
@@ -351,34 +333,13 @@
     <ClInclude Include="LifeComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Button.h">
-      <Filter>Script</Filter>
-    </ClInclude>
-    <ClInclude Include="Canvas.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HUD.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Image.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuGame.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="RenderType.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Widget.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Script\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="Menu.cpp">
-      <Filter>Script\Menus</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Script\Game</Filter>
@@ -452,9 +413,6 @@
     <ClCompile Include="TimerManager.cpp">
       <Filter>Script\Manager\Timer</Filter>
     </ClCompile>
-    <ClCompile Include="MenuManager.cpp">
-      <Filter>Script\Manager\Menu</Filter>
-    </ClCompile>
     <ClCompile Include="Animation.cpp">
       <Filter>Script\Animation</Filter>
     </ClCompile>
@@ -472,9 +430,6 @@
     </ClCompile>
     <ClCompile Include="CameraActor.cpp">
       <Filter>Script\Core\Actor\Camera</Filter>
-    </ClCompile>
-    <ClCompile Include="Label.cpp">
-      <Filter>Script\Core\Actor\Label</Filter>
     </ClCompile>
     <ClCompile Include="Level.cpp">
       <Filter>Script\Level</Filter>
@@ -534,24 +489,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="LifeComponent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Button.cpp">
-      <Filter>Script</Filter>
-    </ClCompile>
-    <ClCompile Include="Canvas.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HUD.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Image.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MenuGame.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Widget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Projectile.cpp">

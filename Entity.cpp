@@ -2,8 +2,21 @@
 #include "GameManager.h"
 
 
-Entity::Entity(const u_int& _lifeCount, const float _radius, const u_int& _spriteCount, const string& _path, const TextureExtensionType& _textureType, 
-	const IntRect& _rect, bool _isRepeated, bool _isSmooth, const string& _name)
+Entity::Entity(const u_int& _lifeCount, const SizeType& _size, const u_int& _spriteCount, const MeshActor& _mesh, 
+	const ActorType& _ownerType, const set<ActorType>& _blackList, const CollisionType& _type, const LayerType& _layer)
+	: MeshActor(_mesh)
+{
+	animation = CreateComponent<AnimationComponent>();
+	collision = CreateComponent<CollisionComponent>(_ownerType, _type, _layer, _blackList, bind(&LifeComponent::DecrementLife, life));
+	life = CreateComponent<LifeComponent>(_lifeCount);
+	
+	size = _size;
+	spriteCount = _spriteCount;
+}
+
+Entity::Entity(const u_int& _lifeCount, const float _radius, const u_int& _spriteCount, const string& _path,
+	const TextureExtensionType& _textureType, const IntRect& _rect, bool _isRepeated, bool _isSmooth, 
+	const string& _name)
 	: MeshActor(_radius, _path, _textureType, _rect, _isRepeated, _isSmooth, 30U, _name)
 {
 	spriteCount = _spriteCount;
@@ -23,7 +36,8 @@ Entity::Entity(const u_int& _lifeCount, const Vector2f& _size, const u_int& _spr
 Entity::Entity(const Entity& _other) : MeshActor(_other)
 {
 	animation = CreateComponent<AnimationComponent>(_other.animation);
-	//life = CreateComponent<LifeComponent>(_other.life);
+	collision = CreateComponent<CollisionComponent>(_other.collision);
+	life = CreateComponent<LifeComponent>(_other.life);
 	spriteCount = _other.spriteCount;
 	size = _other.size;
 }

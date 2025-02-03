@@ -5,10 +5,9 @@
 
 Asteroid::Asteroid(const float _radius, const SizeType& _size, const string& _path
 	, const TextureExtensionType& _textureType, const IntRect& _rect)
-	: Entity(1, _radius, 26, "Asteroid/" + _path, _textureType, _rect)
+	: Entity(1, _size, 26, MeshActor(_radius, "Asteroid/" + _path, _textureType, _rect), AT_ASTEROID, { AT_ASTEROID })
 {
 	movement = CreateComponent<EnemyMovementComponent>();
-	size = _size;
 	convexShapePoints =
 	{
 		{30.0f, 20.0f},		{80.0f, 0.0f},

@@ -2,7 +2,7 @@
 
 #include "Component.h"
 
-class LifeComponent : Component
+class LifeComponent : public Component
 {
 	u_int lifeCount;
 
@@ -18,7 +18,7 @@ public:
 	}
 public:
 	LifeComponent(Actor* _owner, const u_int& _lifeCount);
-	LifeComponent(Actor* _owner, const LifeComponent& _other);
+	LifeComponent(Actor* _owner, const LifeComponent* _other);
 public:
 	void Death();
 };
