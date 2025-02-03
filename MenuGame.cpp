@@ -76,6 +76,7 @@ void MenuGame::InitMainMenu(Canvas* _canva)
 	{ 
 		if (Canvas* _canva = dynamic_cast<Canvas*>(M_HUD.GetCurrentWidget()))
 		{
+			_canva->Destroy();
 			_canva->RemoveWidgets();
 			M_GAME.GetCurrent()->LaunchGame();
 			//_canva = M_HUD.CreateWidget<Canvas>("Play Canva");

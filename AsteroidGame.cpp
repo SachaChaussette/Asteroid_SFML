@@ -54,6 +54,9 @@ void AsteroidGame::Start()
 {
 	Super::Start();
 	
+	//LaunchGame();
+
+
 	menus->Start();
 
 	windowSize = CAST(Vector2f, M_GAME.GetCurrent()->GetWindowSize());
@@ -86,8 +89,11 @@ void AsteroidGame::LaunchGame()
 	//menus->Reset();
 	Level::SpawnActor(MeshActor(CAST(Vector2f, GetWindowSize()), "InGameBackground"));
 
-	new Timer<Seconds>([&]() { GenerateAsteroid(); }, seconds(1.0f), true, false);
-	new Timer<Seconds>([&]() { GenerateUFO(); }, seconds(1.0f), true, false);
+	for (u_int _index = 0; _index < 5; _index++)
+	{
+		GenerateAsteroid();
+	}
+	new Timer<Seconds>([&]() { GenerateUFO(); }, seconds(10.0f), true, true);
 
 	GeneratePlayer();
 }
