@@ -4,6 +4,7 @@
 #include "AnimationComponent.h"
 #include "EnemyMovementComponent.h"
 #include "SizeType.h"
+#include "CollisionComponent.h"
 
 
 class Asteroid : public Entity

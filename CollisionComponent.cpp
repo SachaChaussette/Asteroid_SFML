@@ -1,36 +1,19 @@
 #include "CollisionComponent.h"
-#include "Entity.h"
 #include "ActorManager.h"
 
-CollisionComponent::CollisionComponent(Actor* _owner, const ActorType& _ownerType, const CollisionType& _type,
-	const LayerType& _layer, const set<ActorType>& _blackList, const function<void()> _callback) 
-	: Component(_owner)
+CollisionComponent::CollisionComponent(Actor* _owner, const string& _channelName, const int _status, const CollisionType& _type) : Component(_owner)
 {
-	ownerType = _ownerType;
+	channelName = _channelName;
 	type = _type;
-	layer = _layer;
-	blackList = _blackList;
-	callback = _callback;
+	status = _status;
 }
 
-CollisionComponent::CollisionComponent(Actor* _owner, const CollisionComponent* _other) : Component(_owner)
+CollisionComponent::CollisionComponent(Actor* _owner, const CollisionComponent& _other) : Component(_owner)
 {
-	ownerType = _other->ownerType;
-	type = _other->type;
-	layer = _other->layer;
-	blackList = _other->blackList;
-	callback = _other->callback;
-}
-
-bool CollisionComponent::IsBlackListed(CollisionComponent* _otherCollision)
-{
-	// si le type de l'entiy est dans la blackList passe à l'entity suivant
-	for (ActorType _type : blackList)
-	{
-		const ActorType& _otherType = _otherCollision->GetActorType();
-		if (_otherType == _type) return true;
-	}
-	return false;
+	channelName = _other.channelName;
+	type = _other.type;
+	status = _other.status;
+	responses = _other.responses;
 }
 
 void CollisionComponent::Tick(const float _deltaTime)
@@ -41,48 +24,29 @@ void CollisionComponent::Tick(const float _deltaTime)
 
 void CollisionComponent::CheckCollision()
 {
-	// si on à une collision de type NONE on return
-	if (type == CT_NONE) return;
-
-	if (!Cast<Entity>(owner))
-	{
-		LOG(Warning, "Actor n'est pas une Entity");
-		return;
-	}
+	// changer en flag et tester s'il contient le flag 'IS_PHYSIC'
+	if (!(status & IS_PHYSIC)) return;
 
 	const set<Actor*>& _allActors = M_ACTOR.GetAllActors();
+	const FloatRect& _ownerRect = Cast<MeshActor>(owner)->GetHitbox();
 	
-	// pour chaque actor si l'actor est un entity alors il fait partie de _allEntities
-	vector<Entity*> _allEntities = vector<Entity*>();
-	for (Actor* _actor : _allActors)
+	for (Actor* _other : _allActors)
 	{
-		if (Entity* _entity = Cast<Entity>(_actor))
+		if (CollisionComponent* _otherCollision = _other->GetComponent<CollisionComponent>())
 		{
-			_allEntities.push_back(_entity);
-		}
-	}
+			const string& _otherName = _otherCollision->GetChannelName();
+			if (!responses.contains(_otherName)) continue;
 
-	Entity* _owner = Cast<Entity>(owner);
+			const CollisionType& _response = responses.at(_otherName);
+			if (_response == CT_NONE) continue;
 
-	// TODO Changer
-	const FloatRect& _ownerRect = _owner->GetMesh()->GetShape()->GetDrawable()->getGlobalBounds();
-
-	for (Entity* _other : _allEntities)
-	{
-		CollisionComponent* _otherCollision = _other->GetCollision();
-
-		// si l'entity à une collision de type NONE on return
-		if (_otherCollision->GetCollisionType() == CT_NONE) continue;
-
-		if (IsBlackListed(_otherCollision)) continue;
-
-		// TODO Change
-		const FloatRect& _otherRect = _other->GetMesh()->GetShape()->GetDrawable()->getGlobalBounds();
-
-		// Collision
-		if (_ownerRect.findIntersection(_otherRect))
-		{
-			callback();
+			const FloatRect& _otherRect = Cast<MeshActor>(_other)->GetHitbox();
+			if (const optional<FloatRect> _intersection = _ownerRect.findIntersection(_otherRect))
+			{
+				const CollisionData& _data = { _other, _response, *_intersection };
+				owner->OnCollision(_data);
+				_other->OnCollision(_data);
+			}
 		}
 	}
 }

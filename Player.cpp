@@ -3,11 +3,20 @@
 #include "TimerManager.h"
 
 Player::Player(const Vector2f& _size, const string& _path, const TextureExtensionType& _textureType, 
-	const IntRect& _rect, bool _isRepeated, bool _isSmooth, const string& _name) 
-	: Entity(3, SMALL, 1, MeshActor(_size, _path, _textureType, _rect, _isRepeated, _isSmooth, _name), AT_PLAYER, { AT_PLAYER })
+	const IntRect& _rect, bool _isRepeated, bool _isSmooth, const string& _name)
+	: Entity(3, SMALL, 1, MeshActor(_size, _path, _textureType, _rect, _isRepeated, _isSmooth, _name), "Player")
 {
 	movement = CreateComponent<PlayerMovementComponent>();
 	shoot = CreateComponent<ShootComponent>();
+
+	const vector<pair<string, CollisionType>>& _responses
+	{
+		{"Player", CT_NONE},
+		{"Asteroid", CT_OVERLAP},
+		{"UFO", CT_OVERLAP},
+		{"Projectile", CT_OVERLAP},
+	};
+	GetCollision()->AddResponses(_responses);
 }
 
 Player::Player(const Player& _other) : Entity(_other)

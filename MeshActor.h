@@ -9,6 +9,10 @@ class MeshActor : public Actor
 	u_int renderMeshToken;
 
 public:
+	FORCEINLINE FloatRect GetHitbox() const
+	{
+		return mesh->GetShape()->GetDrawable()->getGlobalBounds();
+	}
 	FORCEINLINE MeshComponent* GetMesh() const
 	{
 		return mesh;

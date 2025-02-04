@@ -5,7 +5,7 @@
 
 Asteroid::Asteroid(const float _radius, const SizeType& _size, const string& _path
 	, const TextureExtensionType& _textureType, const IntRect& _rect)
-	: Entity(1, _size, 26, MeshActor(_radius, "Asteroid/" + _path, _textureType, _rect), AT_ASTEROID, { AT_ASTEROID })
+	: Entity(1, _size, 26, MeshActor(_radius, "Asteroid/" + _path, _textureType, _rect), "Asteroid")
 {
 	movement = CreateComponent<EnemyMovementComponent>();
 	convexShapePoints =
@@ -16,6 +16,15 @@ Asteroid::Asteroid(const float _radius, const SizeType& _size, const string& _pa
 		{80.0f, 190.0f},	{60.0f, 180.0f},
 		{40.0f, 180.0f},	{0.0f, 100.0f},
 	};
+
+	const vector<pair<string, CollisionType>>& _responses
+	{
+		{"Player", CT_OVERLAP},
+		{"Asteroid", CT_NONE},
+		{"UFO", CT_OVERLAP},
+		{"Projectile", CT_OVERLAP},
+	};
+	GetCollision()->AddResponses(_responses);
 }
 Asteroid::Asteroid(const Asteroid& _other) : Entity(_other)
 {

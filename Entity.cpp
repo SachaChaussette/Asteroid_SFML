@@ -1,15 +1,13 @@
 #include "Entity.h"
 #include "GameManager.h"
 
-
-Entity::Entity(const u_int& _lifeCount, const SizeType& _size, const u_int& _spriteCount, const MeshActor& _mesh, 
-	const ActorType& _ownerType, const set<ActorType>& _blackList, const CollisionType& _type, const LayerType& _layer)
-	: MeshActor(_mesh)
+Entity::Entity(const u_int& _lifeCount, const SizeType& _size, const u_int& _spriteCount, const MeshActor& _mesh,
+	const string& _name) : MeshActor(_mesh)
 {
 	animation = CreateComponent<AnimationComponent>();
 	life = CreateComponent<LifeComponent>(_lifeCount);
-	collision = CreateComponent<CollisionComponent>(_ownerType, _type, _layer, _blackList, bind(&LifeComponent::DecrementLife, life));
-	
+	collision = CreateComponent<CollisionComponent>(_name, IS_ALL, CT_OVERLAP);
+
 	size = _size;
 	spriteCount = _spriteCount;
 }
@@ -18,7 +16,7 @@ Entity::Entity(const Entity& _other) : MeshActor(_other)
 {
 	animation = CreateComponent<AnimationComponent>(_other.animation);
 	life = CreateComponent<LifeComponent>(_other.life);
-	collision = CreateComponent<CollisionComponent>(_other.collision);
+	collision = CreateComponent<CollisionComponent>(*_other.collision);
 	spriteCount = _other.spriteCount;
 	size = _other.size;
 }

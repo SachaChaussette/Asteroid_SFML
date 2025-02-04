@@ -2,7 +2,7 @@
 #include "GameManager.h"
 
 UFO::UFO(const float _radius, const SizeType& _size, const string& _path, const TextureExtensionType& _textureType,
-	const IntRect& _rect) : Entity(1, _size, 4, MeshActor(_radius, "UFO/" + _path, _textureType, _rect, false, false), AT_UFO, {AT_UFO})
+	const IntRect& _rect) : Entity(1, _size, 4, MeshActor(_radius, "UFO/" + _path, _textureType, _rect, false, false), "UFO")
 {
 	movement = CreateComponent<EnemyMovementComponent>();
 	shoot = CreateComponent<ShootComponent>();
@@ -14,6 +14,15 @@ UFO::UFO(const float _radius, const SizeType& _size, const string& _path, const 
 		{30.0f, 210.0f},	{0.0f, 180.0f},
 		{30.0f, 150.0f},	{110.0f, 120.0f}, 
 	};
+
+	const vector<pair<string, CollisionType>>& _responses
+	{
+		{"Player", CT_OVERLAP},
+		{"Asteroid", CT_OVERLAP},
+		{"UFO", CT_NONE},
+		{"Projectile", CT_OVERLAP},
+	};
+	GetCollision()->AddResponses(_responses);
 }
 
 UFO::UFO(const UFO& _other) : Entity(_other)

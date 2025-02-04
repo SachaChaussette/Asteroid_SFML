@@ -5,6 +5,7 @@
 #include "AnimationComponent.h"
 #include "CollisionComponent.h"
 #include "LifeComponent.h"
+#include "Layer.h"
 
 class Entity : public MeshActor
 {
@@ -16,13 +17,14 @@ protected:
 	u_int spriteCount;
 	SizeType size;
 public:
+
 	FORCEINLINE CollisionComponent* GetCollision() const
 	{
 		return collision;
 	}
 public:
-	Entity(const u_int& _lifeCount, const SizeType& _size, const u_int& _spriteCount, const MeshActor& _mesh,
-		const ActorType& _ownerType, const set<ActorType>& _blackList = {}, const CollisionType& _type = CT_OVERLAP, const LayerType& _layer = LT_DYNAMIC);
+	Entity(const u_int& _lifeCount, const SizeType& _size, const u_int& _spriteCount, const MeshActor& _mesh, 
+		const string& _name);
 	Entity(const Entity& _other);
 protected:
 	virtual void Tick(const float _deltaTime) override;
