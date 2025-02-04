@@ -33,7 +33,7 @@ void AsteroidGame::GenerateAsteroid()
 
 void AsteroidGame::GenerateUFO()
 {
-	const string& _finalPath = "UFOSpriteSheet_1" + to_string(GetRandomNumberInRange(1, 3));
+	const string& _finalPath = "UFOSpriteSheet_" + to_string(GetRandomNumberInRange(1, 3));
 	UFO* _ufo = Level::SpawnActor(UFO(110.0f, MEDIUM, _finalPath));
 	_ufo->SetOriginAtMiddle();
 	_ufo->SetPosition({ 0.0f, GetRandomNumberInRange(0.0f, CAST(float, GetWindowSize().y))});
@@ -55,11 +55,11 @@ void AsteroidGame::LaunchGame()
 
 	Level::SpawnActor(MeshActor(CAST(Vector2f, GetWindowSize()), "InGameBackground"));
 
-	for (u_int _index = 0; _index < 5; _index++)
+	for (u_int _index = 0; _index < 1; _index++)
 	{
 		GenerateAsteroid();
 	}
-	new Timer<Seconds>([&]() { GenerateUFO(); }, seconds(10.0f), true, true);
+	//new Timer<Seconds>([&]() { GenerateUFO(); }, seconds(10.0f), true, true);
 
 	GeneratePlayer();
 }

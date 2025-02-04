@@ -46,15 +46,5 @@ void Asteroid::Tick(const float _deltaTime)
 
 void Asteroid::Deconstruct()
 {
-	if (size > SMALL)
-	{
-		for (size_t _i = 0; _i < 2; _i++)
-		{
-			Asteroid* _smallerAsteroid1 = Level::SpawnActor(Asteroid(SizeType(size - 1)));
-			_smallerAsteroid1->ComputeNewDirection();
-			_smallerAsteroid1->SetOriginAtMiddle();
-			_smallerAsteroid1->SetPosition(GetPosition());
-		}
-	}
 	Super::Deconstruct();
 }

@@ -13,6 +13,7 @@ public:
 	}
 	FORCEINLINE void DecrementLife()
 	{
+		LOG(Warning, "Life : " + to_string(lifeCount));
 		--lifeCount;
 		if (lifeCount <= 0) Death();
 	}

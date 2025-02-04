@@ -7,8 +7,8 @@ Entity::Entity(const u_int& _lifeCount, const SizeType& _size, const u_int& _spr
 	: MeshActor(_mesh)
 {
 	animation = CreateComponent<AnimationComponent>();
-	collision = CreateComponent<CollisionComponent>(_ownerType, _type, _layer, _blackList, bind(&LifeComponent::DecrementLife, life));
 	life = CreateComponent<LifeComponent>(_lifeCount);
+	collision = CreateComponent<CollisionComponent>(_ownerType, _type, _layer, _blackList, bind(&LifeComponent::DecrementLife, life));
 	
 	size = _size;
 	spriteCount = _spriteCount;
@@ -36,8 +36,8 @@ Entity::Entity(const u_int& _lifeCount, const Vector2f& _size, const u_int& _spr
 Entity::Entity(const Entity& _other) : MeshActor(_other)
 {
 	animation = CreateComponent<AnimationComponent>(_other.animation);
-	collision = CreateComponent<CollisionComponent>(_other.collision);
 	life = CreateComponent<LifeComponent>(_other.life);
+	collision = CreateComponent<CollisionComponent>(_other.collision);
 	spriteCount = _other.spriteCount;
 	size = _other.size;
 }

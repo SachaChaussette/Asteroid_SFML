@@ -82,7 +82,6 @@ void CollisionComponent::CheckCollision()
 		// Collision
 		if (_ownerRect.findIntersection(_otherRect))
 		{
-			LOG(Warning, "COLLISION");
 			callback();
 		}
 	}
