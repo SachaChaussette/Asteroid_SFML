@@ -1,6 +1,5 @@
 #include "Game.h"
 #include "AsteroidGame.h"
-#include "MenuGame.h"
 #include "GameManager.h"
 
 void InitConfig()

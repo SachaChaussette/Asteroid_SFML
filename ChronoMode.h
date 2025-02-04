@@ -7,16 +7,19 @@ using namespace UI;
 
 class ChronoMode : public GameMode
 {
-	u_int timerCount;
-	u_int currentTime;
+	int timerCount;
+	int currentTime;
 
 	Label* chrono;
 
-
-
 public:
-	ChronoMode(const u_int& _timerCount);
+	ChronoMode(const int _timerCount);
 
+private:
+	void ComputeTime();
+	void ResetTime();
+	
+	virtual void Stop() override;
 public:
 	virtual void Start() override;
 	virtual void Update() override;

@@ -7,9 +7,12 @@ class GameMode
 	string name;
 public:
 	GameMode(const string& _name);
-protected:
-	virtual void Start() = 0;
-	virtual void Update() = 0;
-	virtual void Stop() = 0;
+public:
+	virtual void Start() {};
+	virtual void Update() {};
+	virtual void Stop() {};
+	void GenerateAsteroid();
+	void GenerateUFO();
+	void GeneratePlayer();
 };
 
