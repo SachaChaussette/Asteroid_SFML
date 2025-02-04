@@ -5,7 +5,6 @@
 
 #include "Canvas.h"
 
-#include "MenuGame.h"
 
 using namespace UI;
 
@@ -17,7 +16,7 @@ class AsteroidGame : public Game
 	u_int baseAsteroidCount;
 	Canvas* canvas;
 	Vector2f windowSize;
-	MenuGame* menus;
+
 public:
 	AsteroidGame();
 public:
@@ -30,7 +29,5 @@ public:
 	virtual bool Update() override;
 	virtual void Stop() override;
 
-private:
-	void InitUpgradeCanvas();
 };
 

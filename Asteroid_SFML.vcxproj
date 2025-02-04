@@ -151,6 +151,7 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClCompile Include="CameraComponent.cpp" />
     <ClCompile Include="CameraManager.cpp" />
     <ClCompile Include="Canvas.cpp" />
+    <ClCompile Include="ChronoMode.cpp" />
     <ClCompile Include="CircleActor.cpp" />
     <ClCompile Include="CollisionComponent.cpp" />
     <ClCompile Include="Color.cpp" />
@@ -161,6 +162,7 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="GameMode.cpp" />
     <ClCompile Include="HUD.cpp" />
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="InputManager.cpp" />
@@ -169,9 +171,6 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClCompile Include="LifeComponent.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Menu.cpp" />
-    <ClCompile Include="MenuGame.cpp" />
-    <ClCompile Include="MenuManager.cpp" />
     <ClCompile Include="MeshActor.cpp" />
     <ClCompile Include="MeshComponent.cpp" />
     <ClCompile Include="EnemyMovementComponent.cpp" />
@@ -214,6 +213,7 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClInclude Include="CameraComponent.h" />
     <ClInclude Include="CameraManager.h" />
     <ClInclude Include="Canvas.h" />
+    <ClInclude Include="ChronoMode.h" />
     <ClInclude Include="CircleActor.h" />
     <ClInclude Include="CollisionComponent.h" />
     <ClInclude Include="Color.h" />
@@ -225,6 +225,7 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClInclude Include="FontManager.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameManager.h" />
+    <ClInclude Include="GameMode.h" />
     <ClInclude Include="HUD.h" />
     <ClInclude Include="Image.h" />
     <ClInclude Include="InputManager.h" />
@@ -235,9 +236,6 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClInclude Include="LifeComponent.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="Macro.h" />
-    <ClInclude Include="Menu.h" />
-    <ClInclude Include="MenuGame.h" />
-    <ClInclude Include="MenuManager.h" />
     <ClInclude Include="MeshActor.h" />
     <ClInclude Include="MeshComponent.h" />
     <ClInclude Include="EnemyMovementComponent.h" />

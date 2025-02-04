@@ -10,7 +10,10 @@ namespace UI
 
 	public:
 #pragma region Modifier
-
+		FORCEINLINE void SetString(const string& _string)
+		{
+			text->GetDrawable()->setString(_string);
+		}
 		FORCEINLINE virtual void SetPosition(const Vector2f& _position) override
 		{
 			Super::SetPosition(_position);
