@@ -12,6 +12,9 @@
     <Filter Include="Script">
       <UniqueIdentifier>{d1a6496a-1587-49f8-93bf-e0848bef52d7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Script\Main">
+      <UniqueIdentifier>{665f6e7c-538b-4110-82d8-32b51e358ed1}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Script\Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
@@ -42,9 +45,6 @@
     </Filter>
     <Filter Include="Script\Core\Actor\Mesh">
       <UniqueIdentifier>{fbd1828f-7db5-49ff-bb96-18a210e901c2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Script\SoundSample">
-      <UniqueIdentifier>{903b55d1-ef67-461f-a7a3-49ca7f0033c9}</UniqueIdentifier>
     </Filter>
     <Filter Include="Script\Object">
       <UniqueIdentifier>{1282caea-4804-4591-879b-5204e2cb8c45}</UniqueIdentifier>
@@ -127,41 +127,50 @@
     <Filter Include="Script\Core\Actor\Spawner">
       <UniqueIdentifier>{a45462c0-efd1-41ad-b769-450c487ecc77}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Script\Core\Components\Animation">
-      <UniqueIdentifier>{320413ee-bce9-4166-a7f6-43ad9c0310be}</UniqueIdentifier>
+    <Filter Include="Script\Manager\Input">
+      <UniqueIdentifier>{2d2898bc-fcb5-43f3-9376-0ea4046411e5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Script\Core\Components\Camera">
-      <UniqueIdentifier>{1b078593-1a13-49bf-bf81-05bc5917319c}</UniqueIdentifier>
+    <Filter Include="Script\AsteroidGame">
+      <UniqueIdentifier>{3a32897c-52d5-4687-9b2c-ad47a41e1df6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Script\Core\Components\Movement">
-      <UniqueIdentifier>{119d40cb-bd72-4b02-90c5-225bfce9c109}</UniqueIdentifier>
+    <Filter Include="Script\Audio\Sound">
+      <UniqueIdentifier>{903b55d1-ef67-461f-a7a3-49ca7f0033c9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Script\Core\Components\Root">
-      <UniqueIdentifier>{2c3e598f-a291-4b07-8b05-49d77548e8ad}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Script\Core\Components\View">
-      <UniqueIdentifier>{1f2ba105-e107-46b5-8a87-5a68ad63ac2b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Main">
-      <UniqueIdentifier>{665f6e7c-538b-4110-82d8-32b51e358ed1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Script\Core\Transform">
-      <UniqueIdentifier>{dafbbfcc-a7dc-4baa-aa0e-42884ebd683c}</UniqueIdentifier>
+    <Filter Include="Script\Audio\Music">
+      <UniqueIdentifier>{5889c1f7-3cb0-42a0-b119-17cb5592afd1}</UniqueIdentifier>
     </Filter>
     <Filter Include="Script\Resource Files\SubclassOf">
-      <UniqueIdentifier>{4dc29b2f-1863-4428-9868-8936d8c688a2}</UniqueIdentifier>
+      <UniqueIdentifier>{81398409-b3f0-482a-bcd2-93ebe72e14c2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Script\Game\AsteroidGame">
-      <UniqueIdentifier>{61d3ab94-58ba-4f2a-bfed-b4b12498be68}</UniqueIdentifier>
+    <Filter Include="Script\Core\Components\Animation">
+      <UniqueIdentifier>{5dfd0db6-a9d3-404b-9f41-aeb15bb1cd9e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Asteroid">
-      <UniqueIdentifier>{ca562919-478a-4768-8ada-6fd85a2f08d1}</UniqueIdentifier>
+    <Filter Include="Script\Core\Components\Camera">
+      <UniqueIdentifier>{168d15e1-0226-4163-be15-075ecdea5f87}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Asteroid\AsteroidMesh">
-      <UniqueIdentifier>{3bf4e008-c3f3-426e-ae56-3666fca0ea34}</UniqueIdentifier>
+    <Filter Include="Script\Core\Components\Movement">
+      <UniqueIdentifier>{a23958b9-4cac-45a8-9597-c67fedaf7e15}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Asteroid\UFO">
-      <UniqueIdentifier>{525360ab-bad4-4a46-9d23-aa07837d75a4}</UniqueIdentifier>
+    <Filter Include="Script\Core\Components\View">
+      <UniqueIdentifier>{7bb490d1-ca24-4981-8d4a-b0e5b3d1ba09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Components\Root">
+      <UniqueIdentifier>{0dba8a8a-93e5-4915-933a-69034921e80f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Components\Shoot">
+      <UniqueIdentifier>{3d8aae30-02ca-458c-b77b-92fde4e3def4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\Player">
+      <UniqueIdentifier>{da40dfb7-bbad-4618-b1a4-4d909f7f9644}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\Projectile">
+      <UniqueIdentifier>{57e1dab3-8231-4634-b36d-331c30562f28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\UFO">
+      <UniqueIdentifier>{9f889804-435a-4869-8bb4-57ae995b924f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\Asteroid">
+      <UniqueIdentifier>{273f6ec6-872f-4749-8ea4-efca5559b828}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -187,10 +196,13 @@
       <Filter>Script\Core\Actor\Mesh</Filter>
     </ClInclude>
     <ClInclude Include="SoundSample.h">
-      <Filter>Script\SoundSample</Filter>
+      <Filter>Script\Audio\Sound</Filter>
     </ClInclude>
     <ClInclude Include="RectangleActor.h">
       <Filter>Script\Core\Actor\Rectangle</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>Script\Core\Components</Filter>
     </ClInclude>
     <ClInclude Include="Core.h">
       <Filter>Script\Core</Filter>
@@ -246,8 +258,14 @@
     <ClInclude Include="Sample.h">
       <Filter>Script\Audio</Filter>
     </ClInclude>
-    <ClInclude Include="MusicSample.h">
-      <Filter>Script\Audio</Filter>
+    <ClInclude Include="TransformData.h">
+      <Filter>Script\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ITransformableViewer.h">
+      <Filter>Script\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ITransformableModifier.h">
+      <Filter>Script\Core</Filter>
     </ClInclude>
     <ClInclude Include="Animation.h">
       <Filter>Script\Animation</Filter>
@@ -276,16 +294,28 @@
     <ClInclude Include="Level.h">
       <Filter>Script\Level</Filter>
     </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>Script\Manager\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="AsteroidGame.h">
+      <Filter>Script\AsteroidGame</Filter>
+    </ClInclude>
+    <ClInclude Include="MusicSample.h">
+      <Filter>Script\Audio\Music</Filter>
+    </ClInclude>
+    <ClInclude Include="SubclassOf.h">
+      <Filter>Script\Resource Files\SubclassOf</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraManager.h">
+      <Filter>Script\Manager\Camera</Filter>
+    </ClInclude>
     <ClInclude Include="AnimationComponent.h">
       <Filter>Script\Core\Components\Animation</Filter>
     </ClInclude>
     <ClInclude Include="CameraComponent.h">
       <Filter>Script\Core\Components\Camera</Filter>
     </ClInclude>
-    <ClInclude Include="CameraManager.h">
-      <Filter>Script\Manager\Camera</Filter>
-    </ClInclude>
-    <ClInclude Include="MovementComponent.h">
+    <ClInclude Include="PlayerMovementComponent.h">
       <Filter>Script\Core\Components\Movement</Filter>
     </ClInclude>
     <ClInclude Include="RootComponent.h">
@@ -294,37 +324,58 @@
     <ClInclude Include="ViewComponent.h">
       <Filter>Script\Core\Components\View</Filter>
     </ClInclude>
-    <ClInclude Include="Component.h">
-      <Filter>Script\Core\Components</Filter>
+    <ClInclude Include="EnemyMovementComponent.h">
+      <Filter>Script\Core\Components\Movement</Filter>
     </ClInclude>
-    <ClInclude Include="ITransformableModifier.h">
-      <Filter>Script\Core\Transform</Filter>
-    </ClInclude>
-    <ClInclude Include="ITransformableViewer.h">
-      <Filter>Script\Core\Transform</Filter>
-    </ClInclude>
-    <ClInclude Include="TransformData.h">
-      <Filter>Script\Core\Transform</Filter>
-    </ClInclude>
-    <ClInclude Include="SubclassOf.h">
-      <Filter>Script\Resource Files\SubclassOf</Filter>
-    </ClInclude>
-    <ClInclude Include="AsteroidGame.h">
-      <Filter>Script\Game\AsteroidGame</Filter>
-    </ClInclude>
-    <ClInclude Include="Asteroid.h">
-      <Filter>Asteroid\AsteroidMesh</Filter>
+    <ClInclude Include="ShootComponent.h">
+      <Filter>Script\Core\Components\Shoot</Filter>
     </ClInclude>
     <ClInclude Include="UFO.h">
-      <Filter>Asteroid\UFO</Filter>
+      <Filter>Script\Core\Actor\UFO</Filter>
+    </ClInclude>
+    <ClInclude Include="Asteroid.h">
+      <Filter>Script\Core\Actor\Asteroid</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Script\Core\Actor\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Projectile.h">
+      <Filter>Script\Core\Actor\Projectile</Filter>
     </ClInclude>
     <ClInclude Include="SizeType.h">
-      <Filter>Asteroid</Filter>
+      <Filter>Script\Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LifeComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="Canvas.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HUD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Widget.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
-      <Filter>Source Files\Main</Filter>
+      <Filter>Script\Main</Filter>
     </ClCompile>
     <ClCompile Include="Menu.cpp">
       <Filter>Script\Menus</Filter>
@@ -342,10 +393,13 @@
       <Filter>Script\Core\Actor\Mesh</Filter>
     </ClCompile>
     <ClCompile Include="SoundSample.cpp">
-      <Filter>Script\SoundSample</Filter>
+      <Filter>Script\Audio\Sound</Filter>
     </ClCompile>
     <ClCompile Include="RectangleActor.cpp">
       <Filter>Script\Core\Actor\Rectangle</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>Script\Core\Components</Filter>
     </ClCompile>
     <ClCompile Include="Core.cpp">
       <Filter>Script\Core</Filter>
@@ -425,9 +479,6 @@
     <ClCompile Include="Level.cpp">
       <Filter>Script\Level</Filter>
     </ClCompile>
-    <ClCompile Include="MusicSample.cpp">
-      <Filter>Script\Audio</Filter>
-    </ClCompile>
     <ClCompile Include="Sample.cpp">
       <Filter>Script\Audio</Filter>
     </ClCompile>
@@ -437,13 +488,25 @@
     <ClCompile Include="SquareActor.cpp">
       <Filter>Script\Core\Actor\Square</Filter>
     </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Script\Manager\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="AsteroidGame.cpp">
+      <Filter>Script\AsteroidGame</Filter>
+    </ClCompile>
+    <ClCompile Include="MusicSample.cpp">
+      <Filter>Script\Audio\Music</Filter>
+    </ClCompile>
+    <ClCompile Include="SubclassOf.cpp">
+      <Filter>Script\Resource Files\SubclassOf</Filter>
+    </ClCompile>
     <ClCompile Include="AnimationComponent.cpp">
       <Filter>Script\Core\Components\Animation</Filter>
     </ClCompile>
     <ClCompile Include="CameraComponent.cpp">
       <Filter>Script\Core\Components\Camera</Filter>
     </ClCompile>
-    <ClCompile Include="MovementComponent.cpp">
+    <ClCompile Include="PlayerMovementComponent.cpp">
       <Filter>Script\Core\Components\Movement</Filter>
     </ClCompile>
     <ClCompile Include="RootComponent.cpp">
@@ -452,20 +515,47 @@
     <ClCompile Include="ViewComponent.cpp">
       <Filter>Script\Core\Components\View</Filter>
     </ClCompile>
-    <ClCompile Include="Component.cpp">
-      <Filter>Script\Core\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="SubclassOf.cpp">
-      <Filter>Script\Resource Files\SubclassOf</Filter>
-    </ClCompile>
-    <ClCompile Include="AsteroidGame.cpp">
-      <Filter>Script\Game\AsteroidGame</Filter>
-    </ClCompile>
-    <ClCompile Include="Asteroid.cpp">
-      <Filter>Asteroid\AsteroidMesh</Filter>
+    <ClCompile Include="EnemyMovementComponent.cpp">
+      <Filter>Script\Core\Components\Movement</Filter>
     </ClCompile>
     <ClCompile Include="UFO.cpp">
-      <Filter>Asteroid\UFO</Filter>
+      <Filter>Script\Core\Actor\UFO</Filter>
+    </ClCompile>
+    <ClCompile Include="Asteroid.cpp">
+      <Filter>Script\Core\Actor\Asteroid</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Script\Core\Actor\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="ShootComponent.cpp">
+      <Filter>Script\Core\Components\Shoot</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LifeComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="Canvas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HUD.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuGame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Widget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Projectile.cpp">
+      <Filter>Script\Core\Actor\Projectile</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

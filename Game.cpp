@@ -2,6 +2,9 @@
 #include "ActorManager.h"
 #include "CameraManager.h"
 #include "TimerManager.h"
+#include "InputManager.h"
+
+using namespace Camera;
 
 Game::Game()
 {
@@ -11,21 +14,21 @@ Game::Game()
 
 void Game::Start()
 {
-    window.create(VideoMode({ 1200, 800 }), "SFML works!");
+    const Vector2u& _size = { 1920, 1080 };
+    window.create(VideoMode(_size), "SFML works!");
+    const Vector2f& _center = Vector2f(CAST(Vector2f, window.getSize()) / 2.0f);
+    M_CAMERA.CreateCamera(_center, CAST(Vector2f, _size), "DefaultCamera");
+
+    M_ACTOR.BeginPlay();
 };
 
 bool Game::Update()
 {
     TM_Seconds& _timer = M_TIMER;
     _timer.Update();
+    
 
-    while (const optional _event = window.pollEvent())
-    {
-        if (_event->is<Event::Closed>())
-        {
-            window.close();
-        }
-    }
+    M_INPUT.ConsumeInputs(window);
 
     const float _deltaTime = _timer.GetDeltaTime().asSeconds();
     M_ACTOR.Tick(_deltaTime);

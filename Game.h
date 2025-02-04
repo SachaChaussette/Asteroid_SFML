@@ -7,13 +7,13 @@ protected:
 	RenderWindow window;
 
 public:
-	FORCEINLINE Vector2f GetWindowSize() const
-	{
-		return CAST(Vector2f, window.getSize());
-	}
 	FORCEINLINE virtual bool IsOver() const
 	{
 		return !window.isOpen();
+	}
+	FORCEINLINE virtual Vector2u GetWindowSize() const
+	{
+		return window.getSize();
 	}
 
 public:
@@ -24,5 +24,7 @@ public:
 	virtual void Start();
 	virtual bool Update();
 	void UpdateWindow();
+	virtual void LaunchGame() {};
+
 	virtual void Stop();
 };
