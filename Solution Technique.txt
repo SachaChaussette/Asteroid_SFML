@@ -57,7 +57,8 @@ Sev : InputManager
 Moi : Collision
 Romain : Destruction Asteroid
 
-Morgan ou Yoan : Sockets
+Morgan : 
+Yoan : Collision
 
 -------------------------------------------------
 

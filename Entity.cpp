@@ -14,25 +14,6 @@ Entity::Entity(const u_int& _lifeCount, const SizeType& _size, const u_int& _spr
 	spriteCount = _spriteCount;
 }
 
-Entity::Entity(const u_int& _lifeCount, const float _radius, const u_int& _spriteCount, const string& _path,
-	const TextureExtensionType& _textureType, const IntRect& _rect, bool _isRepeated, bool _isSmooth, 
-	const string& _name)
-	: MeshActor(_radius, _path, _textureType, _rect, _isRepeated, _isSmooth, 30U, _name)
-{
-	spriteCount = _spriteCount;
-	animation = CreateComponent<AnimationComponent>();
-	//life = CreateComponent<LifeComponent>(_lifeCount);
-}
-
-Entity::Entity(const u_int& _lifeCount, const Vector2f& _size, const u_int& _spriteCount, const string& _path, const TextureExtensionType& _textureType,
-	const IntRect& _rect, bool _isRepeated, bool _isSmooth, const string& _name)
-	: MeshActor(_size, _path, _textureType, _rect, _isRepeated, _isSmooth, _name)
-{
-	spriteCount = _spriteCount;
-	animation = CreateComponent<AnimationComponent>();
-	//life = CreateComponent<LifeComponent>(_lifeCount);
-}
-
 Entity::Entity(const Entity& _other) : MeshActor(_other)
 {
 	animation = CreateComponent<AnimationComponent>(_other.animation);

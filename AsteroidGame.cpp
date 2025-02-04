@@ -23,7 +23,6 @@ void AsteroidGame::GeneratePlayer()
 
 void AsteroidGame::GenerateAsteroid()
 {
-
 	const string& _finalPath = "AsteroidSpriteSheet_1" + to_string(GetRandomNumberInRange(1, 2));
 	Asteroid* _asteroid = Level::SpawnActor(Asteroid(110.0f, BIG, _finalPath));
 	_asteroid->SetOriginAtMiddle();

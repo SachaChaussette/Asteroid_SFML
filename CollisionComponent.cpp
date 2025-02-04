@@ -3,7 +3,7 @@
 #include "ActorManager.h"
 
 CollisionComponent::CollisionComponent(Actor* _owner, const ActorType& _ownerType, const CollisionType& _type,
-	const LayerType& _layer, const set<ActorType>& _blackList, const function<void()>& _callback) 
+	const LayerType& _layer, const set<ActorType>& _blackList, const function<void()> _callback) 
 	: Component(_owner)
 {
 	ownerType = _ownerType;

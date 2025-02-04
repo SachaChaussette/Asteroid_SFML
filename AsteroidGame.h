@@ -4,7 +4,7 @@
 
 class AsteroidGame : public Game
 {
-  float difficultyFactor;
+    float difficultyFactor;
 	u_int wavesCount;
 	u_int baseAsteroidCount;
 	Vector2f windowSize;

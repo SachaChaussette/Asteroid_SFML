@@ -7,12 +7,12 @@ LifeComponent::LifeComponent(Actor* _owner, const u_int& _lifeCount) : Component
 
 }
 
-LifeComponent::LifeComponent(Actor* _owner, const LifeComponent* _other) : Component(_owner)
+LifeComponent::LifeComponent(Actor* _owner, const LifeComponent* _other) : Component(*_other)
 {
 	lifeCount = _other->lifeCount;
 }
 
 void LifeComponent::Death()
 {
-	owner->Destroy();
+	owner->SetToDelete();
 }

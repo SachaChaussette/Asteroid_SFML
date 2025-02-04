@@ -46,7 +46,7 @@ public:
 	}
 public:
 	CollisionComponent(Actor* _owner, const ActorType& _ownerType, const CollisionType& _type = CT_NONE, const LayerType& _layer = LT_DYNAMIC,
-		const set<ActorType>& _blackList = {}, const function<void()>& _callback = {});
+		const set<ActorType>& _blackList = {}, const function<void()> _callback = {});
 	CollisionComponent(Actor* _owner, const CollisionComponent* _other);
 private:
 	bool IsBlackListed(CollisionComponent* _otherCollision);

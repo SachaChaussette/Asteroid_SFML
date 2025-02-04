@@ -4,7 +4,7 @@
 
 class LifeComponent : public Component
 {
-	u_int lifeCount;
+	int lifeCount;
 
 public:
 	FORCEINLINE void IncrementLife()
