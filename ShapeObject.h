@@ -28,7 +28,7 @@ struct CircleShapeData
 	bool isSmooth;
 
 	CircleShapeData(const float _radius, const string& _path, const TextureExtensionType& _textureType
-				   ,const IntRect& _rect = IntRect(), bool _isRepeated = false, bool _isSmooth = true, const size_t& _pointCount = 30U)
+		, const IntRect& _rect = IntRect(), bool _isRepeated = false, bool _isSmooth = true, const size_t& _pointCount = 30U)
 	{
 		radius = _radius;
 		path = _path;
@@ -62,8 +62,8 @@ struct RectangleShapeData
 	bool isRepeated;
 	bool isSmooth;
 
-	RectangleShapeData(const Vector2f& _size, const string& _path, const TextureExtensionType& _textureType,
-		const IntRect& _rect = IntRect(), bool _isRepeated = false, bool _isSmooth = true)
+	RectangleShapeData(const Vector2f& _size, const string& _path = "", const TextureExtensionType& _textureType = PNG, 
+						const IntRect& _rect = IntRect(), bool _isRepeated = false, bool _isSmooth = true)
 	{
 		size = _size;
 		path = _path;
@@ -82,9 +82,8 @@ struct ConvexShapeData
 	TextureExtensionType textureType;
 	bool isRepeated;
 	bool isSmooth;
-
 	ConvexShapeData(const vector<Vector2f> _point, const string& _path, const TextureExtensionType& _textureType
-				   ,const IntRect& _rect = IntRect(), bool _isRepeated = false, bool _isSmooth = true)
+		, const IntRect& _rect = IntRect(), bool _isRepeated = false, bool _isSmooth = true)
 	{
 		path = _path;
 		rect = _rect;
@@ -94,7 +93,6 @@ struct ConvexShapeData
 		isSmooth = _isSmooth;
 	}
 };
-
 
 union ObjectData
 {
@@ -141,6 +139,7 @@ struct ShapeObjectData
 		{
 			delete data.rectangleData;
 		}
+
 		else
 		{
 			delete data.convexData;
@@ -160,6 +159,7 @@ struct ShapeObjectData
 		{
 			data.rectangleData = new RectangleShapeData(*_other.data.rectangleData);
 		}
+
 		else if (type == SOT_CONVEX)
 		{
 			data.convexData = new ConvexShapeData(*_other.data.convexData);
@@ -221,16 +221,14 @@ public:
 	}
 
 public:
-	ShapeObject(const float _radius, const string& _path = "", const TextureExtensionType& _textureType = PNG
-			   ,const IntRect& _rect = IntRect(),bool _isRepeated = false
-			   ,bool _isSmooth = true, const size_t& _pointCount = 30U); // Circle
-
-	ShapeObject(const Vector2f& _size, const string& _path = "", const TextureExtensionType& _textureType = PNG
-			   ,const IntRect& _rect = IntRect(), bool _isRepeated = false, bool _isSmooth = true); // Rectangle
-
-	ShapeObject(const vector<Vector2f> point, const string& _path = "", const TextureExtensionType& _textureType = PNG
-			   ,const IntRect& _rect = IntRect(), bool _isRepeated = false, bool _isSmooth = true); // convex
-
+	ShapeObject(const float _radius, const string& _path = "", const TextureExtensionType& _textureType = PNG,
+		const IntRect& _rect = IntRect(), bool _isRepeated = false,
+		bool _isSmooth = true, const size_t& _pointCount = 30U); // Circle
+	ShapeObject(const Vector2f& _size, const string& _path = "", const TextureExtensionType& _textureType = PNG,
+		const IntRect& _rect = IntRect(), bool _isRepeated = false, bool _isSmooth = true); // Rectangle
+	ShapeObject(const vector<Vector2f> point, const string& _path = "", const TextureExtensionType& _textureType = PNG,
+		const IntRect& _rect = IntRect(), bool _isRepeated = false, bool _isSmooth = true); // convex
+	ShapeObject(const RectangleShapeData& _data); 
 	ShapeObject(const ShapeObject& _other);
 	~ShapeObject();
 

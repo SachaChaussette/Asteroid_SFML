@@ -1,6 +1,7 @@
 #include "Game.h"
-#include "GameManager.h"
 #include "AsteroidGame.h"
+#include "MenuGame.h"
+#include "GameManager.h"
 
 void InitConfig()
 {
@@ -11,6 +12,7 @@ void InitConfig()
 int main()
 {
     InitConfig();
+
     M_GAME.Launch(new AsteroidGame());
 
 	return EXIT_SUCCESS;

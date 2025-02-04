@@ -1,5 +1,4 @@
 #pragma once
-
 enum SizeType
 {
 	SMALL = 1,

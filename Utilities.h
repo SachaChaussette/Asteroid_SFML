@@ -24,5 +24,5 @@ template <typename Type, typename BaseType, IS_BASE_OF(BaseType, Type)>
 Type* Cast(BaseType* _baseType)
 {
     if (!_baseType) return nullptr;
-	return dynamic_cast<Type*>(_baseType);
+    return dynamic_cast<Type*>(_baseType);
 }
