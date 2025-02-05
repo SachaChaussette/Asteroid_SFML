@@ -13,6 +13,7 @@ AnimationComponent::AnimationComponent(Actor* _owner, const AnimationComponent* 
 		allAnimations[_animation.first] = new Animation(*_animation.second);
 	}
 	current = _other->current;
+
 }
 
 AnimationComponent::~AnimationComponent()

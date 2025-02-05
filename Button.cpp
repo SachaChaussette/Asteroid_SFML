@@ -87,6 +87,9 @@ void UI::Button::Construct()
 {
 	Super::Construct();
 	/*M_INPUT.BindAction([&](Vector2i _mousePos)
+
+	M_INPUT.BindAction([&](Vector2i _mousePos)
+
 	{
 		const Vector2i& _buttonPos = CAST(Vector2i, GetPosition());
 		const Vector2i& _buttonScale = CAST(Vector2i, foreground->GetInitialSize());
@@ -96,6 +99,7 @@ void UI::Button::Construct()
 			OnPressed();
 		}
 	}, Mouse::Button::Left);*/
+
 }
 
 void UI::Button::Deconstruct()

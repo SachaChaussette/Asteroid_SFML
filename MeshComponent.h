@@ -7,11 +7,17 @@ class Actor;
 class MeshComponent : public Component
 {
 	ShapeObject* shape;
+	string texturePath;
+	//TODO store TexturePath 
 
 public:
 	FORCEINLINE ShapeObject* GetShape() const
 	{
 		return shape;
+	}
+	FORCEINLINE string GetTexturePath() const
+	{
+		return texturePath;
 	}
 	FORCEINLINE void SetShape(ShapeObject* _shape)
 	{

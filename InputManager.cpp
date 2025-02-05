@@ -9,6 +9,7 @@ void InputManager::CloseWindow(RenderWindow& _window)
 //{
 //    inputsData.push_back(InputData(_buttonCallback, { _buttonCodes }));
 //}
+
 void InputManager::BindAction(const function<void()>& _callback, const Code& _code)
 {
     inputsData.push_back(InputData(_callback, { _code }));
@@ -38,6 +39,7 @@ void InputManager::ConsumeInputs(RenderWindow& _window)
                 if (_inputData.TryToExecute(_key)) break;
             }
         }
+
         else if (const KeyReleased* _key = _event->getIf<KeyReleased>())
         {
             for (const InputData& _inputData : inputsData)
@@ -45,6 +47,7 @@ void InputManager::ConsumeInputs(RenderWindow& _window)
                 if (_inputData.TryToExecute(_key)) break;
             }
         }
+
         else if (const MouseButtonPressed* _key = _event->getIf<MouseButtonPressed>())
         {
             for (const InputData& _inputData : inputsData)

@@ -7,10 +7,10 @@
 #include "CollisionComponent.h"
 
 
+
 class Asteroid : public Entity
 {
 	EnemyMovementComponent* movement;
-
 
 public:
 	FORCEINLINE EnemyMovementComponent* GetMovement() const

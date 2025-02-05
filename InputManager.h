@@ -72,8 +72,8 @@ public:
 private:
 	void CloseWindow(RenderWindow& _window);
 public:
-	void 
-		Action(const function<void(Vector2i _pos)>& _buttonCallback, const MouseCode& _code);
+
+	//void BindAction(const function<void(Vector2i _pos)>& _buttonCallback, const MouseCode& _code);
 	void BindAction(const function<void()>& _callback, const Code& _code);
 	void BindAction(const function<void(Vector2i _pos)>& _buttonCallback, const vector<MouseCode>& _code);
 	void BindAction(const function<void()>& _callback, const vector<Code>& _code);

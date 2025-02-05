@@ -1,8 +1,8 @@
 #include "Entity.h"
 #include "GameManager.h"
 
-Entity::Entity(const u_int& _lifeCount, const SizeType& _size, const u_int& _spriteCount, const MeshActor& _mesh,
-	const string& _name) : MeshActor(_mesh)
+Entity::Entity(const u_int & _lifeCount, const SizeType & _size, const u_int & _spriteCount, const MeshActor & _mesh,
+		const string & _name) : MeshActor(_mesh)
 {
 	animation = CreateComponent<AnimationComponent>();
 	life = CreateComponent<LifeComponent>(_lifeCount);
@@ -15,6 +15,7 @@ Entity::Entity(const u_int& _lifeCount, const SizeType& _size, const u_int& _spr
 Entity::Entity(const Entity& _other) : MeshActor(_other)
 {
 	animation = CreateComponent<AnimationComponent>(_other.animation);
+
 	life = CreateComponent<LifeComponent>(_other.life);
 	collision = CreateComponent<CollisionComponent>(*_other.collision);
 	spriteCount = _other.spriteCount;

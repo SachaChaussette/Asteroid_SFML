@@ -14,6 +14,9 @@ class UFO : public Entity
 	Timer<Seconds>* shootTimer;
 	Timer<Seconds>* directionTimer;
 
+	//Servira pour la CollisionBox !
+	vector<Vector2f> convexShapePoints;
+
 public:
 	FORCEINLINE EnemyMovementComponent* GetMovement() const
 	{
@@ -26,13 +29,13 @@ public:
 	UFO(const UFO& _other);
 
 	~UFO();
-
 public:
 	void ComputeNewDirection();
 	virtual void Construct() override;
 	virtual void Tick(const float _deltaTime) override;
 	virtual void BeginPlay() override;
 	virtual void Deconstruct() override;
+
 	virtual void OnCollision(const CollisionData& _data) override;
 };
 

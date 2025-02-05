@@ -6,19 +6,18 @@
 #include "RootComponent.h"
 #include "Layer.h"
 
-
 struct CollisionData;
 
 class Actor : public Core, public ITransformableModifier, public ITransformableViewer
 {
 	bool isToDelete;
-	float lifeSpan;
 	u_int id;
 	string name;
 	string displayName;
 	set<Component*> components;
 	RootComponent* root;
-	shared_ptr<Actor> parent;
+
+	Actor* parent;
 	AttachmentType attachment;
 	set<shared_ptr<Actor>> children;
 	Layer::LayerType layer;
@@ -40,9 +39,12 @@ protected:
 	}
 
 public:
-	FORCEINLINE void SetToDelete()
+	template <typename Type, typename ...Args, IS_BASE_OF(Component, Type)>
+	FORCEINLINE Type* CreateComponent(Args... _args)
 	{
-		isToDelete = true;
+		Type* _component = new Type(this, _args...);
+		AddComponent(_component);
+		return _component;
 	}
 	FORCEINLINE void SetLifeSpan(const float _lifeSpan)
 	{
@@ -51,6 +53,10 @@ public:
 	FORCEINLINE void SetLayer(Layer::LayerType _layer)
 	{
 		layer = _layer;
+	}
+	FORCEINLINE void SetToDelete()
+	{
+		isToDelete = true;
 	}
 	FORCEINLINE bool IsToDelete() const
 	{
@@ -76,23 +82,23 @@ public:
 #pragma region Children
 
 private:
-	FORCEINLINE void SetParent(const shared_ptr<Actor>& _parent)
+	FORCEINLINE void SetParent(Actor* _parent)
 	{
 		parent = _parent;
 	}
-	FORCEINLINE void UpdateChildTransform(const shared_ptr<Actor>& _child)
+	FORCEINLINE void UpdateChildTransform(Actor* _child)
 	{
 		UpdateChildPosition(_child);
 		UpdateChildRotation(_child);
 		UpdateChildScale(_child);
 	}
-	FORCEINLINE void UpdateChildPosition(const shared_ptr<Actor>& _child)
+	FORCEINLINE void UpdateChildPosition(Actor* _child)
 	{
 		const vector<function<Vector2f()>>& _computePosition =
 		{
-			// Keep the child’s relative position to the parent.
+			// Keep the childï¿½s relative position to the parent.
 			[&]() { return _child->GetPosition() - GetPosition(); },
-			// Keep the child’s world position.
+			// Keep the childï¿½s world position.
 			[&]() { return _child->GetPosition(); },
 			// Snap the child to the parent's position.
 			[&]() { return GetPosition(); },
@@ -101,13 +107,13 @@ private:
 		const AttachmentType& _type = _child->GetAttachmentType();
 		_child->SetPosition(_computePosition[_type]());
 	}
-	FORCEINLINE void UpdateChildRotation(const shared_ptr<Actor>& _child)
+	FORCEINLINE void UpdateChildRotation(Actor* _child)
 	{
 		const vector<function<Angle()>>& _computeRotation =
 		{
-			// Keep the child’s relative rotation to the parent.
+			// Keep the childï¿½s relative rotation to the parent.
 			[&]() { return _child->GetRotation() - GetRotation(); },
-			// Keep the child’s world rotation.
+			// Keep the childï¿½s world rotation.
 			[&]() { return _child->GetRotation(); },
 			// Snap the child to the parent's rotation.
 			[&]() { return GetRotation(); },
@@ -116,13 +122,13 @@ private:
 		const AttachmentType& _type = _child->GetAttachmentType();
 		_child->SetRotation(_computeRotation[_type]());
 	}
-	FORCEINLINE void UpdateChildScale(const shared_ptr<Actor>& _child)
+	FORCEINLINE void UpdateChildScale(Actor* _child)
 	{
 		const vector<function<Vector2f()>>& _computeScale =
 		{
-			// Keep the child’s relative scale to the parent.
+			// Keep the childï¿½s relative scale to the parent.
 			[&]() { return _child->GetScale() - GetScale(); },
-			// Keep the child’s world scale.
+			// Keep the childï¿½s world scale.
 			[&]() { return _child->GetScale(); },
 			// Snap the child to the parent's scale.
 			[&]() { return GetScale(); },
@@ -133,14 +139,14 @@ private:
 	}
 
 public:
-	FORCEINLINE void AddChild(const shared_ptr<Actor>& _child, const AttachmentType& _type)
+	FORCEINLINE void AddChild(Actor* _child, const AttachmentType& _type)
 	{
 		_child->SetAttachmentType(_type);
-		_child->SetParent(shared_ptr<Actor>(this));
+		_child->SetParent(this);
 		UpdateChildTransform(_child);
 		children.insert(_child);
 	}
-	FORCEINLINE void RemoveChild(const shared_ptr<Actor>& _child)
+	FORCEINLINE void RemoveChild(Actor* _child)
 	{
 		if (!_child || !children.contains(_child)) return;
 
@@ -155,17 +161,17 @@ public:
 	{
 		return attachment;
 	}
-	FORCEINLINE shared_ptr<Actor> GetParent() const
+	FORCEINLINE Actor* GetParent() const
 	{
 		return parent;
 	}
-	FORCEINLINE set<shared_ptr<Actor>> GetChildren() const
+	FORCEINLINE set<Actor*> GetChildren() const
 	{
 		return children;
 	}
-	FORCEINLINE shared_ptr<Actor> GetChildrenAtIndex(const int _index) const
+	FORCEINLINE Actor* GetChildrenAtIndex(const int _index) const
 	{
-		set<shared_ptr<Actor>>::const_iterator _it = children.begin();
+		set<Actor*>::const_iterator _it = children.begin();
 		advance(_it, _index);
 		return *_it;
 	}
@@ -205,7 +211,8 @@ public:
 	{
 		root->SetPosition(_position);
 
-		for (shared_ptr<Actor> _child : children)
+
+		for (Actor* _child : children)
 		{
 			UpdateChildPosition(_child);
 		}
@@ -214,7 +221,7 @@ public:
 	{
 		root->SetRotation(_rotation);
 
-		for (shared_ptr<Actor> _child : children)
+		for (Actor* _child : children)
 		{
 			UpdateChildRotation(_child);
 		}
@@ -223,7 +230,7 @@ public:
 	{
 		root->SetScale(_scale);
 
-		for (shared_ptr<Actor> _child : children)
+		for (Actor* _child : children)
 		{
 			UpdateChildScale(_child);
 		}
@@ -236,7 +243,7 @@ public:
 	{
 		root->Move(_offset);
 
-		for (shared_ptr<Actor> _child : children)
+		for (Actor* _child : children)
 		{
 			_child->Move(_offset);
 		}
@@ -245,7 +252,7 @@ public:
 	{
 		root->Rotate(_angle);
 
-		for (shared_ptr<Actor> _child : children)
+		for (Actor* _child : children)
 		{
 			_child->Rotate(_angle);
 		}
@@ -254,7 +261,7 @@ public:
 	{
 		root->Scale(_factor);
 
-		for (shared_ptr<Actor> _child : children)
+		for (Actor* _child : children)
 		{
 			_child->Scale(_factor);
 		}
@@ -276,11 +283,13 @@ public:
 	virtual void Tick(const float _deltaTime) override;
 	virtual void BeginDestroy() override;
 
-	#pragma region Components
+	virtual void Destroy();
+
+#pragma region Components
 
 	void AddComponent(Component* _component);
 	void RemoveComponent(Component* _component);
-	template <typename T>
+	template <typename T, IS_BASE_OF(Component, T)>
 	T* GetComponent()
 		{
 			for (Component* _component : components)
@@ -291,8 +300,10 @@ public:
 					return _componentCast;
 				}
 			}
-
-			return nullptr;
+			if (T* _newComponent = dynamic_cast<T*>(_component))
+			{
+				return _newComponent;
+			}
 		}
 
 	#pragma endregion
@@ -305,4 +316,5 @@ public:
 
 	virtual void Death() {};
 
+#pragma endregion
 };

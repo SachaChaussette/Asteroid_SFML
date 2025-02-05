@@ -26,7 +26,6 @@ UFO::~UFO()
 	M_TIMER.RemoveTimer(directionTimer);
 }
 
-
 void UFO::ComputeNewDirection()
 {
 	GetMovement()->SetDirection(Vector2f(
@@ -72,7 +71,6 @@ void UFO::Deconstruct()
 	Super::Deconstruct();
 }
 
-
 void UFO::OnCollision(const CollisionData& _data)
 {
 	Super::OnCollision(_data);
@@ -94,5 +92,4 @@ void UFO::OnCollision(const CollisionData& _data)
 		_projectile->GetLife()->DecrementLife();
 	}
 }
-
 

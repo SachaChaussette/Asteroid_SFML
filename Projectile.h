@@ -5,6 +5,7 @@
 #include "AnimationComponent.h"
 #include "SizeType.h"
 
+
 class Projectile : public Entity
 {
 	EnemyMovementComponent* movement;
@@ -33,5 +34,6 @@ public:
 	virtual void Deconstruct() override ;
 
 	void OnCollision(const CollisionData& _data);
+
 };
 

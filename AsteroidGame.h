@@ -17,10 +17,16 @@ class AsteroidGame : public Game
 public:
 	AsteroidGame();
 public:
+	void GeneratePlayer();
+	void GenerateAsteroid();
+	void GenerateUFO();
+
 	virtual void Start() override;
 	virtual void LaunchGame() override;
 	virtual bool Update() override;
 	virtual void Stop() override;
+
+	void InitUpgradeCanvas();
 
 };
 

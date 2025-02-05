@@ -11,6 +11,7 @@ class Entity : public MeshActor
 {
 protected:
 	AnimationComponent* animation;
+
 	CollisionComponent* collision;
 	LifeComponent* life;
 

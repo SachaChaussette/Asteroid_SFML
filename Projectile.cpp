@@ -23,6 +23,7 @@ void Projectile::BeginPlay()
 	Super::BeginPlay();
 }
 
+
 void Projectile::Construct()
 {
 	Super::Construct();
@@ -43,6 +44,7 @@ void Projectile::Construct()
 	// Scale
 	const float _scaleFactor = 1.65f * CAST(float, size);
 	SetScale({ _scaleFactor , _scaleFactor });
+
 }
 
 void Projectile::Tick(const float _deltaTime)
@@ -76,3 +78,4 @@ void Projectile::OnCollision(const CollisionData& _data)
 	}
 
 }
+
