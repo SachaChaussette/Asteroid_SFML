@@ -85,7 +85,7 @@ public:
 
 	MeshActor(const RectangleShapeData& _data, const string& _name = "MeshActor"); // Rectangle v2
 
-	MeshActor(const vector<Vector2f> point, const string& _path = "", const TextureExtensionType& _textureType = PNG, 
+	MeshActor(const vector<Vector2f>& _point, const string& _path = "", const TextureExtensionType& _textureType = PNG, 
 			const IntRect& _rect = {}, bool _isRepeated = false, bool _isSmooth = true, 
 			const string& _name = "MeshActor");
 	MeshActor(const MeshActor& _other);

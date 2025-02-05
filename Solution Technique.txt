@@ -15,19 +15,15 @@ Proposition :
 Etape Jeu :
 
 GAMEPLAY
-- Player 60%
-	- Collision
+- Player 70%
 	- Modification Sprite
 	- Socket dynamique (ajout de canons)
-	- Invincibilité collision ennemie
 	- Animation explosion à la mort
 	- Centrer le shoot
-- Asteroid 60%
-	- Collision
+- Asteroid 90%
 	- Refonte Graphique
 	- Animation explosion à la mort
-- UFO 80%
-	- Collision
+- UFO 95%
 	- Animation explosion à la mort
 
 AUDIO

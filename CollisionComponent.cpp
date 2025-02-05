@@ -24,7 +24,6 @@ void CollisionComponent::Tick(const float _deltaTime)
 
 void CollisionComponent::CheckCollision()
 {
-	// changer en flag et tester s'il contient le flag 'IS_PHYSIC'
 	if (!(status & IS_PHYSIC)) return;
 
 	const set<Actor*>& _allActors = M_ACTOR.GetAllActors();

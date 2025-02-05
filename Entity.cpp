@@ -55,7 +55,6 @@ void Entity::Construct()
 {
 	Super::Construct();
 	
-
 	// Animation / Sprite
 	const Vector2i& _spriteSize = Vector2i(32, 32);
 	vector<SpriteData> _sprites;

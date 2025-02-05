@@ -6,7 +6,7 @@ LifeComponent::LifeComponent(Actor* _owner, const u_int& _lifeCount) : Component
 {
 	lifeCount = _lifeCount;
 	invicibilityTime = 1.0f;
-	canGetDamage = true;
+	canGetDamage = false;
 }
 
 LifeComponent::LifeComponent(Actor* _owner, const LifeComponent* _other) : Component(_owner)
@@ -14,6 +14,12 @@ LifeComponent::LifeComponent(Actor* _owner, const LifeComponent* _other) : Compo
 	lifeCount = _other->lifeCount;
 	invicibilityTime = _other->invicibilityTime;
 	canGetDamage = _other->canGetDamage;
+}
+
+void LifeComponent::BeginPlay()
+{
+	Super::BeginPlay();
+	new Timer([&]() { canGetDamage = true; }, seconds(3.0f), true, false);
 }
 
 void LifeComponent::Death()

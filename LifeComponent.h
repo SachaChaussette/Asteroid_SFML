@@ -27,10 +27,15 @@ public:
 
 		// TODO Modifier Sprite Frame Invincibilité
 	}
+	FORCEINLINE void SetCanGetDamage( const bool _canGetDamage)
+	{
+		canGetDamage = _canGetDamage;
+	}
 public:
 	LifeComponent(Actor* _owner, const u_int& _lifeCount);
 	LifeComponent(Actor* _owner, const LifeComponent* _other);
 public:
+	virtual void BeginPlay() override;
 	void Death();
 };
 

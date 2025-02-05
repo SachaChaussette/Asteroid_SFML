@@ -63,8 +63,8 @@ void Projectile::OnCollision(const CollisionData& _data)
 	}
 	if (_data.other->GetLayer() == Layer::UFO && friendlyLayer != Layer::UFO)
 	{
-		Player* _player = Cast<Player>(_data.other);
-		_player->GetLife()->DecrementLife();
+		UFO* _ufo = Cast<UFO>(_data.other);
+		_ufo->GetLife()->DecrementLife();
 	}
 	else if (_data.other->GetLayer() == Layer::ASTEROID && friendlyLayer != Layer::ASTEROID)
 	{
