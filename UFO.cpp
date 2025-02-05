@@ -1,20 +1,15 @@
 #include "UFO.h"
 #include "GameManager.h"
+#include "Player.h"
+#include "Asteroid.h"
+#include "Projectile.h"
 
-UFO::UFO(const float _radius, const SizeType& _size, const string& _path, const TextureExtensionType& _textureType,
-	const IntRect& _rect) : Entity(1, _radius, 4, "UFO/" + _path, _textureType, _rect, false, false)
+UFO::UFO(const vector<Vector2f>& _point, const string& _path, const TextureExtensionType& _textureType,
+	const IntRect& _rect, bool _isRepeated, bool _isSmooth, const string& _name) : 
+	Entity(1, MEDIUM, 4, MeshActor(_point, "UFO/" + _path, _textureType, _rect, _isRepeated, _isSmooth), "UFO")
 {
 	movement = CreateComponent<EnemyMovementComponent>();
 	shoot = CreateComponent<ShootComponent>();
-	convexShapePoints =
-	{ 
-		{170.0f, 70.0f},	{220.0f, 120.0f}, 
-		{300.0f, 150.0f},	{330.0f, 180.0f}, 
-		{300.0f, 210.0f},	{160.0f, 240.0f}, 
-		{30.0f, 210.0f},	{0.0f, 180.0f},
-		{30.0f, 150.0f},	{110.0f, 120.0f}, 
-	};
-	size = _size;
 }
 
 UFO::UFO(const UFO& _other) : Entity(_other)
@@ -23,6 +18,12 @@ UFO::UFO(const UFO& _other) : Entity(_other)
 	shoot = CreateComponent<ShootComponent>(_other.shoot);
 	size = _other.size;
 
+}
+
+UFO::~UFO()
+{
+	M_TIMER.RemoveTimer(shootTimer);
+	M_TIMER.RemoveTimer(directionTimer);
 }
 
 
@@ -37,9 +38,23 @@ void UFO::Construct()
 {
 	Super::Construct();
 
+	SetLayer(Layer::UFO);
+
+	const vector<pair<string, CollisionType>>& _responses
+	{
+		{"Player", CT_OVERLAP},
+		{"Asteroid", CT_OVERLAP},
+		{"UFO", CT_NONE},
+		{"Projectile", CT_OVERLAP},
+	};
+	GetCollision()->AddResponses(_responses);
+
 	// Scale
-	const float _scaleFactor = 0.15f * CAST(float, size);
+	const float _scaleFactor = 1.65f * CAST(float, size);
 	SetScale({ _scaleFactor , _scaleFactor });
+
+	directionTimer = new Timer<Seconds>([&]() { ComputeNewDirection(); }, seconds(3.0f), true, true);
+	shootTimer = new Timer<Seconds>([&]() { shoot->Shoot(); }, seconds(5.0f), true, true);
 }
 
 void UFO::Tick(const float _deltaTime)
@@ -50,11 +65,34 @@ void UFO::Tick(const float _deltaTime)
 void UFO::BeginPlay()
 {
 	Super::BeginPlay();
-	new Timer<Seconds>([&]() { ComputeNewDirection(); }, seconds(3.0f), true, true);
-	new Timer<Seconds>([&]() { shoot->Shoot(); }, seconds(5.0f), true, true);
 }
 
 void UFO::Deconstruct()
 {
 	Super::Deconstruct();
 }
+
+
+void UFO::OnCollision(const CollisionData& _data)
+{
+	Super::OnCollision(_data);
+
+	if (_data.other->GetLayer() == Layer::PLAYER)
+	{
+		Player* _player = Cast<Player>(_data.other);
+		_player->GetLife()->DecrementLife();
+	}
+	else if (_data.other->GetLayer() == Layer::ASTEROID)
+	{
+		Asteroid* _asteroid = Cast<Asteroid>(_data.other);
+		_asteroid->GetLife()->DecrementLife();
+	}
+	else if (_data.other->GetLayer() == Layer::PROJECTILE)
+	{
+		Projectile* _projectile = Cast<Projectile>(_data.other);
+		if (_projectile->GetFriendlyLayer() == Layer::UFO) return;
+		_projectile->GetLife()->DecrementLife();
+	}
+}
+
+

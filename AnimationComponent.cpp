@@ -12,10 +12,7 @@ AnimationComponent::AnimationComponent(Actor* _owner, const AnimationComponent* 
 	{
 		allAnimations[_animation.first] = new Animation(*_animation.second);
 	}
-	if (_other->current)
-	{
-		current = allAnimations[_other->current->GetName()];
-	}
+	current = _other->current;
 }
 
 AnimationComponent::~AnimationComponent()

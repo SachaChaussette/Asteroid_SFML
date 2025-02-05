@@ -12,6 +12,9 @@ class Player : public Entity
 	PlayerMovementComponent* movement;
 
 public:
+	Player(const vector<Vector2f>& _point, const string& _path = "", const TextureExtensionType& _textureType = PNG,
+		const IntRect& _rect = {}, bool _isRepeated = false, bool _isSmooth = false,
+		const string& _name = "Player");
 	Player(const Vector2f& _size, const string& _path = "", const TextureExtensionType& _textureType = PNG,
 		const IntRect& _rect = {}, bool _isRepeated = false, bool _isSmooth = false,
 		const string& _name = "Player");
@@ -23,4 +26,5 @@ public:
 	virtual void BeginPlay() override;
 	virtual void Tick(const float _deltaTime) override;
 	virtual void BeginDestroy() override {};
+	virtual void OnCollision(const CollisionData& _data) override;
 };

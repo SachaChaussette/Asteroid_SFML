@@ -1,29 +1,22 @@
 #include "Entity.h"
 #include "GameManager.h"
 
-
-Entity::Entity(const u_int& _lifeCount, const float _radius, const u_int& _spriteCount, const string& _path, const TextureExtensionType& _textureType, 
-	const IntRect& _rect, bool _isRepeated, bool _isSmooth, const string& _name)
-	: MeshActor(_radius, _path, _textureType, _rect, _isRepeated, _isSmooth, 30U, _name)
+Entity::Entity(const u_int& _lifeCount, const SizeType& _size, const u_int& _spriteCount, const MeshActor& _mesh,
+	const string& _name) : MeshActor(_mesh)
 {
-	spriteCount = _spriteCount;
 	animation = CreateComponent<AnimationComponent>();
-	//life = CreateComponent<LifeComponent>(_lifeCount);
-}
+	life = CreateComponent<LifeComponent>(_lifeCount);
+	collision = CreateComponent<CollisionComponent>(_name, IS_ALL, CT_OVERLAP);
 
-Entity::Entity(const u_int& _lifeCount, const Vector2f& _size, const u_int& _spriteCount, const string& _path, const TextureExtensionType& _textureType,
-	const IntRect& _rect, bool _isRepeated, bool _isSmooth, const string& _name)
-	: MeshActor(_size, _path, _textureType, _rect, _isRepeated, _isSmooth, _name)
-{
+	size = _size;
 	spriteCount = _spriteCount;
-	animation = CreateComponent<AnimationComponent>();
-	//life = CreateComponent<LifeComponent>(_lifeCount);
 }
 
 Entity::Entity(const Entity& _other) : MeshActor(_other)
 {
 	animation = CreateComponent<AnimationComponent>(_other.animation);
-	//life = CreateComponent<LifeComponent>(_other.life);
+	life = CreateComponent<LifeComponent>(_other.life);
+	collision = CreateComponent<CollisionComponent>(*_other.collision);
 	spriteCount = _other.spriteCount;
 	size = _other.size;
 }
@@ -62,7 +55,6 @@ void Entity::Construct()
 {
 	Super::Construct();
 	
-
 	// Animation / Sprite
 	const Vector2i& _spriteSize = Vector2i(32, 32);
 	vector<SpriteData> _sprites;
@@ -79,5 +71,3 @@ void Entity::Construct()
 	animation->SetCurrentAnimation("Movement");
 	animation->StartAnimation();
 }
-
-

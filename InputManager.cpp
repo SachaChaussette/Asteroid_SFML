@@ -5,10 +5,10 @@ void InputManager::CloseWindow(RenderWindow& _window)
     _window.close();
 }
 
-void InputManager::BindAction(const function<void(Vector2i _pos)>& _buttonCallback, const MouseCode& _buttonCodes)
-{
-    inputsData.push_back(InputData(_buttonCallback, { _buttonCodes }));
-}
+//void InputManager::BindAction(const function<void(Vector2i _pos)>& _buttonCallback, const MouseCode& _buttonCodes)
+//{
+//    inputsData.push_back(InputData(_buttonCallback, { _buttonCodes }));
+//}
 void InputManager::BindAction(const function<void()>& _callback, const Code& _code)
 {
     inputsData.push_back(InputData(_callback, { _code }));
