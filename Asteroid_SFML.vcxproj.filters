@@ -366,6 +366,9 @@
     <ClInclude Include="GameModeManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Layer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -554,5 +557,8 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="TODOList.txt" />
+    <Text Include="Solution Technique.txt">
+      <Filter>Header Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

@@ -5,8 +5,6 @@
 
 #include "Canvas.h"
 
-#include "MenuGame.h"
-
 using namespace UI;
 
 class AsteroidGame : public Game
@@ -24,7 +22,5 @@ public:
 	virtual bool Update() override;
 	virtual void Stop() override;
 
-private:
-	void InitUpgradeCanvas();
 };
 

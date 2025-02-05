@@ -234,6 +234,7 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClInclude Include="ITransformableModifier.h" />
     <ClInclude Include="ITransformableViewer.h" />
     <ClInclude Include="Label.h" />
+    <ClInclude Include="Layer.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="LifeComponent.h" />
     <ClInclude Include="Logger.h" />
@@ -270,6 +271,7 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClInclude Include="Widget.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Solution Technique.txt" />
     <Text Include="TODOList.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
