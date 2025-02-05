@@ -29,7 +29,7 @@ void AsteroidGame::Start()
 	Level::SpawnActor(MeshActor(windowSize, "InGameBackground"));
 
 
-	M_GAMEMODE.SetCurrentMode(new ChronoMode(10));
+	M_GAMEMODE.SetCurrentMode(new ChronoMode(180));
 	M_GAMEMODE.Launch();
 
 	//TODO Temp

@@ -27,4 +27,7 @@ public:
 	virtual void Tick(const float _deltaTime) override;
 	virtual void BeginDestroy() override {};
 	virtual void OnCollision(const CollisionData& _data) override;
+
+	virtual void Death() override;
+
 };

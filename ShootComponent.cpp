@@ -4,7 +4,7 @@
 
 ShootComponent::ShootComponent(Actor* _owner) : Component(_owner)
 {
-	projectile = new Projectile(20.0f, "Shoot/laser", PNG, IntRect(Vector2i(), Vector2i(16, 16)));
+	projectile = new Projectile(Vector2f(20.0f, 20.0f), "projectile");
 }
 
 ShootComponent::ShootComponent(Actor* _owner, const ShootComponent* _other) : Component(_owner)

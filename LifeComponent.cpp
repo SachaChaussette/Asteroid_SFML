@@ -25,4 +25,5 @@ void LifeComponent::BeginPlay()
 void LifeComponent::Death()
 {
 	owner->SetToDelete();
+	owner->Death();
 }

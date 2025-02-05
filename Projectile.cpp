@@ -3,9 +3,9 @@
 #include "UFO.h"
 #include "Asteroid.h"
 
-Projectile::Projectile(const float _radius, const string& _path
+Projectile::Projectile(const Vector2f& _size, const string& _path
 	, const TextureExtensionType& _textureType, const IntRect& _rect)
-	: Entity(1, SMALL, 2, MeshActor(_radius, "Asteroid/" + _path, _textureType, _rect), "Projectile")
+	: Entity(1, SMALL, 4, MeshActor(_size, "Shoot/" + _path, _textureType, _rect), "Projectile")
 {
 	movement = CreateComponent<EnemyMovementComponent>();
 	friendlyLayer = Layer::COUNT;
@@ -40,6 +40,9 @@ void Projectile::Construct()
 	};
 	collision->AddResponses(_responses);
 
+	// Scale
+	const float _scaleFactor = 1.65f * CAST(float, size);
+	SetScale({ _scaleFactor , _scaleFactor });
 }
 
 void Projectile::Tick(const float _deltaTime)

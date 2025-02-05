@@ -302,4 +302,7 @@ public:
 	virtual void OnCollision(const CollisionData& _data) {}
 
 	#pragma endregion
+
+	virtual void Death() {};
+
 };

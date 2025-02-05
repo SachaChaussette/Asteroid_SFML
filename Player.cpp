@@ -111,4 +111,12 @@ void Player::OnCollision(const CollisionData& _data)
 
 }
 
+void Player::Death()
+{
+
+
+	Super::Death();
+	system("pause");
+}
+
 
