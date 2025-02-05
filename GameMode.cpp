@@ -20,7 +20,7 @@ void GameMode::GeneratePlayer()
 		{12.0f, 48.0f},
 		{50.0f, 48.0f},
 	};*/
-	Player* _player = Level::SpawnActor(Player(Vector2f(50.0f, 50.0f), "player", PNG, IntRect(Vector2i(), Vector2i(32, 32))));
+	Player* _player = Level::SpawnActor(Player(Vector2f(50.0f, 50.0f), "Ship_" + to_string(GetRandomNumberInRange(1, 5)), PNG, IntRect(Vector2i(), Vector2i(32, 32))));
 	_player->SetOriginAtMiddle();
 	_player->SetPosition(Vector2f(_windowSize.x / 2, _windowSize.y / 2));
 }
