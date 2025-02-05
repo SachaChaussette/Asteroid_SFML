@@ -5,16 +5,16 @@
 #include "UFO.h"
 #include "Projectile.h"
 
-Player::Player(const vector<Vector2f>& _point, const string& _path, const TextureExtensionType& _textureType,
+Player::Player(const float _radius, const vector<Vector2f>& _point, const string& _path, const TextureExtensionType& _textureType,
 	const IntRect& _rect, bool _isRepeated, bool _isSmooth, const string& _name)
-	: Entity(3, SMALL, 1, MeshActor(_point, "Player/" + _path, _textureType, _rect, _isRepeated, _isSmooth, _name), "Player")
+	: Entity(3, SMALL, 1, MeshActor(_radius, "Player/" + _path, _textureType, _rect, _isRepeated, _isSmooth, 30U, _name), MeshActor(_point, ""), "Player")
 {
 	movement = CreateComponent<PlayerMovementComponent>();
 	shoot = CreateComponent<ShootComponent>();
 }
-Player::Player(const Vector2f& _size, const string& _path, const TextureExtensionType& _textureType,
+Player::Player(const float _radius, const Vector2f& _size, const string& _path, const TextureExtensionType& _textureType,
 	const IntRect& _rect, bool _isRepeated, bool _isSmooth, const string& _name)
-	: Entity(3, SMALL, 1, MeshActor(_size, "Player/" + _path, _textureType, _rect, _isRepeated, _isSmooth, _name), "Player")
+	: Entity(3, SMALL, 1, MeshActor(_size, "Player/" + _path, _textureType, _rect, _isRepeated, _isSmooth, _name), MeshActor(_size, ""), "Player")
 {
 	movement = CreateComponent<PlayerMovementComponent>();
 	shoot = CreateComponent<ShootComponent>();
@@ -56,7 +56,7 @@ void Player::Construct()
 		shoot->Shoot();
 	}, Code::Space);
 
-	SetLayer(Layer::PLAYER);
+	convexHitBox->SetLayer(Layer::PLAYER);
 
 	const vector<pair<string, CollisionType>>& _responses
 	{
@@ -65,7 +65,7 @@ void Player::Construct()
 		{"UFO", CT_OVERLAP},
 		{"Projectile", CT_OVERLAP},
 	};
-	collision->AddResponses(_responses);
+	AddCollisionResponses(_responses);
 }
 
 void Player::Deconstruct()
@@ -81,6 +81,9 @@ void Player::BeginPlay()
 	{ 
 		movement->ApplyFriction(); 
 	}, seconds(0.25), true, true);
+
+	
+
 }
 
 void Player::Tick(const float _deltaTime)

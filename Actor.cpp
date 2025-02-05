@@ -13,6 +13,7 @@ Actor::Actor(const string& _name, const TransformData& _transform)
 
 Actor::Actor(const Actor& _actor)
 {
+	children = _actor.children;
 	name = _actor.name;
 	displayName = _actor.displayName;
 	isToDelete = _actor.isToDelete;
@@ -68,10 +69,6 @@ void Actor::BeginDestroy()
 	for (Component* _component : components)
 	{
 		_component->BeginDestroy();
-	}
-	for (Actor* _child : children)
-	{
-		_child->BeginDestroy();
 	}
 }
 

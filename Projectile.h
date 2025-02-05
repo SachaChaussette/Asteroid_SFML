@@ -24,7 +24,7 @@ public:
 		return movement;
 	}
 public:
-	Projectile(const Vector2f& _size, const string& _path = "",
+	Projectile(const float _radius, const Vector2f& _size, const string& _path = "",
 		const TextureExtensionType& _textureType = PNG, const IntRect& _rect = {});
 	Projectile(const Projectile& _other);
 

@@ -40,14 +40,6 @@ void InputManager::ConsumeInputs(RenderWindow& _window)
             }
         }
 
-        else if (const KeyReleased* _key = _event->getIf<KeyReleased>())
-        {
-            for (const InputData& _inputData : inputsData)
-            {
-                if (_inputData.TryToExecute(_key)) break;
-            }
-        }
-
         else if (const MouseButtonPressed* _key = _event->getIf<MouseButtonPressed>())
         {
             for (const InputData& _inputData : inputsData)

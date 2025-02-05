@@ -3,9 +3,9 @@
 #include "UFO.h"
 #include "Asteroid.h"
 
-Projectile::Projectile(const Vector2f& _size, const string& _path
+Projectile::Projectile(const float _radius, const Vector2f& _size, const string& _path
 	, const TextureExtensionType& _textureType, const IntRect& _rect)
-	: Entity(1, SMALL, 4, MeshActor(_size, "Shoot/" + _path, _textureType, _rect), "Projectile")
+	: Entity(1, SMALL, 4, MeshActor(_radius, "Shoot/" + _path, _textureType, _rect), MeshActor(_size, ""), "Projectile")
 {
 	movement = CreateComponent<EnemyMovementComponent>();
 	friendlyLayer = Layer::COUNT;
@@ -29,7 +29,7 @@ void Projectile::Construct()
 	Super::Construct();
 	movement->SetSpeed(150.0f);
 
-	SetLayer(Layer::PROJECTILE);
+	convexHitBox->SetLayer(Layer::PROJECTILE);
 	
 	const vector<pair<string, CollisionType>>& _responses
 	{
@@ -39,8 +39,7 @@ void Projectile::Construct()
 		{"UFO", CT_OVERLAP},
 		{"Projectile", CT_NONE},
 	};
-	collision->AddResponses(_responses);
-
+	AddCollisionResponses(_responses);
 	// Scale
 	const float _scaleFactor = 1.65f * CAST(float, size);
 	SetScale({ _scaleFactor , _scaleFactor });

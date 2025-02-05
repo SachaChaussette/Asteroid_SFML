@@ -4,7 +4,7 @@
 
 ShootComponent::ShootComponent(Actor* _owner) : Component(_owner)
 {
-	projectile = new Projectile(Vector2f(20.0f, 20.0f), "projectile");
+	projectile = new Projectile(10.0f, Vector2f(20.0f, 20.0f), "projectile");
 
 }
 

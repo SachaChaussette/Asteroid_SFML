@@ -1,12 +1,15 @@
 #include "Entity.h"
 #include "GameManager.h"
+#include "Level.h"
 
-Entity::Entity(const u_int & _lifeCount, const SizeType & _size, const u_int & _spriteCount, const MeshActor & _mesh,
-		const string & _name) : MeshActor(_mesh)
+Entity::Entity(const u_int & _lifeCount, const SizeType & _size, const u_int & _spriteCount, 
+	const MeshActor& _mesh, const MeshActor& _hitBoxMesh, const string & _name) : MeshActor(_mesh)
 {
 	animation = CreateComponent<AnimationComponent>();
 	life = CreateComponent<LifeComponent>(_lifeCount);
-	collision = CreateComponent<CollisionComponent>(_name, IS_ALL, CT_OVERLAP);
+
+	convexHitBox = Level::SpawnActor<MeshActor>(_hitBoxMesh);
+	AddChild(convexHitBox, AT_SNAP_TO_TARGET);
 
 	size = _size;
 	spriteCount = _spriteCount;
@@ -15,12 +18,14 @@ Entity::Entity(const u_int & _lifeCount, const SizeType & _size, const u_int & _
 Entity::Entity(const Entity& _other) : MeshActor(_other)
 {
 	animation = CreateComponent<AnimationComponent>(_other.animation);
-
 	life = CreateComponent<LifeComponent>(_other.life);
-	collision = CreateComponent<CollisionComponent>(*_other.collision);
+
+	convexHitBox = _other.convexHitBox;
+
 	spriteCount = _other.spriteCount;
 	size = _other.size;
 }
+
 
 void Entity::Tick(const float _deltaTime)
 {
@@ -68,7 +73,12 @@ void Entity::Construct()
 	AnimationData _data = AnimationData(100.0f, _sprites, true, true, RD_ROW);
 	Animation* _move = new Animation("Movement", GetMesh()->GetShape(), _data);
 
+	convexHitBox->AddComponent(CreateComponent<CollisionComponent>("HitBox", IS_ALL, CT_OVERLAP));
+
+	convexHitBox->SetScale({ 10000000.0f, 10000000.0f });
+
 	animation->AddAnimation(_move);
 	animation->SetCurrentAnimation("Movement");
 	animation->StartAnimation();
+
 }

@@ -4,9 +4,9 @@
 #include "Asteroid.h"
 #include "Projectile.h"
 
-UFO::UFO(const vector<Vector2f>& _point, const string& _path, const TextureExtensionType& _textureType,
+UFO::UFO(const float _radius, const vector<Vector2f>& _point, const string& _path, const TextureExtensionType& _textureType,
 	const IntRect& _rect, bool _isRepeated, bool _isSmooth, const string& _name) : 
-	Entity(1, MEDIUM, 4, MeshActor(_point, "UFO/" + _path, _textureType, _rect, _isRepeated, _isSmooth), "UFO")
+	Entity(1, MEDIUM, 4, MeshActor(_radius, "UFO/" + _path, _textureType, _rect, _isRepeated, _isSmooth), MeshActor(_point, ""), "UFO")
 {
 	movement = CreateComponent<EnemyMovementComponent>();
 	shoot = CreateComponent<ShootComponent>();
@@ -37,7 +37,7 @@ void UFO::Construct()
 {
 	Super::Construct();
 
-	SetLayer(Layer::UFO);
+	convexHitBox->SetLayer(Layer::UFO);
 
 	const vector<pair<string, CollisionType>>& _responses
 	{
@@ -46,7 +46,7 @@ void UFO::Construct()
 		{"UFO", CT_NONE},
 		{"Projectile", CT_OVERLAP},
 	};
-	GetCollision()->AddResponses(_responses);
+	AddCollisionResponses(_responses);
 
 	// Scale
 	const float _scaleFactor = 1.65f * CAST(float, size);

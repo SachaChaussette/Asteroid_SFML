@@ -6,9 +6,9 @@
 #include "Projectile.h"
 
 
-Asteroid::Asteroid(const vector<Vector2f>& _point, const string& _path, const SizeType& _size, const TextureExtensionType& _textureType,
+Asteroid::Asteroid(const float _radius, const vector<Vector2f>& _point, const string& _path, const SizeType& _size, const TextureExtensionType& _textureType,
 	const IntRect& _rect, bool _isRepeated, bool _isSmooth, const string& _name)
-	: Entity(1, _size, 26, MeshActor(_point, "Asteroid/" + _path, _textureType, _rect), "Asteroid")
+	: Entity(1, _size, 26, MeshActor(_radius, _path, _textureType, _rect), MeshActor(_point, ""), "Asteroid")
 {
 	movement = CreateComponent<EnemyMovementComponent>();
 }
@@ -28,7 +28,7 @@ void Asteroid::Construct()
 {
 	Super::Construct();
 
-	SetLayer(Layer::ASTEROID);
+	convexHitBox->SetLayer(Layer::ASTEROID);
 
 	const vector<pair<string, CollisionType>>& _responses
 	{
@@ -37,7 +37,8 @@ void Asteroid::Construct()
 		{"UFO", CT_OVERLAP},
 		{"Projectile", CT_OVERLAP},
 	};
-	GetCollision()->AddResponses(_responses);
+	AddCollisionResponses(_responses);
+
 
 	// Scale
 	const float _scaleFactor = 1.65f * CAST(float,size);
@@ -66,7 +67,7 @@ void Asteroid::Deconstruct()
 				{19.0f,28.0f}, {13.0f,28.0f},
 				{3.0f,19.0f}, {3.0f,14.0f},
 			};
-			Asteroid* _asteroid = Level::SpawnActor(Asteroid(_convexShapePoints, GetMesh()->GetTexturePath(), SizeType(size - 1)));
+			Asteroid* _asteroid = Level::SpawnActor(Asteroid(10.0f, _convexShapePoints, GetMesh()->GetTexturePath(), SizeType(size - 1)));
 			_asteroid->ComputeNewDirection();
 			_asteroid->SetOriginAtMiddle();
 			_asteroid->SetPosition(GetPosition());

@@ -18,7 +18,7 @@ public:
 		return movement;
 	}
 public:
-	Asteroid(const vector<Vector2f>& _point, const string& _path = "", const SizeType& _size = BIG, const TextureExtensionType& _textureType = PNG,
+	Asteroid(const float _radius, const vector<Vector2f>& _point, const string& _path = "", const SizeType& _size = BIG, const TextureExtensionType& _textureType = PNG,
 		const IntRect& _rect = {}, bool _isRepeated = false, bool _isSmooth = false, const string& _name = "Asteroid");
 	Asteroid(const Asteroid& _other);
 

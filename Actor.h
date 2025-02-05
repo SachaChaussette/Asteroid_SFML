@@ -238,7 +238,7 @@ public:
 
 		for (Actor* _child : children)
 		{
-			_child->Move(_offset);
+			UpdateChildTransform(_child);
 		}
 	}
 	FORCEINLINE virtual void Rotate(const Angle& _angle) override

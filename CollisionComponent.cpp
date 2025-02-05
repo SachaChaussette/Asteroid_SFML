@@ -1,7 +1,9 @@
 #include "CollisionComponent.h"
 #include "ActorManager.h"
+#include "Entity.h"
 
-CollisionComponent::CollisionComponent(Actor* _owner, const string& _channelName, const int _status, const CollisionType& _type) : Component(_owner)
+CollisionComponent::CollisionComponent(Actor* _owner, const string& _channelName, const int _status, 
+	const CollisionType& _type) : Component(_owner)
 {
 	channelName = _channelName;
 	type = _type;
@@ -31,20 +33,23 @@ void CollisionComponent::CheckCollision()
 	
 	for (Actor* _other : _allActors)
 	{
-		if (CollisionComponent* _otherCollision = _other->GetComponent<CollisionComponent>())
+		if (Entity* _otherEntity = Cast<Entity>(_other))
 		{
-			const string& _otherName = _otherCollision->GetChannelName();
-			if (!responses.contains(_otherName)) continue;
-
-			const CollisionType& _response = responses.at(_otherName);
-			if (_response == CT_NONE) continue;
-
-			const FloatRect& _otherRect = Cast<MeshActor>(_other)->GetHitbox();
-			if (const optional<FloatRect> _intersection = _ownerRect.findIntersection(_otherRect))
+			if (CollisionComponent* _otherCollision = _otherEntity->GetConvexHitBox()->GetComponent<CollisionComponent>())
 			{
-				const CollisionData& _data = { _other, _response, *_intersection };
-				owner->OnCollision(_data);
-				_other->OnCollision(_data);
+				const string& _otherName = _otherCollision->GetChannelName();
+				if (!responses.contains(_otherName)) continue;
+
+				const CollisionType& _response = responses.at(_otherName);
+				if (_response == CT_NONE) continue;
+
+				const FloatRect& _otherRect = _otherEntity->GetHitbox();
+				if (const optional<FloatRect> _intersection = _ownerRect.findIntersection(_otherRect))
+				{
+					const CollisionData& _data = { _other, _response, *_intersection };
+					owner->OnCollision(_data);
+					_other->OnCollision(_data);
+				}
 			}
 		}
 	}

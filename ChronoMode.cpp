@@ -32,10 +32,13 @@ void ChronoMode::Start()
 
 	const Vector2f& _windowSize = CAST(Vector2f, M_GAME.GetCurrent()->GetWindowSize());
 
-	new Timer<Seconds>([&]() { GenerateAsteroid(); }, seconds(2.0f), true, true);
-	new Timer<Seconds>([&]() { GenerateUFO(); }, seconds(10.0f), true, true);
+	//new Timer<Seconds>([&]() { GenerateAsteroid(); }, seconds(2.0f), true, true);
+	//new Timer<Seconds>([&]() { GenerateUFO(); }, seconds(10.0f), true, true);
 
 	GeneratePlayer();
+
+	GenerateAsteroid();
+	GenerateUFO();
 
 	chrono = M_HUD.CreateWidget<Label>(to_string(currentTime), Screen, "Score", TTF);
 	M_HUD.AddToViewport(chrono);

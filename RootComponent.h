@@ -5,9 +5,9 @@
 
 enum AttachmentType
 {
-	AT_KEEP_RELATIVE,
+	AT_KEEP_RELATIVE, // canons
 	AT_KEEP_WORLD,
-	AT_SNAP_TO_TARGET,
+	AT_SNAP_TO_TARGET, // hitbox
 };
 
 class RootComponent : public Component, public ITransformableModifier, public ITransformableViewer

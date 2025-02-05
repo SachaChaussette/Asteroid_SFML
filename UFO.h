@@ -24,7 +24,7 @@ public:
 	}
 public:
 	//point servira à la ConvexShape de la CollisionBox !
-	UFO(const vector<Vector2f>& _point, const string& _path = "", const TextureExtensionType& _textureType = PNG,
+	UFO(const float _radius, const vector<Vector2f>& _point, const string& _path = "", const TextureExtensionType& _textureType = PNG,
 		const IntRect& _rect = {}, bool _isRepeated = false, bool _isSmooth = false, const string& _name = "UFO");
 	UFO(const UFO& _other);
 
