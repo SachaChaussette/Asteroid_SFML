@@ -58,7 +58,7 @@ void AsteroidGame::Start()
 	//menus->Start();
 
 	windowSize = CAST(Vector2f, M_GAME.GetCurrent()->GetWindowSize());
-	const string& _finalPath = "AsteroidSpriteSheet_";
+	const string& _finalPath = "AsteroidSpriteSheet_" + to_string(GetRandomNumberInRange(1, 2));
 	Asteroid* _asteroid = Level::SpawnActor(Asteroid(110.0f, BIG, _finalPath));
 	_asteroid->SetOriginAtMiddle();
 	_asteroid->SetPosition({ 0.0f, GetRandomNumberInRange(0.0f, CAST(float, GetWindowSize().y)) });
