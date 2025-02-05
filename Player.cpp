@@ -15,10 +15,6 @@ Player::Player(const vector<Vector2f>& _point, const string& _path, const Textur
 Player::Player(const Vector2f& _size, const string& _path, const TextureExtensionType& _textureType,
 	const IntRect& _rect, bool _isRepeated, bool _isSmooth, const string& _name)
 	: Entity(3, SMALL, 1, MeshActor(_size, "Player/" + _path, _textureType, _rect, _isRepeated, _isSmooth, _name), "Player")
-
-Player::Player(const Vector2f& _size, const string& _path, const TextureExtensionType& _textureType, 
-	const IntRect& _rect, bool _isRepeated, bool _isSmooth, const string& _name) 
-	: Entity(3, _size, 1, _path, _textureType, _rect, _isRepeated, _isSmooth, _name)
 {
 	movement = CreateComponent<PlayerMovementComponent>();
 	shoot = CreateComponent<ShootComponent>();

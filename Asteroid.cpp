@@ -11,15 +11,6 @@ Asteroid::Asteroid(const vector<Vector2f>& _point, const string& _path, const Si
 	: Entity(1, _size, 26, MeshActor(_point, "Asteroid/" + _path, _textureType, _rect), "Asteroid")
 {
 	movement = CreateComponent<EnemyMovementComponent>();
-	convexShapePoints =
-	{
-		{30.0f, 20.0f},		{80.0f, 0.0f},
-		{220.0f, 20.0f},	{260.0f, 60.0f},
-		{260.0f, 120.0f},	{230.0f, 180.0f},
-		{80.0f, 190.0f},	{60.0f, 180.0f},
-		{40.0f, 180.0f},	{0.0f, 100.0f},
-	};
-
 }
 Asteroid::Asteroid(const Asteroid& _other) : Entity(_other)
 {
@@ -65,10 +56,20 @@ void Asteroid::Deconstruct()
 	{
 		for (size_t _i = 0; _i < 2; _i++)
 		{
-			Asteroid* _smallerAsteroid1 = Level::SpawnActor(Asteroid(110.0f, SizeType(size - 1), GetMesh()->GetTexturePath()));
-			_smallerAsteroid1->ComputeNewDirection();
-			_smallerAsteroid1->SetOriginAtMiddle();
-			_smallerAsteroid1->SetPosition(GetPosition());
+			const Vector2f& _windowSize = CAST(Vector2f, M_GAME.GetCurrent()->GetWindowSize());
+
+			const vector<Vector2f>& _convexShapePoints =
+			{
+				{3.0f,14.0f}, {10.0f,5.0f},
+				{18.0f,5.0f}, {29.0f,11.0f},
+				{29.0f,16.0f}, {26.0f,23.0f},
+				{19.0f,28.0f}, {13.0f,28.0f},
+				{3.0f,19.0f}, {3.0f,14.0f},
+			};
+			Asteroid* _asteroid = Level::SpawnActor(Asteroid(_convexShapePoints, GetMesh()->GetTexturePath(), SizeType(size - 1)));
+			_asteroid->ComputeNewDirection();
+			_asteroid->SetOriginAtMiddle();
+			_asteroid->SetPosition(GetPosition());
 		}
 	}
 	Super::Deconstruct();

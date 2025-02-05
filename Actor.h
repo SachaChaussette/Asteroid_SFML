@@ -16,10 +16,10 @@ class Actor : public Core, public ITransformableModifier, public ITransformableV
 	string displayName;
 	set<Component*> components;
 	RootComponent* root;
-
+	float lifeSpan;
 	Actor* parent;
 	AttachmentType attachment;
-	set<shared_ptr<Actor>> children;
+	set<Actor*> children;
 	Layer::LayerType layer;
 
 protected:
@@ -39,13 +39,6 @@ protected:
 	}
 
 public:
-	template <typename Type, typename ...Args, IS_BASE_OF(Component, Type)>
-	FORCEINLINE Type* CreateComponent(Args... _args)
-	{
-		Type* _component = new Type(this, _args...);
-		AddComponent(_component);
-		return _component;
-	}
 	FORCEINLINE void SetLifeSpan(const float _lifeSpan)
 	{
 		lifeSpan = _lifeSpan;
@@ -283,28 +276,23 @@ public:
 	virtual void Tick(const float _deltaTime) override;
 	virtual void BeginDestroy() override;
 
-	virtual void Destroy();
-
 #pragma region Components
 
 	void AddComponent(Component* _component);
 	void RemoveComponent(Component* _component);
 	template <typename T, IS_BASE_OF(Component, T)>
 	T* GetComponent()
+	{
+		for (Component* _component : components)
 		{
-			for (Component* _component : components)
+			T* _componentCast = dynamic_cast<T*>(_component);
+			if (_componentCast)
 			{
-				T* _componentCast = dynamic_cast<T*>(_component);
-				if (_componentCast)
-				{
-					return _componentCast;
-				}
-			}
-			if (T* _newComponent = dynamic_cast<T*>(_component))
-			{
-				return _newComponent;
+				return _componentCast;
 			}
 		}
+		return nullptr;
+	}
 
 	#pragma endregion
 
