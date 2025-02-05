@@ -1,10 +1,14 @@
 #pragma once
 
 #include "Component.h"
+#include "Actor.h"
+#include "TimerManager.h"
 
 class LifeComponent : public Component
 {
 	int lifeCount;
+	int invicibilityTime;
+	bool canGetDamage;
 
 public:
 	FORCEINLINE void IncrementLife()
@@ -13,9 +17,15 @@ public:
 	}
 	FORCEINLINE void DecrementLife()
 	{
-		LOG(Warning, "Life : " + to_string(lifeCount));
+		if (!canGetDamage) return;
+		
 		--lifeCount;
+		LOG(Warning, to_string(lifeCount));
+		canGetDamage = false;
 		if (lifeCount <= 0) Death();
+		new Timer([&]() { canGetDamage = true; }, seconds(invicibilityTime), true, false);
+
+		// TODO Modifier Sprite Frame Invincibilité
 	}
 public:
 	LifeComponent(Actor* _owner, const u_int& _lifeCount);

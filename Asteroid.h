@@ -28,5 +28,6 @@ public:
 	virtual void Construct() override;
 	virtual void Tick(const float _deltaTime) override;
 	virtual void Deconstruct() override;
+	virtual void OnCollision(const CollisionData& _data) override;
 };
 

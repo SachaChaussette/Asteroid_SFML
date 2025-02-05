@@ -17,7 +17,10 @@ protected:
 	u_int spriteCount;
 	SizeType size;
 public:
-
+	FORCEINLINE LifeComponent* GetLife() const
+	{
+		return life;
+	}
 	FORCEINLINE CollisionComponent* GetCollision() const
 	{
 		return collision;

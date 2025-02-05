@@ -14,8 +14,10 @@ ShootComponent::ShootComponent(Actor* _owner, const ShootComponent* _other) : Co
 
 void ShootComponent::Shoot()
 {
+	projectile->SetFriendlyLayer(owner->GetLayer());
+
 	// On prend un offset qui sera appliquer à la direction + centre de l'actor qui shoot
-	const Vector2f& _offset = Vector2f(22.0f, 34.0f);
+	const Vector2f& _offset = Vector2f(22.0f, 75.0f);
 
 	float _currentAngle = 0.0f;
 	if (PlayerMovementComponent* _movement  = owner->GetComponent<PlayerMovementComponent>())

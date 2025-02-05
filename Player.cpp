@@ -1,6 +1,9 @@
 #include "Player.h"
 #include "InputManager.h"
 #include "TimerManager.h"
+#include "Asteroid.h"
+#include "UFO.h"
+#include "Projectile.h"
 
 Player::Player(const Vector2f& _size, const string& _path, const TextureExtensionType& _textureType, 
 	const IntRect& _rect, bool _isRepeated, bool _isSmooth, const string& _name)
@@ -8,15 +11,6 @@ Player::Player(const Vector2f& _size, const string& _path, const TextureExtensio
 {
 	movement = CreateComponent<PlayerMovementComponent>();
 	shoot = CreateComponent<ShootComponent>();
-
-	const vector<pair<string, CollisionType>>& _responses
-	{
-		{"Player", CT_NONE},
-		{"Asteroid", CT_OVERLAP},
-		{"UFO", CT_OVERLAP},
-		{"Projectile", CT_OVERLAP},
-	};
-	GetCollision()->AddResponses(_responses);
 }
 
 Player::Player(const Player& _other) : Entity(_other)
@@ -54,6 +48,17 @@ void Player::Construct()
 	{
 		shoot->Shoot();
 	}, Code::Space);
+
+	SetLayer(Layer::PLAYER);
+
+	const vector<pair<string, CollisionType>>& _responses
+	{
+		{"Player", CT_NONE},
+		{"Asteroid", CT_OVERLAP},
+		{"UFO", CT_OVERLAP},
+		{"Projectile", CT_OVERLAP},
+	};
+	collision->AddResponses(_responses);
 }
 
 void Player::Deconstruct()
@@ -74,7 +79,29 @@ void Player::BeginPlay()
 void Player::Tick(const float _deltaTime)
 {
 	Super::Tick(_deltaTime);
-	ComputeNewPositionIfNotInWindow();
+}
+
+void Player::OnCollision(const CollisionData& _data)
+{
+	Super::OnCollision(_data);
+
+	if (_data.other->GetLayer() == Layer::ASTEROID)
+	{
+		Asteroid* _asteroid = Cast<Asteroid>(_data.other);
+		_asteroid->GetLife()->DecrementLife();
+	}
+	else if (_data.other->GetLayer() == Layer::PROJECTILE)
+	{
+		Projectile* _projectile = Cast<Projectile>(_data.other);
+		if (_projectile->GetFriendlyLayer() == Layer::PLAYER) return;
+		_projectile->GetLife()->DecrementLife();
+	}
+	else if (_data.other->GetLayer() == Layer::UFO)
+	{
+		UFO* _ufo = Cast<UFO>(_data.other);
+		_ufo->GetLife()->DecrementLife();
+	}
+
 }
 
 

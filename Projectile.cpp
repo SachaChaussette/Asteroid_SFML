@@ -1,15 +1,20 @@
 #include "Projectile.h"
+#include "Player.h"
+#include "UFO.h"
+#include "Asteroid.h"
 
-Projectile::Projectile(const float _radius, const string& _path, 
-	const TextureExtensionType& _textureType, const IntRect& _rect, bool _isRepeated, bool _isSmooth, 
-	const string& _name) : MeshActor(_radius, _path, _textureType, _rect, _isRepeated, _isSmooth , 30U, _name)
+Projectile::Projectile(const float _radius, const string& _path
+	, const TextureExtensionType& _textureType, const IntRect& _rect)
+	: Entity(1, SMALL, 2, MeshActor(_radius, "Asteroid/" + _path, _textureType, _rect), "Projectile")
 {
 	movement = CreateComponent<EnemyMovementComponent>();
+	friendlyLayer = Layer::COUNT;
 }
 
-Projectile::Projectile(const Projectile& _other) : MeshActor(_other)
+Projectile::Projectile(const Projectile& _other) : Entity(_other)
 {
 	movement = CreateComponent<EnemyMovementComponent>(_other.movement);
+	friendlyLayer = _other.friendlyLayer;
 }
 
 void Projectile::BeginPlay()
@@ -18,44 +23,53 @@ void Projectile::BeginPlay()
 	Super::BeginPlay();
 }
 
-void Projectile::ComputeNewPositionIfNotInWindow()
-{
-	const Vector2f& _windowSize = CAST(Vector2f, M_GAME.GetCurrent()->GetWindowSize());
-	const Vector2f& _playerPosition = GetPosition();
-	const Vector2f& _playerScale = GetScale();
-	const Vector2f& _playerSize = Vector2f(_playerScale.x, _playerScale.y) / 2.0f;
-	if ((_playerPosition.x + _playerSize.x) < 0.0f)
-	{
-		SetPosition({ _windowSize.x + _playerSize.x, _playerPosition.y });
-	}
-	else if ((_playerPosition.x - _playerSize.x) > _windowSize.x)
-	{
-		SetPosition({ 0.0f - _playerSize.x, _playerPosition.y });
-	}
-	if ((_playerPosition.y + _playerSize.y) < 0.0f)
-	{
-		SetPosition({ _playerPosition.x , _windowSize.y + _playerSize.y });
-	}
-	else if ((_playerPosition.y - _playerSize.y) > _windowSize.y)
-	{
-		SetPosition({ _playerPosition.x, 0.0f - _playerSize.y });
-	}
-}
-
 void Projectile::Construct()
 {
 	Super::Construct();
 	movement->SetSpeed(150.0f);
+
+	SetLayer(Layer::PROJECTILE);
+	
+	const vector<pair<string, CollisionType>>& _responses
+	{
+		// TODO CHANGE PLAYER
+		{"Player", CT_NONE},
+		{"Asteroid", CT_OVERLAP},
+		{"UFO", CT_OVERLAP},
+		{"Projectile", CT_NONE},
+	};
+	collision->AddResponses(_responses);
 
 }
 
 void Projectile::Tick(const float _deltaTime)
 {
 	Super::Tick(_deltaTime);
-	ComputeNewPositionIfNotInWindow();
 }
 
 void Projectile::Deconstruct()
 {
 	Super::Deconstruct();
+}
+
+void Projectile::OnCollision(const CollisionData& _data)
+{
+	Super::OnCollision(_data);
+
+	if (_data.other->GetLayer() == Layer::PLAYER && friendlyLayer != Layer::PLAYER)
+	{
+		Player* _player = Cast<Player>(_data.other);
+		_player->GetLife()->DecrementLife();
+	}
+	if (_data.other->GetLayer() == Layer::UFO && friendlyLayer != Layer::UFO)
+	{
+		Player* _player = Cast<Player>(_data.other);
+		_player->GetLife()->DecrementLife();
+	}
+	else if (_data.other->GetLayer() == Layer::ASTEROID && friendlyLayer != Layer::ASTEROID)
+	{
+		Asteroid* _asteroid = Cast<Asteroid>(_data.other);
+		_asteroid->GetLife()->DecrementLife();
+	}
+
 }

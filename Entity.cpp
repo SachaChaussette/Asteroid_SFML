@@ -72,5 +72,3 @@ void Entity::Construct()
 	animation->SetCurrentAnimation("Movement");
 	animation->StartAnimation();
 }
-
-
