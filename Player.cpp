@@ -5,6 +5,7 @@
 #include "UFO.h"
 #include "Projectile.h"
 
+
 Player::Player(const float _radius, const vector<Vector2f>& _point, const string& _path, const TextureExtensionType& _textureType,
 	const IntRect& _rect, bool _isRepeated, bool _isSmooth, const string& _name)
 	: Entity(3, SMALL, 1, MeshActor(_radius, "Player/" + _path, _textureType, _rect, _isRepeated, _isSmooth, 30U, _name), MeshActor(_point, ""), "Player")
@@ -56,6 +57,7 @@ void Player::Construct()
 		shoot->Shoot();
 	}, Code::Space);
 
+	convexHitBox->AddComponent(new CollisionComponent(this, "Player", IS_ALL, CT_OVERLAP));
 	convexHitBox->SetLayer(Layer::PLAYER);
 
 	const vector<pair<string, CollisionType>>& _responses
@@ -94,24 +96,26 @@ void Player::Tick(const float _deltaTime)
 void Player::OnCollision(const CollisionData& _data)
 {
 	Super::OnCollision(_data);
-
-	if (_data.other->GetLayer() == Layer::ASTEROID)
+	if (Entity* _entity = Cast<Entity>(_data.other))
 	{
-		Asteroid* _asteroid = Cast<Asteroid>(_data.other);
-		_asteroid->GetLife()->DecrementLife();
+		Layer::LayerType _layerType = _entity->GetConvexHitBox()->GetLayer();
+		if (_layerType == Layer::ASTEROID)
+		{
+			Asteroid* _asteroid = Cast<Asteroid>(_entity);
+			_asteroid->GetLife()->DecrementLife();
+		}
+		else if (_layerType == Layer::PROJECTILE)
+		{
+			Projectile* _projectile = Cast<Projectile>(_entity);
+			if (_projectile->GetFriendlyLayer() == Layer::PLAYER) return;
+			_projectile->GetLife()->DecrementLife();
+		}
+		else if (_layerType == Layer::UFO)
+		{
+			UFO* _ufo = Cast<UFO>(_entity);
+			_ufo->GetLife()->DecrementLife();
+		}
 	}
-	else if (_data.other->GetLayer() == Layer::PROJECTILE)
-	{
-		Projectile* _projectile = Cast<Projectile>(_data.other);
-		if (_projectile->GetFriendlyLayer() == Layer::PLAYER) return;
-		_projectile->GetLife()->DecrementLife();
-	}
-	else if (_data.other->GetLayer() == Layer::UFO)
-	{
-		UFO* _ufo = Cast<UFO>(_data.other);
-		_ufo->GetLife()->DecrementLife();
-	}
-
 }
 
 void Player::Death()

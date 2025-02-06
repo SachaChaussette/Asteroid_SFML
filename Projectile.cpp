@@ -2,10 +2,11 @@
 #include "Player.h"
 #include "UFO.h"
 #include "Asteroid.h"
+#include "Layer.h"
 
-Projectile::Projectile(const float _radius, const Vector2f& _size, const string& _path
+Projectile::Projectile(const float _radius, const float& _hitBoxRadius, const string& _path
 	, const TextureExtensionType& _textureType, const IntRect& _rect)
-	: Entity(1, SMALL, 4, MeshActor(_radius, "Shoot/" + _path, _textureType, _rect), MeshActor(_size, ""), "Projectile")
+	: Entity(1, SMALL, 4, MeshActor(_radius, "Shoot/" + _path, _textureType, _rect), MeshActor(_hitBoxRadius, ""), "Projectile")
 {
 	movement = CreateComponent<EnemyMovementComponent>();
 	friendlyLayer = Layer::COUNT;
@@ -29,11 +30,11 @@ void Projectile::Construct()
 	Super::Construct();
 	movement->SetSpeed(150.0f);
 
+	convexHitBox->AddComponent(new CollisionComponent(this, "Projectile", IS_ALL, CT_OVERLAP));
 	convexHitBox->SetLayer(Layer::PROJECTILE);
 	
 	const vector<pair<string, CollisionType>>& _responses
 	{
-		// TODO CHANGE PLAYER
 		{"Player", CT_NONE},
 		{"Asteroid", CT_OVERLAP},
 		{"UFO", CT_OVERLAP},
@@ -59,22 +60,26 @@ void Projectile::Deconstruct()
 void Projectile::OnCollision(const CollisionData& _data)
 {
 	Super::OnCollision(_data);
-
-	if (_data.other->GetLayer() == Layer::PLAYER && friendlyLayer != Layer::PLAYER)
+	if (Entity* _entity = Cast<Entity>(_data.other))
 	{
-		Player* _player = Cast<Player>(_data.other);
-		_player->GetLife()->DecrementLife();
+		Layer::LayerType _layerType = _entity->GetConvexHitBox()->GetLayer();
+		if (_layerType == Layer::PLAYER && friendlyLayer != Layer::PLAYER)
+		{
+			Player* _player = Cast<Player>(_entity);
+			_player->GetLife()->DecrementLife();
+		}
+		if (_layerType == Layer::UFO && friendlyLayer != Layer::UFO)
+		{
+			UFO* _ufo = Cast<UFO>(_entity);
+			_ufo->GetLife()->DecrementLife();
+		}
+		else if (_layerType == Layer::ASTEROID && friendlyLayer != Layer::ASTEROID)
+		{
+			Asteroid* _asteroid = Cast<Asteroid>(_entity);
+			_asteroid->GetLife()->DecrementLife();
+		}
 	}
-	if (_data.other->GetLayer() == Layer::UFO && friendlyLayer != Layer::UFO)
-	{
-		UFO* _ufo = Cast<UFO>(_data.other);
-		_ufo->GetLife()->DecrementLife();
-	}
-	else if (_data.other->GetLayer() == Layer::ASTEROID && friendlyLayer != Layer::ASTEROID)
-	{
-		Asteroid* _asteroid = Cast<Asteroid>(_data.other);
-		_asteroid->GetLife()->DecrementLife();
-	}
+	
 
 }
 

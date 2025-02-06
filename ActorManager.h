@@ -31,6 +31,7 @@ public:
 			if (_it->second == _actor)
 			{
 				_it = actorsID.erase(_it);
+				break;
 			}
 			else
 			{

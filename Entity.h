@@ -42,11 +42,12 @@ public:
 	Entity(const u_int& _lifeCount, const SizeType& _size, const u_int& _spriteCount, const MeshActor& _mesh, 
 		const MeshActor& _hitBoxMesh, const string& _name);
 	Entity(const Entity& _other);
-	~Entity();
 
 protected:
 	virtual void Tick(const float _deltaTime) override;
 	void ComputeNewPositionIfNotInWindow();
 	virtual void Construct() override;
+	virtual void Deconstruct() override;
+	virtual void Death() override;
 };
 

@@ -72,13 +72,23 @@ void Entity::Construct()
 	}
 	AnimationData _data = AnimationData(100.0f, _sprites, true, true, RD_ROW);
 	Animation* _move = new Animation("Movement", GetMesh()->GetShape(), _data);
-
-	convexHitBox->AddComponent(CreateComponent<CollisionComponent>("HitBox", IS_ALL, CT_OVERLAP));
-
-	convexHitBox->SetScale({ 10000000.0f, 10000000.0f });
-
+	
 	animation->AddAnimation(_move);
 	animation->SetCurrentAnimation("Movement");
 	animation->StartAnimation();
 
+	convexHitBox->SetOriginAtMiddle();
+
+}
+
+void Entity::Deconstruct()
+{
+	convexHitBox->Deconstruct();
+	Super::Deconstruct();
+
+}
+
+void Entity::Death()
+{
+	Super::Death();
 }

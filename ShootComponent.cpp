@@ -4,13 +4,11 @@
 
 ShootComponent::ShootComponent(Actor* _owner) : Component(_owner)
 {
-	projectile = new Projectile(10.0f, Vector2f(20.0f, 20.0f), "projectile");
 
 }
 
 ShootComponent::ShootComponent(Actor* _owner, const ShootComponent* _other) : Component(_owner)
 {
-	projectile = _other->projectile;
 }
 
 void ShootComponent::Shoot()
@@ -34,7 +32,7 @@ void ShootComponent::Shoot()
 	const Vector2f& _newPos = owner->GetPosition() - _offset + _direction;
 
 	// On spawn le projectile aux nouvelles coordonées et on lui donne la direction du tir
-	Projectile* _projectile = Level::SpawnActor(Projectile(*projectile));
+	Projectile* _projectile = Level::SpawnActor(Projectile(10.0f, Vector2f(20.0f, 20.0f), "projectile"));
 
 	_projectile->SetFriendlyLayer(owner->GetLayer());
 

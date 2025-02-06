@@ -37,6 +37,7 @@ void UFO::Construct()
 {
 	Super::Construct();
 
+	convexHitBox->AddComponent(new CollisionComponent(this, "UFO", IS_ALL, CT_OVERLAP));
 	convexHitBox->SetLayer(Layer::UFO);
 
 	const vector<pair<string, CollisionType>>& _responses
@@ -74,22 +75,25 @@ void UFO::Deconstruct()
 void UFO::OnCollision(const CollisionData& _data)
 {
 	Super::OnCollision(_data);
-
-	if (_data.other->GetLayer() == Layer::PLAYER)
+	if (Entity* _entity = Cast<Entity>(_data.other))
 	{
-		Player* _player = Cast<Player>(_data.other);
-		_player->GetLife()->DecrementLife();
-	}
-	else if (_data.other->GetLayer() == Layer::ASTEROID)
-	{
-		Asteroid* _asteroid = Cast<Asteroid>(_data.other);
-		_asteroid->GetLife()->DecrementLife();
-	}
-	else if (_data.other->GetLayer() == Layer::PROJECTILE)
-	{
-		Projectile* _projectile = Cast<Projectile>(_data.other);
-		if (_projectile->GetFriendlyLayer() == Layer::UFO) return;
-		_projectile->GetLife()->DecrementLife();
+		Layer::LayerType _layerType = _entity->GetConvexHitBox()->GetLayer();
+		if (_layerType == Layer::ASTEROID)
+		{
+			Asteroid* _asteroid = Cast<Asteroid>(_entity);
+			_asteroid->GetLife()->DecrementLife();
+		}
+		else if (_layerType == Layer::PROJECTILE)
+		{
+			Projectile* _projectile = Cast<Projectile>(_entity);
+			if (_projectile->GetFriendlyLayer() == Layer::UFO) return;
+			_projectile->GetLife()->DecrementLife();
+		}
+		else if (_layerType == Layer::PLAYER)
+		{
+			Player* _player = Cast<Player>(_entity);
+			_player->GetLife()->DecrementLife();
+		}
 	}
 }
 
