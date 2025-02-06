@@ -1,6 +1,6 @@
 #include "MenuGame.h"
 #include "HUD.h"
-#include "Level.h"
+#include "LevelManager.h"
 #include "CameraManager.h"
 #include "GameManager.h"
 
@@ -26,7 +26,8 @@ MenuGame::MenuGame(const MenuGame& _other)
 void MenuGame::Start()
 {
 	Super::Start();
-	const Vector2f& _windowSize = CAST(Vector2f, M_GAME.GetCurrent()->GetWindowSize());
+	// TODO
+	/*const Vector2f& _windowSize = CAST(Vector2f, M_GAME.GetCurrent()->GetWindowSize());
 
 	MeshActor* _background = Level::SpawnActor(MeshActor(RectangleShapeData(_windowSize, "Sky", PNG)));
 	_background->SetFillColor(Color(255, 255, 255, 100));
@@ -36,7 +37,7 @@ void MenuGame::Start()
 	canva = M_HUD.CreateWidget<Canvas>("Main Menu");
 	InitMainMenu(canva);
 	ApplyCanva(canva);
-	M_HUD.SetCurrentWidget(canva);
+	M_HUD.SetCurrentWidget(canva);*/
 }
 
 bool MenuGame::Update()
@@ -53,7 +54,7 @@ void MenuGame::Stop()
 
 void MenuGame::InitMainMenu(Canvas* _canva)
 {
-	const Vector2f& _windowSize = CAST(Vector2f, M_GAME.GetCurrent()->GetWindowSize());
+	const Vector2f& _windowSize = M_LEVEL.GetCurrentLevel()->GetWindowSize();
 
 	Label* _title = M_HUD.CreateWidget<Label>("ASTEROID", Screen, "Daydream", TTF);
 	_title->SetPosition(Vector2f(_windowSize.x * 0.33, _windowSize.y * 0.2));
@@ -74,27 +75,28 @@ void MenuGame::InitMainMenu(Canvas* _canva)
 	UI::Image* _playImage = new UI::Image(Vector2f(100.0f, 30.0f), "PixelTransparent");
 	const ButtonData& _playData = ButtonData([&]() {}, [&]() {}, [&]() 
 	{ 
-		if (Canvas* _canva = dynamic_cast<Canvas*>(M_HUD.GetCurrentWidget()))
-		{
-			_canva->Destroy();
-			_canva->RemoveWidgets();
-			M_GAME.GetCurrent()->LaunchGame();
-			//_canva = M_HUD.CreateWidget<Canvas>("Play Canva");
-			/*InitStartMenu(_canva);
-			_canva->UpdateWidgets();
-			ApplyCanva(_canva);
-			M_HUD.SetCurrentWidget(_canva);*/
-		}
-		else
-		{
-			LOG(Warning, "Dynamic Invalide");
-		}
+		// TODO
+		//if (Canvas* _canva = dynamic_cast<Canvas*>(M_HUD.GetCurrentWidget()))
+		//{
+		//	_canva->Destroy();
+		//	_canva->RemoveWidgets();
+		//	M_GAME.GetCurrent()->LaunchGame();
+		//	//_canva = M_HUD.CreateWidget<Canvas>("Play Canva");
+		//	/*InitStartMenu(_canva);
+		//	_canva->UpdateWidgets();
+		//	ApplyCanva(_canva);
+		//	M_HUD.SetCurrentWidget(_canva);*/
+		//}
+		//else
+		//{
+		//	LOG(Warning, "Dynamic Invalide");
+		//}
 		
 	}, [&]() {}, [&]() {});
-	Button* _playButton = M_HUD.CreateWidget<Button>(_playImage, _playData, "PlayButton");
+	/*Button* _playButton = M_HUD.CreateWidget<Button>(_playImage, _playData, "PlayButton");
 	_playButton->SetPosition(Vector2f(_windowSize.x * 0.15, _windowSize.y * 0.8));
 	_playButton->SetZOrder(3);
-	
+	*/
 
 	//////////////////////////
 	///		LeaderBoard
@@ -108,23 +110,24 @@ void MenuGame::InitMainMenu(Canvas* _canva)
 	UI::Image* _leaderBoardImage = new UI::Image(Vector2f(300.0f, 30.0f), "PixelTransparent");
 	const ButtonData& _leaderBoardData = ButtonData([&]() {}, [&]() {}, [&]() 
 	{ 
-		if (Canvas* _canva = dynamic_cast<Canvas*>(M_HUD.GetCurrentWidget()))
-		{
-			_canva->RemoveWidgets();
-			//_canva = M_HUD.CreateWidget<Canvas>("Play Canva");
-			InitLeaderBoard(_canva);
-			_canva->UpdateWidgets();
-			ApplyCanva(_canva);
-			M_HUD.SetCurrentWidget(_canva);
-		}
-		else
-		{
-			LOG(Warning, "Dynamic Invalide");
-		}
+		// TODO
+		//if (Canvas* _canva = dynamic_cast<Canvas*>(M_HUD.GetCurrentWidget()))
+		//{
+		//	_canva->RemoveWidgets();
+		//	//_canva = M_HUD.CreateWidget<Canvas>("Play Canva");
+		//	InitLeaderBoard(_canva);
+		//	_canva->UpdateWidgets();
+		//	ApplyCanva(_canva);
+		//	M_HUD.SetCurrentWidget(_canva);
+		//}
+		//else
+		//{
+		//	LOG(Warning, "Dynamic Invalide");
+		//}
 	}, [&]() {}, [&]() {});
-	Button* _leaderBoardButton = M_HUD.CreateWidget<Button>(_leaderBoardImage, _leaderBoardData, "LeaderBoardButton");
+	/*Button* _leaderBoardButton = M_HUD.CreateWidget<Button>(_leaderBoardImage, _leaderBoardData, "LeaderBoardButton");
 	_leaderBoardButton->SetPosition(Vector2f(_windowSize.x * 0.3, _windowSize.y * 0.8));
-	_leaderBoardButton->SetZOrder(3);
+	_leaderBoardButton->SetZOrder(3);*/
 	
 	//////////////////////////
 	///		Credits
@@ -138,23 +141,24 @@ void MenuGame::InitMainMenu(Canvas* _canva)
 	UI::Image* _creditImage = new UI::Image(Vector2f(170.0f, 30.0f), "PixelTransparent");
 	const ButtonData& _creditsData = ButtonData([&]() {}, [&]() {}, [&]() 
 	{ 
-		if (Canvas* _canva = dynamic_cast<Canvas*>(M_HUD.GetCurrentWidget()))
-		{
-			_canva->RemoveWidgets();
-			//_canva = M_HUD.CreateWidget<Canvas>("Play Canva");
-			InitCredits(_canva);
-			_canva->UpdateWidgets();
-			ApplyCanva(_canva);
-			M_HUD.SetCurrentWidget(_canva);
-		}
-		else
-		{
-			LOG(Warning, "Dynamic Invalide");
-		}
+		// TODO
+		//if (Canvas* _canva = dynamic_cast<Canvas*>(M_HUD.GetCurrentWidget()))
+		//{
+		//	_canva->RemoveWidgets();
+		//	//_canva = M_HUD.CreateWidget<Canvas>("Play Canva");
+		//	InitCredits(_canva);
+		//	_canva->UpdateWidgets();
+		//	ApplyCanva(_canva);
+		//	M_HUD.SetCurrentWidget(_canva);
+		//}
+		//else
+		//{
+		//	LOG(Warning, "Dynamic Invalide");
+		//}
 	}, [&]() {}, [&]() {});
-	Button* _creditsButton = M_HUD.CreateWidget<Button>(_creditImage, _creditsData, "CreditsButton");
+	/*Button* _creditsButton = M_HUD.CreateWidget<Button>(_creditImage, _creditsData, "CreditsButton");
 	_creditsButton->SetPosition(Vector2f(_windowSize.x * 0.57, _windowSize.y * 0.8));
-	_creditsButton->SetZOrder(3);
+	_creditsButton->SetZOrder(3);*/
 
 	
 
@@ -170,16 +174,16 @@ void MenuGame::InitMainMenu(Canvas* _canva)
 	UI::Image* _quitImage = new UI::Image(Vector2f(100.0f, 30.0f), "PixelTransparent");
 	const ButtonData& _quitData = ButtonData([&]() {}, [&]() {}, [&]() 
 	{ 
-		M_GAME.GetCurrent()->IsOver();
+		//M_GAME.GetCurrent()->IsOver();
 	}, [&]() {}, [&]() {});
-	Button* _quitButton = M_HUD.CreateWidget<Button>(_quitImage, _quitData, "QuitButton");
+	/*Button* _quitButton = M_HUD.CreateWidget<Button>(_quitImage, _quitData, "QuitButton");
 	_quitButton->SetPosition(Vector2f(_windowSize.x * 0.8, _windowSize.y * 0.8));
-	_quitButton->SetZOrder(3);
+	_quitButton->SetZOrder(3);*/
 
-	_canva->AddWidget(_playButton);
+	/*_canva->AddWidget(_playButton);
 	_canva->AddWidget(_leaderBoardButton);
 	_canva->AddWidget(_creditsButton);
-	_canva->AddWidget(_quitButton);
+	_canva->AddWidget(_quitButton);*/
 
 	_canva->AddWidget(_play);
 	_canva->AddWidget(_leaderBoard);
@@ -190,7 +194,7 @@ void MenuGame::InitMainMenu(Canvas* _canva)
 
 void MenuGame::InitStartMenu(Canvas* _canva)
 {
-	const Vector2f& _windowSize = CAST(Vector2f, M_GAME.GetCurrent()->GetWindowSize());
+	const Vector2f& _windowSize = M_LEVEL.GetCurrentLevel()->GetWindowSize();
 
 	Label* _solo = M_HUD.CreateWidget<Label>("SOLO", Screen, "Daydream", TTF);
 	_solo->SetPosition(Vector2f(_windowSize.x * 0.2, _windowSize.y * 0.25));
@@ -268,7 +272,7 @@ void MenuGame::InitStartMenu(Canvas* _canva)
 
 void MenuGame::InitLeaderBoard(Canvas* _canva)
 {
-	const Vector2f& _windowSize = CAST(Vector2f, M_GAME.GetCurrent()->GetWindowSize());
+	const Vector2f& _windowSize = M_LEVEL.GetCurrentLevel()->GetWindowSize();
 
 	Label* _leaderBoard = M_HUD.CreateWidget<Label>("LeaderBoard", Screen, "Daydream", TTF);
 	_leaderBoard->SetPosition(Vector2f(_windowSize.x * 0.32, _windowSize.y * 0.1));
@@ -324,7 +328,7 @@ void MenuGame::InitLeaderBoard(Canvas* _canva)
 
 void MenuGame::InitCredits(Canvas* _canva)
 {
-	const Vector2f& _windowSize = CAST(Vector2f, M_GAME.GetCurrent()->GetWindowSize());
+	const Vector2f& _windowSize = M_LEVEL.GetCurrentLevel()->GetWindowSize();
 
 	Label* _credits = M_HUD.CreateWidget<Label>("Credits", Screen, "Daydream", TTF);
 	_credits->SetPosition(Vector2f(_windowSize.x * 0.38, _windowSize.y * 0.1));

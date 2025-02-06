@@ -103,9 +103,6 @@
     <Filter Include="Script\Manager\Font">
       <UniqueIdentifier>{e8d5ab2b-17ab-4998-9744-35e28e1aa780}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Script\Core\Actor\Label">
-      <UniqueIdentifier>{c9825337-b29c-47a7-aec4-ccc05e905467}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Script\Level">
       <UniqueIdentifier>{a5b0ded4-8981-4d0e-a0d6-a583b1a11a2c}</UniqueIdentifier>
     </Filter>
@@ -142,29 +139,131 @@
     <Filter Include="Script\Core\Components\Camera">
       <UniqueIdentifier>{168d15e1-0226-4163-be15-075ecdea5f87}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Script\Core\Components\Movement">
-      <UniqueIdentifier>{a23958b9-4cac-45a8-9597-c67fedaf7e15}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Script\Core\Components\View">
       <UniqueIdentifier>{7bb490d1-ca24-4981-8d4a-b0e5b3d1ba09}</UniqueIdentifier>
     </Filter>
     <Filter Include="Script\Core\Components\Root">
       <UniqueIdentifier>{0dba8a8a-93e5-4915-933a-69034921e80f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Script\Core\Components\Shoot">
-      <UniqueIdentifier>{3d8aae30-02ca-458c-b77b-92fde4e3def4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Script\Core\Actor\Player">
-      <UniqueIdentifier>{da40dfb7-bbad-4618-b1a4-4d909f7f9644}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Script\Core\Actor\Projectile">
-      <UniqueIdentifier>{57e1dab3-8231-4634-b36d-331c30562f28}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Script\Core\Actor\UFO">
       <UniqueIdentifier>{9f889804-435a-4869-8bb4-57ae995b924f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Script\Core\Actor\Asteroid">
+    <Filter Include="Script\Engine">
+      <UniqueIdentifier>{b5bdff20-16f2-44dd-8aa9-1f66d10924c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\Widget">
+      <UniqueIdentifier>{42a4e370-359f-4c57-80d7-5ca94592e30d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\UI">
+      <UniqueIdentifier>{bcb9abff-9aa5-4e07-896b-1302ade93a6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Menu">
+      <UniqueIdentifier>{74a3aa5e-ea66-4bb4-b8ea-ff4c57de8f06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Physic">
+      <UniqueIdentifier>{7ccd368e-9492-45b5-8b9a-8bff10b41354}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Input">
+      <UniqueIdentifier>{ca907728-091d-4cd0-8606-2dfc1fb81ad3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Object\Vertex">
+      <UniqueIdentifier>{fa209bfd-bd6e-4dab-803d-c210d95daae7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Manager\Collision">
+      <UniqueIdentifier>{aad9bd53-5510-4002-91be-91d14182fe6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Manager\File">
+      <UniqueIdentifier>{1029cf8a-7deb-4f99-b46c-70ff3b1acf8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Manager\HUD">
+      <UniqueIdentifier>{c8dacb01-927d-471a-a897-427f334ef774}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Manager\Level">
+      <UniqueIdentifier>{0e93a90b-0ec6-4179-8f86-c1f54d38ddfc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Manager\GAMEMODE">
+      <UniqueIdentifier>{5a25cbea-a7fd-4250-b600-91f47305170a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Components\LIFE">
+      <UniqueIdentifier>{078b52aa-e157-413a-900c-c3c4bbff9b81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Components\Vertex">
+      <UniqueIdentifier>{74e179b8-d6cd-418c-8c2b-384a9cb05080}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Components\MOVEMENT">
+      <UniqueIdentifier>{a23958b9-4cac-45a8-9597-c67fedaf7e15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Components\MOVEMENT\ENEMY">
+      <UniqueIdentifier>{85f257d6-047c-4736-82a4-170a485b2f9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Components\MOVEMENT\PLAYER">
+      <UniqueIdentifier>{372f63de-fd21-465b-a186-1931c849c67d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Components\SHOOT">
+      <UniqueIdentifier>{3d8aae30-02ca-458c-b77b-92fde4e3def4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\PROJECTILE">
+      <UniqueIdentifier>{57e1dab3-8231-4634-b36d-331c30562f28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\PLAYER">
+      <UniqueIdentifier>{da40dfb7-bbad-4618-b1a4-4d909f7f9644}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\ASTEROID">
       <UniqueIdentifier>{273f6ec6-872f-4749-8ea4-efca5559b828}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\Widget\Image">
+      <UniqueIdentifier>{3368c7a5-631e-4666-b173-16470a846f2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\Widget\Box">
+      <UniqueIdentifier>{a3e8d8da-1ee6-41ce-8660-752b6ca336c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\Widget\Button">
+      <UniqueIdentifier>{814ce8e1-65c6-4fd0-82f8-0185fb6d0a9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\Widget\CheckBox">
+      <UniqueIdentifier>{6cff4406-6086-4752-947b-f04c0cb5910d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\Widget\Canva">
+      <UniqueIdentifier>{1ebd0076-feed-469c-847e-e20de89e295d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\Widget\HorizontalBox">
+      <UniqueIdentifier>{d65e6466-7862-4732-af2c-55437a9e65af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\Widget\VerticalBox">
+      <UniqueIdentifier>{cef2bb89-bdc0-4933-ac01-2424e190fc00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\Widget\Label">
+      <UniqueIdentifier>{c9804c83-bb29-4630-a318-88e297d8f22b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\Widget\Panel">
+      <UniqueIdentifier>{1094fd1e-46a4-417f-b18b-cb88c222bd55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\Widget\Slider">
+      <UniqueIdentifier>{1fcd4b42-acd4-428f-93bf-fb014a68b954}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\Widget\ProgressBar">
+      <UniqueIdentifier>{d291a069-d02b-4596-8474-4a66c9270c26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\Vertex">
+      <UniqueIdentifier>{78d94d63-ecd4-4756-a2c3-91334a22d002}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\PlayerController">
+      <UniqueIdentifier>{d5826c79-47f7-416b-8a6e-3f8164cc1fac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\Particle">
+      <UniqueIdentifier>{60ad05f0-1278-4c47-9780-2219f2f42264}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\GameMode">
+      <UniqueIdentifier>{613b35d8-540f-413b-ae71-bdd6e44855e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Core\Actor\ENTITY">
+      <UniqueIdentifier>{30d4d482-b903-4747-9c52-a41e841ef09f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\UI\Slot">
+      <UniqueIdentifier>{1ac70243-2238-4849-b782-cd149e9e4416}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\UI\Slot\Canva">
+      <UniqueIdentifier>{22e286f3-78eb-4e21-a837-96373308185b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -249,12 +348,6 @@
     <ClInclude Include="TransformData.h">
       <Filter>Script\Core</Filter>
     </ClInclude>
-    <ClInclude Include="ITransformableViewer.h">
-      <Filter>Script\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="ITransformableModifier.h">
-      <Filter>Script\Core</Filter>
-    </ClInclude>
     <ClInclude Include="Animation.h">
       <Filter>Script\Animation</Filter>
     </ClInclude>
@@ -272,9 +365,6 @@
     </ClInclude>
     <ClInclude Include="AudioManager.h">
       <Filter>Script\Manager\Audio</Filter>
-    </ClInclude>
-    <ClInclude Include="Label.h">
-      <Filter>Script\Core\Actor\Label</Filter>
     </ClInclude>
     <ClInclude Include="Spawner.h">
       <Filter>Script\Core\Actor\Spawner</Filter>
@@ -303,74 +393,164 @@
     <ClInclude Include="CameraComponent.h">
       <Filter>Script\Core\Components\Camera</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerMovementComponent.h">
-      <Filter>Script\Core\Components\Movement</Filter>
-    </ClInclude>
     <ClInclude Include="RootComponent.h">
       <Filter>Script\Core\Components\Root</Filter>
     </ClInclude>
     <ClInclude Include="ViewComponent.h">
       <Filter>Script\Core\Components\View</Filter>
     </ClInclude>
-    <ClInclude Include="EnemyMovementComponent.h">
-      <Filter>Script\Core\Components\Movement</Filter>
-    </ClInclude>
     <ClInclude Include="ShootComponent.h">
-      <Filter>Script\Core\Components\Shoot</Filter>
+      <Filter>Script\Core\Components\SHOOT</Filter>
     </ClInclude>
     <ClInclude Include="UFO.h">
       <Filter>Script\Core\Actor\UFO</Filter>
     </ClInclude>
     <ClInclude Include="Asteroid.h">
-      <Filter>Script\Core\Actor\Asteroid</Filter>
+      <Filter>Script\Core\Actor\ASTEROID</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>Script\Core\Actor\Player</Filter>
+      <Filter>Script\Core\Actor\PLAYER</Filter>
     </ClInclude>
     <ClInclude Include="Projectile.h">
-      <Filter>Script\Core\Actor\Projectile</Filter>
+      <Filter>Script\Core\Actor\PROJECTILE</Filter>
     </ClInclude>
     <ClInclude Include="SizeType.h">
       <Filter>Script\Resource Files</Filter>
     </ClInclude>
-    <ClInclude Include="Entity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="LifeComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Button.h">
-      <Filter>Script</Filter>
-    </ClInclude>
-    <ClInclude Include="Canvas.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HUD.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Image.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RenderType.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Widget.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ChronoMode.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="GameMode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GameModeManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Layer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GameModel.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyMovementComponent.h">
+      <Filter>Script\Core\Components\MOVEMENT\ENEMY</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMovementComponent.h">
+      <Filter>Script\Core\Components\MOVEMENT\PLAYER</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformableViewer.h">
+      <Filter>Script\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformableModifier.h">
+      <Filter>Script\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformableObject.h">
+      <Filter>Script\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderType.h">
+      <Filter>Script\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuGame.h">
+      <Filter>Script\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Layer.h">
+      <Filter>Script\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Kismet.h">
+      <Filter>Script\Physic</Filter>
+    </ClInclude>
+    <ClInclude Include="Action.h">
+      <Filter>Script\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionMap.h">
+      <Filter>Script\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine.h">
+      <Filter>Script\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexObject.h">
+      <Filter>Script\Object\Vertex</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionManager.h">
+      <Filter>Script\Manager\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="FileManager.h">
+      <Filter>Script\Manager\File</Filter>
+    </ClInclude>
+    <ClInclude Include="GameModeManager.h">
+      <Filter>Script\Manager\GAMEMODE</Filter>
+    </ClInclude>
+    <ClInclude Include="HUD.h">
+      <Filter>Script\Manager\HUD</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelManager.h">
+      <Filter>Script\Manager\Level</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexComponent.h">
+      <Filter>Script\Core\Components\Vertex</Filter>
+    </ClInclude>
+    <ClInclude Include="LifeComponent.h">
+      <Filter>Script\Core\Components\LIFE</Filter>
+    </ClInclude>
+    <ClInclude Include="Widget.h">
+      <Filter>Script\Core\Actor\Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="Label.h">
+      <Filter>Script\Core\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="PanelWidget.h">
+      <Filter>Script\Core\Actor\Widget\Panel</Filter>
+    </ClInclude>
+    <ClInclude Include="SliderWidget.h">
+      <Filter>Script\Core\Actor\Widget\Slider</Filter>
+    </ClInclude>
+    <ClInclude Include="VerticalBox.h">
+      <Filter>Script\Core\Actor\Widget\VerticalBox</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgressBarWidget.h">
+      <Filter>Script\Core\Actor\Widget\ProgressBar</Filter>
+    </ClInclude>
+    <ClInclude Include="LabelWidget.h">
+      <Filter>Script\Core\Actor\Widget\Label</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageWidget.h">
+      <Filter>Script\Core\Actor\Widget\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="HorizontalBox.h">
+      <Filter>Script\Core\Actor\Widget\HorizontalBox</Filter>
+    </ClInclude>
+    <ClInclude Include="CheckBoxWidget.h">
+      <Filter>Script\Core\Actor\Widget\CheckBox</Filter>
+    </ClInclude>
+    <ClInclude Include="CanvasWidget.h">
+      <Filter>Script\Core\Actor\Widget\Canva</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonWidget.h">
+      <Filter>Script\Core\Actor\Widget\Button</Filter>
+    </ClInclude>
+    <ClInclude Include="Box.h">
+      <Filter>Script\Core\Actor\Widget\Box</Filter>
+    </ClInclude>
+    <ClInclude Include="Canvas.h">
+      <Filter>Script\Core\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="Image.h">
+      <Filter>Script\Core\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexActor.h">
+      <Filter>Script\Core\Actor\Vertex</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerController.h">
+      <Filter>Script\Core\Actor\PlayerController</Filter>
+    </ClInclude>
+    <ClInclude Include="Particle.h">
+      <Filter>Script\Core\Actor\Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMode.h">
+      <Filter>Script\Core\Actor\GameMode</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Script\Core\Actor\ENTITY</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Script\Core\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="CanvasSlot.h">
+      <Filter>Script\UI\Slot\Canva</Filter>
+    </ClInclude>
+    <ClInclude Include="Slot.h">
+      <Filter>Script\UI\Slot</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -467,9 +647,6 @@
     <ClCompile Include="CameraActor.cpp">
       <Filter>Script\Core\Actor\Camera</Filter>
     </ClCompile>
-    <ClCompile Include="Label.cpp">
-      <Filter>Script\Core\Actor\Label</Filter>
-    </ClCompile>
     <ClCompile Include="Level.cpp">
       <Filter>Script\Level</Filter>
     </ClCompile>
@@ -500,71 +677,153 @@
     <ClCompile Include="CameraComponent.cpp">
       <Filter>Script\Core\Components\Camera</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerMovementComponent.cpp">
-      <Filter>Script\Core\Components\Movement</Filter>
-    </ClCompile>
     <ClCompile Include="RootComponent.cpp">
       <Filter>Script\Core\Components\Root</Filter>
     </ClCompile>
     <ClCompile Include="ViewComponent.cpp">
       <Filter>Script\Core\Components\View</Filter>
     </ClCompile>
-    <ClCompile Include="EnemyMovementComponent.cpp">
-      <Filter>Script\Core\Components\Movement</Filter>
-    </ClCompile>
     <ClCompile Include="UFO.cpp">
       <Filter>Script\Core\Actor\UFO</Filter>
     </ClCompile>
     <ClCompile Include="Asteroid.cpp">
-      <Filter>Script\Core\Actor\Asteroid</Filter>
+      <Filter>Script\Core\Actor\ASTEROID</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>Script\Core\Actor\Player</Filter>
+      <Filter>Script\Core\Actor\PLAYER</Filter>
     </ClCompile>
     <ClCompile Include="ShootComponent.cpp">
-      <Filter>Script\Core\Components\Shoot</Filter>
-    </ClCompile>
-    <ClCompile Include="Entity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="LifeComponent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Button.cpp">
-      <Filter>Script</Filter>
-    </ClCompile>
-    <ClCompile Include="Canvas.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HUD.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Image.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Widget.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Script\Core\Components\SHOOT</Filter>
     </ClCompile>
     <ClCompile Include="Projectile.cpp">
-      <Filter>Script\Core\Actor\Projectile</Filter>
+      <Filter>Script\Core\Actor\PROJECTILE</Filter>
     </ClCompile>
     <ClCompile Include="ChronoMode.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GameMode.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GameModeManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameModel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MenuGame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyMovementComponent.cpp">
+      <Filter>Script\Core\Components\MOVEMENT\ENEMY</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerMovementComponent.cpp">
+      <Filter>Script\Core\Components\MOVEMENT\PLAYER</Filter>
+    </ClCompile>
+    <ClCompile Include="Label.cpp">
+      <Filter>Script\Core\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Script\Core\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Action.cpp">
+      <Filter>Script\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionMap.cpp">
+      <Filter>Script\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Box.cpp">
+      <Filter>Script\Core\Actor\Widget\Box</Filter>
+    </ClCompile>
+    <ClCompile Include="Canvas.cpp">
+      <Filter>Script\Core\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>Script\Manager\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Script\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="FileManager.cpp">
+      <Filter>Script\Manager\File</Filter>
+    </ClCompile>
+    <ClCompile Include="GameModeManager.cpp">
+      <Filter>Script\Manager\GAMEMODE</Filter>
+    </ClCompile>
+    <ClCompile Include="HUD.cpp">
+      <Filter>Script\Manager\HUD</Filter>
+    </ClCompile>
+    <ClCompile Include="Image.cpp">
+      <Filter>Script\Core\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Kismet.cpp">
+      <Filter>Script\Physic</Filter>
+    </ClCompile>
+    <ClCompile Include="LifeComponent.cpp">
+      <Filter>Script\Core\Components\LIFE</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelManager.cpp">
+      <Filter>Script\Manager\Level</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexObject.cpp">
+      <Filter>Script\Object\Vertex</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexComponent.cpp">
+      <Filter>Script\Core\Components\Vertex</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformableObject.cpp">
+      <Filter>Script\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="ButtonWidget.cpp">
+      <Filter>Script\Core\Actor\Widget\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="CanvasWidget.cpp">
+      <Filter>Script\Core\Actor\Widget\Canva</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Script\Core\Actor\ENTITY</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckBoxWidget.cpp">
+      <Filter>Script\Core\Actor\Widget\CheckBox</Filter>
+    </ClCompile>
+    <ClCompile Include="HorizontalBox.cpp">
+      <Filter>Script\Core\Actor\Widget\HorizontalBox</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageWidget.cpp">
+      <Filter>Script\Core\Actor\Widget\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="LabelWidget.cpp">
+      <Filter>Script\Core\Actor\Widget\Label</Filter>
+    </ClCompile>
+    <ClCompile Include="SliderWidget.cpp">
+      <Filter>Script\Core\Actor\Widget\Slider</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexActor.cpp">
+      <Filter>Script\Core\Actor\Vertex</Filter>
+    </ClCompile>
+    <ClCompile Include="Widget.cpp">
+      <Filter>Script\Core\Actor\Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="VerticalBox.cpp">
+      <Filter>Script\Core\Actor\Widget\VerticalBox</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgressBarWidget.cpp">
+      <Filter>Script\Core\Actor\Widget\ProgressBar</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerController.cpp">
+      <Filter>Script\Core\Actor\PlayerController</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle.cpp">
+      <Filter>Script\Core\Actor\Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="PanelWidget.cpp">
+      <Filter>Script\Core\Actor\Widget\Panel</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMode.cpp">
+      <Filter>Script\Core\Actor\GameMode</Filter>
+    </ClCompile>
+    <ClCompile Include="CanvasSlot.cpp">
+      <Filter>Script\UI\Slot\Canva</Filter>
+    </ClCompile>
+    <ClCompile Include="Slot.cpp">
+      <Filter>Script\UI\Slot</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="TODOList.txt" />
-    <Text Include="Solution Technique.txt">
-      <Filter>Header Files</Filter>
-    </Text>
+    <Text Include="Solution Technique.txt" />
   </ItemGroup>
 </Project>

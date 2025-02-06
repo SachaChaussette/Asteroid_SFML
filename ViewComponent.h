@@ -1,8 +1,8 @@
 #pragma once
 
 #include "Component.h"
-#include "ITransformableModifier.h"
-#include "ITransformableViewer.h"
+#include "TransformableModifier.h"
+#include "TransformableViewer.h"
 
 class ViewComponent : public Component, public ITransformableModifier, public ITransformableViewer
 {
