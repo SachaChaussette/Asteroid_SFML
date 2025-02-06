@@ -17,12 +17,10 @@ class Player : public Entity
 
 public:
 
-	Player(const float _radius, const vector<Vector2f>& _point, const string& _path = "", 
-		const TextureExtensionType& _textureType = PNG, const IntRect& _rect = {}, bool _isRepeated = false, 
-		bool _isSmooth = false, const string& _name = "Player");
-	Player(const float _radius, const Vector2f& _size, const string& _path = "", 
-		const TextureExtensionType& _textureType = PNG, const IntRect& _rect = {}, bool _isRepeated = false,
-		bool _isSmooth = false, const string& _name = "Player");
+	Player(const CircleShapeData& _data, const vector<Vector2f>& _point = vector<Vector2f>(),
+		const SizeType& _size = SMALL, const string& _name = "Player");
+	Player(const RectangleShapeData& _data, const vector<Vector2f>& _point = vector<Vector2f>(),
+		const SizeType& _size = SMALL, const string& _name = "Player");
 	Player(const Player& _other);
 public:
 
@@ -32,8 +30,8 @@ public:
 	virtual void Tick(const float _deltaTime) override;
 	virtual void BeginDestroy() override {};
 
-	virtual void OnCollision(const CollisionData& _data) override;
+	virtual void CollisionEnter(const CollisionData& _data) override;
 
-	virtual void Death() override;
+	//virtual void Death() override;
 
 };

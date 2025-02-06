@@ -2,8 +2,9 @@
 #include "HUD.h"
 #include "TimerManager.h"
 #include "GameManager.h"
+#include "LevelManager.h"
 
-ChronoMode::ChronoMode(const int _timerCount) : GameMode("ChronoMode")
+ChronoMode::ChronoMode(const int _timerCount) : GameModel("ChronoMode")
 {
 	timerCount = _timerCount;
 	currentTime = timerCount;
@@ -37,7 +38,7 @@ void ChronoMode::Start()
 {
 	Super::Start();
 
-	const Vector2f& _windowSize = CAST(Vector2f, M_GAME.GetCurrent()->GetWindowSize());
+	const Vector2f& _windowSize = M_LEVEL.GetCurrentLevel()->GetWindowSize();
 
 
 	//new Timer<Seconds>([&]() { GenerateAsteroid(); }, seconds(2.0f), true, true);

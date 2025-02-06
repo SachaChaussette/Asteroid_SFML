@@ -18,8 +18,8 @@ public:
 		return movement;
 	}
 public:
-	Asteroid(const float _radius, const vector<Vector2f>& _point, const string& _path = "", const SizeType& _size = BIG, const TextureExtensionType& _textureType = PNG,
-		const IntRect& _rect = {}, bool _isRepeated = false, bool _isSmooth = false, const string& _name = "Asteroid");
+	Asteroid(const CircleShapeData& _data, const vector<Vector2f>& _point = vector<Vector2f>(), 
+		const SizeType& _size = BIG, const string& _name = "Asteroid");
 	Asteroid(const Asteroid& _other);
 
 public: 
@@ -27,6 +27,6 @@ public:
 	virtual void Construct() override;
 	virtual void Tick(const float _deltaTime) override;
 	virtual void Deconstruct() override;
-	virtual void OnCollision(const CollisionData& _data) override;
+	virtual void CollisionEnter(const CollisionData& _data) override;
 };
 

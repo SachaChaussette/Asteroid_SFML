@@ -1,6 +1,6 @@
 #include "Entity.h"
 #include "GameManager.h"
-#include "Level.h"
+#include "LevelManager.h"
 
 Entity::Entity(const u_int & _lifeCount, const SizeType & _size, const u_int & _spriteCount, 
 	const MeshActor& _mesh, const MeshActor& _hitBoxMesh, const string & _name) : MeshActor(_mesh)
@@ -8,7 +8,8 @@ Entity::Entity(const u_int & _lifeCount, const SizeType & _size, const u_int & _
 	animation = CreateComponent<AnimationComponent>();
 	life = CreateComponent<LifeComponent>(_lifeCount);
 
-	convexHitBox = Level::SpawnActor<MeshActor>(_hitBoxMesh);
+	// TODO
+	//convexHitBox = Level::SpawnActor<MeshActor>(_hitBoxMesh);
 	AddChild(convexHitBox, AT_SNAP_TO_TARGET);
 
 	size = _size;
@@ -35,7 +36,7 @@ void Entity::Tick(const float _deltaTime)
 
 void Entity::ComputeNewPositionIfNotInWindow()
 {
-	const Vector2f& _windowSize = CAST(Vector2f, M_GAME.GetCurrent()->GetWindowSize());
+	const Vector2f& _windowSize = M_LEVEL.GetCurrentLevel()->GetWindowSize();
 	const Vector2f& _playerPosition = GetPosition();
 	const Vector2f& _playerScale = GetScale();
 	const Vector2f& _playerSize = Vector2f(_playerScale.x, _playerScale.y) / 2.0f;
@@ -78,7 +79,8 @@ void Entity::Construct()
 	animation->StartAnimation();
 
 	convexHitBox->SetOriginAtMiddle();
-	convexHitBox->SetParent(this);
+	// TODO
+	//convexHitBox->SetParent(this);
 }
 
 void Entity::Deconstruct()
@@ -88,7 +90,7 @@ void Entity::Deconstruct()
 
 }
 
-void Entity::Death()
-{
-	Super::Death();
-}
+//void Entity::Death()
+//{
+//	Super::Death();
+//}

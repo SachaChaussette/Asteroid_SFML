@@ -7,17 +7,17 @@
 #include "Level.h"
 
 
-Player::Player(const float _radius, const vector<Vector2f>& _point, const string& _path, const TextureExtensionType& _textureType,
-	const IntRect& _rect, bool _isRepeated, bool _isSmooth, const string& _name)
-	: Entity(3, SMALL, 1, MeshActor(_radius, "Player/" + _path, _textureType, _rect, _isRepeated, _isSmooth, 30U, _name), MeshActor(_point, "Transparent"), "Player")
+Player::Player(const CircleShapeData& _data, const vector<Vector2f>& _point,
+	const SizeType& _size, const string& _name)
+	: Entity(3, _size, 1, MeshActor(_data), MeshActor(_point, "Transparent"), _name)
 {
 	movement = CreateComponent<PlayerMovementComponent>();
 	shoot = CreateComponent<ShootComponent>();
 	canons = vector<MeshActor*>();
 }
-Player::Player(const float _radius, const Vector2f& _size, const string& _path, const TextureExtensionType& _textureType,
-	const IntRect& _rect, bool _isRepeated, bool _isSmooth, const string& _name)
-	: Entity(3, SMALL, 1, MeshActor(_radius, "Player/" + _path, _textureType, _rect, _isRepeated, _isSmooth, 30U, _name), MeshActor(_size, "Transparent"), "Player")
+Player::Player(const RectangleShapeData& _data, const vector<Vector2f>& _point,
+	const SizeType& _size, const string& _name)
+	: Entity(3, _size, 1, MeshActor(_data), MeshActor(_size, "Transparent"), "Player")
 {
 	movement = CreateComponent<PlayerMovementComponent>();
 	shoot = CreateComponent<ShootComponent>();
@@ -35,7 +35,8 @@ void Player::Construct()
 {
 	Super::Construct();
 
-	M_INPUT.BindAction([&]() 
+	// TODO
+	/*M_INPUT.BindAction([&]()
 	{
 		movement->Rotate(-10);
 		SetOriginAtMiddle();
@@ -57,15 +58,17 @@ void Player::Construct()
 	M_INPUT.BindAction([&]() 
 	{
 		shoot->Shoot();
-	}, Code::Space);
+	}, Code::Space);*/
 
-	MeshActor* _canon = Level::SpawnActor(MeshActor(Vector2f(200.0f, 200.0f), ""));
+	// TODO
+	//MeshActor* _canon = Level::SpawnActor(MeshActor(Vector2f(200.0f, 200.0f), ""));
 	//_canon->SetPosition(GetPosition());
-	AddChild(_canon, AT_KEEP_RELATIVE);
-	canons.push_back(_canon);
+	//AddChild(_canon, AT_KEEP_RELATIVE);
+	//canons.push_back(_canon);
 
 	convexHitBox->AddComponent(new CollisionComponent(convexHitBox, "Player", IS_ALL, CT_OVERLAP));
-	convexHitBox->SetLayer(Layer::PLAYER);
+	// TODO
+	//convexHitBox->SetLayer(Layer::PLAYER);
 
 	const vector<pair<string, CollisionType>>& _responses
 	{
@@ -100,13 +103,14 @@ void Player::Tick(const float _deltaTime)
 	Super::Tick(_deltaTime);
 }
 
-void Player::OnCollision(const CollisionData& _data)
+void Player::CollisionEnter(const CollisionData& _data)
 {
-	Super::OnCollision(_data);
+	Super::CollisionEnter(_data);
 	if (Entity* _entity = Cast<Entity>(_data.other))
 	{
-		Layer::LayerType _layerType = _entity->GetConvexHitBox()->GetLayer();
-		if (_layerType == Layer::ASTEROID)
+		// TODO
+		//Layer::LayerType _layerType = _entity->GetConvexHitBox()->GetLayer();
+		/*if (_layerType == Layer::ASTEROID)
 		{
 			Asteroid* _asteroid = Cast<Asteroid>(_entity);
 			_asteroid->GetLife()->DecrementLife();
@@ -121,14 +125,14 @@ void Player::OnCollision(const CollisionData& _data)
 		{
 			UFO* _ufo = Cast<UFO>(_entity);
 			_ufo->GetLife()->DecrementLife();
-		}
+		}*/
 	}
 }
 
-void Player::Death()
-{
-	Super::Death();
-	system("pause");
-}
-
+//void Player::Death()
+//{
+//	Super::Death();
+//	system("pause");
+//}
+//
 

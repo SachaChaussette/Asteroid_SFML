@@ -24,8 +24,10 @@ public:
 		return movement;
 	}
 public:
-	Projectile(const float _radius, const Vector2f& _size, const string& _path = "",
-		const TextureExtensionType& _textureType = PNG, const IntRect& _rect = {});
+	Projectile(const CircleShapeData& _data, const vector<Vector2f>& _point = vector<Vector2f>(),
+		const SizeType& _size = SMALL, const string& _name = "Projectile");
+	Projectile(const RectangleShapeData& _data, const vector<Vector2f>& _point = vector<Vector2f>(),
+		const SizeType& _size = SMALL, const string& _name = "Projectile");
 	Projectile(const Projectile& _other);
 
 	virtual void Construct() override;
@@ -33,7 +35,7 @@ public:
 	virtual void BeginPlay() override ;
 	virtual void Deconstruct() override ;
 
-	void OnCollision(const CollisionData& _data);
+	virtual void CollisionEnter(const CollisionData& _data) override;
 
 };
 

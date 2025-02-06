@@ -9,7 +9,7 @@ namespace UI
 		TextObject* text;
 
 	public:
-#pragma region Modifier
+	#pragma region Modifier
 		FORCEINLINE void SetString(const string& _string)
 		{
 			text->GetDrawable()->setString(_string);
@@ -54,7 +54,11 @@ namespace UI
 			text->GetDrawable()->setCharacterSize(_size);
 		}
 
-#pragma endregion
+	#pragma endregion
+		FORCEINLINE virtual Vector2f GetSize() const override
+		{
+			return text->GetDrawable()->getScale();
+		}
 
 	public:
 		Label(const string& _text, const RenderType& _type = Screen, const string& _path = "", const FontExtensionType& _fontType = OTF);

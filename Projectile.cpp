@@ -4,9 +4,17 @@
 #include "Asteroid.h"
 #include "Layer.h"
 
-Projectile::Projectile(const float _radius, const Vector2f& _size, const string& _path
-	, const TextureExtensionType& _textureType, const IntRect& _rect)
-	: Entity(1, SMALL, 4, MeshActor(_radius, "Shoot/" + _path, _textureType, _rect), MeshActor(_size, "Transparent"), "Projectile")
+Projectile::Projectile(const CircleShapeData& _data, const vector<Vector2f>& _point,
+	const SizeType& _size, const string& _name)
+	: Entity(3, _size, 1, MeshActor(_data), MeshActor(_point, "Transparent"), _name)
+{
+	movement = CreateComponent<EnemyMovementComponent>();
+	friendlyLayer = Layer::COUNT;
+}
+
+Projectile::Projectile(const RectangleShapeData& _data, const vector<Vector2f>& _point,
+	const SizeType& _size, const string& _name)
+	: Entity(3, _size, 1, MeshActor(_data), MeshActor(_size, "Transparent"), "Player")
 {
 	movement = CreateComponent<EnemyMovementComponent>();
 	friendlyLayer = Layer::COUNT;
@@ -20,7 +28,8 @@ Projectile::Projectile(const Projectile& _other) : Entity(_other)
 
 void Projectile::BeginPlay()
 {
-	SetLifeSpan(5.0f);
+	// TODO
+	//SetLifeSpan(5.0f);
 	Super::BeginPlay();
 }
 
@@ -31,7 +40,8 @@ void Projectile::Construct()
 	movement->SetSpeed(250.0f);
 
 	convexHitBox->AddComponent(new CollisionComponent(convexHitBox, "Projectile", IS_ALL, CT_OVERLAP));
-	convexHitBox->SetLayer(Layer::PROJECTILE);
+	// TODO
+	//convexHitBox->SetLayer(Layer::PROJECTILE);
 	
 	const vector<pair<string, CollisionType>>& _responses
 	{
@@ -57,10 +67,11 @@ void Projectile::Deconstruct()
 	Super::Deconstruct();
 }
 
-void Projectile::OnCollision(const CollisionData& _data)
+void Projectile::CollisionEnter(const CollisionData& _data)
 {
-	Super::OnCollision(_data);
-	if (Entity* _entity = Cast<Entity>(_data.other))
+	Super::CollisionEnter(_data);
+	// TODO
+	/*if (Entity* _entity = Cast<Entity>(_data.other))
 	{
 		Layer::LayerType _layerType = _entity->GetConvexHitBox()->GetLayer();
 		if (_layerType == Layer::PLAYER && friendlyLayer != Layer::PLAYER)
@@ -78,7 +89,7 @@ void Projectile::OnCollision(const CollisionData& _data)
 			Asteroid* _asteroid = Cast<Asteroid>(_entity);
 			_asteroid->GetLife()->DecrementLife();
 		}
-	}
+	}*/
 	
 
 }

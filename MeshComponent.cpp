@@ -10,6 +10,11 @@ MeshComponent::MeshComponent(Actor* _owner, const RectangleShapeData& _data) : C
 	shape = new ShapeObject(_data);
 }
 
+MeshComponent::MeshComponent(Actor* _owner, const ConvexShapeData& _data) : Component(_owner)
+{
+	shape = new ShapeObject(_data);
+}
+
 MeshComponent::MeshComponent(Actor* _owner, const MeshComponent& _other) : Component(_owner) 
 {
 	shape = new ShapeObject(*_other.shape);

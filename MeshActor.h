@@ -77,6 +77,7 @@ public:
 	MeshActor() = default;
 	MeshActor(const CircleShapeData& _data, const string& _name = "MeshActor");
 	MeshActor(const RectangleShapeData& _data, const string& _name = "MeshActor");
+	MeshActor(const ConvexShapeData& _data, const string& _name = "MeshActor");
 	MeshActor(const MeshActor& _other);
 
 protected:

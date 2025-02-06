@@ -56,14 +56,14 @@ void UI::Canvas::BeginDestroy()
 	}
 }
 
-void UI::Canvas::Destroy()
-{
-	Super::Destroy();
-	for (Actor* _actor : allWidgets)
-	{
-		if (Widget* _widget = Cast<Widget>(_actor))
-		{
-			_widget->SetToDelete();
-		}
-	}
-}
+//void UI::Canvas::Destroy()
+//{
+//	Super::Destroy();
+//	for (Actor* _actor : allWidgets)
+//	{
+//		if (Widget* _widget = Cast<Widget>(_actor))
+//		{
+//			_widget->SetToDelete();
+//		}
+//	}
+//}

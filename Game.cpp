@@ -17,9 +17,10 @@ void Game::Start()
     const Vector2u& _size = { 1920, 1080 };
     window.create(VideoMode(_size), "SFML works!");
     const Vector2f& _center = Vector2f(CAST(Vector2f, window.getSize()) / 2.0f);
-    M_CAMERA.CreateCamera(_center, CAST(Vector2f, _size), "DefaultCamera");
+    // TODO
+    //M_CAMERA.CreateCamera(_center, CAST(Vector2f, _size), "DefaultCamera");
 
-    M_ACTOR.BeginPlay();
+    //M_ACTOR.BeginPlay();
 };
 
 bool Game::Update()
@@ -28,10 +29,11 @@ bool Game::Update()
     _timer.Update();
     
 
-    M_INPUT.ConsumeInputs(window);
+    M_INPUT.Update(window);
 
     const float _deltaTime = _timer.GetDeltaTime().asSeconds();
-    M_ACTOR.Tick(_deltaTime);
+    // TODO
+    //M_ACTOR.Tick(_deltaTime);
 
     return IsOver();
 }
@@ -39,11 +41,13 @@ bool Game::Update()
 void Game::UpdateWindow()
 {
     window.clear();
-    M_CAMERA.RenderAllCameras(window);
+    // TODO
+    //M_CAMERA.RenderAllCameras(window);
     window.display();
 }
 
 void Game::Stop()
 {
-    M_ACTOR.BeginDestroy();
+    // TODO
+    //M_ACTOR.BeginDestroy();
 }

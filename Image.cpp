@@ -1,27 +1,16 @@
 #include "Image.h"
 
-UI::Image::Image(const float _radius, const string& _path, 
-	const TextureExtensionType& _textureType, const IntRect& _rect, bool _isRepeated, 
-	bool _isSmooth, const size_t& _pointCount, const string& _name, const RenderType& _type)
+UI::Image::Image(const CircleShapeData& _data, const string& _name, const RenderType& _type) 
 	: Widget(_name, _type)
 {
-	shape = new ShapeObject(_radius, _path, _textureType, _rect, _isRepeated, _isSmooth, _pointCount);
+	shape = new ShapeObject(_data);
 	sizeToContent = false;
-	initialSize = Vector2f(_radius / 2, _radius / 2);
+	initialSize = Vector2f(_data.radius / 2, _data.radius / 2);
 	gradient = VertexArray(PrimitiveType::TriangleStrip, 4);
 }
 
-UI::Image::Image(const Vector2f& _size, const string& _path,
-	const TextureExtensionType& _textureType, const IntRect& _rect, bool _isRepeated,
-	bool _isSmooth, const string& _name, const RenderType& _type) : Widget(_name, _type)
-{
-	shape = new ShapeObject(_size, _path, _textureType, _rect, _isRepeated, _isSmooth);
-	sizeToContent = false;
-	initialSize = _size;
-	gradient = VertexArray(PrimitiveType::TriangleStrip, 4);
-}
-
-UI::Image::Image(const RectangleShapeData& _data, const string& _name, const RenderType& _type) : Widget(_name, _type)
+UI::Image::Image(const RectangleShapeData& _data, const string& _name, const RenderType& _type) 
+	: Widget(_name, _type)
 {
 	shape = new ShapeObject(_data);
 	sizeToContent = false;
@@ -29,11 +18,10 @@ UI::Image::Image(const RectangleShapeData& _data, const string& _name, const Ren
 	gradient = VertexArray(PrimitiveType::TriangleStrip, 4);
 }
 
-UI::Image::Image(const vector<Vector2f> point, const string& _path, 
-	const TextureExtensionType& _textureType, const IntRect& _rect, bool _isRepeated, 
-	bool _isSmooth, const string& _name, const RenderType& _type) : Widget(_name, _type)
+UI::Image::Image(const ConvexShapeData& _data, const string& _name, const RenderType& _type) 
+	: Widget(_name, _type)
 {
-	shape = new ShapeObject(point, _path, _textureType, _rect, _isRepeated, _isSmooth);
+	shape = new ShapeObject(_data);
 	sizeToContent = false;
 	initialSize = Vector2f();
 	gradient = VertexArray(PrimitiveType::TriangleStrip, 4);

@@ -12,7 +12,7 @@ enum ShapeObjectType
 {
 	SOT_CIRCLE,
 	SOT_RECTANGLE,
-	SOT_VERTEX,
+	SOT_CONVEX,
 
 	SOT_COUNT,
 };
@@ -63,10 +63,28 @@ struct RectangleShapeData
 	}
 };
 
+struct ConvexShapeData
+{
+	vector<Vector2f> points;
+	string path;
+	IntRect rect;
+	size_t pointCount;
+
+	ConvexShapeData(const vector<Vector2f>& _points, const string& _path = "",
+		const IntRect& _rect = IntRect(), const size_t& _pointCount = 30)
+	{
+		points = _points;
+		path = _path;
+		rect = _rect;
+		pointCount = _pointCount;
+	}
+};
+
 union ObjectData
 {
 	CircleShapeData* circleData;
 	RectangleShapeData* rectangleData;
+	ConvexShapeData* convexData;
 
 	ObjectData() {}
 	~ObjectData() {}
@@ -91,6 +109,11 @@ struct ShapeObjectData
 		type = _type;
 		data.rectangleData = new RectangleShapeData(_rectangleData);
 	}
+	ShapeObjectData(const ShapeObjectType& _type, const ConvexShapeData& _convexData)
+	{
+		type = _type;
+		data.convexData = new ConvexShapeData(_convexData);
+	}
 	~ShapeObjectData()
 	{
 		if (type == SOT_CIRCLE)
@@ -101,6 +124,11 @@ struct ShapeObjectData
 		else if (type == SOT_RECTANGLE)
 		{
 			delete data.rectangleData;
+		}
+
+		else if (type == SOT_CONVEX)
+		{
+			delete data.convexData;
 		}
 	}
 
@@ -176,10 +204,12 @@ public:
 public:
 	ShapeObject(const CircleShapeData& _data); // Circle
 	ShapeObject(const RectangleShapeData& _data); // Rectangle
+	ShapeObject(const ConvexShapeData& _data); // Convex
 	ShapeObject(const ShapeObject& _other);
 	~ShapeObject();
 
 private:
 	void InitCircle(const CircleShapeData& _data);
 	void InitRectangle(const RectangleShapeData& _data);
+	void InitConvex(const ConvexShapeData& _data);
 };

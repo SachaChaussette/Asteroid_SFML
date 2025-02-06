@@ -89,14 +89,9 @@ namespace UI
 
 
 	public:
-		Image(const float _radius, const string& _path = "", const TextureExtensionType& _textureType = PNG,
-			const IntRect& _rect = IntRect(), bool _isRepeated = false,
-			bool _isSmooth = true, const size_t& _pointCount = 30U, const string& _name = "Image", const RenderType& _type = Screen);
-		Image(const Vector2f& _size, const string& _path = "", const TextureExtensionType& _textureType = PNG,
-			const IntRect& _rect = IntRect(), bool _isRepeated = false, bool _isSmooth = true, const string& _name = "Image", const RenderType& _type = Screen); // Rectangle
+		Image(const CircleShapeData& _data, const string& _name = "Image", const RenderType& _type = Screen);
 		Image(const RectangleShapeData& _data, const string& _name = "Image", const RenderType& _type = Screen);
-		Image(const vector<Vector2f> point, const string& _path = "", const TextureExtensionType& _textureType = PNG,
-			const IntRect& _rect = IntRect(), bool _isRepeated = false, bool _isSmooth = true, const string& _name = "Image", const RenderType& _type = Screen);
+		Image(const ConvexShapeData& _data, const string& _name = "Image", const RenderType& _type = Screen);
 		Image(const Image& _other);
 	private:
 		void UpdateSize();

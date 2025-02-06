@@ -12,6 +12,11 @@ ShapeObject::ShapeObject(const RectangleShapeData& _data)
 	objectData = ShapeObjectData(SOT_RECTANGLE, _data);
 	InitRectangle(*objectData.data.rectangleData);
 }
+ShapeObject::ShapeObject(const ConvexShapeData& _data)
+{
+	objectData = ShapeObjectData(SOT_CONVEX, _data);
+	InitConvex(*objectData.data.convexData);
+}
 
 ShapeObject::ShapeObject(const ShapeObject& _other)
 {
@@ -44,4 +49,10 @@ void ShapeObject::InitRectangle(const RectangleShapeData& _data)
 {
 	shape = new RectangleShape(_data.size);
 	M_TEXTURE.Load(this, _data.path, _data.rect, _data.textureType, _data.isRepeated);
+}
+
+void ShapeObject::InitConvex(const ConvexShapeData& _data)
+{
+	shape = new ConvexShape(_data.pointCount);
+	M_TEXTURE.Load(this, _data.path, _data.rect);
 }

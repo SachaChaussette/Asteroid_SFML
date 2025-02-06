@@ -23,19 +23,21 @@ void LifeComponent::BeginPlay()
 	
 	if (Entity* _owner = Cast<Entity>(owner))
 	{
-		if (_owner->GetConvexHitBox()->GetLayer() == Layer::PROJECTILE)
+		// TODO
+		/*if (_owner->GetConvexHitBox()->GetLayer() == Layer::PROJECTILE)
 		{
 			canGetDamage = true;
 		}
 		else
 		{
 			new Timer([&]() { canGetDamage = true; }, seconds(3.0f), true, false);
-		}
+		}*/
 	}
 }
 
 void LifeComponent::Death()
 {
 	owner->SetToDelete();
-	owner->Death();
+	// TODO
+	//owner->Death();
 }

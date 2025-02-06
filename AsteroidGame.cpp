@@ -25,12 +25,13 @@ void AsteroidGame::Start()
 {
 	Super::Start();
 
-	windowSize = CAST(Vector2f, M_GAME.GetCurrent()->GetWindowSize());
+	// TODO
+	/*windowSize = CAST(Vector2f, M_GAME.GetCurrent()->GetWindowSize());
 	Level::SpawnActor(MeshActor(windowSize, "InGameBackground"));
 
 
 	M_GAMEMODE.SetCurrentMode(new ChronoMode(180));
-	M_GAMEMODE.Launch();
+	M_GAMEMODE.Launch();*/
 
 	//TODO Temp
 	//canvas = new Canvas("Upgrade");
@@ -43,13 +44,15 @@ void AsteroidGame::LaunchGame()
 {
 	Super::LaunchGame();
 
-	Level::SpawnActor(MeshActor(CAST(Vector2f, GetWindowSize()), "InGameBackground"));
+	// TODO
+	//Level::SpawnActor(MeshActor(CAST(Vector2f, GetWindowSize()), "InGameBackground"));
 }
 
 bool AsteroidGame::Update()
 {
 	Super::Update();
-	M_GAMEMODE.Update();
+	// TODO
+	//M_GAMEMODE.Update();
 	return IsOver();
 }
 

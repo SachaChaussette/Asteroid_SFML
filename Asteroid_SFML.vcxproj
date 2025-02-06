@@ -163,6 +163,7 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GameMode.cpp" />
+    <ClCompile Include="GameModel.cpp" />
     <ClCompile Include="GameModeManager.cpp" />
     <ClCompile Include="HUD.cpp" />
     <ClCompile Include="Image.cpp" />
@@ -227,6 +228,7 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameMode.h" />
+    <ClInclude Include="GameModel.h" />
     <ClInclude Include="GameModeManager.h" />
     <ClInclude Include="HUD.h" />
     <ClInclude Include="Image.h" />

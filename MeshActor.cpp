@@ -19,6 +19,13 @@ MeshActor::MeshActor(const RectangleShapeData& _data, const string& _name) : Act
 	collision = CreateComponent<CollisionComponent>();
 }
 
+MeshActor::MeshActor(const ConvexShapeData& _data, const string& _name) : Actor(_name)
+{
+	renderMeshToken = -1;
+	mesh = CreateComponent<MeshComponent>(_data);
+	collision = CreateComponent<CollisionComponent>();
+}
+
 MeshActor::MeshActor(const MeshActor& _other) : Actor(_other)
 {
 	renderMeshToken = _other.renderMeshToken;

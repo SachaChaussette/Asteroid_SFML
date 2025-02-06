@@ -24,8 +24,8 @@ public:
 	}
 public:
 	//point servira à la ConvexShape de la CollisionBox !
-	UFO(const float _radius, const vector<Vector2f>& _point, const string& _path = "", const TextureExtensionType& _textureType = PNG,
-		const IntRect& _rect = {}, bool _isRepeated = false, bool _isSmooth = false, const string& _name = "UFO");
+	UFO(const CircleShapeData& _data, const vector<Vector2f>& _point = vector<Vector2f>(),
+		const SizeType& _size = BIG, const string& _name = "UFO"); 
 	UFO(const UFO& _other);
 
 	~UFO();
@@ -36,7 +36,7 @@ public:
 	virtual void BeginPlay() override;
 	virtual void Deconstruct() override;
 
-	virtual void OnCollision(const CollisionData& _data) override;
+	virtual void CollisionEnter(const CollisionData& _data) override;
 };
 
 

@@ -48,6 +48,6 @@ protected:
 	void ComputeNewPositionIfNotInWindow();
 	virtual void Construct() override;
 	virtual void Deconstruct() override;
-	virtual void Death() override;
+	//virtual void Death() override;
 };
 

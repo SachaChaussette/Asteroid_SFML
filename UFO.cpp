@@ -4,9 +4,9 @@
 #include "Asteroid.h"
 #include "Projectile.h"
 
-UFO::UFO(const float _radius, const vector<Vector2f>& _point, const string& _path, const TextureExtensionType& _textureType,
-	const IntRect& _rect, bool _isRepeated, bool _isSmooth, const string& _name) : 
-	Entity(1, SMALL, 4, MeshActor(_radius, "UFO/" + _path, _textureType, _rect, _isRepeated, _isSmooth), MeshActor(_point, "Transparent"), "UFO")
+UFO::UFO(const CircleShapeData& _data, const vector<Vector2f>& _point,
+	const SizeType& _size, const string& _name)
+	: Entity(1, _size, 26, MeshActor(_data), MeshActor(_point, "Transparent"), _name)
 {
 	movement = CreateComponent<EnemyMovementComponent>();
 	shoot = CreateComponent<ShootComponent>();
@@ -38,7 +38,8 @@ void UFO::Construct()
 	Super::Construct();
 
 	convexHitBox->AddComponent(new CollisionComponent(convexHitBox, "UFO", IS_ALL, CT_OVERLAP));
-	convexHitBox->SetLayer(Layer::UFO);
+	// TODO
+	//convexHitBox->SetLayer(Layer::UFO);
 
 	const vector<pair<string, CollisionType>>& _responses
 	{
@@ -74,10 +75,11 @@ void UFO::Deconstruct()
 	M_TIMER.RemoveTimer(shootTimer);
 }
 
-void UFO::OnCollision(const CollisionData& _data)
+void UFO::CollisionEnter(const CollisionData& _data)
 {
-	Super::OnCollision(_data);
-	if (Entity* _entity = Cast<Entity>(_data.other))
+	Super::CollisionEnter(_data);
+	// TODO
+	/*if (Entity* _entity = Cast<Entity>(_data.other))
 	{
 		Layer::LayerType _layerType = _entity->GetConvexHitBox()->GetLayer();
 		if (_layerType == Layer::ASTEROID)
@@ -96,6 +98,6 @@ void UFO::OnCollision(const CollisionData& _data)
 			Player* _player = Cast<Player>(_entity);
 			_player->GetLife()->DecrementLife();
 		}
-	}
+	}*/
 }
 

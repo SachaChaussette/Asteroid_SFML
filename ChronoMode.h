@@ -1,13 +1,13 @@
 #pragma once
 
-#include "GameMode.h"
+#include "GameModel.h"
 #include "Label.h"
 #include "Canvas.h"
 #include "Player.h"
 
 using namespace UI;
 
-class ChronoMode : public GameMode
+class ChronoMode : public GameModel
 {
 	int timerCount;
 	int currentTime;

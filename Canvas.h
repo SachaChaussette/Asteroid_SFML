@@ -38,6 +38,11 @@ namespace UI
 				_widget->Deconstruct();
 			}
 		}
+		FORCEINLINE virtual Vector2f GetSize() const override
+		{
+			// TODO ?
+			return Vector2f();
+		}
 	public:
 		Canvas(const string& _name, const RenderType& _type = Screen);
 		Canvas(const Canvas& _other);
@@ -47,7 +52,7 @@ namespace UI
 		void UpdateWidgets();
 		virtual void Construct() override;
 		virtual void BeginDestroy() override;
-		virtual void Destroy() override;
+		//virtual void Destroy() override;
 		
 	};
 }

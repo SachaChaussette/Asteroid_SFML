@@ -4,11 +4,12 @@
 #include "Player.h"
 #include "UFO.h"
 #include "Projectile.h"
+#include "LevelManager.h"
 
 
-Asteroid::Asteroid(const float _radius, const vector<Vector2f>& _point, const string& _path, const SizeType& _size, const TextureExtensionType& _textureType,
-	const IntRect& _rect, bool _isRepeated, bool _isSmooth, const string& _name)
-	: Entity(1, _size, 26, MeshActor(_radius, _path, _textureType, _rect), MeshActor(_point, "Transparent"), "Asteroid")
+Asteroid::Asteroid(const CircleShapeData& _data, const vector<Vector2f>& _point, 
+	const SizeType& _size, const string& _name)
+	: Entity(1, _size, 26, MeshActor(_data), MeshActor(_point, "Transparent"), _name)
 {
 	movement = CreateComponent<EnemyMovementComponent>();
 }
@@ -29,7 +30,8 @@ void Asteroid::Construct()
 	Super::Construct();
 
 	convexHitBox->AddComponent(new CollisionComponent(convexHitBox, "Asteroid", IS_ALL, CT_OVERLAP));
-	convexHitBox->SetLayer(Layer::ASTEROID);
+	// TODO
+	//convexHitBox->SetLayer(Layer::ASTEROID);
 
 	const vector<pair<string, CollisionType>>& _responses
 	{
@@ -58,7 +60,7 @@ void Asteroid::Deconstruct()
 	{
 		for (size_t _i = 0; _i < 2; _i++)
 		{
-			const Vector2f& _windowSize = CAST(Vector2f, M_GAME.GetCurrent()->GetWindowSize());
+			const Vector2f& _windowSize = M_LEVEL.GetCurrentLevel()->GetWindowSize();
 
 			const vector<Vector2f>& _convexShapePoints =
 			{
@@ -68,21 +70,23 @@ void Asteroid::Deconstruct()
 				{19.0f,28.0f}, {13.0f,28.0f},
 				{3.0f,19.0f}, {3.0f,14.0f},
 			};
-			Asteroid* _asteroid = Level::SpawnActor(Asteroid(20.0f, _convexShapePoints, GetMesh()->GetTexturePath(), SizeType(size - 1)));
-			_asteroid->ComputeNewDirection();
-			_asteroid->SetOriginAtMiddle();
-			_asteroid->SetPosition(GetPosition());
+			// TODO
+			//Asteroid* _asteroid = Level::SpawnActor(Asteroid(20.0f, _convexShapePoints, GetMesh()->GetTexturePath(), SizeType(size - 1)));
+			//_asteroid->ComputeNewDirection();
+			//_asteroid->SetOriginAtMiddle();
+			//_asteroid->SetPosition(GetPosition());
 		}
 	}
 	Super::Deconstruct();
 }
 
-void Asteroid::OnCollision(const CollisionData& _data)
+void Asteroid::CollisionEnter(const CollisionData& _data)
 {
-	Super::OnCollision(_data);
+	Super::CollisionEnter(_data);
 	if (Entity* _entity = Cast<Entity>(_data.other))
 	{
-		Layer::LayerType _layerType = _entity->GetConvexHitBox()->GetLayer();
+		// TODO
+		/*Layer::LayerType _layerType = _entity->GetConvexHitBox()->GetLayer();
 		if (_layerType == Layer::UFO)
 		{
 			UFO* _ufo = Cast<UFO>(_entity);
@@ -98,6 +102,6 @@ void Asteroid::OnCollision(const CollisionData& _data)
 		{
 			Player* _player = Cast<Player>(_entity);
 			_player->GetLife()->DecrementLife();
-		}
+		}*/
 	}
 }

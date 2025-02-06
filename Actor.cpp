@@ -11,7 +11,7 @@ Actor::Actor(const string& _name, const TransformData& _transform)
 	name = _name;
 	displayName = "Unknown";
 	components = set<Component*>();
-	root = CreateComponent<RootComponent>(_transform);
+	//root = CreateComponent<RootComponent>(_transform);
 	parent = nullptr;
 	attachment = AT_NONE;
 	children = set<Actor*>();
@@ -29,7 +29,7 @@ Actor::Actor(const Actor& _other)
 	{
 		CreateComponent<TYPE(*_component)>(*_component);
 	}
-	root = GetComponent<RootComponent>();
+	//root = GetComponent<RootComponent>();
 	parent = _other.parent;
 	attachment = _other.attachment;
 	for (Actor* _child : _other.children)
