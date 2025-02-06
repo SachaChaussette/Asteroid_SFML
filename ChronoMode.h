@@ -14,6 +14,7 @@ class ChronoMode : public GameMode
 
 	Label* chrono;
 	Label* life;
+	
 	Canvas* canva;
 
 public:

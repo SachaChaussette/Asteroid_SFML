@@ -28,7 +28,7 @@ void Projectile::BeginPlay()
 void Projectile::Construct()
 {
 	Super::Construct();
-	movement->SetSpeed(150.0f);
+	movement->SetSpeed(250.0f);
 
 	convexHitBox->AddComponent(new CollisionComponent(convexHitBox, "Projectile", IS_ALL, CT_OVERLAP));
 	convexHitBox->SetLayer(Layer::PROJECTILE);

@@ -11,6 +11,10 @@ class Player : public Entity
 	ShootComponent* shoot;
 	PlayerMovementComponent* movement;
 
+	u_int dmgLevel;
+	vector<MeshActor*> canons;
+
+
 public:
 
 	Player(const float _radius, const vector<Vector2f>& _point, const string& _path = "", 

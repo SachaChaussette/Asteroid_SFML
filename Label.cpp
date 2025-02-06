@@ -16,6 +16,7 @@ UI::Label::~Label()
 
 void UI::Label::Render(RenderWindow& _window)
 {
+	// TODO Change avec Nouvelle Archi
 	if (visibility == Hidden) return;
 	_window.draw(*text->GetDrawable());
 }

@@ -4,6 +4,7 @@
 #include "Asteroid.h"
 #include "UFO.h"
 #include "Projectile.h"
+#include "Level.h"
 
 
 Player::Player(const float _radius, const vector<Vector2f>& _point, const string& _path, const TextureExtensionType& _textureType,
@@ -12,6 +13,7 @@ Player::Player(const float _radius, const vector<Vector2f>& _point, const string
 {
 	movement = CreateComponent<PlayerMovementComponent>();
 	shoot = CreateComponent<ShootComponent>();
+	canons = vector<MeshActor*>();
 }
 Player::Player(const float _radius, const Vector2f& _size, const string& _path, const TextureExtensionType& _textureType,
 	const IntRect& _rect, bool _isRepeated, bool _isSmooth, const string& _name)
@@ -19,14 +21,14 @@ Player::Player(const float _radius, const Vector2f& _size, const string& _path, 
 {
 	movement = CreateComponent<PlayerMovementComponent>();
 	shoot = CreateComponent<ShootComponent>();
+	canons = vector<MeshActor*>();
 }
 
 Player::Player(const Player& _other) : Entity(_other)
 {
 	movement = CreateComponent<PlayerMovementComponent>(_other.movement);
-
 	shoot = CreateComponent<ShootComponent>(_other.shoot);
-
+	canons = _other.canons;
 }
 
 void Player::Construct()
@@ -56,6 +58,11 @@ void Player::Construct()
 	{
 		shoot->Shoot();
 	}, Code::Space);
+
+	MeshActor* _canon = Level::SpawnActor(MeshActor(Vector2f(200.0f, 200.0f), ""));
+	//_canon->SetPosition(GetPosition());
+	AddChild(_canon, AT_KEEP_RELATIVE);
+	canons.push_back(_canon);
 
 	convexHitBox->AddComponent(new CollisionComponent(convexHitBox, "Player", IS_ALL, CT_OVERLAP));
 	convexHitBox->SetLayer(Layer::PLAYER);

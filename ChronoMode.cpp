@@ -55,8 +55,8 @@ void ChronoMode::Start()
 	chrono->SetCharacterSize(70);
 	chrono->SetZOrder(3);
 
-	life = M_HUD.CreateWidget<Label>("P1 : " + to_string(player->GetLife()->GetLifeCount()), Screen, "Score");
-	life->SetPosition({ _windowSize.x * 0.05f, _windowSize.y * 0.05f });
+	life = M_HUD.CreateWidget<Label>("P1 : " + to_string(player->GetLife()->GetLifeCount()), Screen, "Score", TTF);
+	life->SetPosition({ _windowSize.x * 0.05f, _windowSize.y * 0.005f });
 	life->SetCharacterSize(50);
 	life->SetZOrder(3);
 
