@@ -38,5 +38,6 @@ namespace UI
 		virtual void Construct() override;
 		virtual void Deconstruct() override;
 		virtual void Render(RenderWindow& _window) = 0;
+		virtual void Destroy() {};
 	};
 }

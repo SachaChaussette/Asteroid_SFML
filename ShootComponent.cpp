@@ -4,18 +4,18 @@
 
 ShootComponent::ShootComponent(Actor* _owner) : Component(_owner)
 {
-	projectile = new Projectile(20.0f, "Shoot/laser", PNG, IntRect(Vector2i(), Vector2i(16, 16)));
+	owner = _owner;
 }
 
 ShootComponent::ShootComponent(Actor* _owner, const ShootComponent* _other) : Component(_owner)
 {
-	projectile = _other->projectile;
+	owner = _owner;
 }
 
 void ShootComponent::Shoot()
 {
 	// On prend un offset qui sera appliquer à la direction + centre de l'actor qui shoot
-	const Vector2f& _offset = Vector2f(22.0f, 34.0f);
+	const Vector2f& _offset = Vector2f(0.0f, 40.0f);
 
 	float _currentAngle = 0.0f;
 	if (PlayerMovementComponent* _movement  = owner->GetComponent<PlayerMovementComponent>())
@@ -30,10 +30,15 @@ void ShootComponent::Shoot()
 	const Vector2f& _direction = Vector2f(cos(_rad), sin(_rad));
 
 	// Calcule la nouvelle pos
-	const Vector2f& _newPos = owner->GetPosition() - _offset + _direction;
-
+	const Vector2f& _newPos = owner->GetChildrenAtIndex(0)->GetPosition();
+	
 	// On spawn le projectile aux nouvelles coordonées et on lui donne la direction du tir
-	Projectile* _projectile = Level::SpawnActor(Projectile(*projectile));
+	Projectile* _projectile = Level::SpawnActor(Projectile(10.0f, Vector2f(20.0f, 10.0f), "projectile"));
+	_projectile->SetOriginAtMiddle();
+	_projectile->Rotate(degrees(90));
+	_projectile->Rotate(owner->GetChildrenAtIndex(0)->GetRotation());
+	_projectile->SetFriendlyLayer(owner->GetChildrenAtIndex(0)->GetLayer());
+
 	_projectile->SetPosition(_newPos);
 	_projectile->GetMovement()->SetDirection(_direction);
 }

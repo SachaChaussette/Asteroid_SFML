@@ -1,0 +1,63 @@
+Proposition :
+
+- Bordure ?
+- Background qui bouge
+- Récompenses
+- Bordel Visuel sans être chiant au Gameplay
+
+- système de parentage
+- Ajout de canons après amélioration
+- Socket
+- Invincibilité
+
+-------------------------------------------------
+
+Etape Jeu :
+
+GAMEPLAY
+- Player 70%
+	- Modification Sprite
+	- Socket dynamique (ajout de canons)
+	- Animation explosion à la mort
+	- Centrer le shoot
+- Asteroid 90%
+	- Refonte Graphique
+	- Animation explosion à la mort
+- UFO 95%
+	- Animation explosion à la mort
+
+AUDIO
+- Music InGame
+- Son Shoot
+- Son Explosion
+
+UI
+- Background 80%
+	- Effet de Mouvement
+- Menu 80%
+	- Callback Button
+- Container Button
+
+GUI
+- Score
+- Affichage PV
+
+AUTRE
+- LeaderBoard
+
+-------------------------------------------------
+
+Taches :
+
+Sev : InputManager
+Moi : Collision
+Romain : Son Asset Projectile
+
+Morgan : 
+Yoan : 
+
+-------------------------------------------------
+
+Important :
+
+Avant Mardi Faire Mode Chrono

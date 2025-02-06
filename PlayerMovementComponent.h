@@ -27,6 +27,10 @@ public:
 	PlayerMovementComponent(Actor* _owner, const PlayerMovementComponent* _other);
 
 public:
+	FORCEINLINE Vector2f GetDirection()
+	{
+		return direction;
+	}
 	void Rotate(const float _degree);
 	void ComputeAcceleration();
 protected:

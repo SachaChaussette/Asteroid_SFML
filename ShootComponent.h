@@ -5,7 +5,6 @@
 
 class ShootComponent : public Component
 {
-	Projectile* projectile;
 
 public:
 	ShootComponent(Actor* _owner);
