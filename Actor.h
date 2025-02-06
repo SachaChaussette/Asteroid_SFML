@@ -4,8 +4,9 @@
 #include "ITransformableViewer.h"
 #include "Component.h"
 #include "RootComponent.h"
-#include "LifeComponent.h"
-#include "TimerManager.h"
+#include "Layer.h"
+
+struct CollisionData;
 
 class Actor : public Core, public ITransformableModifier, public ITransformableViewer
 {
@@ -15,22 +16,13 @@ class Actor : public Core, public ITransformableModifier, public ITransformableV
 	string displayName;
 	set<Component*> components;
 	RootComponent* root;
+	float lifeSpan;
 	Actor* parent;
 	AttachmentType attachment;
 	set<Actor*> children;
+	Layer::LayerType layer;
 
 protected:
-	float lifeSpan;
-
-protected:
-	FORCEINLINE void CreateSocket(const string& _name, const TransformData& _transform = TransformData(),
-		const AttachmentType& _type = AT_SNAP_TO_TARGET)
-	{
-		Actor* _socket = new Actor(_name, _transform);
-		AddChild(_socket, _type);
-	}
-
-public:
 	template <typename Type, typename ...Args, IS_BASE_OF(Component, Type)>
 	FORCEINLINE Type* CreateComponent(Args... _args)
 	{
@@ -38,9 +30,22 @@ public:
 		AddComponent(_component);
 		return _component;
 	}
+	template <typename Type = Actor, typename ...Args, IS_BASE_OF(Actor, Type)>
+	FORCEINLINE Type* CreateSocket(const AttachmentType& _type = AT_SNAP_TO_TARGET, Args... _args)
+	{
+		Type* _socket = new Type(_args...);
+		AddChild(_socket, _type);
+		return _socket;
+	}
+
+public:
 	FORCEINLINE void SetLifeSpan(const float _lifeSpan)
 	{
 		lifeSpan = _lifeSpan;
+	}
+	FORCEINLINE void SetLayer(Layer::LayerType _layer)
+	{
+		layer = _layer;
 	}
 	FORCEINLINE void SetToDelete()
 	{
@@ -61,6 +66,10 @@ public:
 	FORCEINLINE string GetDisplayName() const
 	{
 		return displayName;
+	}
+	FORCEINLINE Layer::LayerType GetLayer() const
+	{
+		return layer;
 	}
 
 #pragma region Children
@@ -195,6 +204,7 @@ public:
 	{
 		root->SetPosition(_position);
 
+
 		for (Actor* _child : children)
 		{
 			UpdateChildPosition(_child);
@@ -228,7 +238,7 @@ public:
 
 		for (Actor* _child : children)
 		{
-			_child->Move(_offset);
+			UpdateChildTransform(_child);
 		}
 	}
 	FORCEINLINE virtual void Rotate(const Angle& _angle) override
@@ -266,8 +276,6 @@ public:
 	virtual void Tick(const float _deltaTime) override;
 	virtual void BeginDestroy() override;
 
-	virtual void Destroy();
-
 #pragma region Components
 
 	void AddComponent(Component* _component);
@@ -277,18 +285,24 @@ public:
 	{
 		for (Component* _component : components)
 		{
-			if (is_same_v<decltype(_component), T*>)
+			T* _componentCast = dynamic_cast<T*>(_component);
+			if (_componentCast)
 			{
-				return dynamic_cast<T*>(_component);
-			}
-			if (T* _newComponent = dynamic_cast<T*>(_component))
-			{
-				return _newComponent;
+				return _componentCast;
 			}
 		}
-
 		return nullptr;
 	}
+
+	#pragma endregion
+
+	#pragma region Collision
+
+	virtual void OnCollision(const CollisionData& _data) {}
+
+	#pragma endregion
+
+	virtual void Death() {};
 
 #pragma endregion
 };

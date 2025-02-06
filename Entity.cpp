@@ -1,32 +1,31 @@
 #include "Entity.h"
 #include "GameManager.h"
+#include "Level.h"
 
-
-Entity::Entity(const u_int& _lifeCount, const float _radius, const u_int& _spriteCount, const string& _path, const TextureExtensionType& _textureType, 
-	const IntRect& _rect, bool _isRepeated, bool _isSmooth, const string& _name)
-	: MeshActor(_radius, _path, _textureType, _rect, _isRepeated, _isSmooth, 30U, _name)
+Entity::Entity(const u_int & _lifeCount, const SizeType & _size, const u_int & _spriteCount, 
+	const MeshActor& _mesh, const MeshActor& _hitBoxMesh, const string & _name) : MeshActor(_mesh)
 {
-	spriteCount = _spriteCount;
 	animation = CreateComponent<AnimationComponent>();
-	//life = CreateComponent<LifeComponent>(_lifeCount);
-}
+	life = CreateComponent<LifeComponent>(_lifeCount);
 
-Entity::Entity(const u_int& _lifeCount, const Vector2f& _size, const u_int& _spriteCount, const string& _path, const TextureExtensionType& _textureType,
-	const IntRect& _rect, bool _isRepeated, bool _isSmooth, const string& _name)
-	: MeshActor(_size, _path, _textureType, _rect, _isRepeated, _isSmooth, _name)
-{
+	convexHitBox = Level::SpawnActor<MeshActor>(_hitBoxMesh);
+	AddChild(convexHitBox, AT_SNAP_TO_TARGET);
+
+	size = _size;
 	spriteCount = _spriteCount;
-	animation = CreateComponent<AnimationComponent>();
-	//life = CreateComponent<LifeComponent>(_lifeCount);
 }
 
 Entity::Entity(const Entity& _other) : MeshActor(_other)
 {
 	animation = CreateComponent<AnimationComponent>(_other.animation);
-	//life = CreateComponent<LifeComponent>(_other.life);
+	life = CreateComponent<LifeComponent>(_other.life);
+
+	convexHitBox = _other.convexHitBox;
+
 	spriteCount = _other.spriteCount;
 	size = _other.size;
 }
+
 
 void Entity::Tick(const float _deltaTime)
 {
@@ -62,7 +61,6 @@ void Entity::Construct()
 {
 	Super::Construct();
 	
-
 	// Animation / Sprite
 	const Vector2i& _spriteSize = Vector2i(32, 32);
 	vector<SpriteData> _sprites;
@@ -74,10 +72,23 @@ void Entity::Construct()
 	}
 	AnimationData _data = AnimationData(100.0f, _sprites, true, true, RD_ROW);
 	Animation* _move = new Animation("Movement", GetMesh()->GetShape(), _data);
-
+	
 	animation->AddAnimation(_move);
 	animation->SetCurrentAnimation("Movement");
 	animation->StartAnimation();
+
+	convexHitBox->SetOriginAtMiddle();
+
 }
 
+void Entity::Deconstruct()
+{
+	convexHitBox->Deconstruct();
+	Super::Deconstruct();
 
+}
+
+void Entity::Death()
+{
+	Super::Death();
+}

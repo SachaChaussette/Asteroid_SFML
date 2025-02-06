@@ -5,10 +5,11 @@ void InputManager::CloseWindow(RenderWindow& _window)
     _window.close();
 }
 
-void InputManager::BindAction(const function<void(Vector2i _pos)>& _buttonCallback, const MouseCode& _buttonCodes)
-{
-    inputsData.push_back(InputData(_buttonCallback, { _buttonCodes }));
-}
+//void InputManager::BindAction(const function<void(Vector2i _pos)>& _buttonCallback, const MouseCode& _buttonCodes)
+//{
+//    inputsData.push_back(InputData(_buttonCallback, { _buttonCodes }));
+//}
+
 void InputManager::BindAction(const function<void()>& _callback, const Code& _code)
 {
     inputsData.push_back(InputData(_callback, { _code }));
@@ -38,6 +39,7 @@ void InputManager::ConsumeInputs(RenderWindow& _window)
                 if (_inputData.TryToExecute(_key)) break;
             }
         }
+
         else if (const MouseButtonPressed* _key = _event->getIf<MouseButtonPressed>())
         {
             for (const InputData& _inputData : inputsData)

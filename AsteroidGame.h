@@ -2,22 +2,19 @@
 
 #include "Game.h"
 #include "HUD.h"
-
 #include "Canvas.h"
-
-#include "MenuGame.h"
+#include "MeshActor.h"
 
 using namespace UI;
 
-
 class AsteroidGame : public Game
 {
-  float difficultyFactor;
+    float difficultyFactor;
 	u_int wavesCount;
 	u_int baseAsteroidCount;
-	Canvas* canvas;
 	Vector2f windowSize;
-	MenuGame* menus;
+	MeshActor* background;
+
 public:
 	AsteroidGame();
 public:
@@ -30,7 +27,7 @@ public:
 	virtual bool Update() override;
 	virtual void Stop() override;
 
-private:
 	void InitUpgradeCanvas();
+
 };
 

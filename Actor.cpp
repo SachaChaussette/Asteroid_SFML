@@ -13,11 +13,13 @@ Actor::Actor(const string& _name, const TransformData& _transform)
 
 Actor::Actor(const Actor& _actor)
 {
+	children = _actor.children;
 	name = _actor.name;
 	displayName = _actor.displayName;
 	isToDelete = _actor.isToDelete;
 	lifeSpan = _actor.lifeSpan;
 	root = CreateComponent<RootComponent>(_actor.root);
+	layer = _actor.layer;
 }
 
 Actor::~Actor()
@@ -45,7 +47,7 @@ void Actor::BeginPlay()
 {
 	if (lifeSpan > 0.0f)
 	{
-		new Timer(bind(&Actor::Destroy, this), seconds(lifeSpan), true);
+		new Timer(bind(&Actor::SetToDelete, this), seconds(lifeSpan), true);
 	}
 
 	for (Component* _component : components)
@@ -68,15 +70,6 @@ void Actor::BeginDestroy()
 	{
 		_component->BeginDestroy();
 	}
-	for (Actor* _child : children)
-	{
-		_child->BeginDestroy();
-	}
-}
-
-void Actor::Destroy()
-{
-	SetToDelete();
 }
 
 
