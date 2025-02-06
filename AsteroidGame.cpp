@@ -14,7 +14,7 @@
 AsteroidGame::AsteroidGame()
 {
 	windowSize = Vector2f();
-
+	background = nullptr;
 	difficultyFactor = 1.4f;
 	wavesCount = 0;
 	baseAsteroidCount = 5;
@@ -26,8 +26,10 @@ void AsteroidGame::Start()
 	Super::Start();
 
 	windowSize = CAST(Vector2f, M_GAME.GetCurrent()->GetWindowSize());
-	Level::SpawnActor(MeshActor(windowSize, "InGameBackground"));
-
+	background = Level::SpawnActor(MeshActor(RectangleShapeData(windowSize, "InGameBackground_2")));
+	background->SetOriginAtMiddle();
+	background->SetPosition(windowSize / 2.0f);
+	background->SetScale({ 2.0f,2.0f });
 
 	M_GAMEMODE.SetCurrentMode(new ChronoMode(180));
 	M_GAMEMODE.Launch();

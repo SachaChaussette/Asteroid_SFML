@@ -2,7 +2,7 @@
 
 #include "Game.h"
 #include "HUD.h"
-
+#include "MeshActor.h"
 #include "Canvas.h"
 
 using namespace UI;
@@ -13,6 +13,7 @@ class AsteroidGame : public Game
 	u_int wavesCount;
 	u_int baseAsteroidCount;
 	Vector2f windowSize;
+	MeshActor* background;
 
 public:
 	AsteroidGame();

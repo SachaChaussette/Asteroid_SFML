@@ -4,6 +4,7 @@
 #include "Player.h"
 #include "UFO.h"
 #include "Projectile.h"
+#include "AudioManager.h"
 
 
 Asteroid::Asteroid(const float _radius, const vector<Vector2f>& _point, const string& _path, const SizeType& _size, const TextureExtensionType& _textureType,
@@ -86,6 +87,10 @@ void Asteroid::OnCollision(const CollisionData& _data)
 		if (_layerType == Layer::UFO)
 		{
 			UFO* _ufo = Cast<UFO>(_entity);
+			if (_ufo->GetLife()->GetCanGetDamage() == true)
+			{
+				M_AUDIO.PlaySample<SoundSample>("ufo_destruction");
+			}
 			_ufo->GetLife()->DecrementLife();
 		}
 		else if (_layerType == Layer::PROJECTILE)
@@ -97,6 +102,17 @@ void Asteroid::OnCollision(const CollisionData& _data)
 		else if (_layerType == Layer::PLAYER)
 		{
 			Player* _player = Cast<Player>(_entity);
+			if (_player->GetLife()->GetCanGetDamage() == true)
+			{
+				if (_player->GetLife()->GetLifeCount() <= 1)
+				{
+					M_AUDIO.PlaySample<SoundSample>("player_destruction");
+				}
+				else
+				{
+					M_AUDIO.PlaySample<SoundSample>("player_damage");
+				}
+			}
 			_player->GetLife()->DecrementLife();
 		}
 	}
