@@ -4,6 +4,7 @@
 
 Actor::Actor(const string& _name, const TransformData& _transform)
 {
+	parent = nullptr;
 	name = _name;
 	displayName = "Unknown";
 	isToDelete = false;
@@ -13,6 +14,7 @@ Actor::Actor(const string& _name, const TransformData& _transform)
 
 Actor::Actor(const Actor& _actor)
 {
+	parent = _actor.parent;
 	children = _actor.children;
 	name = _actor.name;
 	displayName = _actor.displayName;

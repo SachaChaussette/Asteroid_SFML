@@ -2,6 +2,8 @@
 
 #include "GameMode.h"
 #include "Label.h"
+#include "Canvas.h"
+#include "Player.h"
 
 using namespace UI;
 
@@ -11,12 +13,15 @@ class ChronoMode : public GameMode
 	int currentTime;
 
 	Label* chrono;
+	Label* life;
+	Canvas* canva;
 
 public:
 	ChronoMode(const int _timerCount);
 
 private:
 	void ComputeTime();
+	void UpdateLife();
 	void ResetTime();
 	
 	virtual void Stop() override;

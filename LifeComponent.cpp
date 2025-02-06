@@ -1,6 +1,7 @@
 #include "LifeComponent.h"
 #include "Actor.h"
 #include "ActorManager.h"
+#include "Entity.h"
 
 LifeComponent::LifeComponent(Actor* _owner, const u_int& _lifeCount) : Component(_owner)
 {
@@ -19,7 +20,18 @@ LifeComponent::LifeComponent(Actor* _owner, const LifeComponent* _other) : Compo
 void LifeComponent::BeginPlay()
 {
 	Super::BeginPlay();
-	new Timer([&]() { canGetDamage = true; }, seconds(3.0f), true, false);
+	
+	if (Entity* _owner = Cast<Entity>(owner))
+	{
+		if (_owner->GetConvexHitBox()->GetLayer() == Layer::PROJECTILE)
+		{
+			canGetDamage = true;
+		}
+		else
+		{
+			new Timer([&]() { canGetDamage = true; }, seconds(3.0f), true, false);
+		}
+	}
 }
 
 void LifeComponent::Death()

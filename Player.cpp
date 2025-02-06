@@ -57,7 +57,7 @@ void Player::Construct()
 		shoot->Shoot();
 	}, Code::Space);
 
-	convexHitBox->AddComponent(new CollisionComponent(this, "Player", IS_ALL, CT_OVERLAP));
+	convexHitBox->AddComponent(new CollisionComponent(convexHitBox, "Player", IS_ALL, CT_OVERLAP));
 	convexHitBox->SetLayer(Layer::PLAYER);
 
 	const vector<pair<string, CollisionType>>& _responses

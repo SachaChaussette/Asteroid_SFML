@@ -75,10 +75,6 @@ public:
 #pragma region Children
 
 private:
-	FORCEINLINE void SetParent(Actor* _parent)
-	{
-		parent = _parent;
-	}
 	FORCEINLINE void UpdateChildTransform(Actor* _child)
 	{
 		UpdateChildPosition(_child);
@@ -132,6 +128,10 @@ private:
 	}
 
 public:
+	FORCEINLINE void SetParent(Actor* _parent)
+	{
+		parent = _parent;
+	}
 	FORCEINLINE void AddChild(Actor* _child, const AttachmentType& _type)
 	{
 		_child->SetAttachmentType(_type);

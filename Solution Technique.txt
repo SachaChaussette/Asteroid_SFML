@@ -51,7 +51,7 @@ Taches :
 
 Sev : InputManager
 Moi : Collision
-Romain : Son Asset Projectile
+Romain : Son
 
 Morgan : 
 Yoan : 

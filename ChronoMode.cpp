@@ -8,6 +8,8 @@ ChronoMode::ChronoMode(const int _timerCount) : GameMode("ChronoMode")
 	timerCount = _timerCount;
 	currentTime = timerCount;
 	chrono = nullptr;
+	canva = nullptr;
+	life = nullptr;
 }
 
 void ChronoMode::ComputeTime()
@@ -21,6 +23,11 @@ void ChronoMode::ComputeTime()
 	chrono->SetString(_finalText);
 }
 
+void ChronoMode::UpdateLife()
+{
+	life->SetString("P1 : " + to_string(player->GetLife()->GetLifeCount()));
+}
+
 void ChronoMode::ResetTime()
 {
 	currentTime = timerCount;
@@ -32,6 +39,7 @@ void ChronoMode::Start()
 
 	const Vector2f& _windowSize = CAST(Vector2f, M_GAME.GetCurrent()->GetWindowSize());
 
+
 	//new Timer<Seconds>([&]() { GenerateAsteroid(); }, seconds(2.0f), true, true);
 	//new Timer<Seconds>([&]() { GenerateUFO(); }, seconds(10.0f), true, true);
 
@@ -40,21 +48,30 @@ void ChronoMode::Start()
 	GenerateAsteroid();
 	GenerateUFO();
 
+	new Timer([&]() { --currentTime; }, seconds(1), true, true);
+
 	chrono = M_HUD.CreateWidget<Label>(to_string(currentTime), Screen, "Score", TTF);
-	M_HUD.AddToViewport(chrono);
 	chrono->SetPosition({ _windowSize.x * 0.45f, _windowSize.y * 0.05f });
 	chrono->SetCharacterSize(70);
 	chrono->SetZOrder(3);
 
-	new Timer([&]() { --currentTime; }, seconds(1), true, true);
+	life = M_HUD.CreateWidget<Label>("P1 : " + to_string(player->GetLife()->GetLifeCount()), Screen, "Score");
+	life->SetPosition({ _windowSize.x * 0.05f, _windowSize.y * 0.05f });
+	life->SetCharacterSize(50);
+	life->SetZOrder(3);
 
+	canva = M_HUD.CreateWidget<Canvas>("ChronoCanva");
+	canva->AddWidget(chrono);
+	canva->AddWidget(life);
 
+	M_HUD.AddToViewport(canva);
 }
 
 void ChronoMode::Update()
 {
 	Super::Update();
 	ComputeTime();
+	UpdateLife();
 }
 
 void ChronoMode::Stop()

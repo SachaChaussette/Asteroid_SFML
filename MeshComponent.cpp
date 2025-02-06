@@ -29,8 +29,8 @@ MeshComponent::MeshComponent(Actor* _owner, const vector<Vector2f> point, const 
 
 MeshComponent::MeshComponent(Actor* _owner, const MeshComponent* _other) : Component(_owner) 
 {
-	shape = new ShapeObject(*_other->shape);
 	texturePath = _other->texturePath;
+	shape = new ShapeObject(*_other->shape);
 }
 
 

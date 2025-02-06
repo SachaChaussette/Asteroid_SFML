@@ -78,7 +78,7 @@ void Entity::Construct()
 	animation->StartAnimation();
 
 	convexHitBox->SetOriginAtMiddle();
-
+	convexHitBox->SetParent(this);
 }
 
 void Entity::Deconstruct()

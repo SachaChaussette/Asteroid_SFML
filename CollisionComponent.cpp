@@ -29,7 +29,7 @@ void CollisionComponent::CheckCollision()
 	if (!(status & IS_PHYSIC)) return;
 
 	const set<Actor*>& _allActors = M_ACTOR.GetAllActors();
-	const FloatRect& _ownerRect = Cast<Entity>(owner)->GetConvexHitBox()->GetHitbox();
+	const FloatRect& _ownerRect = Cast<MeshActor>(owner)->GetHitbox();
 	
 	for (Actor* _other : _allActors)
 	{
@@ -47,8 +47,8 @@ void CollisionComponent::CheckCollision()
 				if (const optional<FloatRect> _intersection = _ownerRect.findIntersection(_otherRect))
 				{
 					const CollisionData& _data = { _other, _response, *_intersection };
-					owner->OnCollision(_data);
-					_other->OnCollision(_data);
+					owner->GetParent()->OnCollision(_data);
+					_otherEntity->OnCollision(_data);
 				}
 			}
 		}

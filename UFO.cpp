@@ -16,14 +16,14 @@ UFO::UFO(const UFO& _other) : Entity(_other)
 {
 	movement = CreateComponent<EnemyMovementComponent>(_other.movement);
 	shoot = CreateComponent<ShootComponent>(_other.shoot);
-	size = _other.size;
+
 
 }
 
 UFO::~UFO()
 {
-	M_TIMER.RemoveTimer(shootTimer);
-	M_TIMER.RemoveTimer(directionTimer);
+	//M_TIMER.RemoveTimer(shootTimer);
+	//M_TIMER.RemoveTimer(directionTimer);
 }
 
 void UFO::ComputeNewDirection()
@@ -37,7 +37,7 @@ void UFO::Construct()
 {
 	Super::Construct();
 
-	convexHitBox->AddComponent(new CollisionComponent(this, "UFO", IS_ALL, CT_OVERLAP));
+	convexHitBox->AddComponent(new CollisionComponent(convexHitBox, "UFO", IS_ALL, CT_OVERLAP));
 	convexHitBox->SetLayer(Layer::UFO);
 
 	const vector<pair<string, CollisionType>>& _responses
@@ -70,6 +70,8 @@ void UFO::BeginPlay()
 void UFO::Deconstruct()
 {
 	Super::Deconstruct();
+	M_TIMER.RemoveTimer(directionTimer);
+	M_TIMER.RemoveTimer(shootTimer);
 }
 
 void UFO::OnCollision(const CollisionData& _data)

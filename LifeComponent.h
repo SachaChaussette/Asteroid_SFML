@@ -11,6 +11,10 @@ class LifeComponent : public Component
 	bool canGetDamage;
 
 public:
+	FORCEINLINE int GetLifeCount() const
+	{
+		return lifeCount;
+	}
 	FORCEINLINE void IncrementLife()
 	{
 		++lifeCount;

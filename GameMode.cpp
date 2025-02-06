@@ -8,6 +8,7 @@
 GameMode::GameMode(const string& _name)
 {
 	name = _name;
+	player = nullptr;
 }
 
 void GameMode::GeneratePlayer()
@@ -20,9 +21,9 @@ void GameMode::GeneratePlayer()
 		{12.0f, 48.0f},
 		{50.0f, 48.0f},
 	};*/
-	Player* _player = Level::SpawnActor(Player(30.0f, Vector2f(60.0f, 60.0f), "Ship_" + to_string(GetRandomNumberInRange(1, 5))));
-	_player->SetOriginAtMiddle();
-	_player->SetPosition(Vector2f(_windowSize.x / 2, _windowSize.y / 2));
+	player = Level::SpawnActor(Player(30.0f, Vector2f(60.0f, 60.0f), "Ship_" + to_string(GetRandomNumberInRange(1, 5))));
+	player->SetOriginAtMiddle();
+	player->SetPosition(Vector2f(_windowSize.x / 2, _windowSize.y / 2));
 }
 
 void GameMode::GenerateAsteroid()

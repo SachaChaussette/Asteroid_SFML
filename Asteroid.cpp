@@ -28,7 +28,7 @@ void Asteroid::Construct()
 {
 	Super::Construct();
 
-	convexHitBox->AddComponent(new CollisionComponent(this, "Asteroid", IS_ALL, CT_OVERLAP));
+	convexHitBox->AddComponent(new CollisionComponent(convexHitBox, "Asteroid", IS_ALL, CT_OVERLAP));
 	convexHitBox->SetLayer(Layer::ASTEROID);
 
 	const vector<pair<string, CollisionType>>& _responses
