@@ -1,51 +1,63 @@
 #include "InputManager.h"
 
-void InputManager::CloseWindow(RenderWindow& _window)
+Input::InputManager::InputManager()
 {
-    _window.close();
+    actionsMaps = map<string, ActionMap*>();
+    isKeyHolding = false;
+    isButtonHolding = false;
 }
 
-//void InputManager::BindAction(const function<void(Vector2i _pos)>& _buttonCallback, const MouseCode& _buttonCodes)
-//{
-//    inputsData.push_back(InputData(_buttonCallback, { _buttonCodes }));
-//}
-
-void InputManager::BindAction(const function<void()>& _callback, const Code& _code)
+Input::InputManager::~InputManager()
 {
-    inputsData.push_back(InputData(_callback, { _code }));
+    for (const pair<string, ActionMap*>& _pair : actionsMaps)
+    {
+        delete _pair.second;
+    }
 }
 
-void InputManager::BindAction(const function<void(Vector2i _pos)>& _buttonCallback, const vector<MouseCode>& _buttonCodes)
+
+void Input::InputManager::UpdateActionMaps(const EventInfo& _event)
 {
-    inputsData.push_back(InputData(_buttonCallback, _buttonCodes, _buttonCodes.empty()));
-}
-void InputManager::BindAction(const function<void()>& _callback, const vector<Code>& _codes)
-{
-    inputsData.push_back(InputData(_callback, _codes, _codes.empty()));
+    for (const pair<string, ActionMap*>& _map : actionsMaps)
+    {
+        _map.second->Update(_event);
+    }
 }
 
-void InputManager::ConsumeInputs(RenderWindow& _window)
+void Input::InputManager::Update(RenderWindow& _window)
 {
-    while (const optional _event = _window.pollEvent())
+    while (const EventInfo& _event = _window.pollEvent())
     {
         if (_event->is<Event::Closed>())
         {
-            CloseWindow(_window);
-        }
-        else if (const KeyPressed* _key = _event->getIf<KeyPressed>())
-        {
-            for (const InputData& _inputData : inputsData)
-            {
-                if (_inputData.TryToExecute(_key)) break;
-            }
+            _window.close();
+            return;
         }
 
-        else if (const MouseButtonPressed* _key = _event->getIf<MouseButtonPressed>())
+        UpdateActionMaps(_event);
+        if (_event->is<PressedKey>() && !isKeyHolding)
         {
-            for (const InputData& _inputData : inputsData)
-            {
-                _inputData.TryToExecute(_key);
-            }
+            isKeyHolding = true;
+        }
+        else if (_event->is<ReleasedKey>() && isKeyHolding)
+        {
+            isKeyHolding = false;
+        }
+        else if (_event->is<PressedMouseButton>() && !isButtonHolding)
+        {
+            isButtonHolding = true;
+        }
+        else if (_event->is<ReleasedMouseButton>() && isButtonHolding)
+        {
+            isButtonHolding = false;
+        }
+        else if (_event->is<PressedMouseButton>() && !isButtonHolding)
+        {
+            isJoystickButtonHolding = true;
+        }
+        else if (_event->is<ReleasedMouseButton>() && isButtonHolding)
+        {
+            isJoystickButtonHolding = false;
         }
     }
 }

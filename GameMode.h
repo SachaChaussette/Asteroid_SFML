@@ -1,21 +1,29 @@
 #pragma once
+#include "Actor.h"
+#include "PlayerController.h"
 
-#include "CoreMinimal.h"
-#include "Player.h"
-
-class GameMode
+class GameMode : public Actor
 {
-	string name;
-protected:
-	Player* player;
-public:
-	GameMode(const string& _name);
-public:
-	virtual void Start() {};
-	virtual void Update() {};
-	virtual void Stop() {};
-	void GenerateAsteroid();
-	void GenerateUFO();
-	void GeneratePlayer();
-};
+	SubclassOf<PlayerController> controllerRef;
+	PlayerController* controller;
+	/*SubclassOf<HUD>* hudRef;
+	HUD* hud;*/
 
+public:
+	/*FORCEINLINE HUD* GetHUD() const
+	{
+		if (!hud)
+		{
+			hud = SpawnActor<HUD>(hudRef);
+		}
+
+		return hud;
+	}*/
+
+public:
+	GameMode(const string& _name = "GameMode");
+	GameMode(const GameMode& _other);
+
+	virtual void Construct() override;
+	PlayerController* GetPlayerController();
+};

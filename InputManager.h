@@ -1,82 +1,92 @@
 #pragma once
-
 #include "Singleton.h"
+#include "ActionMap.h"
 
-using KeyPressed = Event::KeyPressed;
-using KeyReleased = Event::KeyReleased;
-using MouseButtonPressed = Event::MouseButtonPressed;
-using Code = Keyboard::Key;
-using MouseCode  = Mouse::Button;
-
-struct InputData
+namespace Input
 {
-	vector<Code> codes;
-	vector<MouseCode> mouseCodes;
-	bool isAnyKey;
-	function<void()> callback;
-	function<void(Vector2i _pos)> buttonCallback;
+	class InputManager : public Singleton<InputManager>
+	{
+		map<string, ActionMap*> actionsMaps;
+		bool isKeyHolding;
+		bool isButtonHolding;
+		bool isJoystickButtonHolding;
 
-	InputData() = default;
-	InputData(const function<void()>& _callback, const vector<Code>& _codes = {},
-			const bool _isAnyKey = false)
-	{
-		callback = _callback;
-		codes = _codes;
-		isAnyKey = _isAnyKey;
-	}
-	InputData(const function<void(Vector2i _pos)>& _buttonCallback, const vector<MouseCode>& _mouseCodes = {},
-		const bool _isAnyKey = false)
-	{
-		buttonCallback = _buttonCallback;
-		mouseCodes = _mouseCodes;
-		isAnyKey = _isAnyKey;
-	}
-
-	template<typename Type = Event::KeyPressed>
-	bool TryToExecute(const Type* _key) const
-	{
-		if (!isAnyKey && !ContainsKey(_key->code)) return false;
-		callback();
-		return true;
-	}
-	bool TryToExecute(const MouseButtonPressed* _key) const
-	{
-		if (!isAnyKey && !ContainsKey(_key->button)) return false;
-		buttonCallback(_key->position);
-		return true;
-	}
-private:
-	inline bool ContainsKey(const Code& _currentCode) const
-	{
-		for (const Code& _code : codes)
+	private:
+		FORCEINLINE void AddActionMap(const pair<string, ActionMap*>& _actionMap)
 		{
-			if (_currentCode == _code) return true;
+			actionsMaps.insert(_actionMap);
 		}
-		return false;
-	}
-	inline bool ContainsKey(const MouseCode& _currentCode) const
-	{
-		for (const MouseCode& _code : mouseCodes)
+	public:
+		FORCEINLINE bool GetIsKeyHolding() const
 		{
-			if (_currentCode == _code) return true;
+			return isKeyHolding;
 		}
-		return false;
-	}
-};
+		FORCEINLINE bool GetIsButtonHolding() const
+		{
+			return isButtonHolding;
+		}
+		FORCEINLINE bool GetIsJoystickButtonHolding() const
+		{
+			return isJoystickButtonHolding;
+		}
+		FORCEINLINE ActionMap* GetActionMapByName(const string& _name)
+		{
+			if (!actionsMaps.contains(_name)) return nullptr;
+			return actionsMaps.at(_name);
+		}
+		FORCEINLINE void RemoveActionMap(const string& _name)
+		{
+			if (!actionsMaps.contains(_name)) return;
 
-class InputManager : public Singleton<InputManager>
-{
-	vector<InputData> inputsData;
-public:
+			delete actionsMaps[_name];
+			actionsMaps.erase(_name);
+		}
+		FORCEINLINE ActionMap* CreateActionMap(const string& _name)
+		{
+			if (actionsMaps.contains(_name))
+			{
+				LOG(Error, "This ActionMap's name (" + _name + ") already used !");
+				return nullptr;
+			}
 
-private:
-	void CloseWindow(RenderWindow& _window);
-public:
+			ActionMap* _actionMap = new ActionMap(_name);
+			AddActionMap({ _name, _actionMap });
+			return _actionMap;
+		}
 
-	//void BindAction(const function<void(Vector2i _pos)>& _buttonCallback, const MouseCode& _code);
-	void BindAction(const function<void()>& _callback, const Code& _code);
-	void BindAction(const function<void(Vector2i _pos)>& _buttonCallback, const vector<MouseCode>& _code);
-	void BindAction(const function<void()>& _callback, const vector<Code>& _code);
-	void ConsumeInputs(RenderWindow& _window);
-};
+	public:
+		InputManager();
+		~InputManager();
 
+	private:
+		void UpdateActionMaps(const EventInfo& _event);
+
+	public:
+		void Update(RenderWindow& _window);
+	};
+}
+
+#pragma region Examples
+/*
+ActionMap* _actionMap = M_INPUT.CreateActionMap("Demo");
+//DIGITAL
+_actionMap->AddAction("Test", ActionData(MouseEntered), [&]() { LOG(Error, "ButtonEntered"); });
+_actionMap->AddAction("Test1", ActionData(KeyPressed, KeyType::A), [&]() { LOG(Display, "coucou"); });
+_actionMap->AddAction("Test2", ActionData(KeyReleased, KeyType::A), [&]() { LOG(Warning, "coucou"); });
+_actionMap->AddAction("Test3", ActionData(KeyHold, KeyType::A), [&]() { LOG(Error, "coucou"); });
+_actionMap->AddAction("Test4", ActionData(KeyPressed, KeyType::B), [&]() { LOG(Display, "salut"); });
+_actionMap->AddAction("Test5", ActionData(KeyReleased, KeyType::B), [&]() { LOG(Warning, "salut"); });
+_actionMap->AddAction("Test6", ActionData(KeyHold, KeyType::B), [&]() { LOG(Error, "salut"); });
+_actionMap->AddAction("Test9", ActionData(KeyHold, KeyType::T), [&]() { LOG(Error, "Thomas"); });
+_actionMap->AddAction("Test8", ActionData(KeyReleased, KeyType::T), [&]() { LOG(Warning, "Thomas"); });
+_actionMap->AddAction("Test7", ActionData(KeyPressed, KeyType::T), [&]() { LOG(Display, "Thomas"); });
+//AXIS2
+_actionMap->AddAction("Test10", ActionData(MouseMoved), [&](const Vector2f& _position) { LOG(Error, "X: " + to_string(_position.x) + " Y: " + to_string(_position.y)); });
+_actionMap->AddAction("Test11", ActionData(MouseMovedRaw), [&](const Vector2f& _position) { LOG(Error, "MouseMovedRaw"); });
+//AXIS
+_actionMap->AddAction("Test12", ActionData(MouseWheelScrolled, KeyType::Vertical), [&](const float _position) { LOG(Error, to_string(_position)); });
+_actionMap->AddAction("Test99", ActionData(JoystickMoved, KeyType::LeftJoystickX), [&](const float _position) { LOG(Error, "manette :" + to_string(_position)); });
+
+_actionMap->Enable();
+*/
+#pragma endregion

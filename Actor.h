@@ -1,52 +1,48 @@
 #pragma once
 #include "Core.h"
-#include "ITransformableModifier.h"
-#include "ITransformableViewer.h"
+#include "TransformableModifier.h"
+#include "TransformableViewer.h"
 #include "Component.h"
 #include "RootComponent.h"
 #include "Layer.h"
 
+class Level;
 struct CollisionData;
 
 class Actor : public Core, public ITransformableModifier, public ITransformableViewer
 {
 	bool isToDelete;
 	u_int id;
+protected:
+	float lifeSpan;
+private:
 	string name;
 	string displayName;
 	set<Component*> components;
 	RootComponent* root;
-	float lifeSpan;
 	Actor* parent;
 	AttachmentType attachment;
 	set<Actor*> children;
-	Layer::LayerType layer;
+protected:
+	Level* level;
 
 protected:
 	template <typename Type, typename ...Args, IS_BASE_OF(Component, Type)>
-	FORCEINLINE Type* CreateComponent(Args... _args)
+	FORCEINLINE Type* CreateComponent(Args&&... _args)
 	{
-		Type* _component = new Type(this, _args...);
+		Type* _component = new Type(this, forward<Args>(_args)...);
 		AddComponent(_component);
 		return _component;
 	}
-	template <typename Type = Actor, typename ...Args, IS_BASE_OF(Actor, Type)>
-	FORCEINLINE Type* CreateSocket(const AttachmentType& _type = AT_SNAP_TO_TARGET, Args... _args)
+	FORCEINLINE void CreateSocket(const string& _name, const TransformData& _transform = TransformData(),
+								  const AttachmentType& _type = AT_SNAP_TO_TARGET)
 	{
-		Type* _socket = new Type(_args...);
+		Actor* _socket = new Actor(_name, _transform);
+		_socket->SetLevelReference(level);
 		AddChild(_socket, _type);
-		return _socket;
 	}
 
 public:
-	FORCEINLINE void SetLifeSpan(const float _lifeSpan)
-	{
-		lifeSpan = _lifeSpan;
-	}
-	FORCEINLINE void SetLayer(Layer::LayerType _layer)
-	{
-		layer = _layer;
-	}
 	FORCEINLINE void SetToDelete()
 	{
 		isToDelete = true;
@@ -67,14 +63,27 @@ public:
 	{
 		return displayName;
 	}
-	FORCEINLINE Layer::LayerType GetLayer() const
-	{
-		return layer;
-	}
 
-#pragma region Children
+	#pragma region Level
+	
+	FORCEINLINE void SetLevelReference(Level* _level)
+	{
+		level = _level;
+	}
+	FORCEINLINE Level* GetLevel() const
+	{
+		return level;
+	}
+	
+	#pragma endregion
+
+	#pragma region Children
 
 private:
+	FORCEINLINE void SetParent(Actor* _parent)
+	{
+		parent = _parent;
+	}
 	FORCEINLINE void UpdateChildTransform(Actor* _child)
 	{
 		UpdateChildPosition(_child);
@@ -85,9 +94,9 @@ private:
 	{
 		const vector<function<Vector2f()>>& _computePosition =
 		{
-			// Keep the childï¿½s relative position to the parent.
-			[&]() { return _child->GetPosition() - GetPosition(); },
-			// Keep the childï¿½s world position.
+			// Keep the child’s relative position to the parent.
+			[&]() { return _child->GetPosition() + GetPosition(); },
+			// Keep the child’s world position.
 			[&]() { return _child->GetPosition(); },
 			// Snap the child to the parent's position.
 			[&]() { return GetPosition(); },
@@ -100,9 +109,9 @@ private:
 	{
 		const vector<function<Angle()>>& _computeRotation =
 		{
-			// Keep the childï¿½s relative rotation to the parent.
-			[&]() { return _child->GetRotation() - GetRotation(); },
-			// Keep the childï¿½s world rotation.
+			// Keep the child’s relative rotation to the parent.
+			[&]() { return _child->GetRotation() + GetRotation(); },
+			// Keep the child’s world rotation.
 			[&]() { return _child->GetRotation(); },
 			// Snap the child to the parent's rotation.
 			[&]() { return GetRotation(); },
@@ -115,9 +124,12 @@ private:
 	{
 		const vector<function<Vector2f()>>& _computeScale =
 		{
-			// Keep the childï¿½s relative scale to the parent.
-			[&]() { return _child->GetScale() - GetScale(); },
-			// Keep the childï¿½s world scale.
+			// Keep the child’s relative scale to the parent.
+			[&]() 
+			{ 
+				return Vector2f(_child->GetScale().x * GetScale().x, _child->GetScale().y * GetScale().y);
+			},
+			// Keep the child’s world scale.
 			[&]() { return _child->GetScale(); },
 			// Snap the child to the parent's scale.
 			[&]() { return GetScale(); },
@@ -128,10 +140,6 @@ private:
 	}
 
 public:
-	FORCEINLINE void SetParent(Actor* _parent)
-	{
-		parent = _parent;
-	}
 	FORCEINLINE void AddChild(Actor* _child, const AttachmentType& _type)
 	{
 		_child->SetAttachmentType(_type);
@@ -169,11 +177,11 @@ public:
 		return *_it;
 	}
 
-#pragma endregion
+	#pragma endregion
 
-#pragma region Transformable
+	#pragma region Transformable
 
-#pragma region Viewer
+	#pragma region Viewer
 
 	FORCEINLINE virtual Vector2f GetOrigin() const override
 	{
@@ -195,15 +203,44 @@ public:
 	{
 		return root->GetTransform();
 	}
+	FORCEINLINE Vector2f GetForwardVector() const
+	{
+		const Angle& _angle = GetRotation();
+		const float _radians = _angle.asRadians();
+		return Vector2f(cos(_radians), sin(_radians));
+	}
+	FORCEINLINE Vector2f GetDownVector() const
+	{
+		const Angle& _angle = GetRotation();
+		const float _radians = _angle.asRadians();
+		return Vector2f(sin(_radians), -cos(_radians));
+	}
+	FORCEINLINE Vector2f GetRightVector() const
+	{
+		const Angle& _angle = GetRotation();
+		const float _radians = _angle.asRadians();
+		return Vector2f(cos(_radians), -sin(_radians));
+	}
+	FORCEINLINE Vector2f GetLeftVector() const
+	{
+		const Angle& _angle = GetRotation();
+		const float _radians = _angle.asRadians();
+		return Vector2f(-cos(_radians), sin(_radians));
+	}
+	FORCEINLINE Vector2f GetBackVector() const
+	{
+		const Angle& _angle = GetRotation();
+		const float _radians = _angle.asRadians();
+		return Vector2f(-cos(_radians), -sin(_radians));
+	}
 
-#pragma endregion
+	#pragma endregion
 
-#pragma region Modifier
+	#pragma region Modifier
 
 	FORCEINLINE virtual void SetPosition(const Vector2f& _position) override
 	{
 		root->SetPosition(_position);
-
 
 		for (Actor* _child : children)
 		{
@@ -238,7 +275,7 @@ public:
 
 		for (Actor* _child : children)
 		{
-			UpdateChildTransform(_child);
+			_child->Move(_offset);
 		}
 	}
 	FORCEINLINE virtual void Rotate(const Angle& _angle) override
@@ -260,13 +297,13 @@ public:
 		}
 	}
 
-#pragma endregion
+	#pragma endregion
 
-#pragma endregion
+	#pragma endregion
 
 public:
 	Actor(const string& _name = "Actor", const TransformData& _transform = TransformData());
-	Actor(const Actor& _actor);
+	Actor(const Actor& _other);
 	virtual ~Actor();
 
 public:
@@ -276,21 +313,24 @@ public:
 	virtual void Tick(const float _deltaTime) override;
 	virtual void BeginDestroy() override;
 
-#pragma region Components
+	void SetName(const string& _name);
+	void Destroy();
+
+	#pragma region Components
 
 	void AddComponent(Component* _component);
 	void RemoveComponent(Component* _component);
-	template <typename T, IS_BASE_OF(Component, T)>
+	template <typename T>
 	T* GetComponent()
 	{
 		for (Component* _component : components)
 		{
-			T* _componentCast = dynamic_cast<T*>(_component);
-			if (_componentCast)
+			if (is_same_v<decltype(_component), T*>)
 			{
-				return _componentCast;
+				return dynamic_cast<T*>(_component);
 			}
 		}
+
 		return nullptr;
 	}
 
@@ -298,11 +338,9 @@ public:
 
 	#pragma region Collision
 
-	virtual void OnCollision(const CollisionData& _data) {}
+	virtual void CollisionEnter(const CollisionData& _data) {}
+	virtual void CollisionUpdate(const CollisionData& _data) {}
+	virtual void CollisionExit(const CollisionData& _data) {}
 
 	#pragma endregion
-
-	virtual void Death() {};
-
-#pragma endregion
 };

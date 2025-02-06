@@ -1,5 +1,5 @@
 #pragma once
-#include "Object.h"
+#include "TransformableObject.h"
 
 enum TextureExtensionType
 {
@@ -12,7 +12,7 @@ enum ShapeObjectType
 {
 	SOT_CIRCLE,
 	SOT_RECTANGLE,
-	SOT_CONVEX,
+	SOT_VERTEX,
 
 	SOT_COUNT,
 };
@@ -23,20 +23,14 @@ struct CircleShapeData
 	string path;
 	IntRect rect;
 	size_t pointCount;
-	TextureExtensionType textureType;
-	bool isRepeated;
-	bool isSmooth;
 
-	CircleShapeData(const float _radius, const string& _path, const TextureExtensionType& _textureType
-		, const IntRect& _rect = IntRect(), bool _isRepeated = false, bool _isSmooth = true, const size_t& _pointCount = 30U)
+	CircleShapeData(const float _radius, const string& _path = "", const IntRect& _rect = IntRect(),
+					const size_t& _pointCount = 30)
 	{
 		radius = _radius;
 		path = _path;
 		rect = _rect;
-		textureType = _textureType;
 		pointCount = _pointCount;
-		isRepeated = _isRepeated;
-		isSmooth = _isSmooth;
 	}
 
 	CircleShapeData& operator = (CircleShapeData _other)
@@ -44,10 +38,7 @@ struct CircleShapeData
 		radius = _other.radius;
 		path = _other.path;
 		rect = _other.rect;
-		textureType = _other.textureType;
 		pointCount = _other.pointCount;
-		isRepeated = _other.isRepeated;
-		isSmooth = _other.isSmooth;
 
 		return *this;
 	}
@@ -60,37 +51,15 @@ struct RectangleShapeData
 	IntRect rect;
 	TextureExtensionType textureType;
 	bool isRepeated;
-	bool isSmooth;
 
-	RectangleShapeData(const Vector2f& _size, const string& _path = "", const TextureExtensionType& _textureType = PNG, 
-						const IntRect& _rect = IntRect(), bool _isRepeated = false, bool _isSmooth = true)
+	RectangleShapeData(const Vector2f& _size, const string& _path = "", const TextureExtensionType& _textureType = PNG,
+					   const bool _isRepeated = false, const IntRect& _rect = IntRect())
 	{
 		size = _size;
 		path = _path;
 		rect = _rect;
 		textureType = _textureType;
 		isRepeated = _isRepeated;
-		isSmooth = _isSmooth;
-	}
-};
-
-struct ConvexShapeData
-{
-	string path;
-	IntRect rect;
-	vector<Vector2f> point;
-	TextureExtensionType textureType;
-	bool isRepeated;
-	bool isSmooth;
-	ConvexShapeData(const vector<Vector2f> _point, const string& _path, const TextureExtensionType& _textureType
-		, const IntRect& _rect = IntRect(), bool _isRepeated = false, bool _isSmooth = true)
-	{
-		path = _path;
-		rect = _rect;
-		point = _point;
-		textureType = _textureType;
-		isRepeated = _isRepeated;
-		isSmooth = _isSmooth;
 	}
 };
 
@@ -98,7 +67,6 @@ union ObjectData
 {
 	CircleShapeData* circleData;
 	RectangleShapeData* rectangleData;
-	ConvexShapeData* convexData;
 
 	ObjectData() {}
 	~ObjectData() {}
@@ -123,11 +91,6 @@ struct ShapeObjectData
 		type = _type;
 		data.rectangleData = new RectangleShapeData(_rectangleData);
 	}
-	ShapeObjectData(const ShapeObjectType& _type, const ConvexShapeData& _convexData)
-	{
-		type = _type;
-		data.convexData = new ConvexShapeData(_convexData);
-	}
 	~ShapeObjectData()
 	{
 		if (type == SOT_CIRCLE)
@@ -138,11 +101,6 @@ struct ShapeObjectData
 		else if (type == SOT_RECTANGLE)
 		{
 			delete data.rectangleData;
-		}
-
-		else
-		{
-			delete data.convexData;
 		}
 	}
 
@@ -160,16 +118,11 @@ struct ShapeObjectData
 			data.rectangleData = new RectangleShapeData(*_other.data.rectangleData);
 		}
 
-		else if (type == SOT_CONVEX)
-		{
-			data.convexData = new ConvexShapeData(*_other.data.convexData);
-		}
-
 		return *this;
 	}
 };
 
-class ShapeObject : public Object
+class ShapeObject : public TransformableObject
 {
 	Texture texture;
 	Shape* shape;
@@ -221,19 +174,12 @@ public:
 	}
 
 public:
-	ShapeObject(const float _radius, const string& _path = "", const TextureExtensionType& _textureType = PNG,
-		const IntRect& _rect = IntRect(), bool _isRepeated = false,
-		bool _isSmooth = true, const size_t& _pointCount = 30U); // Circle
-	ShapeObject(const Vector2f& _size, const string& _path = "", const TextureExtensionType& _textureType = PNG,
-		const IntRect& _rect = IntRect(), bool _isRepeated = false, bool _isSmooth = true); // Rectangle
-	ShapeObject(const vector<Vector2f> point, const string& _path = "", const TextureExtensionType& _textureType = PNG,
-		const IntRect& _rect = IntRect(), bool _isRepeated = false, bool _isSmooth = true); // convex
-	ShapeObject(const RectangleShapeData& _data); 
+	ShapeObject(const CircleShapeData& _data); // Circle
+	ShapeObject(const RectangleShapeData& _data); // Rectangle
 	ShapeObject(const ShapeObject& _other);
 	~ShapeObject();
 
 private:
 	void InitCircle(const CircleShapeData& _data);
 	void InitRectangle(const RectangleShapeData& _data);
-	void InitConvex(const ConvexShapeData& _data);
 };

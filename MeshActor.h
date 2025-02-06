@@ -1,22 +1,25 @@
 #pragma once
 #include "Actor.h"
 #include "MeshComponent.h"
+#include "CollisionComponent.h"
 #include "TextureManager.h"
 
 class MeshActor : public Actor
 {
-	MeshComponent* mesh;
 	u_int renderMeshToken;
+	MeshComponent* mesh;
+protected:
+	CollisionComponent* collision;
 
 public:
-	FORCEINLINE FloatRect GetHitbox() const
-	{
-		return mesh->GetShape()->GetDrawable()->getGlobalBounds();
-	}
 	FORCEINLINE MeshComponent* GetMesh() const
 	{
 		return mesh;
 	}
+	FORCEINLINE FloatRect GetHitbox() const
+	{
+		return mesh->GetShape()->GetDrawable()->getGlobalBounds();
+	}  
 	FORCEINLINE void SetTextureRect(const Vector2i& _start, const Vector2i& _size)
 	{
 		SetTextureRect(IntRect(_start, _size));
@@ -67,33 +70,17 @@ public:
 		Super::Scale(_factor);
 		mesh->GetShape()->Scale(_factor);
 	}
-	FORCEINLINE void SetFillColor(const Color& _color)
-	{
-		mesh->GetShape()->GetDrawable()->setFillColor(_color);
-	}
 
 	#pragma endregion
 
 public:
 	MeshActor() = default;
-	MeshActor(const float _radius, const string& _path = "", const TextureExtensionType& _textureType = PNG, 
-			const IntRect& _rect = {}, bool _isRepeated = false, bool _isSmooth = true, 
-			const size_t& _pointCount = 30U, const string& _name = "MeshActor");
-	MeshActor(const Vector2f& _size, const string& _path = "", const TextureExtensionType& _textureType = PNG,
-			const IntRect& _rect = {}, bool _isRepeated = false, bool _isSmooth = true, 
-			const string& _name = "MeshActor");
-
-	MeshActor(const RectangleShapeData& _data, const string& _name = "MeshActor"); // Rectangle v2
-
-	MeshActor(const vector<Vector2f>& _point, const string& _path = "", const TextureExtensionType& _textureType = PNG, 
-			const IntRect& _rect = {}, bool _isRepeated = false, bool _isSmooth = true, 
-			const string& _name = "MeshActor");
+	MeshActor(const CircleShapeData& _data, const string& _name = "MeshActor");
+	MeshActor(const RectangleShapeData& _data, const string& _name = "MeshActor");
 	MeshActor(const MeshActor& _other);
 
-	
-
-private:
-	void RenderMesh(RenderWindow& _window);
+protected:
+	virtual void RenderMesh(RenderWindow& _window);
 
 public:
 	virtual void Construct() override;

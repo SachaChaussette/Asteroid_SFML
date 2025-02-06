@@ -2,14 +2,15 @@
 
 namespace Layer
 {
+
 	enum LayerType
 	{
 		WORLD_STATIC,
 		WORLD_DYNAMIC,
 		PLAYER,
 		PROJECTILE,
-		ASTEROID,
-		UFO,
+		BREAKABLE,
+		RETRIEVABLE,
 		COUNT
 	};
 }

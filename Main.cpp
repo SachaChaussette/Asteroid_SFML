@@ -1,19 +1,25 @@
-#include "Game.h"
-#include "AsteroidGame.h"
-#include "MenuGame.h"
-#include "GameManager.h"
+#include "GameMode.h"
+#include "Engine.h"
+#include "LevelManager.h"
+#include "MeshActor.h"
+#include "Particle.h"
 
 void InitConfig()
 {
-    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-    Logger::Reset();
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+	Logger::Reset();
 }
 
 int main()
 {
-    InitConfig();
+	InitConfig();
 
-    M_GAME.Launch(new AsteroidGame());
+	Level* _level = new Level("LevelDemo");
+	_level->SpawnActor<MeshActor>(RectangleShapeData({ 50.f, 50.f }, "Wall", JPG));
+	_level->SpawnActor<ParticleActor>(1000, 3.0f);
+	M_LEVEL.SetLevel(_level);
+
+	Engine::GetInstance().Start();
 
 	return EXIT_SUCCESS;
 }

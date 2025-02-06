@@ -15,6 +15,7 @@ namespace UI
 			allWidgets.insert(_widget);
 		}
 	public:
+		// Tips: Look the parameters in the Constructor of your Class
 		template <typename Type, typename ...Args, IS_BASE_OF(Widget, Type)>
 		FORCEINLINE Type* CreateWidget(Args... _args)
 		{
@@ -27,16 +28,7 @@ namespace UI
 			if (!allWidgets.contains(_widget)) return;
 			allWidgets.erase(_widget);
 		}
-		FORCEINLINE void SetCurrentWidget(Widget* _widget)
-		{
-			if (!allWidgets.contains(_widget)) return;
-			if (currentWidget == _widget) return;
-			currentWidget = _widget;
-		}
-		FORCEINLINE Widget* GetCurrentWidget() const
-		{
-			return currentWidget;
-		}
+
 	public:
 		HUD();
 		~HUD();

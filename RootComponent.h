@@ -1,13 +1,14 @@
 #pragma once
 #include "Component.h"
-#include "ITransformableModifier.h"
-#include "ITransformableViewer.h"
+#include "TransformableModifier.h"
+#include "TransformableViewer.h"
 
 enum AttachmentType
 {
-	AT_KEEP_RELATIVE, // canons
+	AT_NONE,
+	AT_KEEP_RELATIVE,
 	AT_KEEP_WORLD,
-	AT_SNAP_TO_TARGET, // hitbox
+	AT_SNAP_TO_TARGET,
 };
 
 class RootComponent : public Component, public ITransformableModifier, public ITransformableViewer

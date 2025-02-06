@@ -1,6 +1,5 @@
 #pragma once
 #include "Component.h"
-#include "MeshActor.h"
 
 enum InteractStatus
 {
@@ -17,36 +16,52 @@ enum CollisionType
 	CT_BLOCK
 };
 
+enum CollisionStep
+{
+	CS_ENTER,
+	CS_UPDATE,
+	CS_EXIT
+};
+
 struct CollisionData
 {
 	Actor* other;
 	CollisionType response;
 	FloatRect impactRect;
+	CollisionStep step;
 };
 
 class CollisionComponent : public Component
 {
 	string channelName;
 	int status;
-	CollisionType type; // Réponse par défaut
-	map<string, CollisionType> responses; //Layer a la place du string
+	CollisionType type;						 
+	map<string, CollisionType> responses;	
+	map<Actor*, CollisionStep> othersStep;
+	bool enable;
 
 public:
-	FORCEINLINE void AddResponses(vector<pair<string, CollisionType>> _responses)
+	FORCEINLINE string GetChannelName() const
+	{
+		return channelName;
+	}
+	FORCEINLINE void AddResponses(const vector<pair<string, CollisionType>>& _responses)
 	{
 		for (pair<string, CollisionType> _pair : _responses)
 		{
 			responses.insert(_pair);
 		}
 	}
-	FORCEINLINE string GetChannelName() const
+	FORCEINLINE void SetInformation(const string& _channelName, const int _status, const CollisionType& _type, const bool _enable = false)
 	{
-		return channelName;
+		channelName = _channelName;
+		type = _type;
+		status = _status;
+		enable = _enable;
 	}
- 
+
 public:
-	CollisionComponent(Actor* _owner, const string& _channelName, const int _status, 
-		const CollisionType& _type);
+	CollisionComponent(Actor* _owner, const string& _channelName = "NONE", const int _status = IS_NONE, const CollisionType& _type = CT_NONE);
 	CollisionComponent(Actor* _owner, const CollisionComponent& _other);
 
 protected:
@@ -54,4 +69,5 @@ protected:
 
 private:
 	void CheckCollision();
+	CollisionStep ComputeOthersStep(Actor* _other, const CollisionStep& _step);
 };
