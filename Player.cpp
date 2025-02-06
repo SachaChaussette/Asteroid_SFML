@@ -8,14 +8,14 @@
 
 Player::Player(const float _radius, const vector<Vector2f>& _point, const string& _path, const TextureExtensionType& _textureType,
 	const IntRect& _rect, bool _isRepeated, bool _isSmooth, const string& _name)
-	: Entity(3, SMALL, 1, MeshActor(_radius, "Player/" + _path, _textureType, _rect, _isRepeated, _isSmooth, 30U, _name), MeshActor(_point, ""), "Player")
+	: Entity(3, SMALL, 1, MeshActor(_radius, "Player/" + _path, _textureType, _rect, _isRepeated, _isSmooth, 30U, _name), MeshActor(_point, "Transparent"), "Player")
 {
 	movement = CreateComponent<PlayerMovementComponent>();
 	shoot = CreateComponent<ShootComponent>();
 }
 Player::Player(const float _radius, const Vector2f& _size, const string& _path, const TextureExtensionType& _textureType,
 	const IntRect& _rect, bool _isRepeated, bool _isSmooth, const string& _name)
-	: Entity(3, SMALL, 1, MeshActor(_size, "Player/" + _path, _textureType, _rect, _isRepeated, _isSmooth, _name), MeshActor(_size, ""), "Player")
+	: Entity(3, SMALL, 1, MeshActor(_radius, "Player/" + _path, _textureType, _rect, _isRepeated, _isSmooth, 30U, _name), MeshActor(_size, "Transparent"), "Player")
 {
 	movement = CreateComponent<PlayerMovementComponent>();
 	shoot = CreateComponent<ShootComponent>();

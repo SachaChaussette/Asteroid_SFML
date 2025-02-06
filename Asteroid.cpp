@@ -8,7 +8,7 @@
 
 Asteroid::Asteroid(const float _radius, const vector<Vector2f>& _point, const string& _path, const SizeType& _size, const TextureExtensionType& _textureType,
 	const IntRect& _rect, bool _isRepeated, bool _isSmooth, const string& _name)
-	: Entity(1, _size, 26, MeshActor(_radius, _path, _textureType, _rect), MeshActor(_point, ""), "Asteroid")
+	: Entity(1, _size, 26, MeshActor(_radius, _path, _textureType, _rect), MeshActor(_point, "Transparent"), "Asteroid")
 {
 	movement = CreateComponent<EnemyMovementComponent>();
 }
@@ -68,7 +68,7 @@ void Asteroid::Deconstruct()
 				{19.0f,28.0f}, {13.0f,28.0f},
 				{3.0f,19.0f}, {3.0f,14.0f},
 			};
-			Asteroid* _asteroid = Level::SpawnActor(Asteroid(10.0f, _convexShapePoints, GetMesh()->GetTexturePath(), SizeType(size - 1)));
+			Asteroid* _asteroid = Level::SpawnActor(Asteroid(20.0f, _convexShapePoints, GetMesh()->GetTexturePath(), SizeType(size - 1)));
 			_asteroid->ComputeNewDirection();
 			_asteroid->SetOriginAtMiddle();
 			_asteroid->SetPosition(GetPosition());

@@ -6,7 +6,7 @@
 
 UFO::UFO(const float _radius, const vector<Vector2f>& _point, const string& _path, const TextureExtensionType& _textureType,
 	const IntRect& _rect, bool _isRepeated, bool _isSmooth, const string& _name) : 
-	Entity(1, MEDIUM, 4, MeshActor(_radius, "UFO/" + _path, _textureType, _rect, _isRepeated, _isSmooth), MeshActor(_point, ""), "UFO")
+	Entity(1, SMALL, 4, MeshActor(_radius, "UFO/" + _path, _textureType, _rect, _isRepeated, _isSmooth), MeshActor(_point, "Transparent"), "UFO")
 {
 	movement = CreateComponent<EnemyMovementComponent>();
 	shoot = CreateComponent<ShootComponent>();

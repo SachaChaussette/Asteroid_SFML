@@ -4,9 +4,9 @@
 #include "Asteroid.h"
 #include "Layer.h"
 
-Projectile::Projectile(const float _radius, const float& _hitBoxRadius, const string& _path
+Projectile::Projectile(const float _radius, const Vector2f& _size, const string& _path
 	, const TextureExtensionType& _textureType, const IntRect& _rect)
-	: Entity(1, SMALL, 4, MeshActor(_radius, "Shoot/" + _path, _textureType, _rect), MeshActor(_hitBoxRadius, ""), "Projectile")
+	: Entity(1, SMALL, 4, MeshActor(_radius, "Shoot/" + _path, _textureType, _rect), MeshActor(_size, "Transparent"), "Projectile")
 {
 	movement = CreateComponent<EnemyMovementComponent>();
 	friendlyLayer = Layer::COUNT;

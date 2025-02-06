@@ -44,7 +44,6 @@ void AsteroidGame::LaunchGame()
 	Super::LaunchGame();
 
 	Level::SpawnActor(MeshActor(CAST(Vector2f, GetWindowSize()), "InGameBackground"));
-
 }
 
 bool AsteroidGame::Update()

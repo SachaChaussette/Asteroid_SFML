@@ -32,7 +32,7 @@ void ShootComponent::Shoot()
 	const Vector2f& _newPos = owner->GetPosition() - _offset + _direction;
 
 	// On spawn le projectile aux nouvelles coordonées et on lui donne la direction du tir
-	Projectile* _projectile = Level::SpawnActor(Projectile(10.0f, Vector2f(20.0f, 20.0f), "projectile"));
+	Projectile* _projectile = Level::SpawnActor(Projectile(10.0f, Vector2f(10.0f, 20.0f), "projectile"));
 
 	_projectile->SetFriendlyLayer(owner->GetLayer());
 
