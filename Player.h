@@ -4,12 +4,15 @@
 #include "Entity.h"
 #include "PlayerMovementComponent.h"
 #include "ShootComponent.h"
+#include "Particle.h"
 
 
 class Player : public Entity
 {
 	ShootComponent* shoot;
 	PlayerMovementComponent* movement;
+
+	ParticleActor* boostParticle;
 
 public:
 

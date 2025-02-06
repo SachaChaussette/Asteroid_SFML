@@ -4,6 +4,7 @@
 #include "Asteroid.h"
 #include "UFO.h"
 #include "Projectile.h"
+#include "Level.h"
 
 
 Player::Player(const float _radius, const vector<Vector2f>& _point, const string& _path, const TextureExtensionType& _textureType,
@@ -12,6 +13,9 @@ Player::Player(const float _radius, const vector<Vector2f>& _point, const string
 {
 	movement = CreateComponent<PlayerMovementComponent>();
 	shoot = CreateComponent<ShootComponent>();
+
+	boostParticle = Level::SpawnActor<ParticleActor>(1000);
+	AddChild(boostParticle, AT_SNAP_TO_TARGET);
 }
 Player::Player(const float _radius, const Vector2f& _size, const string& _path, const TextureExtensionType& _textureType,
 	const IntRect& _rect, bool _isRepeated, bool _isSmooth, const string& _name)
@@ -19,14 +23,17 @@ Player::Player(const float _radius, const Vector2f& _size, const string& _path, 
 {
 	movement = CreateComponent<PlayerMovementComponent>();
 	shoot = CreateComponent<ShootComponent>();
+
+	boostParticle = Level::SpawnActor<ParticleActor>(1000);
+	AddChild(boostParticle, AT_SNAP_TO_TARGET);
 }
 
 Player::Player(const Player& _other) : Entity(_other)
 {
 	movement = CreateComponent<PlayerMovementComponent>(_other.movement);
-
 	shoot = CreateComponent<ShootComponent>(_other.shoot);
 
+	boostParticle = _other.boostParticle;
 }
 
 void Player::Construct()
@@ -49,6 +56,7 @@ void Player::Construct()
 
 	M_INPUT.BindAction([&]() 
 	{
+		visibility = ActorMesh::Visible;
 		movement->ComputeAcceleration();
 	}, { Code::Up, Code::Z });
 
@@ -59,6 +67,8 @@ void Player::Construct()
 
 	convexHitBox->AddComponent(new CollisionComponent(this, "Player", IS_ALL, CT_OVERLAP));
 	convexHitBox->SetLayer(Layer::PLAYER);
+
+	boostParticle->SetOriginAtMiddle();
 
 	const vector<pair<string, CollisionType>>& _responses
 	{

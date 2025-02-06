@@ -3,12 +3,31 @@
 #include "MeshComponent.h"
 #include "TextureManager.h"
 
+namespace ActorMesh
+{
+	enum VisibilityType
+	{
+		Hidden = 0,
+		Disabled = 1 << 0,
+		Visible = 1 << 1,
+
+		// ====== \\
+		// Ajouter des Type si besoin
+	};
+}
+
+
 class MeshActor : public Actor
 {
 	MeshComponent* mesh;
 	u_int renderMeshToken;
-
+protected:
+	ActorMesh::VisibilityType visibility;
 public:
+	FORCEINLINE void SetVisibility(const ActorMesh::VisibilityType& _visibility)
+	{
+		visibility = _visibility;
+	}
 	FORCEINLINE FloatRect GetHitbox() const
 	{
 		return mesh->GetShape()->GetDrawable()->getGlobalBounds();
@@ -82,7 +101,6 @@ public:
 	MeshActor(const Vector2f& _size, const string& _path = "", const TextureExtensionType& _textureType = PNG,
 			const IntRect& _rect = {}, bool _isRepeated = false, bool _isSmooth = true, 
 			const string& _name = "MeshActor");
-
 	MeshActor(const RectangleShapeData& _data, const string& _name = "MeshActor"); // Rectangle v2
 
 	MeshActor(const vector<Vector2f>& _point, const string& _path = "", const TextureExtensionType& _textureType = PNG, 

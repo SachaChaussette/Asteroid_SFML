@@ -2,6 +2,8 @@
 #include "HUD.h"
 #include "TimerManager.h"
 #include "GameManager.h"
+#include "Particle.h"
+#include "Level.h"
 
 ChronoMode::ChronoMode(const int _timerCount) : GameMode("ChronoMode")
 {
@@ -40,6 +42,7 @@ void ChronoMode::Start()
 	GenerateAsteroid();
 	GenerateUFO();
 
+	
 	chrono = M_HUD.CreateWidget<Label>(to_string(currentTime), Screen, "Score", TTF);
 	M_HUD.AddToViewport(chrono);
 	chrono->SetPosition({ _windowSize.x * 0.45f, _windowSize.y * 0.05f });

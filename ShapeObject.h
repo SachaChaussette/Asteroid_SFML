@@ -1,5 +1,5 @@
 #pragma once
-#include "Object.h"
+#include "TransformableObject.h"
 
 enum TextureExtensionType
 {
@@ -169,7 +169,7 @@ struct ShapeObjectData
 	}
 };
 
-class ShapeObject : public Object
+class ShapeObject : public TransformableObject
 {
 	Texture texture;
 	Shape* shape;

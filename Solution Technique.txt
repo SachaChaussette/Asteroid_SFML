@@ -16,12 +16,10 @@ Etape Jeu :
 
 GAMEPLAY
 - Player 70%
-	- Modification Sprite
 	- Socket dynamique (ajout de canons)
 	- Animation explosion à la mort
 	- Centrer le shoot
-- Asteroid 90%
-	- Refonte Graphique
+- Asteroid 95%
 	- Animation explosion à la mort
 - UFO 95%
 	- Animation explosion à la mort
@@ -57,7 +55,3 @@ Morgan :
 Yoan : 
 
 -------------------------------------------------
-
-Important :
-
-Avant Mardi Faire Mode Chrono

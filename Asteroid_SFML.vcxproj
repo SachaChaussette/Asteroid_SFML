@@ -172,9 +172,11 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClCompile Include="LifeComponent.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MenuGame.cpp" />
     <ClCompile Include="MeshActor.cpp" />
     <ClCompile Include="MeshComponent.cpp" />
     <ClCompile Include="EnemyMovementComponent.cpp" />
+    <ClCompile Include="Particle.cpp" />
     <ClCompile Include="PlayerMovementComponent.cpp" />
     <ClCompile Include="MusicManager.cpp" />
     <ClCompile Include="MusicSample.cpp" />
@@ -195,9 +197,13 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClCompile Include="TextObject.cpp" />
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="TimerManager.cpp" />
+    <ClCompile Include="TransformableObject.cpp" />
     <ClCompile Include="TriangleActor.cpp" />
     <ClCompile Include="UFO.cpp" />
     <ClCompile Include="Utilities.cpp" />
+    <ClCompile Include="VertexActor.cpp" />
+    <ClCompile Include="VertexComponent.cpp" />
+    <ClCompile Include="VertexObject.cpp" />
     <ClCompile Include="ViewComponent.cpp" />
     <ClCompile Include="Widget.cpp" />
   </ItemGroup>
@@ -239,9 +245,11 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClInclude Include="LifeComponent.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="Macro.h" />
+    <ClInclude Include="MenuGame.h" />
     <ClInclude Include="MeshActor.h" />
     <ClInclude Include="MeshComponent.h" />
     <ClInclude Include="EnemyMovementComponent.h" />
+    <ClInclude Include="Particle.h" />
     <ClInclude Include="PlayerMovementComponent.h" />
     <ClInclude Include="MusicManager.h" />
     <ClInclude Include="MusicSample.h" />
@@ -263,10 +271,14 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClInclude Include="TextObject.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="TimerManager.h" />
+    <ClInclude Include="TransformableObject.h" />
     <ClInclude Include="TransformData.h" />
     <ClInclude Include="TriangleActor.h" />
     <ClInclude Include="UFO.h" />
     <ClInclude Include="Utilities.h" />
+    <ClInclude Include="VertexActor.h" />
+    <ClInclude Include="VertexComponent.h" />
+    <ClInclude Include="VertexObject.h" />
     <ClInclude Include="ViewComponent.h" />
     <ClInclude Include="Widget.h" />
   </ItemGroup>
