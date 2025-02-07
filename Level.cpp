@@ -9,8 +9,8 @@ Level::Level(const string& _name)
 	name = _name;
 	actorManager = ActorManager();
 	cameraManager = CameraManager();
-	gamemodeRef = GameMode();
-	gamemode = nullptr;
+	gameModeRef = GameMode();
+	gameMode = nullptr;
 
 	M_LEVEL.RegisterLevel(_name, this);
 }
@@ -19,7 +19,7 @@ Level::Level(const string& _name)
 void Level::Update(const float _deltaTime)
 {
 	actorManager.Update(_deltaTime);
-
+	//TODO change
 	GetGameMode()->GetPlayerController()->GetInputManager().Update(window);
 
 	if (!window.isOpen())
@@ -54,6 +54,8 @@ void Level::Unload()
 void Level::InitLevel()
 {
 	isLoaded = true;
-	//const SubclassOf<CameraActor>& _cameraActorRef = CameraActor("DefaultCameraActor");
-	//CameraActor* _cameraActor = SpawnCamera(_cameraActorRef);
+
+	const SubclassOf<CameraActor>& _cameraActorRef = CameraActor("CameraActorTest");
+	CameraActor* _cameraActor = SpawnCamera(_cameraActorRef);
+	SpawnCamera("CameraActorTest2");
 }

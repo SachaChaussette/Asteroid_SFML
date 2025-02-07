@@ -120,21 +120,21 @@ void ChronoLevel::InitLevel()
 		UpdateLife();
 	}, seconds(1), true, true);
 
-	chrono = M_HUD.CreateWidget<LabelWidget>(to_string(currentTime), "ChronoLabel", Screen);
+	chrono = GetGameMode()->GetHUD()->CreateWidget<LabelWidget>(to_string(currentTime), "ChronoLabel", Screen);
 	chrono->SetFont("Score", TTF);
 	chrono->SetPosition({ _windowSize.x * 0.45f, _windowSize.y * 0.05f });
 	chrono->SetCharacterSize(70);
 	chrono->SetZOrder(3);
 
-	life = M_HUD.CreateWidget<LabelWidget>("P1 : " + to_string(player->GetLife()->GetLifeCount()), "LifeLabel", Screen);
+	life = GetGameMode()->GetHUD()->CreateWidget<LabelWidget>("P1 : " + to_string(player->GetLife()->GetLifeCount()), "LifeLabel", Screen);
 	life->SetFont("Score", TTF);
 	life->SetPosition({ _windowSize.x * 0.05f, _windowSize.y * 0.005f });
 	life->SetCharacterSize(50);
 	life->SetZOrder(3);
 
-	canva = M_HUD.CreateWidget<CanvasWidget>("ChronoCanva", Screen);
+	canva = GetGameMode()->GetHUD()->CreateWidget<CanvasWidget>("ChronoCanva", Screen);
 	canva->AddChild(chrono);
 	canva->AddChild(life);
 
-	M_HUD.AddToViewport(canva);*/
+	GetGameMode()->GetHUD()->AddToViewport(canva);*/
 }

@@ -9,14 +9,14 @@ using namespace Camera;
 class Level
 {
 	bool isLoaded;
-	RenderWindow window;
 
 protected:
+	RenderWindow window;
 	string name;
 	ActorManager actorManager;
 	CameraManager cameraManager;
-	SubclassOf<GameMode> gamemodeRef;
-	GameMode* gamemode;
+	SubclassOf<GameMode> gameModeRef;
+	GameMode* gameMode;
 
 public:
 	#pragma region Window
@@ -50,12 +50,17 @@ public:
 	}
 	FORCEINLINE GameMode* GetGameMode()
 	{
-		if (!gamemode)
+		if (!gameMode)
 		{
-			gamemode = SpawnActor<GameMode>(gamemodeRef);
+			gameMode = SpawnActor<GameMode>(gameModeRef);
 		}
 
-		return gamemode;
+		return gameMode;
+	}
+	template <typename Type = UI::HUD, IS_BASE_OF(Type, UI::HUD)>
+	FORCEINLINE Type* GetHUD()
+	{
+		return Cast<Type>(gameMode->GetHUD());
 	}
 
 	#pragma region SpawnActor
@@ -82,12 +87,24 @@ public:
 		_actor->Construct();
 		return _actor;
 	}
-	template <typename Type = Actor, typename ...Args, IS_BASE_OF(CameraActor, Type)>
+
+	#pragma endregion
+
+	#pragma region SpawnCamera
+
+	template <typename Type = CameraActor, typename ...Args, IS_BASE_OF(CameraActor, Type)>
+	FORCEINLINE Type* SpawnCamera(Args&&... _args)
+	{
+		Type* _camera = SpawnActor(forward<Args>(_args)...);
+		cameraManager.AddCamera(_camera);
+		return _camera;
+	}
+	template <typename Type = CameraActor, IS_BASE_OF(CameraActor, Type)>
 	FORCEINLINE Type* SpawnCamera(const SubclassOf<Type> _actorRef)
 	{
-		Type* _actor = SpawnActor(_actorRef);
-		cameraManager.AddCamera(_actor);
-		return _actor;
+		Type* _camera = SpawnActor(_actorRef);
+		cameraManager.AddCamera(_camera);
+		return _camera;
 	}
 
 

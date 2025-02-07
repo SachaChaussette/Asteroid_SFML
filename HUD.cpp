@@ -9,12 +9,14 @@ UI::HUD::HUD()
 	currentWidget = nullptr;
 }
 
-UI::HUD::~HUD()
+UI::HUD::HUD(const HUD& _other)
 {
-	for (Widget* _widget : allWidgets)
+	for (Widget* _widget : _other.allWidgets)
 	{
-		delete _widget;
+		allWidgets.insert(_widget);
 	}
+
+	currentWidget = _other.currentWidget;
 }
 
 

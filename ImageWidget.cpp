@@ -4,25 +4,23 @@
 
 #include "PanelWidget.h"
 
-UI::ImageWidget::ImageWidget(const string& _name, const RectangleShapeData& _data, const RenderType& _type)
-	: Widget(_name, _type)
+UI::ImageWidget::ImageWidget(const string& _name, const RectangleShapeData& _data, const RenderType& _type) : Widget(_name, _type)
 {
-	image = new MeshActor(_data, _name);
-	SetTexture(_data.path);
+	sizeToContent = false;
 	initialSize = GetSize();
+	gradient = VertexArray();
+	colorGradient = Gradient();
+	image = level->SpawnActor<MeshActor>(_data, _name);
+	SetTexture(_data.path);
 }
 
 UI::ImageWidget::ImageWidget(const string& _name, const CircleShapeData& _data, const RenderType& _type)
-	: Widget(_name, _type)
+						   : Widget(_name, _type)
 {
-	image = new MeshActor(_data, _name);
+	image = level->SpawnActor<MeshActor>(_data, _name);
 	SetTexture(_data.path);
 }
 
-UI::ImageWidget::~ImageWidget()
-{
-	delete image;
-}
 
 void UI::ImageWidget::UpdateGradient()
 {
@@ -47,6 +45,7 @@ void UI::ImageWidget::UpdatePosition(const Vector2f& _position)
 		Super::SetPosition(slot->GetPosition());
 		image->SetPosition(slot->GetPosition());
 	}
+
 	else
 	{
 		Super::SetPosition(_position);
@@ -61,18 +60,13 @@ void UI::ImageWidget::UpdateSize(const Vector2f& _size)
 		slot->SetSize(Vector2f(slot->GetParent()->GetScale().x * _size.x, slot->GetParent()->GetScale().y * _size.y));
 		SetScale(Vector2f(slot->GetSize().x / initialSize.x, slot->GetSize().y / initialSize.y));
 	}
+
 	else
 	{
 		SetScale(Vector2f(_size.x / initialSize.x, _size.y / initialSize.y));
 	}
 }
 
-void UI::ImageWidget::Render(RenderWindow& _window)
-{
-	if (visibility == Hidden) return;
-	_window.draw(*image->GetMesh()->GetShape()->GetDrawable());
-	_window.draw(gradient);
-}
 
 void UI::ImageWidget::SetSizeToContent(const bool _fillToContent)
 {
@@ -91,4 +85,12 @@ void UI::ImageWidget::SetGradient(const Gradient& _gradient)
 {
 	colorGradient = _gradient;
 	UpdateGradient();
+}
+
+void UI::ImageWidget::Render(RenderWindow& _window)
+{
+	if (visibility == Hidden) return;
+
+	_window.draw(*image->GetMesh()->GetShape()->GetDrawable());
+	_window.draw(gradient);
 }

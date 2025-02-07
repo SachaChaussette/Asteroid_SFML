@@ -1,24 +1,14 @@
 #pragma once
 #include "Actor.h"
 #include "PlayerController.h"
+#include "HUD.h"
 
 class GameMode : public Actor
 {
 	SubclassOf<PlayerController> controllerRef;
 	PlayerController* controller;
-	/*SubclassOf<HUD>* hudRef;
-	HUD* hud;*/
-
-public:
-	/*FORCEINLINE HUD* GetHUD() const
-	{
-		if (!hud)
-		{
-			hud = SpawnActor<HUD>(hudRef);
-		}
-
-		return hud;
-	}*/
+	SubclassOf<UI::HUD> hudRef;
+	UI::HUD* hud;
 
 public:
 	GameMode(const string& _name = "GameMode");
@@ -26,4 +16,5 @@ public:
 
 	virtual void Construct() override;
 	PlayerController* GetPlayerController();
+	UI::HUD* GetHUD();
 };

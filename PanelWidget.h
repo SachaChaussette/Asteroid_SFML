@@ -10,14 +10,16 @@ namespace UI
 		bool debugMode;
 		int maxChild;
 		Vector2f size;
+
 	public:
 		//Adds a new child widget to the container.
-		template <typename Type, typename ...Args, IS_BASE_OF(Widget, Type)>
-		FORCEINLINE void AddChild(Type* _widget)
+		FORCEINLINE virtual bool AddChild(Widget* _widget)
 		{
-			if (!CanAddMoreChildren()) return;
+			if (!CanAddMoreChildren()) return false;
+
 			Actor::AddChild(_widget, AT_KEEP_RELATIVE);
 			_widget->AddSlot(new Slot(this, _widget));
+			return true;
 		}
 
 		//Returns true if the panel can accept another child widget.
@@ -67,6 +69,7 @@ namespace UI
 			return _slots;
 		}
 
+		//TODO QUENTIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIN
 		FORCEINLINE virtual Vector2f GetSize() const override
 		{
 			return size;
@@ -131,12 +134,12 @@ namespace UI
 
 	public:
 		PanelWidget(const string& _name, const RenderType& _type);
-		~PanelWidget();
+
+	private:
+		void AddSlot(Widget* _widget);
+		void UpdateDebugFrame();
 
 	public:
 		virtual void Render(RenderWindow& _window) override;
-
-	private:
-		void UpdateDebugFrame();
 	};
 }

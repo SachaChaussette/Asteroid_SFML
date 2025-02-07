@@ -29,3 +29,13 @@ PlayerController* GameMode::GetPlayerController()
 
 	return controller;
 }
+
+UI::HUD* GameMode::GetHUD()
+{
+	if (!hud)
+	{
+		hud = level->SpawnActor<UI::HUD>(hudRef);
+	}
+
+	return hud;
+}

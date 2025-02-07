@@ -1,10 +1,10 @@
 #pragma once
-#include "Singleton.h"
+#include "Actor.h"
 #include "Widget.h"
 
 namespace UI
 {
-	class HUD : public Singleton<HUD>
+	class HUD : public Actor
 	{
 		set<Widget*> allWidgets;
 		Widget* currentWidget;
@@ -15,11 +15,10 @@ namespace UI
 			allWidgets.insert(_widget);
 		}
 	public:
-		// Tips: Look the parameters in the Constructor of your Class
 		template <typename Type, typename ...Args, IS_BASE_OF(Widget, Type)>
-		FORCEINLINE Type* CreateWidget(Args... _args)
+		FORCEINLINE Type* SpawnWidget(Args&&... _args)
 		{
-			Type* _widget = new Type(_args...);
+			Type* _widget = level->SpawnActor<Type>(forward<Args>(_args)...));
 			RegisterWidget(_widget);
 			return _widget;
 		}
@@ -31,7 +30,7 @@ namespace UI
 
 	public:
 		HUD();
-		~HUD();
+		HUD(const HUD& _other);
 
 	public:
 		void AddToViewport(Widget* _widget);

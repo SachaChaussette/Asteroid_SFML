@@ -1,7 +1,6 @@
 #include "VerticalBox.h"
-#include "Level.h"
 
-VerticalBox::VerticalBox(const BoxData& _data) : Box(_data)
+UI::VerticalBox::VerticalBox(const BoxData& _data) : Box(_data)
 {
 	if (data.spaceBetween == -1.0f)
 	{
@@ -9,7 +8,8 @@ VerticalBox::VerticalBox(const BoxData& _data) : Box(_data)
 	}
 }
 
-void VerticalBox::Update()
+
+void UI::VerticalBox::Update()
 {
 	Super::Update();
 
@@ -17,6 +17,7 @@ void VerticalBox::Update()
 	const u_int& _totalElement = GetElementCount();
 	const float _spaceY = (_totalSize.y - data.spaceBetween * (_totalElement - 1)) / _totalElement;
 	float _allElementsSize = 0.0f;
+
 	for (Widget* _widget : widgets)
 	{
 		const Vector2f& _size = _widget->GetSize();
@@ -26,9 +27,10 @@ void VerticalBox::Update()
 		_widget->SetScale(Vector2f(_newScale, _newScale));
 		_allElementsSize += _size.y * _newScale;
 	}
-	_allElementsSize += data.spaceBetween * (_totalElement - 1);
 
+	_allElementsSize += data.spaceBetween * (_totalElement - 1);
 	float _currentY = (_totalSize.y - _allElementsSize) / 2.0f;
+
 	for (Widget* _widget : widgets)
 	{
 		const float _computeSizeY = _widget->GetSize().y * _widget->GetScale().y;

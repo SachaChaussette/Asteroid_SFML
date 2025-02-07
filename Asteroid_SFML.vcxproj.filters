@@ -250,9 +250,6 @@
     <Filter Include="Script\UI\Slot\Canva">
       <UniqueIdentifier>{22e286f3-78eb-4e21-a837-96373308185b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Script\UI\Menu">
-      <UniqueIdentifier>{74a3aa5e-ea66-4bb4-b8ea-ff4c57de8f06}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Script\Input\Action">
       <UniqueIdentifier>{9cd7730a-a469-4b07-9b1f-31897089478e}</UniqueIdentifier>
     </Filter>
@@ -261,6 +258,24 @@
     </Filter>
     <Filter Include="Script\ASTEROIDLEVEL">
       <UniqueIdentifier>{3a32897c-52d5-4687-9b2c-ad47a41e1df6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Level\CHRONO">
+      <UniqueIdentifier>{bdff5c13-edff-4b29-a4c7-51a37721eb28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Level\MENU">
+      <UniqueIdentifier>{74a3aa5e-ea66-4bb4-b8ea-ff4c57de8f06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Level\MENU\MAIN">
+      <UniqueIdentifier>{40167dd4-9d1e-406f-a183-679fdfa8c2f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Level\MENU\START">
+      <UniqueIdentifier>{4fea5346-252a-4838-bc5a-3950afeda37d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Level\MENU\LEADERBOARD">
+      <UniqueIdentifier>{2196922a-41a2-41e3-abee-cf5100922507}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Level\MENU\CREDIT">
+      <UniqueIdentifier>{7746663d-4159-4a67-910b-2f99398ea36e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -429,9 +444,6 @@
     <ClInclude Include="RenderType.h">
       <Filter>Script\UI</Filter>
     </ClInclude>
-    <ClInclude Include="MenuGame.h">
-      <Filter>Script\UI\Menu</Filter>
-    </ClInclude>
     <ClInclude Include="Layer.h">
       <Filter>Script\UI</Filter>
     </ClInclude>
@@ -525,7 +537,19 @@
     <ClInclude Include="Action.h">
       <Filter>Script\Input\Action</Filter>
     </ClInclude>
-    <ClInclude Include="MainMenuLevel.h">
+    <ClInclude Include="MainMenu.h">
+      <Filter>Script\Level\MENU\MAIN</Filter>
+    </ClInclude>
+    <ClInclude Include="LeaderboardMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CreditsMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StartMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -671,9 +695,6 @@
     <ClCompile Include="ChronoLevel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MenuGame.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="EnemyMovementComponent.cpp">
       <Filter>Script\Core\Components\MOVEMENT\ENEMY</Filter>
     </ClCompile>
@@ -773,7 +794,19 @@
     <ClCompile Include="Action.cpp">
       <Filter>Script\Input\Action</Filter>
     </ClCompile>
-    <ClCompile Include="MainMenuLevel.cpp">
+    <ClCompile Include="MainMenu.cpp">
+      <Filter>Script\Level\MENU\MAIN</Filter>
+    </ClCompile>
+    <ClCompile Include="LeaderboardMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CreditsMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StartMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
