@@ -1,14 +1,14 @@
 #pragma once
 #include "Game.h"
-#include "Canvas.h"
+#include "CanvasWidget.h"
 
 using namespace UI;
 
 class MenuGame : public Game
 {
-	Canvas* canva;
+	CanvasWidget* canva;
 public:
-	FORCEINLINE Canvas* GetCanva() const
+	FORCEINLINE CanvasWidget* GetCanva() const
 	{
 		return canva;
 	}
@@ -23,10 +23,10 @@ public:
 	void Reset();
 
 private:
-	void InitMainMenu(Canvas* _canva);
-	void InitStartMenu(Canvas* _canva);
-	void InitLeaderBoard(Canvas* _canva);
-	void InitCredits(Canvas* _canva);
-	void ApplyCanva(Canvas* _canva);
+	void InitMainMenu(CanvasWidget* _canva);
+	void InitStartMenu(CanvasWidget* _canva);
+	void InitLeaderBoard(CanvasWidget* _canva);
+	void InitCredits(CanvasWidget* _canva);
+	void ApplyCanva(CanvasWidget* _canva);
 };
 

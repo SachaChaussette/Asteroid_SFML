@@ -121,9 +121,6 @@
     <Filter Include="Script\Manager\Input">
       <UniqueIdentifier>{2d2898bc-fcb5-43f3-9376-0ea4046411e5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Script\AsteroidGame">
-      <UniqueIdentifier>{3a32897c-52d5-4687-9b2c-ad47a41e1df6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Script\Audio\Sound">
       <UniqueIdentifier>{903b55d1-ef67-461f-a7a3-49ca7f0033c9}</UniqueIdentifier>
     </Filter>
@@ -156,9 +153,6 @@
     </Filter>
     <Filter Include="Script\UI">
       <UniqueIdentifier>{bcb9abff-9aa5-4e07-896b-1302ade93a6f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Script\Menu">
-      <UniqueIdentifier>{74a3aa5e-ea66-4bb4-b8ea-ff4c57de8f06}</UniqueIdentifier>
     </Filter>
     <Filter Include="Script\Physic">
       <UniqueIdentifier>{7ccd368e-9492-45b5-8b9a-8bff10b41354}</UniqueIdentifier>
@@ -264,6 +258,18 @@
     </Filter>
     <Filter Include="Script\UI\Slot\Canva">
       <UniqueIdentifier>{22e286f3-78eb-4e21-a837-96373308185b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\UI\Menu">
+      <UniqueIdentifier>{74a3aa5e-ea66-4bb4-b8ea-ff4c57de8f06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Input\Action">
+      <UniqueIdentifier>{9cd7730a-a469-4b07-9b1f-31897089478e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\Input\ActionMap">
+      <UniqueIdentifier>{0d679083-6320-4cc8-8dc9-fd14d42ef828}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\ASTEROIDGAME">
+      <UniqueIdentifier>{3a32897c-52d5-4687-9b2c-ad47a41e1df6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -376,7 +382,7 @@
       <Filter>Script\Manager\Input</Filter>
     </ClInclude>
     <ClInclude Include="AsteroidGame.h">
-      <Filter>Script\AsteroidGame</Filter>
+      <Filter>Script\ASTEROIDGAME</Filter>
     </ClInclude>
     <ClInclude Include="MusicSample.h">
       <Filter>Script\Audio\Music</Filter>
@@ -442,19 +448,13 @@
       <Filter>Script\UI</Filter>
     </ClInclude>
     <ClInclude Include="MenuGame.h">
-      <Filter>Script\Menu</Filter>
+      <Filter>Script\UI\Menu</Filter>
     </ClInclude>
     <ClInclude Include="Layer.h">
       <Filter>Script\UI</Filter>
     </ClInclude>
     <ClInclude Include="Kismet.h">
       <Filter>Script\Physic</Filter>
-    </ClInclude>
-    <ClInclude Include="Action.h">
-      <Filter>Script\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="ActionMap.h">
-      <Filter>Script\Input</Filter>
     </ClInclude>
     <ClInclude Include="Engine.h">
       <Filter>Script\Engine</Filter>
@@ -485,9 +485,6 @@
     </ClInclude>
     <ClInclude Include="Widget.h">
       <Filter>Script\Core\Actor\Widget</Filter>
-    </ClInclude>
-    <ClInclude Include="Label.h">
-      <Filter>Script\Core\Actor</Filter>
     </ClInclude>
     <ClInclude Include="PanelWidget.h">
       <Filter>Script\Core\Actor\Widget\Panel</Filter>
@@ -522,12 +519,6 @@
     <ClInclude Include="Box.h">
       <Filter>Script\Core\Actor\Widget\Box</Filter>
     </ClInclude>
-    <ClInclude Include="Canvas.h">
-      <Filter>Script\Core\Actor</Filter>
-    </ClInclude>
-    <ClInclude Include="Image.h">
-      <Filter>Script\Core\Actor</Filter>
-    </ClInclude>
     <ClInclude Include="VertexActor.h">
       <Filter>Script\Core\Actor\Vertex</Filter>
     </ClInclude>
@@ -543,14 +534,17 @@
     <ClInclude Include="Entity.h">
       <Filter>Script\Core\Actor\ENTITY</Filter>
     </ClInclude>
-    <ClInclude Include="Button.h">
-      <Filter>Script\Core\Actor</Filter>
-    </ClInclude>
     <ClInclude Include="CanvasSlot.h">
       <Filter>Script\UI\Slot\Canva</Filter>
     </ClInclude>
     <ClInclude Include="Slot.h">
       <Filter>Script\UI\Slot</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionMap.h">
+      <Filter>Script\Input\ActionMap</Filter>
+    </ClInclude>
+    <ClInclude Include="Action.h">
+      <Filter>Script\Input\Action</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -663,7 +657,7 @@
       <Filter>Script\Manager\Input</Filter>
     </ClCompile>
     <ClCompile Include="AsteroidGame.cpp">
-      <Filter>Script\AsteroidGame</Filter>
+      <Filter>Script\ASTEROIDGAME</Filter>
     </ClCompile>
     <ClCompile Include="MusicSample.cpp">
       <Filter>Script\Audio\Music</Filter>
@@ -713,23 +707,8 @@
     <ClCompile Include="PlayerMovementComponent.cpp">
       <Filter>Script\Core\Components\MOVEMENT\PLAYER</Filter>
     </ClCompile>
-    <ClCompile Include="Label.cpp">
-      <Filter>Script\Core\Actor</Filter>
-    </ClCompile>
-    <ClCompile Include="Button.cpp">
-      <Filter>Script\Core\Actor</Filter>
-    </ClCompile>
-    <ClCompile Include="Action.cpp">
-      <Filter>Script\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="ActionMap.cpp">
-      <Filter>Script\Input</Filter>
-    </ClCompile>
     <ClCompile Include="Box.cpp">
       <Filter>Script\Core\Actor\Widget\Box</Filter>
-    </ClCompile>
-    <ClCompile Include="Canvas.cpp">
-      <Filter>Script\Core\Actor</Filter>
     </ClCompile>
     <ClCompile Include="CollisionManager.cpp">
       <Filter>Script\Manager\Collision</Filter>
@@ -745,9 +724,6 @@
     </ClCompile>
     <ClCompile Include="HUD.cpp">
       <Filter>Script\Manager\HUD</Filter>
-    </ClCompile>
-    <ClCompile Include="Image.cpp">
-      <Filter>Script\Core\Actor</Filter>
     </ClCompile>
     <ClCompile Include="Kismet.cpp">
       <Filter>Script\Physic</Filter>
@@ -820,6 +796,12 @@
     </ClCompile>
     <ClCompile Include="Slot.cpp">
       <Filter>Script\UI\Slot</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionMap.cpp">
+      <Filter>Script\Input\ActionMap</Filter>
+    </ClCompile>
+    <ClCompile Include="Action.cpp">
+      <Filter>Script\Input\Action</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

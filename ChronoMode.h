@@ -1,8 +1,8 @@
 #pragma once
 
 #include "GameModel.h"
-#include "Label.h"
-#include "Canvas.h"
+#include "LabelWidget.h"
+#include "CanvasWidget.h"
 #include "Player.h"
 
 using namespace UI;
@@ -12,10 +12,10 @@ class ChronoMode : public GameModel
 	int timerCount;
 	int currentTime;
 
-	Label* chrono;
-	Label* life;
+	LabelWidget* chrono;
+	LabelWidget* life;
 	
-	Canvas* canva;
+	CanvasWidget* canva;
 
 public:
 	ChronoMode(const int _timerCount);

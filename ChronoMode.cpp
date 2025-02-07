@@ -51,19 +51,19 @@ void ChronoMode::Start()
 
 	new Timer([&]() { --currentTime; }, seconds(1), true, true);
 
-	chrono = M_HUD.CreateWidget<Label>(to_string(currentTime), Screen, "Score", TTF);
+	/*chrono = M_HUD.CreateWidget<LabelWidget>(to_string(currentTime), Screen, "Score", TTF);
 	chrono->SetPosition({ _windowSize.x * 0.45f, _windowSize.y * 0.05f });
 	chrono->SetCharacterSize(70);
 	chrono->SetZOrder(3);
 
-	life = M_HUD.CreateWidget<Label>("P1 : " + to_string(player->GetLife()->GetLifeCount()), Screen, "Score", TTF);
+	life = M_HUD.CreateWidget<LabelWidget>("P1 : " + to_string(player->GetLife()->GetLifeCount()), Screen, "Score", TTF);
 	life->SetPosition({ _windowSize.x * 0.05f, _windowSize.y * 0.005f });
 	life->SetCharacterSize(50);
 	life->SetZOrder(3);
 
-	canva = M_HUD.CreateWidget<Canvas>("ChronoCanva");
-	canva->AddWidget(chrono);
-	canva->AddWidget(life);
+	canva = M_HUD.CreateWidget<CanvasWidget>("ChronoCanva");
+	canva->AddChild(chrono);
+	canva->AddChild(life);*/
 
 	M_HUD.AddToViewport(canva);
 }

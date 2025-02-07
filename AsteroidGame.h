@@ -3,7 +3,7 @@
 #include "Game.h"
 #include "HUD.h"
 
-#include "Canvas.h"
+#include "CanvasWidget.h"
 
 using namespace UI;
 
