@@ -24,7 +24,7 @@ void LifeComponent::BeginPlay()
 	if (Entity* _owner = Cast<Entity>(owner))
 	{
 		// TODO
-		/*if (_owner->GetConvexHitBox()->GetLayer() == Layer::PROJECTILE)
+		/*if (_owner->GetConvexHitBox()->GetLayerType() == Layer::PROJECTILE)
 		{
 			canGetDamage = true;
 		}

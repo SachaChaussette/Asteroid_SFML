@@ -3,9 +3,9 @@
 #include "Asteroid.h"
 #include "Projectile.h"
 
-UFO::UFO(const CircleShapeData& _data, const ConvexShapeData& _hitBoxData,
+UFO::UFO(Level* _level, const CircleShapeData& _data, const ConvexShapeData& _hitBoxData,
 	const SizeType& _size, const string& _name)
-	: Entity(1, _size, 26, MeshActor(_data), MeshActor(_hitBoxData), _name)
+	: Entity(1, _size, 26, MeshActor(_level, _data), MeshActor(_level, _hitBoxData), _name)
 {
 	movement = CreateComponent<EnemyMovementComponent>();
 	shoot = CreateComponent<ShootComponent>();
@@ -37,7 +37,7 @@ void UFO::Construct()
 	Super::Construct();
 
 	convexHitBox->AddComponent(new CollisionComponent(convexHitBox, "UFO", IS_ALL, CT_OVERLAP));
-	convexHitBox->SetLayer(Layer::UFO);
+	convexHitBox->SetLayerType(Layer::UFO);
 
 	const vector<pair<string, CollisionType>>& _responses
 	{
@@ -78,7 +78,7 @@ void UFO::CollisionEnter(const CollisionData& _data)
 	Super::CollisionEnter(_data);
 	if (Entity* _entity = Cast<Entity>(_data.other))
 	{
-		Layer::LayerType _layerType = _entity->GetConvexHitBox()->GetLayer();
+		Layer::LayerType _layerType = _entity->GetConvexHitBox()->GetLayerType();
 		if (_layerType == Layer::ASTEROID)
 		{
 			Asteroid* _asteroid = Cast<Asteroid>(_entity);

@@ -1,7 +1,8 @@
 #include "Box.h"
 #include "Level.h"
+#include "HUD.h"
 
-UI::Box::Box(const BoxData& _data) : Widget("Widget")
+UI::Box::Box(Level* _level, const BoxData& _data) : Widget(_level, "Widget")
 {
 	widgets = vector<Widget*>();
 	data = _data;

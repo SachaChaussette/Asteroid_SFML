@@ -7,17 +7,9 @@
 #include "Level.h"
 
 
-Player::Player(const CircleShapeData& _data, const RectangleShapeData& _hitBoxData,
+Player::Player(Level* _level, const CircleShapeData& _data, const RectangleShapeData& _hitBoxData,
 	const SizeType& _size, const string& _name)
-	: Entity(3, _size, 1, MeshActor(_data), MeshActor(_hitBoxData), _name)
-{
-	movement = CreateComponent<PlayerMovementComponent>();
-	shoot = CreateComponent<ShootComponent>();
-	canons = vector<MeshActor*>();
-}
-Player::Player(const RectangleShapeData& _data, const vector<Vector2f>& _point,
-	const SizeType& _size, const string& _name)
-	: Entity(3, _size, 1, MeshActor(_data), MeshActor(_size, "Transparent"), "Player")
+	: Entity(3, _size, 1, MeshActor(_level, _data), MeshActor(_level, _hitBoxData), _name)
 {
 	movement = CreateComponent<PlayerMovementComponent>();
 	shoot = CreateComponent<ShootComponent>();
@@ -89,8 +81,8 @@ void Player::Construct()
 	//AddChild(_canon, AT_KEEP_RELATIVE);
 	//canons.push_back(_canon);
 
-	convexHitBox->AddComponent(new CollisionComponent(convexHitBox, "Player", IS_ALL, CT_OVERLAP));
-	convexHitBox->SetLayer(Layer::PLAYER);
+	//convexHitBox->AddComponent(new CollisionComponent(convexHitBox, "Player", IS_ALL, CT_OVERLAP));
+	//convexHitBox->SetLayerType(Layer::PLAYER);
 
 	const vector<pair<string, CollisionType>>& _responses
 	{
@@ -99,7 +91,7 @@ void Player::Construct()
 		{"UFO", CT_OVERLAP},
 		{"Projectile", CT_OVERLAP},
 	};
-	AddCollisionResponses(_responses);
+	//AddCollisionResponses(_responses);
 }
 
 void Player::Deconstruct()
@@ -130,7 +122,7 @@ void Player::CollisionEnter(const CollisionData& _data)
 	Super::CollisionEnter(_data);
 	if (Entity* _entity = Cast<Entity>(_data.other))
 	{
-		Layer::LayerType _layerType = _entity->GetConvexHitBox()->GetLayer();
+		Layer::LayerType _layerType = _entity->GetConvexHitBox()->GetLayerType();
 		if (_layerType == Layer::ASTEROID)
 		{
 			Asteroid* _asteroid = Cast<Asteroid>(_entity);

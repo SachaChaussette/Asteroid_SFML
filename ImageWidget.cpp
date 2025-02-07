@@ -4,7 +4,8 @@
 
 #include "PanelWidget.h"
 
-UI::ImageWidget::ImageWidget(const string& _name, const RectangleShapeData& _data, const RenderType& _type) : Widget(_name, _type)
+UI::ImageWidget::ImageWidget(Level* _level, const string& _name, const RectangleShapeData& _data, const RenderType& _type)
+						   : Widget(_level, _name, _type)
 {
 	sizeToContent = false;
 	initialSize = GetSize();
@@ -14,8 +15,8 @@ UI::ImageWidget::ImageWidget(const string& _name, const RectangleShapeData& _dat
 	SetTexture(_data.path);
 }
 
-UI::ImageWidget::ImageWidget(const string& _name, const CircleShapeData& _data, const RenderType& _type)
-						   : Widget(_name, _type)
+UI::ImageWidget::ImageWidget(Level* _level, const string& _name, const CircleShapeData& _data, const RenderType& _type)
+						   : Widget(_level, _name, _type)
 {
 	image = level->SpawnActor<MeshActor>(_data, _name);
 	SetTexture(_data.path);

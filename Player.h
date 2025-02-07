@@ -17,9 +17,7 @@ class Player : public Entity
 
 public:
 
-	Player(const CircleShapeData& _data, const RectangleShapeData& _hitBoxData,
-		const SizeType& _size = SMALL, const string& _name = "Player");
-	Player(const RectangleShapeData& _data, const vector<Vector2f>& _point = vector<Vector2f>(),
+	Player(Level* _level, const CircleShapeData& _data, const RectangleShapeData& _hitBoxData,
 		const SizeType& _size = SMALL, const string& _name = "Player");
 	Player(const Player& _other);
 public:

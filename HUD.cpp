@@ -3,13 +3,13 @@
 
 using namespace Camera;
 
-UI::HUD::HUD()
+UI::HUD::HUD(Level* _level) : Actor(_level)
 {
 	allWidgets = set<Widget*>();
 	currentWidget = nullptr;
 }
 
-UI::HUD::HUD(const HUD& _other)
+UI::HUD::HUD(const HUD& _other) : Actor(_other)
 {
 	for (Widget* _widget : _other.allWidgets)
 	{

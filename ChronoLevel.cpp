@@ -16,7 +16,7 @@ ChronoLevel::ChronoLevel(const int _timerCount) : Level("Chrono Level")
 
 void ChronoLevel::ComputeTime()
 {
-	if (currentTime <= 0) M_LEVEL.GetCurrentLevel()->Unload(); // GameOver
+	if (currentTime <= 0) Unload(); // GameOver
 
 	const int _minutes = currentTime / 60;
 	const int _seconds = currentTime % 60;
@@ -38,7 +38,7 @@ void ChronoLevel::ResetTime()
 
 void ChronoLevel::GeneratePlayer()
 {
-	const Vector2f& _windowSize = M_LEVEL.GetCurrentLevel()->GetWindowSize();
+	const Vector2f& _windowSize = GetWindowSize();
 
 	/*const vector<Vector2f>& _convexShapePoints =
 	{
@@ -49,14 +49,15 @@ void ChronoLevel::GeneratePlayer()
 
 	const CircleShapeData& _shapeData = CircleShapeData(30.0f, "Player/Ship_" + to_string(GetRandomNumberInRange(1, 5)));
 	const RectangleShapeData& _hitBoxData = RectangleShapeData(Vector2f(60.0f, 60.0f), "Transparent");
-	player = M_LEVEL.GetCurrentLevel()->SpawnActor<Player>(_shapeData, _hitBoxData);
-	//player->SetOriginAtMiddle();
+
+	player = SpawnActor<Player>(_shapeData, _hitBoxData);
+	player->SetOriginAtMiddle();
 	player->SetPosition(Vector2f(_windowSize.x / 2, _windowSize.y / 2));
 }
 
 void ChronoLevel::GenerateAsteroid()
 {
-	const Vector2f& _windowSize = M_LEVEL.GetCurrentLevel()->GetWindowSize();
+	const Vector2f& _windowSize = GetWindowSize();
 
 	const vector<Vector2f>& _convexShapePoints =
 	{
@@ -69,7 +70,7 @@ void ChronoLevel::GenerateAsteroid()
 	const string& _finalPath = "Asteroid/AsteroidSpriteSheet_" + to_string(GetRandomNumberInRange(1, 2));
 	const CircleShapeData& _shapeData = CircleShapeData(20.0f, _finalPath);
 	const ConvexShapeData& _hitBoxData = ConvexShapeData(_convexShapePoints, "Transparent");
-	Asteroid* _asteroid = M_LEVEL.GetCurrentLevel()->SpawnActor<Asteroid>(_shapeData, _hitBoxData);
+	Asteroid* _asteroid = SpawnActor<Asteroid>(_shapeData, _hitBoxData);
 	_asteroid->SetOriginAtMiddle();
 	_asteroid->SetPosition({ 0.0f, GetRandomNumberInRange(0.0f, _windowSize.y) });
 	_asteroid->ComputeNewDirection();
@@ -77,7 +78,7 @@ void ChronoLevel::GenerateAsteroid()
 
 void ChronoLevel::GenerateUFO()
 {
-	const Vector2f& _windowSize = M_LEVEL.GetCurrentLevel()->GetWindowSize();
+	const Vector2f& _windowSize = GetWindowSize();
 
 	const vector<Vector2f>& _convexShapePoints =
 	{
@@ -93,7 +94,7 @@ void ChronoLevel::GenerateUFO()
 	const string& _finalPath = "UFOSpriteSheet_" + to_string(GetRandomNumberInRange(1, 3));
 	const CircleShapeData& _shapeData = CircleShapeData(20.0f, _finalPath);
 	const ConvexShapeData& _hitBoxData = ConvexShapeData(_convexShapePoints, "Transparent"); 
-	UFO* _ufo = M_LEVEL.GetCurrentLevel()->SpawnActor<UFO>(_shapeData, _hitBoxData);
+	UFO* _ufo = SpawnActor<UFO>(_shapeData, _hitBoxData);
 	_ufo->SetOriginAtMiddle();
 	_ufo->SetPosition({ 0.0f, GetRandomNumberInRange(0.0f, _windowSize.y) });
 	_ufo->ComputeNewDirection();
@@ -103,7 +104,7 @@ void ChronoLevel::InitLevel()
 {
 	Super::InitLevel();
 
-	const Vector2f& _windowSize = M_LEVEL.GetCurrentLevel()->GetWindowSize();
+	const Vector2f& _windowSize = GetWindowSize();
 
 	//new Timer<Seconds>([&]() { GenerateAsteroid(); }, seconds(2.0f), true, true);
 	//new Timer<Seconds>([&]() { GenerateUFO(); }, seconds(10.0f), true, true);
@@ -120,21 +121,21 @@ void ChronoLevel::InitLevel()
 		UpdateLife();
 	}, seconds(1), true, true);
 
-	chrono = GetGameMode()->GetHUD()->CreateWidget<LabelWidget>(to_string(currentTime), "ChronoLabel", Screen);
+	chrono = CreateWidget<LabelWidget>(to_string(currentTime), "ChronoLabel", Screen);
 	chrono->SetFont("Score", TTF);
 	chrono->SetPosition({ _windowSize.x * 0.45f, _windowSize.y * 0.05f });
 	chrono->SetCharacterSize(70);
 	chrono->SetZOrder(3);
 
-	life = GetGameMode()->GetHUD()->CreateWidget<LabelWidget>("P1 : " + to_string(player->GetLife()->GetLifeCount()), "LifeLabel", Screen);
+	life = CreateWidget<LabelWidget>("P1 : " + to_string(player->GetLife()->GetLifeCount()), "LifeLabel", Screen);
 	life->SetFont("Score", TTF);
 	life->SetPosition({ _windowSize.x * 0.05f, _windowSize.y * 0.005f });
 	life->SetCharacterSize(50);
 	life->SetZOrder(3);
 
-	canva = GetGameMode()->GetHUD()->CreateWidget<CanvasWidget>("ChronoCanva", Screen);
+	canva = CreateWidget<CanvasWidget>("ChronoCanva", Screen);
 	canva->AddChild(chrono);
 	canva->AddChild(life);
 
-	GetGameMode()->GetHUD()->AddToViewport(canva);*/
+	M_LEVEL.GetCurrentLevel()->AddToViewport(canva);*/
 }

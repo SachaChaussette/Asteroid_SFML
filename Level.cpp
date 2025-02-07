@@ -9,7 +9,7 @@ Level::Level(const string& _name)
 	name = _name;
 	actorManager = ActorManager();
 	cameraManager = CameraManager();
-	gameModeRef = GameMode();
+	gameModeRef = GameMode(this);
 	gameMode = nullptr;
 
 	M_LEVEL.RegisterLevel(_name, this);
@@ -54,8 +54,4 @@ void Level::Unload()
 void Level::InitLevel()
 {
 	isLoaded = true;
-
-	const SubclassOf<CameraActor>& _cameraActorRef = CameraActor("CameraActorTest");
-	CameraActor* _cameraActor = SpawnCamera(_cameraActorRef);
-	SpawnCamera("CameraActorTest2");
 }

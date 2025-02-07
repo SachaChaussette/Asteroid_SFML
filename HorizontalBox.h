@@ -6,8 +6,7 @@ namespace UI
 	class HorizontalBox : public Box
 	{
 	public:
-		HorizontalBox() = default;
-		HorizontalBox(const BoxData& _data);
+		HorizontalBox(Level* _level, const BoxData& _data);
 
 	public:
 		virtual void Update() override;

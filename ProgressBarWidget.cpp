@@ -1,9 +1,9 @@
 #include "ProgressBarWidget.h"
 #include "Level.h"
 
-UI::ProgressBarWidget::ProgressBarWidget(const ProgressType& _type, const RectangleShapeData& _data, const string _name, 
+UI::ProgressBarWidget::ProgressBarWidget(Level* _level, const ProgressType& _type, const RectangleShapeData& _data, const string _name,
                                          const float _maxValue, const RenderType& _renderType)
-                                       : ImageWidget(_name, _data, _renderType)
+                                       : ImageWidget(_level, _name, _data, _renderType)
 {
     currentValue = 0.0f;
     maxValue = _maxValue;

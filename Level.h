@@ -3,8 +3,10 @@
 #include "ActorManager.h"
 #include "CameraManager.h"
 #include "GameMode.h"
+#include "Widget.h"
 
 using namespace Camera;
+using namespace UI;
 
 class Level
 {
@@ -63,27 +65,22 @@ public:
 		return Cast<Type>(gameMode->GetHUD());
 	}
 
+	#pragma region Spawn
+
 	#pragma region SpawnActor
 
 	template <typename Type = Actor, typename ...Args, IS_BASE_OF(Actor, Type)>
 	FORCEINLINE Type* SpawnActor(Args&&... _args)
 	{
-		Type* _actor = new Type(forward<Args>(_args)...);
-		_actor->SetLevelReference(this);
-
-		if constexpr (SAME_VALUE(TYPE(_actor), CameraActor))
-		{
-			cameraManager.AddCamera(_actor);
-		}
-
+		Type* _actor = new Type(this, forward<Args>(_args)...);
 		_actor->Construct();
 		return _actor;
 	}
+
 	template <typename Type = Actor, typename ...Args, IS_BASE_OF(Actor, Type)>
 	FORCEINLINE Type* SpawnActor(const SubclassOf<Type> _actorRef)
 	{
 		Type* _actor = new Type(_actorRef.GetObject());
-		_actor->SetLevelReference(this);
 		_actor->Construct();
 		return _actor;
 	}
@@ -95,18 +92,40 @@ public:
 	template <typename Type = CameraActor, typename ...Args, IS_BASE_OF(CameraActor, Type)>
 	FORCEINLINE Type* SpawnCamera(Args&&... _args)
 	{
-		Type* _camera = SpawnActor(forward<Args>(_args)...);
-		cameraManager.AddCamera(_camera);
-		return _camera;
-	}
-	template <typename Type = CameraActor, IS_BASE_OF(CameraActor, Type)>
-	FORCEINLINE Type* SpawnCamera(const SubclassOf<Type> _actorRef)
-	{
-		Type* _camera = SpawnActor(_actorRef);
+		Type* _camera = SpawnActor<Type>(forward<Args>(_args)...);
 		cameraManager.AddCamera(_camera);
 		return _camera;
 	}
 
+	template <typename Type = CameraActor, IS_BASE_OF(CameraActor, Type)>
+	FORCEINLINE Type* SpawnCamera(const SubclassOf<Type> _actorRef)
+	{
+		Type* _camera = SpawnActor<Type>(_actorRef);
+		cameraManager.AddCamera(_camera);
+		return _camera;
+	}
+
+	#pragma endregion
+
+	#pragma region SpawnWidget
+
+	template <typename Type = Widget, typename ...Args, IS_BASE_OF(Widget, Type)>
+	FORCEINLINE Type* SpawnWidget(Args&&... _args)
+	{
+		Type* _widget = SpawnActor<Type>(forward<Args>(_args)...);
+		GetHUD()->RegisterWidget(_widget);
+		return _widget;
+	}
+
+	template <typename Type = Widget, IS_BASE_OF(Widget, Type)>
+	FORCEINLINE Widget* SpawnWidget(const SubclassOf<Widget> _widgetRef)
+	{
+		Type* _widget = SpawnActor<Type>(_widgetRef);
+		GetHUD()->RegisterWidget(_widget);
+		return _widget;
+	}
+
+	#pragma endregion
 
 	#pragma endregion
 

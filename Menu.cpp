@@ -31,10 +31,10 @@ void Menu::InitLevel()
 
    M_AUDIO.PlaySample<MusicSample>("MainMenu");
 
-   canva = GetGameMode()->GetHUD()->SpawnWidget<Canvas>("Main Menu");
+   canva = M_LEVEL.GetCurrentLevel()->SpawnWidget<Canvas>("Main Menu");
    InitMainMenu(canva);
    ApplyCanva(canva);
-   GetGameMode()->GetHUD()->SetCurrentWidget(canva);*/
+   M_LEVEL.GetCurrentLevel()->SetCurrentWidget(canva);*/
 }
 
 void Menu::Reset()
@@ -44,5 +44,5 @@ void Menu::Reset()
 
 void Menu::ApplyCanva(CanvasWidget* _canva)
 {
-	GetGameMode()->GetHUD()->AddToViewport(_canva);
+	//M_LEVEL.GetCurrentLevel()->AddToViewport(_canva);
 }

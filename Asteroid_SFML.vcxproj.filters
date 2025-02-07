@@ -109,9 +109,6 @@
     <Filter Include="Script\Core\Components\Mesh">
       <UniqueIdentifier>{fde68991-f458-43ae-ba08-e50176f5cd04}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Script\Core\Actor\Spawner">
-      <UniqueIdentifier>{a45462c0-efd1-41ad-b769-450c487ecc77}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Script\Manager\Input">
       <UniqueIdentifier>{2d2898bc-fcb5-43f3-9376-0ea4046411e5}</UniqueIdentifier>
     </Filter>
@@ -371,9 +368,6 @@
     </ClInclude>
     <ClInclude Include="AudioManager.h">
       <Filter>Script\Manager\Audio</Filter>
-    </ClInclude>
-    <ClInclude Include="Spawner.h">
-      <Filter>Script\Core\Actor\Spawner</Filter>
     </ClInclude>
     <ClInclude Include="Level.h">
       <Filter>Script\Level</Filter>
@@ -646,9 +640,6 @@
     </ClCompile>
     <ClCompile Include="Sample.cpp">
       <Filter>Script\Audio</Filter>
-    </ClCompile>
-    <ClCompile Include="Spawner.cpp">
-      <Filter>Script\Core\Actor\Spawner</Filter>
     </ClCompile>
     <ClCompile Include="SquareActor.cpp">
       <Filter>Script\Core\Actor\Square</Filter>

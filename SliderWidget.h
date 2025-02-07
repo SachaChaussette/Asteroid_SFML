@@ -112,7 +112,7 @@ namespace UI
 		}
 		
 	public:
-		SliderWidget(const string _name, const RenderType& _renderType);
+		SliderWidget(Level* _level, const string _name, const RenderType& _renderType);
 
 	private: 
 		void Init();

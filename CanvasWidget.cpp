@@ -1,6 +1,6 @@
 #include "CanvasWidget.h"
 
-UI::CanvasWidget::CanvasWidget(const string& _name, const RenderType& _type) : PanelWidget(_name, _type)
+UI::CanvasWidget::CanvasWidget(Level* _level, const string& _name, const RenderType& _type) : PanelWidget(_level, _name, _type)
 {
 	size = { 400.0f, 300.0f };
 }

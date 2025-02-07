@@ -7,7 +7,7 @@ Entity::Entity(const u_int & _lifeCount, const SizeType & _size, const u_int & _
 	animation = CreateComponent<AnimationComponent>();
 	life = CreateComponent<LifeComponent>(_lifeCount);
 
-	convexHitBox = M_LEVEL.GetCurrentLevel()->SpawnActor<MeshActor>(_hitBoxMesh);
+	//convexHitBox = M_LEVEL.GetCurrentLevel()->SpawnActor<MeshActor>(_hitBoxMesh);
 	//AddChild(convexHitBox, AT_SNAP_TO_TARGET);
 
 	size = _size;

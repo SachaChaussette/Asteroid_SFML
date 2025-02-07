@@ -38,8 +38,7 @@ namespace UI
 		}
 
 	public:
-		Box() = default;
-		Box(const BoxData& _data);
+		Box(Level* _level, const BoxData& _data);
 
 	protected:
 		virtual void Update() = 0;

@@ -1,6 +1,6 @@
 #include "HorizontalBox.h"
 
-UI::HorizontalBox::HorizontalBox(const BoxData& _data) : Box(_data)
+UI::HorizontalBox::HorizontalBox(Level* _level, const BoxData& _data) : Box(_level, _data)
 {
 	if (data.spaceBetween == -1.0f)
 	{
@@ -11,8 +11,6 @@ UI::HorizontalBox::HorizontalBox(const BoxData& _data) : Box(_data)
 
 void UI::HorizontalBox::Update()
 {
-	Super::Update();
-
 	const Vector2f& _totalSize = GetSize();
 	const u_int& _totalElement = GetElementCount();
 	const float _spaceX = (_totalSize.x - data.spaceBetween * (_totalElement - 1)) / _totalElement;

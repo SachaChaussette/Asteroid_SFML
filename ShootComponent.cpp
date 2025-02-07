@@ -39,7 +39,7 @@ void ShootComponent::Shoot()
 		const CircleShapeData& _shapeData = CircleShapeData(10.0f, "Transparent");
 		Projectile* _projectile = M_LEVEL.GetCurrentLevel()->SpawnActor<Projectile>(_shapeData, _hitBoxData);
 
-		_projectile->SetFriendlyLayer(_entity->GetConvexHitBox()->GetLayer());
+		_projectile->SetFriendlyLayer(_entity->GetConvexHitBox()->GetLayerType());
 
 		_projectile->SetPosition(_newPos);
 		_projectile->GetMovement()->SetDirection(_direction);

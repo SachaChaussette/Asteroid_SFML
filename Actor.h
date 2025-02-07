@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "Core.h"
 #include "TransformableModifier.h"
 #include "TransformableViewer.h"
@@ -15,11 +15,11 @@ class Actor : public Core, public ITransformableModifier, public ITransformableV
 	u_int id;
 protected:
 	float lifeSpan;
+	Layer::LayerType layer;
 private:
 	string name;
-	Layer::LayerType layer;
 	string displayName;
-	set<Component*> components;
+	map<type_index, Component*> components;
 	RootComponent* root;
 	Actor* parent;
 	AttachmentType attachment;
@@ -27,35 +27,13 @@ private:
 protected:
 	Level* level;
 
-protected:
-	template <typename Type, typename ...Args, IS_BASE_OF(Component, Type)>
-	FORCEINLINE Type* CreateComponent(Args&&... _args)
-	{
-		Type* _component = new Type(this, forward<Args>(_args)...);
-		AddComponent(_component);
-		return _component;
-	}
-	FORCEINLINE void CreateSocket(const string& _name, const TransformData& _transform = TransformData(),
-								  const AttachmentType& _type = AT_SNAP_TO_TARGET)
-	{
-		Actor* _socket = new Actor(_name, _transform);
-		_socket->SetLevelReference(level);
-		AddChild(_socket, _type);
-	}
-
 public:
-	FORCEINLINE Layer::LayerType GetLayer() const
-	{
-		return layer;
-	}
-	FORCEINLINE void SetLayer(const Layer::LayerType& _layer)
-	{
-		layer = _layer;
-	}
 	FORCEINLINE void SetLifeSpan(const float _lifeSpan)
 	{
 		lifeSpan = _lifeSpan;
 	}
+
+	#pragma region Delete
 	FORCEINLINE void SetToDelete()
 	{
 		isToDelete = true;
@@ -64,6 +42,9 @@ public:
 	{
 		return isToDelete;
 	}
+	#pragma endregion
+
+	#pragma region ID/Name
 	FORCEINLINE u_int GetID() const
 	{
 		return id;
@@ -76,18 +57,26 @@ public:
 	{
 		return displayName;
 	}
+	#pragma endregion
+
+	#pragma region Layer
+	FORCEINLINE void SetLayerType(const Layer::LayerType& _layer)
+	{
+		layer = _layer;
+	}
+	FORCEINLINE Layer::LayerType GetLayerType() const
+	{
+		return layer;
+	}
+	#pragma endregion
 
 	#pragma region Level
-	
-	FORCEINLINE void SetLevelReference(Level* _level)
-	{
-		level = _level;
-	}
+
 	FORCEINLINE Level* GetLevel() const
 	{
 		return level;
 	}
-	
+
 	#pragma endregion
 
 	#pragma region Children
@@ -107,9 +96,9 @@ private:
 	{
 		const vector<function<Vector2f()>>& _computePosition =
 		{
-			// Keep the child’s relative position to the parent.
+			// Keep the childï¿½s relative position to the parent.
 			[&]() { return _child->GetPosition() + GetPosition(); },
-			// Keep the child’s world position.
+			// Keep the childï¿½s world position.
 			[&]() { return _child->GetPosition(); },
 			// Snap the child to the parent's position.
 			[&]() { return GetPosition(); },
@@ -122,9 +111,9 @@ private:
 	{
 		const vector<function<Angle()>>& _computeRotation =
 		{
-			// Keep the child’s relative rotation to the parent.
+			// Keep the childï¿½s relative rotation to the parent.
 			[&]() { return _child->GetRotation() + GetRotation(); },
-			// Keep the child’s world rotation.
+			// Keep the childï¿½s world rotation.
 			[&]() { return _child->GetRotation(); },
 			// Snap the child to the parent's rotation.
 			[&]() { return GetRotation(); },
@@ -137,12 +126,12 @@ private:
 	{
 		const vector<function<Vector2f()>>& _computeScale =
 		{
-			// Keep the child’s relative scale to the parent.
-			[&]() 
-			{ 
+			// Keep the childï¿½s relative scale to the parent.
+			[&]()
+			{
 				return Vector2f(_child->GetScale().x * GetScale().x, _child->GetScale().y * GetScale().y);
 			},
-			// Keep the child’s world scale.
+			// Keep the childï¿½s world scale.
 			[&]() { return _child->GetScale(); },
 			// Snap the child to the parent's scale.
 			[&]() { return GetScale(); },
@@ -314,8 +303,19 @@ public:
 
 	#pragma endregion
 
+	#pragma region Component
+protected:
+	template <typename Type, typename ...Args, IS_BASE_OF(Component, Type)>
+	FORCEINLINE Type* CreateComponent(Args&&... _args)
+	{
+		Type* _component = new Type(this, forward<Args>(_args)...);
+		AddComponent(_component);
+		return _component;
+	}
+	#pragma endregion
+
 public:
-	Actor(const string& _name = "Actor", const TransformData& _transform = TransformData());
+	Actor(Level* _level, const string& _name = "Actor", const TransformData& _transform = TransformData());
 	Actor(const Actor& _other);
 	virtual ~Actor();
 
@@ -327,24 +327,19 @@ public:
 	virtual void BeginDestroy() override;
 
 	void SetName(const string& _name);
+	void CreateSocket(const string& _name, const TransformData& _transform = TransformData(), const AttachmentType& _type = AT_SNAP_TO_TARGET);
 	void Destroy();
 
 	#pragma region Components
 
-	void AddComponent(Component* _component);
+	void AddComponent(const type_index& _type, Component* _component);
 	void RemoveComponent(Component* _component);
-	template <typename T>
-	T* GetComponent()
+	template <typename Type, IS_BASE_OF(Component, Type)>
+	Type* GetComponent()
 	{
-		for (Component* _component : components)
-		{
-			if (is_same_v<decltype(_component), T*>)
-			{
-				return dynamic_cast<T*>(_component);
-			}
-		}
-
-		return nullptr;
+		const type_index& _type = TYPE_ID(Type);
+		if (!components.contains(_type)) return nullptr;
+		return Cast<Type>(components[_type]);
 	}
 
 	#pragma endregion

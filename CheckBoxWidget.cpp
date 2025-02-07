@@ -1,11 +1,11 @@
 #include "CheckBoxWidget.h"
 #include "Level.h"
 
-UI::CheckBoxWidget::CheckBoxWidget(const string& _name, const float _size, const RenderType& _type)
-							 : ButtonWidget(_name, RectangleShapeData(Vector2f(_size, _size), ""), _type)
+UI::CheckBoxWidget::CheckBoxWidget(Level* _level, const string& _name, const float _size, const RenderType& _type)
+								 : ButtonWidget(_level, _name, RectangleShapeData(Vector2f(_size, _size), ""), _type)
 {
 	isChecked = false;
-	checkImage = level->GetHUD()->SpawnWidget<ImageWidget>("CheckImage", RectangleShapeData(Vector2f(_size, _size), "CheckMark"), _type);
+	checkImage = level->SpawnWidget<ImageWidget>("CheckImage", RectangleShapeData(Vector2f(_size, _size), "CheckMark"), _type);
 	checkImage->SetZOrder(zOrder + 1);
 }
 

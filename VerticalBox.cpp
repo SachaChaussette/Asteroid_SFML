@@ -1,6 +1,6 @@
 #include "VerticalBox.h"
 
-UI::VerticalBox::VerticalBox(const BoxData& _data) : Box(_data)
+UI::VerticalBox::VerticalBox(Level* _level, const BoxData& _data) : Box(_level, _data)
 {
 	if (data.spaceBetween == -1.0f)
 	{
@@ -11,8 +11,6 @@ UI::VerticalBox::VerticalBox(const BoxData& _data) : Box(_data)
 
 void UI::VerticalBox::Update()
 {
-	Super::Update();
-
 	const Vector2f& _totalSize = GetSize();
 	const u_int& _totalElement = GetElementCount();
 	const float _spaceY = (_totalSize.y - data.spaceBetween * (_totalElement - 1)) / _totalElement;

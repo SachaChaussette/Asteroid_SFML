@@ -6,8 +6,7 @@ namespace UI
 	class VerticalBox : public Box
 	{
 	public:
-		VerticalBox() = default;
-		VerticalBox(const BoxData& _data);
+		VerticalBox(Level* _level, const BoxData& _data);
 
 	public:
 		virtual void Update() override;

@@ -24,8 +24,8 @@ void AsteroidLevel::InitLevel()
 {
 	Super::InitLevel();
 
-	windowSize = M_LEVEL.GetCurrentLevel()->GetWindowSize();
-	M_LEVEL.GetCurrentLevel()->SpawnActor(MeshActor(windowSize, "InGameBackground"));
+	windowSize = GetWindowSize();
+	M_LEVEL.GetCurrentLevel()->SpawnActor<MeshActor>(RectangleShapeData(windowSize, "InGameBackground"));
 
 
 	//M_GAMEMODE.SetCurrentMode(new ChronoLevel(180));

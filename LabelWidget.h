@@ -14,10 +14,6 @@ namespace UI
 	public:
 	#pragma region Modifier
 
-		FORCEINLINE virtual void SetString(const string& _string)
-		{
-			text->GetDrawable()->setString(_string);
-		}
 		FORCEINLINE virtual void SetPosition(const Vector2f& _position) override
 		{
 			Super::SetPosition(_position);
@@ -97,16 +93,19 @@ namespace UI
 		}
 	#pragma endregion
 
+		FORCEINLINE virtual void SetString(const string& _string)
+		{
+			text->GetDrawable()->setString(_string);
+		}
 
 	public:
-		LabelWidget(const string& _text, const string& _name, const RenderType& _type = Screen);
+		LabelWidget(Level* _level, const string& _text, const string& _name, const RenderType& _type = Screen);
 		~LabelWidget();
-
-	public:
-		virtual void Render(RenderWindow& _window) override;
-		virtual void Tick(const float _deltaTime) override;
 
 	private:
 		string ComputeScoreText();
+
+	public:
+		virtual void Render(RenderWindow& _window) override;
 	};
 }

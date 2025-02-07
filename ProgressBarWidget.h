@@ -117,9 +117,9 @@ namespace UI
 		}
 
 	public:
-		ProgressBarWidget(const ProgressType& _type, const RectangleShapeData& _data,
-			const string _name, const float _maxValue = 100.0f,
-			const RenderType& _renderType = Screen);
+		ProgressBarWidget(Level* _level, const ProgressType& _type, const RectangleShapeData& _data,
+						  const string _name, const float _maxValue = 100.0f,
+						  const RenderType& _renderType = Screen);
 
 	private:
 		void Update();

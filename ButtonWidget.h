@@ -67,7 +67,7 @@ namespace UI
 		#pragma endregion
 
 	public:
-		ButtonWidget(const string _name, const RectangleShapeData& _data, const RenderType& _renderType);
+		ButtonWidget(Level* _level, const string _name, const RectangleShapeData& _data, const RenderType& _renderType);
 
 	public:
 		virtual void OnClick();

@@ -3,8 +3,10 @@
 #include "TimerManager.h"
 #include "Level.h"
 
-Actor::Actor(const string& _name, const TransformData& _transform)
+Actor::Actor(Level* _level, const string& _name, const TransformData& _transform)
 {
+	level = _level; // Setup level in first
+
 	isToDelete = false;
 	id = 0;
 	lifeSpan = 0.0f;
@@ -15,7 +17,6 @@ Actor::Actor(const string& _name, const TransformData& _transform)
 	parent = nullptr;
 	attachment = AT_NONE;
 	children = set<Actor*>();
-	level = nullptr;
 }
 
 Actor::Actor(const Actor& _other)
@@ -25,11 +26,11 @@ Actor::Actor(const Actor& _other)
 	lifeSpan = _other.lifeSpan;
 	name = _other.name;
 	displayName = _other.displayName;
-	for (Component* _component : _other.components)
+	for (pair<type_index, Component*> _pair : _other.components)
 	{
-		CreateComponent<TYPE(*_component)>(*_component);
+		CreateComponent<TYPE(_pair.first)>(*_pair.second);
 	}
-	root = CreateComponent<RootComponent>(_other.root);
+	root = GetComponent<RootComponent>();
 	parent = _other.parent;
 	attachment = _other.attachment;
 	for (Actor* _child : _other.children)
@@ -42,9 +43,9 @@ Actor::Actor(const Actor& _other)
 
 Actor::~Actor()
 {
-	for (Component* _component : components)
+	for (pair<type_index, Component*> _pair : components)
 	{
-		delete _component;
+		delete _pair.second;
 	}
 }
 
@@ -76,26 +77,26 @@ void Actor::BeginPlay()
 		new Timer(bind(&Actor::Destroy, this), seconds(lifeSpan), true);
 	}
 
-	for (Component* _component : components)
+	for (const pair<type_index, Component*>& _pair : components)
 	{
-		_component->BeginPlay();
+		_pair.second->BeginPlay();
 	}
 }
 
 void Actor::Tick(const float _deltaTime)
 {
 	Super::Tick(_deltaTime);
-	for (Component* _component : components)
+	for (const pair<type_index, Component*>& _pair : components)
 	{
-		_component->Tick(_deltaTime);
+		_pair.second->Tick(_deltaTime);
 	}
 }
 
 void Actor::BeginDestroy()
 {
-	for (Component* _component : components)
+	for (const pair<type_index, Component*>& _pair : components)
 	{
-		_component->BeginDestroy();
+		_pair.second->BeginDestroy();
 	}
 }
 
@@ -107,17 +108,23 @@ void Actor::SetName(const string& _name)
 	displayName = level->GetActorManager().GetDisplayName(this);
 }
 
+void Actor::CreateSocket(const string& _name, const TransformData& _transform, const AttachmentType& _type)
+{
+	Actor* _socket = level->SpawnActor<Actor>(_name, _transform);
+	AddChild(_socket, _type);
+}
+
 void Actor::Destroy()
 {
 	SetToDelete();
 }
 
-void Actor::AddComponent(Component* _component)
+void Actor::AddComponent(const type_index& _type, Component* _pair)
 {
-	components.insert(_component);
+	components.insert({ _type, _pair });
 }
 
-void Actor::RemoveComponent(Component* _component)
+void Actor::RemoveComponent(Component* _pair)
 {
-	components.erase(_component);
+	components.erase(TYPE_ID(_pair));
 }

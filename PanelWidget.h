@@ -114,14 +114,20 @@ namespace UI
 			advance(_it, _index);
 			RemoveChild(Cast<Widget>(*_it));
 		}
+
+		//TODO QUENTIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIN
 		FORCEINLINE void SetDebugMode(const bool _status)
 		{
 			debugMode = _status;
 		}
+
+		//TODO QUENTIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIN
 		FORCEINLINE virtual void SetSize(const Vector2f& _size)
 		{
 			size = _size;
 		}
+
+		//TODO QUENTIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIN
 		FORCEINLINE virtual void SetScale(const Vector2f& _scale)
 		{
 			Super::SetScale(_scale);
@@ -133,10 +139,9 @@ namespace UI
 		}
 
 	public:
-		PanelWidget(const string& _name, const RenderType& _type);
+		PanelWidget(Level* _level, const string& _name, const RenderType& _type);
 
 	private:
-		void AddSlot(Widget* _widget);
 		void UpdateDebugFrame();
 
 	public:
