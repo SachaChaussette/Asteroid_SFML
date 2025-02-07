@@ -4,17 +4,17 @@
 #include "Asteroid.h"
 #include "Layer.h"
 
-Projectile::Projectile(const CircleShapeData& _data, const vector<Vector2f>& _point,
+Projectile::Projectile(const CircleShapeData& _data, const ConvexShapeData& _hitBoxData,
 	const SizeType& _size, const string& _name)
-	: Entity(3, _size, 1, MeshActor(_data), MeshActor(_point, "Transparent"), _name)
+	: Entity(1, _size, 1, MeshActor(_data), MeshActor(_hitBoxData), _name)
 {
 	movement = CreateComponent<EnemyMovementComponent>();
 	friendlyLayer = Layer::COUNT;
 }
 
-Projectile::Projectile(const RectangleShapeData& _data, const vector<Vector2f>& _point,
+Projectile::Projectile(const CircleShapeData& _data, const RectangleShapeData& _hitBoxData,
 	const SizeType& _size, const string& _name)
-	: Entity(3, _size, 1, MeshActor(_data), MeshActor(_size, "Transparent"), "Player")
+	: Entity(1, _size, 1, MeshActor(_data), MeshActor(_hitBoxData), _name)
 {
 	movement = CreateComponent<EnemyMovementComponent>();
 	friendlyLayer = Layer::COUNT;
@@ -28,8 +28,7 @@ Projectile::Projectile(const Projectile& _other) : Entity(_other)
 
 void Projectile::BeginPlay()
 {
-	// TODO
-	//SetLifeSpan(5.0f);
+	SetLifeSpan(5.0f);
 	Super::BeginPlay();
 }
 
@@ -40,8 +39,7 @@ void Projectile::Construct()
 	movement->SetSpeed(250.0f);
 
 	convexHitBox->AddComponent(new CollisionComponent(convexHitBox, "Projectile", IS_ALL, CT_OVERLAP));
-	// TODO
-	//convexHitBox->SetLayer(Layer::PROJECTILE);
+	convexHitBox->SetLayer(Layer::PROJECTILE);
 	
 	const vector<pair<string, CollisionType>>& _responses
 	{
@@ -70,8 +68,7 @@ void Projectile::Deconstruct()
 void Projectile::CollisionEnter(const CollisionData& _data)
 {
 	Super::CollisionEnter(_data);
-	// TODO
-	/*if (Entity* _entity = Cast<Entity>(_data.other))
+	if (Entity* _entity = Cast<Entity>(_data.other))
 	{
 		Layer::LayerType _layerType = _entity->GetConvexHitBox()->GetLayer();
 		if (_layerType == Layer::PLAYER && friendlyLayer != Layer::PLAYER)
@@ -89,7 +86,7 @@ void Projectile::CollisionEnter(const CollisionData& _data)
 			Asteroid* _asteroid = Cast<Asteroid>(_entity);
 			_asteroid->GetLife()->DecrementLife();
 		}
-	}*/
+	}
 	
 
 }

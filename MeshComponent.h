@@ -7,6 +7,7 @@ class Actor;
 class MeshComponent : public Component
 {
 	ShapeObject* shape;
+	string path;
 
 public:
 	FORCEINLINE ShapeObject* GetShape() const
@@ -17,7 +18,10 @@ public:
 	{
 		shape = _shape;
 	}
-
+	FORCEINLINE string GetPath() const
+	{
+		return path;
+	}
 public:
 	MeshComponent(Actor* _owner, const CircleShapeData& _data);
 	MeshComponent(Actor* _owner, const RectangleShapeData& _data);

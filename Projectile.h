@@ -24,9 +24,9 @@ public:
 		return movement;
 	}
 public:
-	Projectile(const CircleShapeData& _data, const vector<Vector2f>& _point = vector<Vector2f>(),
+	Projectile(const CircleShapeData& _data, const ConvexShapeData& _hitBoxData,
 		const SizeType& _size = SMALL, const string& _name = "Projectile");
-	Projectile(const RectangleShapeData& _data, const vector<Vector2f>& _point = vector<Vector2f>(),
+	Projectile(const CircleShapeData & _data, const RectangleShapeData& _hitBoxData,
 		const SizeType& _size = SMALL, const string& _name = "Projectile");
 	Projectile(const Projectile& _other);
 

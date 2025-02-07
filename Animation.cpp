@@ -5,7 +5,7 @@ bool LinkedAnimation::TryToChange()
 {
 	if (!IsValid()) return false;
 
-	animation->Start(); // TODO implement
+	animation->Start();
 	return true;
 }
 

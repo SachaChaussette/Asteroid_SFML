@@ -7,9 +7,9 @@
 #include "Level.h"
 
 
-Player::Player(const CircleShapeData& _data, const vector<Vector2f>& _point,
+Player::Player(const CircleShapeData& _data, const RectangleShapeData& _hitBoxData,
 	const SizeType& _size, const string& _name)
-	: Entity(3, _size, 1, MeshActor(_data), MeshActor(_point, "Transparent"), _name)
+	: Entity(3, _size, 1, MeshActor(_data), MeshActor(_hitBoxData), _name)
 {
 	movement = CreateComponent<PlayerMovementComponent>();
 	shoot = CreateComponent<ShootComponent>();
@@ -35,10 +35,35 @@ void Player::Construct()
 {
 	Super::Construct();
 
-	// TODO
+	ActionMap* _playerMovement = M_INPUT.CreateActionMap("Player Movement");
+	const vector<Action*>& _actions =
+	{
+		new Action("Forward", ActionData(KeyHold, Input::Z), [&]()
+		{
+				LOG(Display, "Forward");
+			movement->ComputeAcceleration();
+		}),
+		new Action("Shoot", ActionData(KeyPressed, Input::Space), [&]()
+		{
+				LOG(Display, "Shoot");
+			shoot->Shoot();
+		}),
+		new Action("Left", ActionData(KeyHold, Input::Q), [&]()
+		{
+				LOG(Display, "Left");
+			movement->Rotate(-10);
+		}),
+		new Action("Right", ActionData(KeyHold, Input::D), [&]()
+		{
+				LOG(Display, "Right");
+			movement->Rotate(10);
+		}),
+	};
+	_playerMovement->AddActions(_actions);
+
+	// TODO InputManaer
 	/*M_INPUT.BindAction([&]()
 	{
-		movement->Rotate(-10);
 		SetOriginAtMiddle();
 	}, { Code::Left, Code::Q 
 	});
@@ -52,23 +77,20 @@ void Player::Construct()
 
 	M_INPUT.BindAction([&]() 
 	{
-		movement->ComputeAcceleration();
 	}, { Code::Up, Code::Z });
 
 	M_INPUT.BindAction([&]() 
 	{
-		shoot->Shoot();
 	}, Code::Space);*/
 
-	// TODO
-	//MeshActor* _canon = Level::SpawnActor(MeshActor(Vector2f(200.0f, 200.0f), ""));
+	// TODO Canon
+	//MeshActor* _canon = M_LEVEL.GetCurrentLevel()->SpawnActor(MeshActor(Vector2f(200.0f, 200.0f), ""));
 	//_canon->SetPosition(GetPosition());
 	//AddChild(_canon, AT_KEEP_RELATIVE);
 	//canons.push_back(_canon);
 
 	convexHitBox->AddComponent(new CollisionComponent(convexHitBox, "Player", IS_ALL, CT_OVERLAP));
-	// TODO
-	//convexHitBox->SetLayer(Layer::PLAYER);
+	convexHitBox->SetLayer(Layer::PLAYER);
 
 	const vector<pair<string, CollisionType>>& _responses
 	{
@@ -108,9 +130,8 @@ void Player::CollisionEnter(const CollisionData& _data)
 	Super::CollisionEnter(_data);
 	if (Entity* _entity = Cast<Entity>(_data.other))
 	{
-		// TODO
-		//Layer::LayerType _layerType = _entity->GetConvexHitBox()->GetLayer();
-		/*if (_layerType == Layer::ASTEROID)
+		Layer::LayerType _layerType = _entity->GetConvexHitBox()->GetLayer();
+		if (_layerType == Layer::ASTEROID)
 		{
 			Asteroid* _asteroid = Cast<Asteroid>(_entity);
 			_asteroid->GetLife()->DecrementLife();
@@ -125,7 +146,7 @@ void Player::CollisionEnter(const CollisionData& _data)
 		{
 			UFO* _ufo = Cast<UFO>(_entity);
 			_ufo->GetLife()->DecrementLife();
-		}*/
+		}
 	}
 }
 

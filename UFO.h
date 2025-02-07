@@ -24,7 +24,7 @@ public:
 	}
 public:
 	//point servira à la ConvexShape de la CollisionBox !
-	UFO(const CircleShapeData& _data, const vector<Vector2f>& _point = vector<Vector2f>(),
+	UFO(const CircleShapeData& _data, const ConvexShapeData& _hitBoxData,
 		const SizeType& _size = BIG, const string& _name = "UFO"); 
 	UFO(const UFO& _other);
 

@@ -1,5 +1,4 @@
 #include "Asteroid.h"
-#include "GameManager.h"
 #include "Level.h"
 #include "Player.h"
 #include "UFO.h"
@@ -7,9 +6,9 @@
 #include "LevelManager.h"
 
 
-Asteroid::Asteroid(const CircleShapeData& _data, const vector<Vector2f>& _point, 
+Asteroid::Asteroid(const CircleShapeData& _data, const ConvexShapeData& _hitBoxData,
 	const SizeType& _size, const string& _name)
-	: Entity(1, _size, 26, MeshActor(_data), MeshActor(_point, "Transparent"), _name)
+	: Entity(1, _size, 26, MeshActor(_data), MeshActor(_hitBoxData), _name)
 {
 	movement = CreateComponent<EnemyMovementComponent>();
 }
@@ -30,8 +29,7 @@ void Asteroid::Construct()
 	Super::Construct();
 
 	convexHitBox->AddComponent(new CollisionComponent(convexHitBox, "Asteroid", IS_ALL, CT_OVERLAP));
-	// TODO
-	//convexHitBox->SetLayer(Layer::ASTEROID);
+	convexHitBox->SetLayer(Layer::ASTEROID);
 
 	const vector<pair<string, CollisionType>>& _responses
 	{
@@ -70,11 +68,12 @@ void Asteroid::Deconstruct()
 				{19.0f,28.0f}, {13.0f,28.0f},
 				{3.0f,19.0f}, {3.0f,14.0f},
 			};
-			// TODO
-			//Asteroid* _asteroid = Level::SpawnActor(Asteroid(20.0f, _convexShapePoints, GetMesh()->GetTexturePath(), SizeType(size - 1)));
-			//_asteroid->ComputeNewDirection();
-			//_asteroid->SetOriginAtMiddle();
-			//_asteroid->SetPosition(GetPosition());
+			const CircleShapeData& _shapeData = CircleShapeData(20.0f, GetMesh()->GetPath(), IntRect(), SizeType(size - 1));
+			const ConvexShapeData& _hitBoxData = ConvexShapeData(_convexShapePoints, "Transparent");
+			Asteroid* _asteroid = M_LEVEL.GetCurrentLevel()->SpawnActor<Asteroid>(_shapeData, _hitBoxData);
+			_asteroid->SetOriginAtMiddle();
+			_asteroid->SetPosition({ 0.0f, GetRandomNumberInRange(0.0f, _windowSize.y) });
+			_asteroid->ComputeNewDirection();
 		}
 	}
 	Super::Deconstruct();
@@ -85,8 +84,7 @@ void Asteroid::CollisionEnter(const CollisionData& _data)
 	Super::CollisionEnter(_data);
 	if (Entity* _entity = Cast<Entity>(_data.other))
 	{
-		// TODO
-		/*Layer::LayerType _layerType = _entity->GetConvexHitBox()->GetLayer();
+		Layer::LayerType _layerType = _entity->GetConvexHitBox()->GetLayer();
 		if (_layerType == Layer::UFO)
 		{
 			UFO* _ufo = Cast<UFO>(_entity);
@@ -102,6 +100,6 @@ void Asteroid::CollisionEnter(const CollisionData& _data)
 		{
 			Player* _player = Cast<Player>(_entity);
 			_player->GetLife()->DecrementLife();
-		}*/
+		}
 	}
 }

@@ -126,7 +126,6 @@ void Input::Action::TryToExecute(const EventInfo& _event)
 				}
 #pragma endregion
 
-				//TODO rajouter condition appel callback
 				else if (const ScrolledMouseWheel* _key = _event->getIf<ScrolledMouseWheel>())
 				{
 					if (IsInAllData(_elementType, _key->wheel))

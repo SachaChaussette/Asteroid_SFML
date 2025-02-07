@@ -19,9 +19,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Script\Game">
-      <UniqueIdentifier>{6ffc15a9-349c-4401-8cea-a25b0015ee19}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Script\Core">
       <UniqueIdentifier>{7defba6c-90b5-4e2f-b53a-603b8d251694}</UniqueIdentifier>
     </Filter>
@@ -97,9 +94,6 @@
     <Filter Include="Script\Manager\Camera">
       <UniqueIdentifier>{b1bcdda7-722f-47f9-a09b-c047440e41a2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Script\Manager\Game">
-      <UniqueIdentifier>{b5c9dc5d-d958-4582-a6a9-25bfa678fd77}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Script\Manager\Font">
       <UniqueIdentifier>{e8d5ab2b-17ab-4998-9744-35e28e1aa780}</UniqueIdentifier>
     </Filter>
@@ -174,9 +168,6 @@
     </Filter>
     <Filter Include="Script\Manager\Level">
       <UniqueIdentifier>{0e93a90b-0ec6-4179-8f86-c1f54d38ddfc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Script\Manager\GAMEMODE">
-      <UniqueIdentifier>{5a25cbea-a7fd-4250-b600-91f47305170a}</UniqueIdentifier>
     </Filter>
     <Filter Include="Script\Core\Components\LIFE">
       <UniqueIdentifier>{078b52aa-e157-413a-900c-c3c4bbff9b81}</UniqueIdentifier>
@@ -268,7 +259,7 @@
     <Filter Include="Script\Input\ActionMap">
       <UniqueIdentifier>{0d679083-6320-4cc8-8dc9-fd14d42ef828}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Script\ASTEROIDGAME">
+    <Filter Include="Script\ASTEROIDLEVEL">
       <UniqueIdentifier>{3a32897c-52d5-4687-9b2c-ad47a41e1df6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -278,9 +269,6 @@
     </ClInclude>
     <ClInclude Include="Macro.h">
       <Filter>Script\Resource Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Script\Game</Filter>
     </ClInclude>
     <ClInclude Include="Actor.h">
       <Filter>Script\Core\Actor</Filter>
@@ -363,9 +351,6 @@
     <ClInclude Include="SquareActor.h">
       <Filter>Script\Core\Actor\Square</Filter>
     </ClInclude>
-    <ClInclude Include="GameManager.h">
-      <Filter>Script\Manager\Game</Filter>
-    </ClInclude>
     <ClInclude Include="FontManager.h">
       <Filter>Script\Manager\Font</Filter>
     </ClInclude>
@@ -381,8 +366,8 @@
     <ClInclude Include="InputManager.h">
       <Filter>Script\Manager\Input</Filter>
     </ClInclude>
-    <ClInclude Include="AsteroidGame.h">
-      <Filter>Script\ASTEROIDGAME</Filter>
+    <ClInclude Include="AsteroidLevel.h">
+      <Filter>Script\ASTEROIDLEVEL</Filter>
     </ClInclude>
     <ClInclude Include="MusicSample.h">
       <Filter>Script\Audio\Music</Filter>
@@ -423,11 +408,8 @@
     <ClInclude Include="SizeType.h">
       <Filter>Script\Resource Files</Filter>
     </ClInclude>
-    <ClInclude Include="ChronoMode.h">
+    <ClInclude Include="ChronoLevel.h">
       <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GameModel.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EnemyMovementComponent.h">
       <Filter>Script\Core\Components\MOVEMENT\ENEMY</Filter>
@@ -467,9 +449,6 @@
     </ClInclude>
     <ClInclude Include="FileManager.h">
       <Filter>Script\Manager\File</Filter>
-    </ClInclude>
-    <ClInclude Include="GameModeManager.h">
-      <Filter>Script\Manager\GAMEMODE</Filter>
     </ClInclude>
     <ClInclude Include="HUD.h">
       <Filter>Script\Manager\HUD</Filter>
@@ -546,13 +525,13 @@
     <ClInclude Include="Action.h">
       <Filter>Script\Input\Action</Filter>
     </ClInclude>
+    <ClInclude Include="MainMenuLevel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Script\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Script\Game</Filter>
     </ClCompile>
     <ClCompile Include="Singleton.h">
       <Filter>Script\Resource Files</Filter>
@@ -635,9 +614,6 @@
     <ClCompile Include="FontManager.cpp">
       <Filter>Script\Manager\Font</Filter>
     </ClCompile>
-    <ClCompile Include="GameManager.cpp">
-      <Filter>Script\Manager\Game</Filter>
-    </ClCompile>
     <ClCompile Include="CameraActor.cpp">
       <Filter>Script\Core\Actor\Camera</Filter>
     </ClCompile>
@@ -656,8 +632,8 @@
     <ClCompile Include="InputManager.cpp">
       <Filter>Script\Manager\Input</Filter>
     </ClCompile>
-    <ClCompile Include="AsteroidGame.cpp">
-      <Filter>Script\ASTEROIDGAME</Filter>
+    <ClCompile Include="AsteroidLevel.cpp">
+      <Filter>Script\ASTEROIDLEVEL</Filter>
     </ClCompile>
     <ClCompile Include="MusicSample.cpp">
       <Filter>Script\Audio\Music</Filter>
@@ -692,10 +668,7 @@
     <ClCompile Include="Projectile.cpp">
       <Filter>Script\Core\Actor\PROJECTILE</Filter>
     </ClCompile>
-    <ClCompile Include="ChronoMode.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GameModel.cpp">
+    <ClCompile Include="ChronoLevel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MenuGame.cpp">
@@ -718,9 +691,6 @@
     </ClCompile>
     <ClCompile Include="FileManager.cpp">
       <Filter>Script\Manager\File</Filter>
-    </ClCompile>
-    <ClCompile Include="GameModeManager.cpp">
-      <Filter>Script\Manager\GAMEMODE</Filter>
     </ClCompile>
     <ClCompile Include="HUD.cpp">
       <Filter>Script\Manager\HUD</Filter>
@@ -802,6 +772,9 @@
     </ClCompile>
     <ClCompile Include="Action.cpp">
       <Filter>Script\Input\Action</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenuLevel.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

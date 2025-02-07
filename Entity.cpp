@@ -1,5 +1,4 @@
 #include "Entity.h"
-#include "GameManager.h"
 #include "LevelManager.h"
 
 Entity::Entity(const u_int & _lifeCount, const SizeType & _size, const u_int & _spriteCount, 
@@ -8,9 +7,8 @@ Entity::Entity(const u_int & _lifeCount, const SizeType & _size, const u_int & _
 	animation = CreateComponent<AnimationComponent>();
 	life = CreateComponent<LifeComponent>(_lifeCount);
 
-	// TODO
-	//convexHitBox = Level::SpawnActor<MeshActor>(_hitBoxMesh);
-	AddChild(convexHitBox, AT_SNAP_TO_TARGET);
+	convexHitBox = M_LEVEL.GetCurrentLevel()->SpawnActor<MeshActor>(_hitBoxMesh);
+	//AddChild(convexHitBox, AT_SNAP_TO_TARGET);
 
 	size = _size;
 	spriteCount = _spriteCount;
@@ -78,7 +76,7 @@ void Entity::Construct()
 	animation->SetCurrentAnimation("Movement");
 	animation->StartAnimation();
 
-	convexHitBox->SetOriginAtMiddle();
+	//convexHitBox->SetOriginAtMiddle();
 	// TODO
 	//convexHitBox->SetParent(this);
 }

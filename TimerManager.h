@@ -221,7 +221,7 @@ public:
 		duration = _manager.GetTime(_time);
 		callback = _callback;
 
-		_manager.AddTimer(this); //TODO check
+		_manager.AddTimer(this);
 	}
 	Timer(const Timer& _other)
 	{

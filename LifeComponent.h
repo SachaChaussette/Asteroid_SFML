@@ -28,8 +28,6 @@ public:
 		canGetDamage = false;
 		if (lifeCount <= 0) Death();
 		new Timer([&]() { canGetDamage = true; }, seconds(invicibilityTime), true, false);
-
-		// TODO Modifier Sprite Frame Invincibilité
 	}
 	FORCEINLINE void SetCanGetDamage( const bool _canGetDamage)
 	{

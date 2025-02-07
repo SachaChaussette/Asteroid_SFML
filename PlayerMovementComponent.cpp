@@ -1,6 +1,5 @@
 #include "PlayerMovementComponent.h"
 #include "Actor.h"
-#include "GameManager.h"
 #include "TimerManager.h"
 
 PlayerMovementComponent::PlayerMovementComponent(Actor* _owner) : Component(_owner)

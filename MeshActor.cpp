@@ -5,7 +5,7 @@
 
 using namespace Camera;
 
-MeshActor::MeshActor(const CircleShapeData& _data, const string& _name)
+MeshActor::MeshActor(const CircleShapeData& _data, const string& _name) : Actor(_name)
 {
 	renderMeshToken = -1;
 	mesh = CreateComponent<MeshComponent>(_data);

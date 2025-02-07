@@ -39,5 +39,5 @@ void Spawner::Spawn()
 	};
 	ref->GetObject().SetPosition(_spawnPosition);
 
-	//Level::SpawnActor<MeshActor>(*ref);
+	//M_LEVEL.GetCurrentLevel()->SpawnActor<MeshActor>(*ref);
 }

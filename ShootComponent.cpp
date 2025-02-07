@@ -1,5 +1,5 @@
 #include "ShootComponent.h"
-#include "Level.h"
+#include "LevelManager.h"
 #include "PlayerMovementComponent.h"
 
 ShootComponent::ShootComponent(Actor* _owner) : Component(_owner)
@@ -34,13 +34,15 @@ void ShootComponent::Shoot()
 		const Vector2f& _newPos = _entity->GetPosition() - _offset + _direction;
 
 		// On spawn le projectile aux nouvelles coordonées et on lui donne la direction du tir
-		// TODO
-		//Projectile* _projectile = Level::SpawnActor(Projectile(10.0f, Vector2f(10.0f, 20.0f), "projectile"));
+		
+		const RectangleShapeData& _hitBoxData = RectangleShapeData(Vector2f(10.0f, 20.0f), "projectile");
+		const CircleShapeData& _shapeData = CircleShapeData(10.0f, "Transparent");
+		Projectile* _projectile = M_LEVEL.GetCurrentLevel()->SpawnActor<Projectile>(_shapeData, _hitBoxData);
 
-		//_projectile->SetFriendlyLayer(_entity->GetConvexHitBox()->GetLayer());
+		_projectile->SetFriendlyLayer(_entity->GetConvexHitBox()->GetLayer());
 
-		//_projectile->SetPosition(_newPos);
-		//_projectile->GetMovement()->SetDirection(_direction);
+		_projectile->SetPosition(_newPos);
+		_projectile->GetMovement()->SetDirection(_direction);
 	}
 	
 }

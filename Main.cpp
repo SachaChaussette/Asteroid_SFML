@@ -3,6 +3,7 @@
 #include "LevelManager.h"
 #include "MeshActor.h"
 #include "Particle.h"
+#include "ChronoLevel.h"
 
 void InitConfig()
 {
@@ -14,9 +15,7 @@ int main()
 {
 	InitConfig();
 
-	Level* _level = new Level("LevelDemo");
-	_level->SpawnActor<MeshActor>(RectangleShapeData({ 50.f, 50.f }, "Wall", JPG));
-	_level->SpawnActor<ParticleActor>(1000, 3.0f);
+	ChronoLevel* _level = new ChronoLevel(180);
 	M_LEVEL.SetLevel(_level);
 
 	Engine::GetInstance().Start();

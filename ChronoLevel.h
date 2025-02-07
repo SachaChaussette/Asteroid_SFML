@@ -1,13 +1,12 @@
 #pragma once
 
-#include "GameModel.h"
 #include "LabelWidget.h"
 #include "CanvasWidget.h"
 #include "Player.h"
 
 using namespace UI;
 
-class ChronoMode : public GameModel
+class ChronoLevel : public Level
 {
 	int timerCount;
 	int currentTime;
@@ -17,17 +16,19 @@ class ChronoMode : public GameModel
 	
 	CanvasWidget* canva;
 
+	Player* player;
+
 public:
-	ChronoMode(const int _timerCount);
+	ChronoLevel(const int _timerCount);
 
 private:
 	void ComputeTime();
 	void UpdateLife();
 	void ResetTime();
-	
-	virtual void Stop() override;
+	void GeneratePlayer();
+	void GenerateAsteroid();
+	void GenerateUFO();
 public:
-	virtual void Start() override;
-	virtual void Update() override;
+	virtual void InitLevel() override;
 };
 

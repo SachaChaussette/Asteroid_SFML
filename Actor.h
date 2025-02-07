@@ -17,6 +17,7 @@ protected:
 	float lifeSpan;
 private:
 	string name;
+	Layer::LayerType layer;
 	string displayName;
 	set<Component*> components;
 	RootComponent* root;
@@ -43,6 +44,18 @@ protected:
 	}
 
 public:
+	FORCEINLINE Layer::LayerType GetLayer() const
+	{
+		return layer;
+	}
+	FORCEINLINE void SetLayer(const Layer::LayerType& _layer)
+	{
+		layer = _layer;
+	}
+	FORCEINLINE void SetLifeSpan(const float _lifeSpan)
+	{
+		lifeSpan = _lifeSpan;
+	}
 	FORCEINLINE void SetToDelete()
 	{
 		isToDelete = true;
