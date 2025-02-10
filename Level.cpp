@@ -4,13 +4,15 @@
 Level::Level(const string& _name)
 {
 	isLoaded = false;
-	window.create(VideoMode({ 1200, 600 }), _name);
-	window.setVisible(false);
 	name = _name;
 	actorManager = ActorManager();
 	cameraManager = CameraManager();
-	gameModeRef = GameMode(this);
+	audioManager = AudioManager();
 	gameMode = nullptr;
+
+	window.create(VideoMode({ 1200, 600 }), _name);
+	window.setVisible(false);
+	gameModeRef = GameMode(this);
 
 	M_LEVEL.RegisterLevel(_name, this);
 }

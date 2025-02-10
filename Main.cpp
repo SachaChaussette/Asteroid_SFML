@@ -1,9 +1,6 @@
-#include "GameMode.h"
 #include "Engine.h"
 #include "LevelManager.h"
-#include "MeshActor.h"
-#include "Particle.h"
-#include "ChronoLevel.h"
+#include "CUSTOMLevel.h"
 
 void InitConfig()
 {
@@ -15,7 +12,7 @@ int main()
 {
 	InitConfig();
 
-	ChronoLevel* _level = new ChronoLevel(180);
+	CUSTOMLevel* _level = new CUSTOMLevel("LevelDemo");
 	M_LEVEL.SetLevel(_level);
 
 	Engine::GetInstance().Start();

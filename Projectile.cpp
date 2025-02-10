@@ -28,7 +28,8 @@ Projectile::Projectile(const Projectile& _other) : Entity(_other)
 
 void Projectile::BeginPlay()
 {
-	SetLifeSpan(5.0f);
+	// TODO
+	//SetLifeSpan(5.0f);
 	Super::BeginPlay();
 }
 
@@ -38,7 +39,8 @@ void Projectile::Construct()
 	Super::Construct();
 	movement->SetSpeed(250.0f);
 
-	convexHitBox->AddComponent(new CollisionComponent(convexHitBox, "Projectile", IS_ALL, CT_OVERLAP));
+	// TODO
+	//convexHitBox->AddComponent(new CollisionComponent(convexHitBox, "Projectile", IS_ALL, CT_OVERLAP));
 	convexHitBox->SetLayerType(Layer::PROJECTILE);
 	
 	const vector<pair<string, CollisionType>>& _responses

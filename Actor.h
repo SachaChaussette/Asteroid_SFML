@@ -1,4 +1,4 @@
-ï»¿#pragma once
+#pragma once
 #include "Core.h"
 #include "TransformableModifier.h"
 #include "TransformableViewer.h"
@@ -19,7 +19,7 @@ protected:
 private:
 	string name;
 	string displayName;
-	map<type_index, Component*> components;
+	set<Component*> components;
 	RootComponent* root;
 	Actor* parent;
 	AttachmentType attachment;
@@ -28,11 +28,6 @@ protected:
 	Level* level;
 
 public:
-	FORCEINLINE void SetLifeSpan(const float _lifeSpan)
-	{
-		lifeSpan = _lifeSpan;
-	}
-
 	#pragma region Delete
 	FORCEINLINE void SetToDelete()
 	{
@@ -71,12 +66,12 @@ public:
 	#pragma endregion
 
 	#pragma region Level
-
+	
 	FORCEINLINE Level* GetLevel() const
 	{
 		return level;
 	}
-
+	
 	#pragma endregion
 
 	#pragma region Children
@@ -96,9 +91,9 @@ private:
 	{
 		const vector<function<Vector2f()>>& _computePosition =
 		{
-			// Keep the childï¿½s relative position to the parent.
+			// Keep the child’s relative position to the parent.
 			[&]() { return _child->GetPosition() + GetPosition(); },
-			// Keep the childï¿½s world position.
+			// Keep the child’s world position.
 			[&]() { return _child->GetPosition(); },
 			// Snap the child to the parent's position.
 			[&]() { return GetPosition(); },
@@ -111,9 +106,9 @@ private:
 	{
 		const vector<function<Angle()>>& _computeRotation =
 		{
-			// Keep the childï¿½s relative rotation to the parent.
+			// Keep the child’s relative rotation to the parent.
 			[&]() { return _child->GetRotation() + GetRotation(); },
-			// Keep the childï¿½s world rotation.
+			// Keep the child’s world rotation.
 			[&]() { return _child->GetRotation(); },
 			// Snap the child to the parent's rotation.
 			[&]() { return GetRotation(); },
@@ -126,12 +121,12 @@ private:
 	{
 		const vector<function<Vector2f()>>& _computeScale =
 		{
-			// Keep the childï¿½s relative scale to the parent.
-			[&]()
-			{
+			// Keep the child’s relative scale to the parent.
+			[&]() 
+			{ 
 				return Vector2f(_child->GetScale().x * GetScale().x, _child->GetScale().y * GetScale().y);
 			},
-			// Keep the childï¿½s world scale.
+			// Keep the child’s world scale.
 			[&]() { return _child->GetScale(); },
 			// Snap the child to the parent's scale.
 			[&]() { return GetScale(); },
@@ -332,14 +327,17 @@ public:
 
 	#pragma region Components
 
-	void AddComponent(const type_index& _type, Component* _component);
+	void AddComponent(Component* _component);
 	void RemoveComponent(Component* _component);
 	template <typename Type, IS_BASE_OF(Component, Type)>
 	Type* GetComponent()
 	{
-		const type_index& _type = TYPE_ID(Type);
-		if (!components.contains(_type)) return nullptr;
-		return Cast<Type>(components[_type]);
+		for (Component* _component : components)
+		{
+			if (Type* _result = Cast<Type>(_component)) return _result;
+		}
+
+		return nullptr;
 	}
 
 	#pragma endregion

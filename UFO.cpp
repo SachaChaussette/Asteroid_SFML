@@ -36,7 +36,8 @@ void UFO::Construct()
 {
 	Super::Construct();
 
-	convexHitBox->AddComponent(new CollisionComponent(convexHitBox, "UFO", IS_ALL, CT_OVERLAP));
+	// TODO
+	//convexHitBox->AddComponent(new CollisionComponent(convexHitBox, "UFO", IS_ALL, CT_OVERLAP));
 	convexHitBox->SetLayerType(Layer::UFO);
 
 	const vector<pair<string, CollisionType>>& _responses

@@ -67,9 +67,6 @@
     <Filter Include="Script\Manager\Music">
       <UniqueIdentifier>{d72dd853-b57c-411f-890d-89b37e98c166}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Script\Manager\Sound">
-      <UniqueIdentifier>{91168c47-598a-40bc-bf3a-9dcfb9618cda}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Script\Manager\Texture">
       <UniqueIdentifier>{26556294-3341-4aaa-b6cb-3df0d603c215}</UniqueIdentifier>
     </Filter>
@@ -339,9 +336,6 @@
     <ClInclude Include="MusicManager.h">
       <Filter>Script\Manager\Music</Filter>
     </ClInclude>
-    <ClInclude Include="SoundManager.h">
-      <Filter>Script\Manager\Sound</Filter>
-    </ClInclude>
     <ClInclude Include="TextureManager.h">
       <Filter>Script\Manager\Texture</Filter>
     </ClInclude>
@@ -546,6 +540,12 @@
     <ClInclude Include="Menu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CUSTOMGameMode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CUSTOMLevel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -610,9 +610,6 @@
     </ClCompile>
     <ClCompile Include="MusicManager.cpp">
       <Filter>Script\Manager\Music</Filter>
-    </ClCompile>
-    <ClCompile Include="SoundManager.cpp">
-      <Filter>Script\Manager\Sound</Filter>
     </ClCompile>
     <ClCompile Include="TextureManager.cpp">
       <Filter>Script\Manager\Texture</Filter>
@@ -799,6 +796,12 @@
     </ClCompile>
     <ClCompile Include="Menu.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CUSTOMGameMode.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CUSTOMLevel.cpp">
+      <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
