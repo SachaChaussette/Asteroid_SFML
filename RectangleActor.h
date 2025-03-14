@@ -1,9 +1,9 @@
 #pragma once
 #include "MeshActor.h"
 
-class RectangleActor : public MeshActor
+class ARectangleActor : public AMeshActor
 {
 public:
-	RectangleActor(Level* _level, const RectangleShapeData& _data);
-	RectangleActor(const RectangleActor& _other);
+	ARectangleActor(Level* _level, const RectangleShapeData& _data);
+	ARectangleActor(const ARectangleActor& _other);
 };

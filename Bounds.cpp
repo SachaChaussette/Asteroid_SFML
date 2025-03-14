@@ -1,5 +1,5 @@
 #include "Bounds.h"
-#include "MeshComponent.h"
+#include "StaticMeshComponent.h"
 #include "Actor.h"
 
 BoundsData::BoundsData()
@@ -277,9 +277,9 @@ bool Bounds::CheckIfInAboveTheTopLeftTangent(const Vector2f& _point, const Vecto
 
 #pragma endregion
 
-void Bounds::UpdateBounds(Actor* _actor)
+void Bounds::UpdateBounds(AActor* _actor)
 {
-	if (MeshComponent* _meshComponent = _actor->GetComponent<MeshComponent>())
+	if (UStaticMeshComponent* _meshComponent = _actor->GetComponent<UStaticMeshComponent>())
 	{
 		const Vector2f& _pos = _meshComponent->GetOwner()->GetPosition();
 		if (_meshComponent->GetShape()->GetData().type == SOT_CIRCLE)

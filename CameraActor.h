@@ -4,12 +4,12 @@
 
 namespace Camera
 {
-	class CameraActor : public Actor
+	class ACameraActor : public AActor
 	{
-		CameraComponent* camera;
+		UCameraComponent* camera;
 
 	public:
-		FORCEINLINE CameraComponent* GetCamera() const
+		FORCEINLINE UCameraComponent* GetCamera() const
 		{
 			return camera;
 		}
@@ -52,10 +52,10 @@ namespace Camera
 		}
 
 	public:
-		CameraActor(Level* _level, const string& _name);
-		CameraActor(Level* _level, const Vector2f& _center, const Vector2f& _size, const string& _name);
-		CameraActor(Level* _level, const Vector2f& _size, const string& _name);
-		CameraActor(Level* _level, const FloatRect& _rect, const string& _name);
-		CameraActor(const CameraActor& _other);
+		ACameraActor(Level* _level, const string& _name);
+		ACameraActor(Level* _level, const Vector2f& _center, const Vector2f& _size, const string& _name);
+		ACameraActor(Level* _level, const Vector2f& _size, const string& _name);
+		ACameraActor(Level* _level, const FloatRect& _rect, const string& _name);
+		ACameraActor(const ACameraActor& _other);
 	};
 }

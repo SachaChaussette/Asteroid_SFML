@@ -99,7 +99,7 @@ public:
 
 	#pragma region SpawnActor
 
-	template <typename Type, typename ...Args, IS_BASE_OF(Actor, Type)>
+	template <typename Type, typename ...Args, IS_BASE_OF(AActor, Type)>
 	FORCEINLINE Type* SpawnActor(Args&&... _args)
 	{
 		Type* _actor = Spawn<Type>(this, forward<Args>(_args)...);
@@ -109,7 +109,7 @@ public:
 		return _actor;
 	}
 
-	template <typename Type, IS_BASE_OF(Actor, Type)>
+	template <typename Type, IS_BASE_OF(AActor, Type)>
 	FORCEINLINE Type* SpawnActor(const SubclassOf<Type>& _actorRef)
 	{
 		Type* _actor = Spawn<Type>(_actorRef);

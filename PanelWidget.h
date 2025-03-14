@@ -16,7 +16,7 @@ namespace UI
 		{
 			if (!CanAddMoreChildren()) return false;
 
-			Actor::AddChild(_widget, AT_KEEP_RELATIVE);
+			AActor::AddChild(_widget, AT_KEEP_RELATIVE);
 			return true;
 		}
 
@@ -46,7 +46,7 @@ namespace UI
 		FORCEINLINE int GetChildIndex(Widget* _Widget) const
 		{
 			int _index = 0;
-			for (Actor* _actor : GetChildren())
+			for (AActor* _actor : GetChildren())
 			{
 				if (Widget* _widget = Cast<Widget>(_actor))
 				{
@@ -67,7 +67,7 @@ namespace UI
 		FORCEINLINE set<Widget*> GetChildren() const
 		{
 			set<Widget*> _widgets;
-			for (Actor* _actor : Actor::GetChildren())
+			for (AActor* _actor : AActor::GetChildren())
 			{
 				if (Widget* _widget = Cast<Widget>(_actor))
 				{
@@ -81,7 +81,7 @@ namespace UI
 		FORCEINLINE set<Slot*> GetSlots() const
 		{
 			set<Slot*> _slots;
-			for (Actor* _actor : GetChildren())
+			for (AActor* _actor : GetChildren())
 			{
 				if (Widget* _widget = Cast<Widget>(_actor))
 				{
@@ -100,7 +100,7 @@ namespace UI
 		//Remove all child widgets from the panel widget.
 		FORCEINLINE virtual void ClearChildren()
 		{
-			for (Actor* _actor : GetChildren())
+			for (AActor* _actor : GetChildren())
 			{
 				if (Widget* _widget = Cast<Widget>(_actor))
 				{
@@ -126,13 +126,13 @@ namespace UI
 		FORCEINLINE void RemoveChild(Type* _widget)
 		{
 			_widget->RemoveSlot();
-			Actor::RemoveChild(_widget);
+			AActor::RemoveChild(_widget);
 		}
 
 		//Removes a child by it's index.
 		FORCEINLINE void RemoveChildAtIndex(const int _index)
 		{
-			set<Actor*>::const_iterator _it = Actor::GetChildren().begin();
+			set<AActor*>::const_iterator _it = AActor::GetChildren().begin();
 			advance(_it, _index);
 			RemoveChild(Cast<Widget>(*_it));
 		}

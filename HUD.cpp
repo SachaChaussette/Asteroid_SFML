@@ -5,13 +5,13 @@
 using namespace UI;
 using namespace Camera;
 
-UI::HUD::HUD(Level* _level) : Actor(_level)
+UI::HUD::HUD(Level* _level) : AActor(_level)
 {
 	allWidgets = set<Widget*>();
 	currentWidget = nullptr;
 }
 
-UI::HUD::HUD(const HUD& _other) : Actor(_other)
+UI::HUD::HUD(const HUD& _other) : AActor(_other)
 {
 	for (Widget* _widget : _other.allWidgets)
 	{
@@ -34,7 +34,7 @@ void UI::HUD::AddToViewport(Widget* _widget)
 
 void UI::HUD::RemoveFromViewport(Widget* _widget)
 {
-	for (Actor* _actor : _widget->GetChildren())
+	for (AActor* _actor : _widget->GetChildren())
 	{
 		if (Widget* _selectedWidget = Cast<Widget>(_actor))
 		{

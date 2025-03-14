@@ -1,6 +1,6 @@
 #include "Sample.h"
 
-Sample::Sample(Level* _level, const string& _path) : Actor(_level)
+Sample::Sample(Level* _level, const string& _path) : AActor(_level)
 {
 	volume = 50.0f;
 	path = _path;

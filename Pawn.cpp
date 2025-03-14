@@ -2,18 +2,18 @@
 #include "InputManager.h"
 #include "Level.h"
 
-Pawn::Pawn(Level* _level, const string& _name) : Actor(_level, _name)
+APawn::APawn(Level* _level, const string& _name) : AActor(_level, _name)
 {
 	controller = _level->GetGameMode()->GetPlayerController();
 }
 
-Pawn::Pawn(const Pawn& _other) : Actor(_other)
+APawn::APawn(const APawn& _other) : AActor(_other)
 {
 	controller = _other.controller;
 }
 
 
-void Pawn::Construct()
+void APawn::Construct()
 {
 	Super::Construct();
 

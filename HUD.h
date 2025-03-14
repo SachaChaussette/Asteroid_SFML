@@ -4,7 +4,7 @@
 
 namespace UI
 {
-	class HUD : public Actor
+	class HUD : public AActor
 	{
 		set<Widget*> allWidgets;
 		Widget* currentWidget;

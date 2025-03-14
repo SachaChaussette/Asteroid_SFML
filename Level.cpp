@@ -32,7 +32,7 @@ void Level::UpdateWindow()
 
 void Level::InitLevel()
 {
-	CameraActor* _camera = SpawnActor<CameraActor>("DefaultCamera");
+	ACameraActor* _camera = SpawnActor<ACameraActor>("DefaultCamera");
 	cameraManager.Register(_camera->GetCamera());
 }
 
@@ -56,7 +56,8 @@ void Level::Load()
 	}
 
 	window.setVisible(true);
-	actorManager.BeginPlay();
+	// Changement BeginPlay Individuelle à chaque Création d'Actor
+	//actorManager.BeginPlay();
 }
 
 void Level::Unload()

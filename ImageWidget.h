@@ -36,7 +36,7 @@ namespace UI
 		ImageGradient colorGradient;
 		bool useGradient;
 	protected:
-		MeshComponent* image;
+		UStaticMeshComponent* image;
 
 	public:
 		FORCEINLINE virtual void SetPosition(const Vector2f& _position) override

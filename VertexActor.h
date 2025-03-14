@@ -2,9 +2,9 @@
 #include "Actor.h"
 #include "VertexComponent.h"
 
-class VertexActor : public Actor
+class AVertexActor : public AActor
 {
-	VertexComponent* vertex;
+	UVertexComponent* vertex;
 	u_int renderMeshToken;
 
 public:
@@ -14,9 +14,9 @@ public:
 	}
 
 public:
-	VertexActor(Level* _level, const u_int& _count, const PrimitiveType& _type = PrimitiveType::Points,
+	AVertexActor(Level* _level, const u_int& _count, const PrimitiveType& _type = PrimitiveType::Points,
 				const string& _name = "VertexActor");
-	VertexActor(const VertexActor& _other);
+	AVertexActor(const AVertexActor& _other);
 
 	virtual void Construct() override;
 	virtual void Deconstruct() override;

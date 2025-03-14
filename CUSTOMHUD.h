@@ -7,7 +7,7 @@ using namespace UI;
 
 class CUSTOMHUD : public HUD
 {
-	MeshActor* mesh;
+	AMeshActor* mesh;
 public:
 	CUSTOMHUD(Level* _level);
 	CUSTOMHUD(const CUSTOMHUD& _other);

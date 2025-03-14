@@ -11,7 +11,7 @@ struct CollisionData;
 
 using namespace Layer;
 
-class Actor : public Core, public ITransformableModifier, public ITransformableViewer
+class AActor : public UCore, public ITransformableModifier, public ITransformableViewer
 {
 	bool isToDelete;
 	u_int id;
@@ -22,11 +22,11 @@ protected:
 private:
 	string name;
 	string displayName;
-	set<Component*> components;
-	RootComponent* root;
-	Actor* parent;
+	set<UComponent*> components;
+	URootComponent* root;
+	AActor* parent;
 	AttachmentType attachment;
-	set<Actor*> children;
+	set<AActor*> children;
 	TransformData oldTransform;
 
 protected:
@@ -96,18 +96,18 @@ public:
 	#pragma region Children
 
 private:
-	FORCEINLINE void SetParent(Actor* _parent)
+	FORCEINLINE void SetParent(AActor* _parent)
 	{
 		parent = _parent;
 	}
-	FORCEINLINE void UpdateChildTransform(Actor* _child)
+	FORCEINLINE void UpdateChildTransform(AActor* _child)
 	{
 		UpdateChildPosition(_child);
 		UpdateChildRotation(_child);
 		UpdateChildScale(_child);
 		UpdateChildOrigin(_child);
 	}
-	FORCEINLINE void UpdateChildPosition(Actor* _child)
+	FORCEINLINE void UpdateChildPosition(AActor* _child)
 	{
 		const vector<function<Vector2f()>>& _computePosition =
 		{
@@ -122,7 +122,7 @@ private:
 		const AttachmentType& _type = _child->GetAttachmentType();
 		_child->SetPosition(_computePosition[_type]());
 	}
-	FORCEINLINE void UpdateChildRotation(Actor* _child)
+	FORCEINLINE void UpdateChildRotation(AActor* _child)
 	{
 		const vector<function<Angle()>>& _computeRotation =
 		{
@@ -137,7 +137,7 @@ private:
 		const AttachmentType& _type = _child->GetAttachmentType();
 		_child->SetRotation(_computeRotation[_type]());
 	}
-	FORCEINLINE void UpdateChildScale(Actor* _child)
+	FORCEINLINE void UpdateChildScale(AActor* _child)
 	{
 		const vector<function<Vector2f()>>& _computeScale =
 		{
@@ -155,7 +155,7 @@ private:
 		const AttachmentType& _type = _child->GetAttachmentType();
 		_child->SetScale(_computeScale[_type]());
 	}
-	FORCEINLINE void UpdateChildOrigin(Actor* _child)
+	FORCEINLINE void UpdateChildOrigin(AActor* _child)
 	{
 		const vector<function<Vector2f()>>& _computePosition =
 		{
@@ -172,14 +172,14 @@ private:
 	}
 
 public:
-	FORCEINLINE void AddChild(Actor* _child, const AttachmentType& _type)
+	FORCEINLINE void AddChild(AActor* _child, const AttachmentType& _type)
 	{
 		_child->SetAttachmentType(_type);
 		_child->SetParent(this);
 		UpdateChildTransform(_child);
 		children.insert(_child);
 	}
-	FORCEINLINE void RemoveChild(Actor* _child)
+	FORCEINLINE void RemoveChild(AActor* _child)
 	{
 		if (!_child || !children.contains(_child)) return;
 
@@ -194,17 +194,17 @@ public:
 	{
 		return attachment;
 	}
-	FORCEINLINE Actor* GetParent() const
+	FORCEINLINE AActor* GetParent() const
 	{
 		return parent;
 	}
-	FORCEINLINE set<Actor*> GetChildren() const
+	FORCEINLINE set<AActor*> GetChildren() const
 	{
 		return children;
 	}
-	FORCEINLINE Actor* GetChildrenAtIndex(const int _index) const
+	FORCEINLINE AActor* GetChildrenAtIndex(const int _index) const
 	{
-		set<Actor*>::const_iterator _it = children.begin();
+		set<AActor*>::const_iterator _it = children.begin();
 		advance(_it, _index);
 		return *_it;
 	}
@@ -275,7 +275,7 @@ public:
 		oldTransform.position = GetPosition();
 		root->SetPosition(_position);
 
-		for (Actor* _child : children)
+		for (AActor* _child : children)
 		{
 			UpdateChildPosition(_child);
 		}
@@ -285,7 +285,7 @@ public:
 		oldTransform.rotation = GetRotation();
 		root->SetRotation(_rotation);
 
-		for (Actor* _child : children)
+		for (AActor* _child : children)
 		{
 			UpdateChildRotation(_child);
 		}
@@ -295,7 +295,7 @@ public:
 		oldTransform.scale = GetScale();
 		root->SetScale(_scale);
 
-		for (Actor* _child : children)
+		for (AActor* _child : children)
 		{
 			UpdateChildScale(_child);
 		}
@@ -305,7 +305,7 @@ public:
 		oldTransform.origin = GetOrigin();
 		root->SetOrigin(_origin);
 
-		for (Actor* _child : children)
+		for (AActor* _child : children)
 		{
 			UpdateChildOrigin(_child);
 		}
@@ -314,7 +314,7 @@ public:
 	{
 		root->Move(_offset);
 
-		for (Actor* _child : children)
+		for (AActor* _child : children)
 		{
 			_child->Move(_offset);
 		}
@@ -323,7 +323,7 @@ public:
 	{
 		root->Rotate(_angle);
 
-		for (Actor* _child : children)
+		for (AActor* _child : children)
 		{
 			_child->Rotate(_angle);
 		}
@@ -332,7 +332,7 @@ public:
 	{
 		root->Scale(_factor);
 
-		for (Actor* _child : children)
+		for (AActor* _child : children)
 		{
 			_child->Scale(_factor);
 		}
@@ -344,8 +344,8 @@ public:
 
 	#pragma region Component
 protected:
-	template <typename Type, typename ...Args, IS_BASE_OF(Component, Type)>
-	FORCEINLINE Type* CreateComponent(Args&&... _args)
+	template <typename Type, typename ...Args, IS_BASE_OF(UComponent, Type)>
+	FORCEINLINE Type* CreateDefaultSubobject(Args&&... _args)
 	{
 		Type* _component = new Type(this, forward<Args>(_args)...);
 		AddComponent(_component);
@@ -357,7 +357,7 @@ public:
 	{
 		Super::SetActive(_status);
 
-		for (Component* _component : components)
+		for (UComponent* _component : components)
 		{
 			_component->SetActive(_status);
 		}
@@ -365,9 +365,9 @@ public:
 	#pragma endregion
 
 public:
-	Actor(Level* _level, const string& _name = "Actor", const TransformData& _transform = TransformData());
-	Actor(const Actor& _other);
-	virtual ~Actor();
+	AActor(Level* _level, const string& _name = "Actor", const TransformData& _transform = TransformData());
+	AActor(const AActor& _other);
+	virtual ~AActor();
 
 public:
 	virtual void Construct() override;
@@ -384,12 +384,12 @@ public:
 
 	#pragma region Components
 
-	void AddComponent(Component* _component);
-	void RemoveComponent(Component* _component);
-	template <typename Type, IS_BASE_OF(Component, Type)>
+	void AddComponent(UComponent* _component);
+	void RemoveComponent(UComponent* _component);
+	template <typename Type, IS_BASE_OF(UComponent, Type)>
 	Type* GetComponent()
 	{
-		for (Component* _component : components)
+		for (UComponent* _component : components)
 		{
 			if (Type* _result = dynamic_cast<Type*>(_component)) return _result;
 		}

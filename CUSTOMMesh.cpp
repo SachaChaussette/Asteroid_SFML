@@ -1,20 +1,20 @@
 #include "CUSTOMMesh.h"
 #include "Level.h"
-CUSTOMMesh::CUSTOMMesh(Level* _level, const RectangleShapeData& _data, const string& _name) : MeshActor(_level, _data, _name)
+CUSTOMMesh::CUSTOMMesh(Level* _level, const RectangleShapeData& _data, const string& _name) : AMeshActor(_level, _data, _name)
 {
 	canMove = true;
 
-	collision = CreateComponent<CollisionComponent>();
+	collision = CreateDefaultSubobject<UCollisionComponent>();
 	collision->SetInformation("test-movement", IS_ALL, CT_OVERLAP);
 	collision->AddResponses({ {"test", CT_BLOCK}, {"ActorCollision",CT_BLOCK} });
 
 }
 
-CUSTOMMesh::CUSTOMMesh(Level* _level, const CircleShapeData& _data, const string& _name) : MeshActor(_level, _data, _name)
+CUSTOMMesh::CUSTOMMesh(Level* _level, const CircleShapeData& _data, const string& _name) : AMeshActor(_level, _data, _name)
 {
 	canMove = true;
 
-	collision = CreateComponent<CollisionComponent>();
+	collision = CreateDefaultSubobject<UCollisionComponent>();
 	collision->SetInformation("test-movement", IS_ALL, CT_OVERLAP);
 	collision->AddResponses({ {"test", CT_BLOCK}, { "ActorCollision",CT_BLOCK } });
 }

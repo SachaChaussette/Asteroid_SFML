@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 
-class Core
+class UCore
 {
 	bool isActive = false;
 

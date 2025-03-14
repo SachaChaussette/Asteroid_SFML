@@ -1,13 +1,13 @@
 #pragma once
 #include "Utilities.h"
 
-class Actor;
+class AActor;
 
 struct HitInfo
 {
 	Vector2f position;
 	float distance;
-	Actor* actor;
+	AActor* actor;
 
 	bool operator!=(const HitInfo& _hitInfo) const
 	{
@@ -16,10 +16,10 @@ struct HitInfo
 };
 
 bool Raycast(const Vector2f& _origin, const Vector2f& _direction, const float _maxDistance,
-			 HitInfo& _hitInfo, const vector<Actor*>& _ignoredActors = vector<Actor*>(),
+			 HitInfo& _hitInfo, const vector<AActor*>& _ignoredActors = vector<AActor*>(),
 			 const float _precision = 0.01f);
 
 vector<HitInfo> RaycastAll(const Vector2f& _origin, const Vector2f& _direction, const float _maxDistance,
 						   const vector<Shape*>& _ignoredShapes, const float _precision = 0.01f);
  
-bool BoxCast(const FloatRect& _boxRect, HitInfo& _hitInfo, const vector<Actor*>& _ignoredActors);
+bool BoxCast(const FloatRect& _boxRect, HitInfo& _hitInfo, const vector<AActor*>& _ignoredActors);

@@ -2,10 +2,10 @@
 #include "MeshActor.h"
 #include "CollisionComponent.h"
 
-class CUSTOMMesh : public MeshActor
+class CUSTOMMesh : public AMeshActor
 {
 	bool canMove;
-	CollisionComponent* collision;
+	UCollisionComponent* collision;
 	
 public:
 	CUSTOMMesh(Level* _level, const RectangleShapeData& _data, const string& _name = "MeshActor");

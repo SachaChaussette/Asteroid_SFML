@@ -2,7 +2,7 @@
 
 ActorManager::~ActorManager()
 {
-	for (Actor* _actor : allActors)
+	for (AActor* _actor : allActors)
 	{
 		delete _actor;
 	}
@@ -11,7 +11,7 @@ ActorManager::~ActorManager()
 
 void ActorManager::BeginPlay()
 {
-	for (Actor* _actor : allActors)
+	for (AActor* _actor : allActors)
 	{
 		_actor->BeginPlay();
 	}
@@ -19,9 +19,9 @@ void ActorManager::BeginPlay()
 
 void ActorManager::Update(const float _deltaTime)
 {
-	vector<Actor*> _garbage;
+	vector<AActor*> _garbage;
 
-	for (Actor* _actor : allActors)
+	for (AActor* _actor : allActors)
 	{
 		if (_actor->IsActive())
 		{
@@ -34,7 +34,7 @@ void ActorManager::Update(const float _deltaTime)
 		}
 	}
 
-	for (Actor* _actor : _garbage)
+	for (AActor* _actor : _garbage)
 	{
 		_actor->Deconstruct();
 		delete _actor;
@@ -43,7 +43,7 @@ void ActorManager::Update(const float _deltaTime)
 
 void ActorManager::BeginDestroy()
 {
-	for (Actor* _actor : allActors)
+	for (AActor* _actor : allActors)
 	{
 		_actor->BeginDestroy();
 	}

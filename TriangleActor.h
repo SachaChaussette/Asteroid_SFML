@@ -1,9 +1,9 @@
 #pragma once
 #include "MeshActor.h"
 
-class TriangleActor : public MeshActor
+class ATriangleActor : public AMeshActor
 {
 public:
-	TriangleActor(Level* _level, const float _radius, const string& _path = "", const IntRect& _rect = {});
-	TriangleActor(const TriangleActor& _other);
+	ATriangleActor(Level* _level, const float _radius, const string& _path = "", const IntRect& _rect = {});
+	ATriangleActor(const ATriangleActor& _other);
 };

@@ -5,14 +5,14 @@
 
 class Level;
 class CameraManager;
-class Pawn;
+class APawn;
 
-class PlayerController : public Actor
+class PlayerController : public AActor
 {
 	Input::InputManager inputManager;
 	RenderWindow* window;
 	Camera::CameraManager* cameraManager;
-	Pawn* pawn;
+	APawn* pawn;
 
 public:
 	FORCEINLINE void SetShowMouseCursor(const bool _status)
@@ -35,7 +35,7 @@ public:
 
 	#pragma region Pawn
 
-	template<typename Type = Pawn, IS_BASE_OF(Pawn, Type)>
+	template<typename Type = APawn, IS_BASE_OF(APawn, Type)>
 	FORCEINLINE Type* GetPawn()
 	{
 		if (!pawn)
@@ -48,10 +48,10 @@ public:
 		return Cast<Type>(pawn);
 	}
 
-	template<typename Type, IS_BASE_OF(Pawn, Type)>
+	template<typename Type, IS_BASE_OF(APawn, Type)>
 	FORCEINLINE Type* SpawnPawn()
 	{
-		Pawn* _pawn = GetPawnRef();
+		APawn* _pawn = GetPawnRef();
 		const SubclassOf<Type>& _pawnRef = *Cast<Type>(_pawn);
 
 		Type* _type = Spawn<Type>(_pawnRef);
@@ -62,7 +62,7 @@ public:
 		return _type;
 	}
 
-	FORCEINLINE virtual Pawn* GetPawnRef() const;
+	FORCEINLINE virtual APawn* GetPawnRef() const;
 	FORCEINLINE Vector2f GetPixelToCoords() const;
 
 	#pragma endregion

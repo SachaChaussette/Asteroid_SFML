@@ -6,7 +6,7 @@ namespace UI
 {
 	class GIFWidget : public ImageWidget
 	{
-		AnimationComponent* animation;
+		UAnimationComponent* animation;
 
 	public:
 		FORCEINLINE void AddAnimation(Animation* _animation)

@@ -17,7 +17,7 @@ namespace UI
 
 	class HUD;
 
-	class Widget : public Actor
+	class Widget : public AActor
 	{
 		u_int renderToken;
 		RenderType type;

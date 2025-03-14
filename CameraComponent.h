@@ -3,7 +3,7 @@
 
 namespace Camera
 {
-	class CameraComponent : public Component
+	class UCameraComponent : public UComponent
 	{
 		View* view;
 
@@ -48,17 +48,17 @@ namespace Camera
 		{
 			view->zoom(_factor);
 		}
-		FORCEINLINE virtual Component* Clone(Actor* _owner) const override
+		FORCEINLINE virtual UComponent* Clone(AActor* _owner) const override
 		{
-			return new CameraComponent(_owner, *this);
+			return new UCameraComponent(_owner, *this);
 		}
 
 	public:
-		CameraComponent(Actor* _owner);
-		CameraComponent(Actor* _owner, const Vector2f& _center, const Vector2f& _size);
-		CameraComponent(Actor* _owner, const Vector2f& _size);
-		CameraComponent(Actor* _owner, const FloatRect& _rect);
-		CameraComponent(Actor* _owner, const CameraComponent& _other);
-		~CameraComponent();
+		UCameraComponent(AActor* _owner);
+		UCameraComponent(AActor* _owner, const Vector2f& _center, const Vector2f& _size);
+		UCameraComponent(AActor* _owner, const Vector2f& _size);
+		UCameraComponent(AActor* _owner, const FloatRect& _rect);
+		UCameraComponent(AActor* _owner, const UCameraComponent& _other);
+		~UCameraComponent();
 	};
 }

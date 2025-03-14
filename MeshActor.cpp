@@ -3,23 +3,23 @@
 #include "CollisionManager.h"
 #include "Level.h"
 
-MeshActor::MeshActor(Level* _level, const CircleShapeData& _data, const string& _name) : Actor(_level, _name)
+AMeshActor::AMeshActor(Level* _level, const CircleShapeData& _data, const string& _name) : AActor(_level, _name)
 {
-	mesh = CreateComponent<MeshComponent>(_data);
+	mesh = CreateDefaultSubobject<UStaticMeshComponent>(_data);
 }
 
-MeshActor::MeshActor(Level* _level, const RectangleShapeData& _data, const string& _name) : Actor(_level, _name)
+AMeshActor::AMeshActor(Level* _level, const RectangleShapeData& _data, const string& _name) : AActor(_level, _name)
 {
-	mesh = CreateComponent<MeshComponent>(_data);
+	mesh = CreateDefaultSubobject<UStaticMeshComponent>(_data);
 }
 
-MeshActor::MeshActor(const MeshActor& _other) : Actor(_other)
+AMeshActor::AMeshActor(const AMeshActor& _other) : AActor(_other)
 {
-	mesh = CreateComponent<MeshComponent>(*_other.mesh);
+	mesh = CreateDefaultSubobject<UStaticMeshComponent>(*_other.mesh);
 }
 
 
-void MeshActor::SetZOrder(const int _zOrder)
+void AMeshActor::SetZOrder(const int _zOrder)
 {
 	Super::SetZOrder(_zOrder);
 

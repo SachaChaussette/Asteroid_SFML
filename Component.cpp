@@ -1,23 +1,28 @@
 #include "Component.h"
 #include "Actor.h"
 
-Component::Component(Actor* _owner)
+UComponent::UComponent(AActor* _owner)
 {
 	owner = _owner;
 }
 
-Component::Component(Actor* _owner, const Component& _other)
+UComponent::UComponent(AActor* _owner, const UComponent& _other)
 {
 	owner = _owner;
 }
 
 
-void Component::Construct()
+void UComponent::Construct()
 {
 	SetActive(true);
 }
 
-void Component::Deconstruct()
+void UComponent::Deconstruct()
 {
 	SetActive(false);
+}
+
+void UComponent::BeginPlay()
+{
+	Construct();
 }

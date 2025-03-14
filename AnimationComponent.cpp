@@ -1,12 +1,12 @@
 #include "AnimationComponent.h"
 
-AnimationComponent::AnimationComponent(Actor* _owner) : Component(_owner)
+UAnimationComponent::UAnimationComponent(AActor* _owner) : UComponent(_owner)
 {
 	current = nullptr;
 	allAnimations = map<string, Animation*>();
 }
 
-AnimationComponent::AnimationComponent(Actor* _owner, const AnimationComponent& _other) : Component(_owner)
+UAnimationComponent::UAnimationComponent(AActor* _owner, const UAnimationComponent& _other) : UComponent(_owner)
 {
 	for (const pair<string, Animation*>& _animation : _other.allAnimations)
 	{
@@ -15,7 +15,7 @@ AnimationComponent::AnimationComponent(Actor* _owner, const AnimationComponent& 
 	current = allAnimations[_other.current->GetName()];
 }
 
-AnimationComponent::~AnimationComponent()
+UAnimationComponent::~UAnimationComponent()
 {
 	for (const pair<string, Animation*>& _animation : allAnimations)
 	{
@@ -24,7 +24,7 @@ AnimationComponent::~AnimationComponent()
 }
 
 
-void AnimationComponent::AddAnimation(Animation* _animation)
+void UAnimationComponent::AddAnimation(Animation* _animation)
 {
 	const string& _animationName = _animation->GetName();
 	if (allAnimations.contains(_animationName)) return;
@@ -37,7 +37,7 @@ void AnimationComponent::AddAnimation(Animation* _animation)
 	}
 }
 
-void AnimationComponent::AddAnimations(const vector<Animation*>& _animations)
+void UAnimationComponent::AddAnimations(const vector<Animation*>& _animations)
 {
 	const u_int& _animationsCount = CAST(u_int, _animations.size());
 

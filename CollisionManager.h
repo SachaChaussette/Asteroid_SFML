@@ -4,19 +4,19 @@
 
 class CollisionManager
 {
-	set<CollisionComponent*> allCollisionComponents;
-	set<pair<Actor*, Actor*>> hasCollision;
+	set<UCollisionComponent*> allCollisionComponents;
+	set<pair<AActor*, AActor*>> hasCollision;
 
 public:
-	FORCEINLINE void AddCollision(CollisionComponent* _component)
+	FORCEINLINE void AddCollision(UCollisionComponent* _component)
 	{
 		allCollisionComponents.insert(_component);
 	}
-	FORCEINLINE void RemoveCollision(CollisionComponent* _component)
+	FORCEINLINE void RemoveCollision(UCollisionComponent* _component)
 	{
 		allCollisionComponents.erase(_component);
 	}
-	FORCEINLINE void AddCollisionPair(Actor* _owner, Actor* _other)
+	FORCEINLINE void AddCollisionPair(AActor* _owner, AActor* _other)
 	{
 		if (!ContainsPair(_owner, _other)) return;
 		hasCollision.insert({ _owner , _other });
@@ -25,7 +25,7 @@ public:
 	{
 		hasCollision.clear();
 	}
-	FORCEINLINE bool ContainsPair(Actor* _owner, Actor* _other)
+	FORCEINLINE bool ContainsPair(AActor* _owner, AActor* _other)
 	{
 		if (hasCollision.contains({ _owner ,_other }) || hasCollision.contains({ _other ,_owner }))
 		{
@@ -33,7 +33,7 @@ public:
 		}
 		return false;
 	}
-	FORCEINLINE set<CollisionComponent*> GetAllCollisionComponents() const
+	FORCEINLINE set<UCollisionComponent*> GetAllCollisionComponents() const
 	{
 		return allCollisionComponents;
 	}

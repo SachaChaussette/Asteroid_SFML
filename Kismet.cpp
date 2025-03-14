@@ -3,7 +3,7 @@
 #include "MeshActor.h"
 
 bool Raycast(const Vector2f& _origin, const Vector2f& _direction, const float _maxDistance,
-			 HitInfo& _hitInfo, const vector<Actor*>& _ignoredActors, const float _precision)
+			 HitInfo& _hitInfo, const vector<AActor*>& _ignoredActors, const float _precision)
 {
 	if (_direction == Vector2f()) return false;
 
@@ -12,9 +12,9 @@ bool Raycast(const Vector2f& _origin, const Vector2f& _direction, const float _m
 
 	while (Distance(_origin, _currentPosition) < _maxDistance)
 	{
-		for (Actor* _actor : M_LEVEL.GetCurrentLevel()->GetActorManager().GetAllActors())
+		for (AActor* _actor : M_LEVEL.GetCurrentLevel()->GetActorManager().GetAllActors())
 		{
-			if (MeshActor* _meshActor = Cast<MeshActor>(_actor))
+			if (AMeshActor* _meshActor = Cast<AMeshActor>(_actor))
 			{
 				//if (Contains(_meshActor, _ignoredActors)) continue;
 
@@ -72,7 +72,7 @@ vector<HitInfo> RaycastAll(const Vector2f& _origin, const Vector2f& _direction, 
 	return _hitInfos;
 }
 
-bool BoxCast(const FloatRect& _boxRect, HitInfo& _hitInfo, const vector<Actor*>& _ignoredActors)
+bool BoxCast(const FloatRect& _boxRect, HitInfo& _hitInfo, const vector<AActor*>& _ignoredActors)
 {
 	/*for (Actor* _actor : ActorManager::GetInstance().GetAllValues())
 	{

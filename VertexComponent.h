@@ -2,9 +2,9 @@
 #include "Component.h"
 #include "VertexObject.h"
 
-class Actor;
+class AActor;
 
-class VertexComponent : public Component
+class UVertexComponent : public UComponent
 {
 	VertexObject* vertex;
 
@@ -14,14 +14,14 @@ public:
 		return vertex;
 	}
 
-	FORCEINLINE virtual Component* Clone(Actor* _owner) const override
+	FORCEINLINE virtual UComponent* Clone(AActor* _owner) const override
 	{
-		return new VertexComponent(_owner, *this);
+		return new UVertexComponent(_owner, *this);
 	}
 
 public:
-	VertexComponent(Actor* _owner, const u_int& _count, const PrimitiveType& _type = PrimitiveType::Points);
-	VertexComponent(Actor* _owner, const VertexComponent& _other);
-	~VertexComponent();
+	UVertexComponent(AActor* _owner, const u_int& _count, const PrimitiveType& _type = PrimitiveType::Points);
+	UVertexComponent(AActor* _owner, const UVertexComponent& _other);
+	~UVertexComponent();
 
 };

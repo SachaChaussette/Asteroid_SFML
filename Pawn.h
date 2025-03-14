@@ -4,7 +4,7 @@
 
 class InputManager;
 
-class Pawn : public Actor
+class APawn : public AActor
 {
 protected:
 	PlayerController* controller;
@@ -15,8 +15,8 @@ public:
 		return controller;
 	}
 public:
-	Pawn(Level* _level, const string& _name = "Pawn");
-	Pawn(const Pawn& _other);
+	APawn(Level* _level, const string& _name = "Pawn");
+	APawn(const APawn& _other);
 
 protected:
 	virtual void SetupInputController(Input::InputManager& _inputManager) {};

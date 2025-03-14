@@ -11,7 +11,7 @@ CUSTOMPlayerController::CUSTOMPlayerController(const PlayerController& _other) :
 
 }
 
-Pawn* CUSTOMPlayerController::GetPawnRef() const
+APawn* CUSTOMPlayerController::GetPawnRef() const
 {
     return new CUSTOMPawn(level);
 }

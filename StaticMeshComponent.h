@@ -2,9 +2,9 @@
 #include "Component.h"
 #include "ShapeObject.h"
 
-class Actor;
+class AActor;
 
-class MeshComponent : public Component
+class UStaticMeshComponent : public UComponent
 {
 	u_int renderMeshToken;
 	ShapeObject* shape;
@@ -22,16 +22,16 @@ public:
 	{
 		return shape;
 	}
-	FORCEINLINE virtual Component* Clone(Actor* _owner) const override
+	FORCEINLINE virtual UComponent* Clone(AActor* _owner) const override
 	{
-		return new MeshComponent(_owner, *this);
+		return new UStaticMeshComponent(_owner, *this);
 	}
 
 public:
-	MeshComponent(Actor* _owner, const CircleShapeData& _data);
-	MeshComponent(Actor* _owner, const RectangleShapeData& _data);
-	MeshComponent(Actor* _owner, const MeshComponent& _other);
-	~MeshComponent();
+	UStaticMeshComponent(AActor* _owner, const CircleShapeData& _data);
+	UStaticMeshComponent(AActor* _owner, const RectangleShapeData& _data);
+	UStaticMeshComponent(AActor* _owner, const UStaticMeshComponent& _other);
+	~UStaticMeshComponent();
 
 	virtual void Construct() override;
 	virtual void Deconstruct() override;

@@ -1,26 +1,26 @@
 #include "CameraActor.h"
 
-Camera::CameraActor::CameraActor(Level* _level, const string& _name) : Actor(_level, _name)
+Camera::ACameraActor::ACameraActor(Level* _level, const string& _name) : AActor(_level, _name)
 {
-	camera = CreateComponent<CameraComponent>();
+	camera = CreateDefaultSubobject<UCameraComponent>();
 }
 
-Camera::CameraActor::CameraActor(Level* _level, const Vector2f& _center, const Vector2f& _size, const string& _name) : Actor(_level, _name)
+Camera::ACameraActor::ACameraActor(Level* _level, const Vector2f& _center, const Vector2f& _size, const string& _name) : AActor(_level, _name)
 {
-	camera = CreateComponent<CameraComponent>(_center, _size);
+	camera = CreateDefaultSubobject<UCameraComponent>(_center, _size);
 }
 
-Camera::CameraActor::CameraActor(Level* _level, const Vector2f& _size, const string& _name) : Actor(_level, _name)
+Camera::ACameraActor::ACameraActor(Level* _level, const Vector2f& _size, const string& _name) : AActor(_level, _name)
 {
-	camera = CreateComponent<CameraComponent>(_size);
+	camera = CreateDefaultSubobject<UCameraComponent>(_size);
 }
 
-Camera::CameraActor::CameraActor(Level* _level, const FloatRect& _rect, const string& _name) : Actor(_level, _name)
+Camera::ACameraActor::ACameraActor(Level* _level, const FloatRect& _rect, const string& _name) : AActor(_level, _name)
 {
-	camera = CreateComponent<CameraComponent>(_rect);
+	camera = CreateDefaultSubobject<UCameraComponent>(_rect);
 }
 
-Camera::CameraActor::CameraActor(const CameraActor& _other) : Actor(_other)
+Camera::ACameraActor::ACameraActor(const ACameraActor& _other) : AActor(_other)
 {
-	camera = CreateComponent<CameraComponent>(*_other.camera);
+	camera = CreateDefaultSubobject<UCameraComponent>(*_other.camera);
 }

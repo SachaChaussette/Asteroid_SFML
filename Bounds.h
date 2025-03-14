@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 
 
-class Actor;
+class AActor;
 
 struct BoundsData
 {
@@ -132,7 +132,7 @@ private:
 	#pragma endregion
 
 public:
-	void UpdateBounds(Actor* _actor);
+	void UpdateBounds(AActor* _actor);
 	bool Contains(const Vector2f& _point) const;
 	Bounds* FindIntersections(Bounds* _other) const;
 };

@@ -46,7 +46,7 @@ void CUSTOMLevel::InitLevel()
 			_spriteMainMenuLoop.push_back(SpriteData(Vector2i(_j * 640, _i * 360), Vector2i(640, 360)));
 		}
 	}
-	Animation* _loopAnim = new Animation("MainMenu BackgroundLoop", _gif->GetComponent<MeshComponent>()->GetShape(), AnimationData(2.0f, _spriteMainMenuLoop, true, false));
+	Animation* _loopAnim = new Animation("MainMenu BackgroundLoop", _gif->GetComponent<UStaticMeshComponent>()->GetShape(), AnimationData(2.0f, _spriteMainMenuLoop, true, false));
 	_gif->AddAnimation(_loopAnim);
 
 	const Vector2i& _spriteSize = Vector2i(41, 39);
@@ -66,7 +66,7 @@ void CUSTOMLevel::InitLevel()
 		SpriteData(Vector2i(127, 86), _spriteSize),
 	};
 	const AnimationData& _animationData = AnimationData(2.0f, _spritesData);
-	Animation* _duckAnim = new Animation("Duck animation", _gif->GetComponent<MeshComponent>()->GetShape(), _animationData);
+	Animation* _duckAnim = new Animation("Duck animation", _gif->GetComponent<UStaticMeshComponent>()->GetShape(), _animationData);
 	_gif->AddAnimation(_duckAnim);
 
 	_loopAnim->AddLinkedAnimation([]() {return true; }, _duckAnim);

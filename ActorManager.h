@@ -4,33 +4,34 @@
 
 class ActorManager
 {
-	set<Actor*> allActors;
-	multimap<string, Actor*> actorsName;
+	set<AActor*> allActors;
+	multimap<string, AActor*> actorsName;
 
 public:
-	FORCEINLINE void AddActor(Actor* _actor)
+	FORCEINLINE void AddActor(AActor* _actor)
 	{
 		allActors.insert(_actor);
 		AddActorName(_actor);
+		_actor->BeginPlay();
 	}
-	FORCEINLINE void RemoveActor(Actor* _actor)
+	FORCEINLINE void RemoveActor(AActor* _actor)
 	{
 		allActors.erase(_actor);
 		RemoveActorName(_actor);
 	}
-	FORCEINLINE set<Actor*> GetAllActors() const
+	FORCEINLINE set<AActor*> GetAllActors() const
 	{
 		return allActors;
 	}
 
-	FORCEINLINE void AddActorName(Actor* _actor)
+	FORCEINLINE void AddActorName(AActor* _actor)
 	{
 		actorsName.insert({ _actor->GetName(), _actor });
 	}
-	FORCEINLINE void RemoveActorName(Actor* _actor)
+	FORCEINLINE void RemoveActorName(AActor* _actor)
 	{
 		const string& _actorName = _actor->GetName();
-		using Iterator = multimap<string, Actor*>::iterator;
+		using Iterator = multimap<string, AActor*>::iterator;
 		const pair<Iterator, Iterator>& _results = actorsName.equal_range(_actorName);
 
 		for (Iterator _it = _results.first; _it != _results.second; )
@@ -44,7 +45,7 @@ public:
 			++_it;
 		}
 	}
-	FORCEINLINE string GetDisplayName(Actor* _actor)
+	FORCEINLINE string GetDisplayName(AActor* _actor)
 	{
 		RemoveActorName(_actor);
 		AddActorName(_actor);
@@ -56,7 +57,7 @@ public:
 		const string& _fullName = _name + (_index == 0 ? "" : "_" + to_string(_index));
 
 		// Je parcours tous les Actors qui possèdent le même nom 
-		using Iterator = multimap<string, Actor*>::iterator;
+		using Iterator = multimap<string, AActor*>::iterator;
 		const pair<Iterator, Iterator>& _results = actorsName.equal_range(_name);
 		if (actorsName.empty() || _results.first == _results.second) return _name;
 		bool _isFindSameName = false;

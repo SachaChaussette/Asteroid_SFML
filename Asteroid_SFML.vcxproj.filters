@@ -217,6 +217,9 @@
     <Filter Include="Scripts\Examples\CustomActor">
       <UniqueIdentifier>{f2a2544c-d591-4624-960a-2225b3eb45ba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Asteroid">
+      <UniqueIdentifier>{9085441b-797a-40b3-bc1f-cb159b864935}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TextObject.cpp">
@@ -267,7 +270,7 @@
     <ClCompile Include="RootComponent.cpp">
       <Filter>Scripts\Engine\Core\Components\Root</Filter>
     </ClCompile>
-    <ClCompile Include="MeshComponent.cpp">
+    <ClCompile Include="StaticMeshComponent.cpp">
       <Filter>Scripts\Engine\Core\Components\Mesh</Filter>
     </ClCompile>
     <ClCompile Include="FontManager.cpp">
@@ -429,11 +432,20 @@
     <ClCompile Include="CustomActor.cpp">
       <Filter>Scripts\Examples\CustomActor</Filter>
     </ClCompile>
+    <ClCompile Include="Singleton.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TESTLevel.cpp">
+      <Filter>Asteroid</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerPawn.cpp">
+      <Filter>Asteroid</Filter>
+    </ClCompile>
+    <ClCompile Include="MovementComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Singleton.h">
-      <Filter>Scripts\Engine\Managers</Filter>
-    </ClInclude>
     <ClInclude Include="CoreMinimal.h">
       <Filter>Scripts\Engine\Resource Files</Filter>
     </ClInclude>
@@ -491,7 +503,7 @@
     <ClInclude Include="RootComponent.h">
       <Filter>Scripts\Engine\Core\Components\Root</Filter>
     </ClInclude>
-    <ClInclude Include="MeshComponent.h">
+    <ClInclude Include="StaticMeshComponent.h">
       <Filter>Scripts\Engine\Core\Components\Mesh</Filter>
     </ClInclude>
     <ClInclude Include="FontManager.h">
@@ -674,5 +686,20 @@
     <ClInclude Include="CustomActor.h">
       <Filter>Scripts\Examples\CustomActor</Filter>
     </ClInclude>
+    <ClInclude Include="SizeType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TESTLevel.h">
+      <Filter>Asteroid</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerPawn.h">
+      <Filter>Asteroid</Filter>
+    </ClInclude>
+    <ClInclude Include="MovementComponent.h">
+      <Filter>Asteroid</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="TODOList.txt" />
   </ItemGroup>
 </Project>

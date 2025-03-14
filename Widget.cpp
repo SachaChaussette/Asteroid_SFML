@@ -5,7 +5,7 @@
 using namespace Camera;
 using namespace Input;
 
-UI::Widget::Widget(Level* _level, const string& _name, const RenderType& _type) : Actor(_level, _name)
+UI::Widget::Widget(Level* _level, const string& _name, const RenderType& _type) : AActor(_level, _name)
 {
 	type = _type;
 	visibility = Visible;
@@ -32,7 +32,7 @@ void UI::Widget::Construct()
 
 void UI::Widget::BindViewport()
 {
-	for (Actor* _actor : GetChildren())
+	for (AActor* _actor : GetChildren())
 	{
 		if (Widget* _widget = Cast<Widget>(_actor))
 		{

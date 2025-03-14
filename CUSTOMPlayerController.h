@@ -9,5 +9,5 @@ public:
 	CUSTOMPlayerController(Level* _level, const string& _name = "CUSTOMPlayerController");
 	CUSTOMPlayerController(const PlayerController& _other);
 
-	virtual Pawn* GetPawnRef() const override;
+	virtual APawn* GetPawnRef() const override;
 };

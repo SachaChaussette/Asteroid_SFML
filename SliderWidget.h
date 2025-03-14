@@ -40,7 +40,7 @@ namespace UI
 		}
 		FORCEINLINE void SetOriginAtMiddle()
 		{
-			SetOrigin(sliderBar->GetComponent<MeshComponent>()->GetShape()->GetDrawable()->getGeometricCenter());
+			SetOrigin(sliderBar->GetComponent<UStaticMeshComponent>()->GetShape()->GetDrawable()->getGeometricCenter());
 		}
 		FORCEINLINE virtual void Move(const Vector2f& _offset) override
 		{

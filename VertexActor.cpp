@@ -3,34 +3,34 @@
 
 using namespace Camera;
 
-VertexActor::VertexActor(Level* _level, const u_int& _count, const PrimitiveType& _type, const string& _name) : Actor(_level, _name)
+AVertexActor::AVertexActor(Level* _level, const u_int& _count, const PrimitiveType& _type, const string& _name) : AActor(_level, _name)
 {
-	vertex = CreateComponent<VertexComponent>(_count, _type);
+	vertex = CreateDefaultSubobject<UVertexComponent>(_count, _type);
 	renderMeshToken = -1;
 }
 
-VertexActor::VertexActor(const VertexActor& _other) : Actor(_other)
+AVertexActor::AVertexActor(const AVertexActor& _other) : AActor(_other)
 {
-	vertex = CreateComponent<VertexComponent>(*_other.vertex);
+	vertex = CreateDefaultSubobject<UVertexComponent>(*_other.vertex);
 	renderMeshToken = _other.renderMeshToken;
 }
 
-void VertexActor::Construct()
+void AVertexActor::Construct()
 {
 	Super::Construct();
 
-	const RenderData& _data = RenderData(bind(&VertexActor::RenderVertices, this, _1));
+	const RenderData& _data = RenderData(bind(&AVertexActor::RenderVertices, this, _1));
 	renderMeshToken = level->GetCameraManager().BindOnRenderWindow(_data);
 }
 
-void VertexActor::Deconstruct()
+void AVertexActor::Deconstruct()
 {
 	Super::Deconstruct();
 	level->GetCameraManager().UnbindOnRenderWindow(renderMeshToken);
 }
 
 
-void VertexActor::RenderVertices(RenderWindow& _window)
+void AVertexActor::RenderVertices(RenderWindow& _window)
 {
 	_window.draw(*vertex->GetVertex()->GetDrawable());
 }

@@ -1,11 +1,11 @@
 #include "RectangleActor.h"
 
-RectangleActor::RectangleActor(Level* _level, const RectangleShapeData& _data) : MeshActor(_level, _data)
+ARectangleActor::ARectangleActor(Level* _level, const RectangleShapeData& _data) : AMeshActor(_level, _data)
 {
 
 }
 
-RectangleActor::RectangleActor(const RectangleActor& _other) : MeshActor(_other)
+ARectangleActor::ARectangleActor(const ARectangleActor& _other) : AMeshActor(_other)
 {
 
 }

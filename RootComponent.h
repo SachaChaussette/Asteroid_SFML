@@ -11,7 +11,7 @@ enum AttachmentType
 	AT_NONE,
 };
 
-class RootComponent : public Component, public ITransformableModifier, public ITransformableViewer
+class URootComponent : public UComponent, public ITransformableModifier, public ITransformableViewer
 {
 	TransformData transform;
 
@@ -78,12 +78,12 @@ public:
 
 	#pragma endregion
 
-	FORCEINLINE virtual Component* Clone(Actor* _owner) const override
+	FORCEINLINE virtual UComponent* Clone(AActor* _owner) const override
 	{
-		return new RootComponent(_owner, *this);
+		return new URootComponent(_owner, *this);
 	}
 
 public:
-	RootComponent(Actor* _owner, const TransformData& _transform = {});
-	RootComponent(Actor* _owner, const RootComponent& _other);
+	URootComponent(AActor* _owner, const TransformData& _transform = {});
+	URootComponent(AActor* _owner, const URootComponent& _other);
 };

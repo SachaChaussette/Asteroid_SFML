@@ -1,7 +1,7 @@
 #pragma once
 #include "Actor.h"
 
-class Sample : public Actor
+class Sample : public AActor
 {
 	float volume;
 	string path;

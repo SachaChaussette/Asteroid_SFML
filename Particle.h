@@ -7,7 +7,7 @@ struct Particle
 	Vector2f velocity;
 };
 
-class ParticleActor : public VertexActor
+class ParticleActor : public AVertexActor
 {
 	float maxLifeTime;
 	vector<Particle> particles;

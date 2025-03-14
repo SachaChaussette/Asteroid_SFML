@@ -4,7 +4,7 @@
 
 using namespace Input;
 
-PlayerController::PlayerController(Level* _level, const string& _name) : Actor(_level, _name)
+PlayerController::PlayerController(Level* _level, const string& _name) : AActor(_level, _name)
 {
 	inputManager = Input::InputManager();
 	window = &_level->GetRenderWindow();
@@ -12,7 +12,7 @@ PlayerController::PlayerController(Level* _level, const string& _name) : Actor(_
 	pawn = nullptr;
 }
 
-PlayerController::PlayerController(const PlayerController& _other) : Actor(_other)
+PlayerController::PlayerController(const PlayerController& _other) : AActor(_other)
 {
 	inputManager = _other.inputManager;
 	window = _other.window;
@@ -53,7 +53,7 @@ Vector2f PlayerController::GetPixelToCoords() const
 	return _pixelToCoords;
 }
 
-Pawn* PlayerController::GetPawnRef() const
+APawn* PlayerController::GetPawnRef() const
 {
-	return new Pawn(level);
+	return new APawn(level);
 }

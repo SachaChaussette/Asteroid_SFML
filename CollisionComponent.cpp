@@ -4,7 +4,7 @@
 #include "MeshActor.h"
 #include "Level.h"
 
-CollisionComponent::CollisionComponent(Actor* _owner, const string& _channelName, const int _status, const CollisionType& _type) : Component(_owner)
+UCollisionComponent::UCollisionComponent(AActor* _owner, const string& _channelName, const int _status, const CollisionType& _type) : UComponent(_owner)
 {
 	channelName = _channelName;
 	type = _type;
@@ -12,7 +12,7 @@ CollisionComponent::CollisionComponent(Actor* _owner, const string& _channelName
 	bounds = new Bounds();
 }
 
-CollisionComponent::CollisionComponent(Actor* _owner, const CollisionComponent& _other) : Component(_owner)
+UCollisionComponent::UCollisionComponent(AActor* _owner, const UCollisionComponent& _other) : UComponent(_owner)
 {
 	channelName = _other.channelName;
 	type = _other.type;
@@ -21,14 +21,14 @@ CollisionComponent::CollisionComponent(Actor* _owner, const CollisionComponent& 
 	*bounds = *_other.bounds;
 }
 
-CollisionComponent::~CollisionComponent()
+UCollisionComponent::~UCollisionComponent()
 {
 	delete bounds->GetData();
 	delete bounds;
 }
 
 
-void CollisionComponent::Construct()
+void UCollisionComponent::Construct()
 {
 	Super::Construct();
 
@@ -38,14 +38,14 @@ void CollisionComponent::Construct()
 	}
 }
 
-void CollisionComponent::Deconstruct()
+void UCollisionComponent::Deconstruct()
 {
 	Super::Deconstruct();
 
 	GetOwner()->GetLevel()->GetCollisionManager().RemoveCollision(this);
 }
 
-void CollisionComponent::Tick(const float _deltaTime)
+void UCollisionComponent::Tick(const float _deltaTime)
 {
 	Super::Tick(_deltaTime);
 
@@ -56,14 +56,14 @@ void CollisionComponent::Tick(const float _deltaTime)
 }
 
 
-void CollisionComponent::ComputeCollisions()
+void UCollisionComponent::ComputeCollisions()
 {
 	if (!(status & IS_PHYSIC)) return;
 
 	CollisionManager* _collisionManager = &owner->GetLevel()->GetCollisionManager();
-	const set<CollisionComponent*>& _allComponent = _collisionManager->GetAllCollisionComponents();
+	const set<UCollisionComponent*>& _allComponent = _collisionManager->GetAllCollisionComponents();
 
-	for (CollisionComponent* _otherComponent : _allComponent)
+	for (UCollisionComponent* _otherComponent : _allComponent)
 	{
 		UpdateBounds();
 		_otherComponent->UpdateBounds();
@@ -85,7 +85,7 @@ void CollisionComponent::ComputeCollisions()
 		}
 		if (_otherResponse == CT_NONE) continue;
 
-		Actor* _other = _otherComponent->owner;
+		AActor* _other = _otherComponent->owner;
 
 		if (Bounds* _intersection = bounds->FindIntersections(_otherComponent->bounds))
 		{
@@ -106,7 +106,7 @@ void CollisionComponent::ComputeCollisions()
 	}
 }
 
-CollisionStep CollisionComponent::ComputeStep(Actor* _other, const CollisionStep& _step)
+CollisionStep UCollisionComponent::ComputeStep(AActor* _other, const CollisionStep& _step)
 {
 	if (othersStep.contains(_other) && othersStep[_other] == CS_ENTER ||_step != CS_EXIT && othersStep[_other] == CS_UPDATE)
 	{
@@ -120,7 +120,7 @@ CollisionStep CollisionComponent::ComputeStep(Actor* _other, const CollisionStep
 
 }
 
-void CollisionComponent::UpdateBounds()
+void UCollisionComponent::UpdateBounds()
 {
 	bounds->UpdateBounds(owner);
 }

@@ -1,15 +1,15 @@
 #pragma once
 #include "Actor.h"
-#include "MeshComponent.h"
+#include "StaticMeshComponent.h"
 #include "TextureManager.h"
 
-class MeshActor : public Actor
+class AMeshActor : public AActor
 {
 protected:
-	MeshComponent* mesh;
+	UStaticMeshComponent* mesh;
 
 public:
-	FORCEINLINE MeshComponent* GetMesh() const
+	FORCEINLINE UStaticMeshComponent* GetMesh() const
 	{
 		return mesh;
 	}
@@ -66,10 +66,10 @@ public:
 	#pragma endregion
 
 public:
-	MeshActor() = default;
-	MeshActor(Level* _level, const CircleShapeData& _data, const string& _name = "MeshActor");
-	MeshActor(Level* _level, const RectangleShapeData& _data, const string& _name = "MeshActor");
-	MeshActor(const MeshActor& _other);
+	AMeshActor() = default;
+	AMeshActor(Level* _level, const CircleShapeData& _data, const string& _name = "MeshActor");
+	AMeshActor(Level* _level, const RectangleShapeData& _data, const string& _name = "MeshActor");
+	AMeshActor(const AMeshActor& _other);
 
 public:
 	virtual void SetZOrder(const int _zOrder) override;

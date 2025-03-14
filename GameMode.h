@@ -3,10 +3,10 @@
 #include "PlayerController.h"
 #include "HUD.h"
 
-class Pawn;
+class APawn;
 using namespace UI;
 
-class GameMode : public Actor
+class GameMode : public AActor
 {
 protected:
 	PlayerController* controller;
@@ -102,6 +102,6 @@ public:
 	GameMode(const GameMode& _other);
 
 public:
-	void Possess(Pawn* _pawn);
-	void Unpossess(Pawn* _pawn);
+	void Possess(APawn* _pawn);
+	void Unpossess(APawn* _pawn);
 };

@@ -2,13 +2,13 @@
 
 ParticleActor::ParticleActor(Level* _level, const u_int& _count, const float _maxLifeTime, 
 							 const Color& _color, const PrimitiveType& _type)
-						   : VertexActor(_level, _count, _type, "Particle")
+						   : AVertexActor(_level, _count, _type, "Particle")
 {
 	maxLifeTime = _maxLifeTime;
 	particles = vector<Particle>(_count);
 }
 
-ParticleActor::ParticleActor(const ParticleActor& _other) : VertexActor(_other)
+ParticleActor::ParticleActor(const ParticleActor& _other) : AVertexActor(_other)
 {
 	maxLifeTime = _other.maxLifeTime;
 	particles = _other.particles;

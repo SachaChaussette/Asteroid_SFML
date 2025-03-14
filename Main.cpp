@@ -1,6 +1,6 @@
 #include "Engine.h"
 #include "LevelManager.h"
-#include "CUSTOMLevel.h"
+#include "TESTLevel.h"
 
 void InitConfig()
 {
@@ -13,7 +13,7 @@ int main()
 {
 	InitConfig();
 
-	CUSTOMLevel* _level = new CUSTOMLevel("LevelDemo");
+	TESTLevel* _level = new TESTLevel("TESTLevel");
 	M_LEVEL.SetLevel(_level);
 
 	Engine _engine;

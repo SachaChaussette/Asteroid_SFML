@@ -3,7 +3,7 @@
 Camera::CameraManager::CameraManager()
 {
 	allRendersData = map<u_int, RenderData>();
-	allCameras = unordered_map<string, CameraComponent*>();
+	allCameras = unordered_map<string, UCameraComponent*>();
 	current = nullptr;
 }
 
@@ -22,7 +22,7 @@ void Camera::CameraManager::Render(RenderWindow& _window, const bool _isSplitScr
 	}
 }
 
-bool Camera::CameraManager::SetRenderView(CameraComponent* _camera, RenderWindow& _window)
+bool Camera::CameraManager::SetRenderView(UCameraComponent* _camera, RenderWindow& _window)
 {
 	if (!_camera->IsActive()) return false;
 
@@ -38,7 +38,7 @@ void Camera::CameraManager::RenderAllCameras(RenderWindow& _window, const int _i
 	vector<RenderData> _renderWidgets;
 
 	// Pour chaque caméra
-	for (const pair<string, CameraComponent*>& _pair : _allCameras)
+	for (const pair<string, UCameraComponent*>& _pair : _allCameras)
 	{
 		if (!SetRenderView(_pair.second, _window))
 		{

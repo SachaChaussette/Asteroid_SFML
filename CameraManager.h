@@ -21,17 +21,17 @@ namespace Camera
 
 	class CameraManager
 	{
-		using AllCameras = unordered_map<string, CameraComponent*>;
+		using AllCameras = unordered_map<string, UCameraComponent*>;
 		using Iterator = multimap<int, u_int>::iterator;
 		using RenderWidgets = vector<Camera::RenderData>;
 
 		multimap<int, u_int> allElements;
 		map<u_int, RenderData> allRendersData;
 		AllCameras allCameras;
-		CameraComponent* current;
+		UCameraComponent* current;
 
 	public:
-		FORCEINLINE void Register(CameraComponent* _camera)
+		FORCEINLINE void Register(UCameraComponent* _camera)
 		{
 			if (!_camera) return;
 
@@ -45,7 +45,7 @@ namespace Camera
 			allCameras.erase(_displayName);
 			SetPreviousCurrent();
 		}
-		FORCEINLINE void Unregister(CameraComponent* _camera)
+		FORCEINLINE void Unregister(UCameraComponent* _camera)
 		{
 			if (!_camera) return;
 
@@ -67,7 +67,7 @@ namespace Camera
 			allRendersData.at(_uniqueId).zOrder = _zOrder;
 			allElements.insert({ _zOrder, _uniqueId });
 		}
-		FORCEINLINE void SetCurrent(CameraComponent* _camera)
+		FORCEINLINE void SetCurrent(UCameraComponent* _camera)
 		{
 			if (!_camera) return;
 			current = _camera;
@@ -93,11 +93,11 @@ namespace Camera
 			allElements.insert({ _zOrder, _id });
 			return _id;
 		}
-		FORCEINLINE CameraComponent* GetCurrent() const
+		FORCEINLINE UCameraComponent* GetCurrent() const
 		{
 			return current;
 		}
-		FORCEINLINE CameraComponent* GetCameraByName(const string& _name) const
+		FORCEINLINE UCameraComponent* GetCameraByName(const string& _name) const
 		{
 			if (!allCameras.contains(_name)) return nullptr;
 			return allCameras.at(_name);
@@ -107,7 +107,7 @@ namespace Camera
 		CameraManager();
 
 		void Render(RenderWindow& _window, const bool _isSplitScreen);
-		bool SetRenderView(CameraComponent* _camera, RenderWindow& _window);
+		bool SetRenderView(UCameraComponent* _camera, RenderWindow& _window);
 		void RenderAllCameras(RenderWindow& _window, const int _index, const AllCameras& _allCameras);
 		void RenderAllElements(RenderWindow& _window, const pair<Iterator, Iterator>& _results, bool& _isFirst, RenderWidgets& _renderWidgets);
 		void RenderAllWidgets(RenderWindow& _window, const vector<RenderData>& _renderWidgets);

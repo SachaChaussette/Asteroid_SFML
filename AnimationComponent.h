@@ -2,7 +2,7 @@
 #include "Component.h"
 #include "Animation.h"
 
-class AnimationComponent : public Component
+class UAnimationComponent : public UComponent
 {
 	Animation* current;
 	map<string, Animation*> allAnimations;
@@ -40,15 +40,15 @@ public:
 		if (!current) return;
 		current->Stop();
 	}
-	FORCEINLINE virtual Component* Clone(Actor* _owner) const override
+	FORCEINLINE virtual UComponent* Clone(AActor* _owner) const override
 	{
-		return new AnimationComponent(_owner, *this);
+		return new UAnimationComponent(_owner, *this);
 	}
 
 public:
-	AnimationComponent(Actor* _owner);
-	AnimationComponent(Actor* _owner, const AnimationComponent& _other);
-	~AnimationComponent();
+	UAnimationComponent(AActor* _owner);
+	UAnimationComponent(AActor* _owner, const UAnimationComponent& _other);
+	~UAnimationComponent();
 
 	void AddAnimation(Animation* _animation);
 	void AddAnimations(const vector<Animation*>& _animations);

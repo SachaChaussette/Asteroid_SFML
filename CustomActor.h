@@ -2,9 +2,9 @@
 #include "Actor.h"
 #include "CollisionComponent.h"
 
-class CustomActor : public Actor
+class CustomActor : public AActor
 {
-	CollisionComponent* collision;
+	UCollisionComponent* collision;
 
 public:
 	CustomActor(Level* _level, const string& _name = "MeshActor");

@@ -26,20 +26,20 @@ enum CollisionStep
 
 struct CollisionData
 {
-	Actor* other;
+	AActor* other;
 	CollisionType response;
 	Bounds impact;
 	CollisionStep step;
 	string channelName;
 };
 
-class CollisionComponent : public Component
+class UCollisionComponent : public UComponent
 {
 	int status;
 	string channelName;
 	CollisionType type;						 
 	map<string, CollisionType> responses;	
-	map<Actor*, CollisionStep> othersStep;
+	map<AActor*, CollisionStep> othersStep;
 	Bounds* bounds;
 
 public:
@@ -66,15 +66,15 @@ public:
 		return bounds;
 	}
 
-	FORCEINLINE virtual Component* Clone(Actor* _owner) const override
+	FORCEINLINE virtual UComponent* Clone(AActor* _owner) const override
 	{
-		return new CollisionComponent(_owner, *this);
+		return new UCollisionComponent(_owner, *this);
 	}
 
 public:
-	CollisionComponent(Actor* _owner, const string& _channelName = "NONE", const int _status = IS_NONE, const CollisionType& _type = CT_NONE);
-	CollisionComponent(Actor* _owner, const CollisionComponent& _other);
-	~CollisionComponent();
+	UCollisionComponent(AActor* _owner, const string& _channelName = "NONE", const int _status = IS_NONE, const CollisionType& _type = CT_NONE);
+	UCollisionComponent(AActor* _owner, const UCollisionComponent& _other);
+	~UCollisionComponent();
 
 protected:
 	virtual void Construct() override;
@@ -83,6 +83,6 @@ protected:
 
 private:
 	void ComputeCollisions();
-	CollisionStep ComputeStep(Actor* _other, const CollisionStep& _step);
+	CollisionStep ComputeStep(AActor* _other, const CollisionStep& _step);
 	void UpdateBounds();
 };

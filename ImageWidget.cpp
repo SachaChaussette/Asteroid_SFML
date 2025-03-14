@@ -8,7 +8,7 @@ UI::ImageWidget::ImageWidget(Level* _level, const RectangleShapeData& _data, con
 						   : Widget(_level, _name, _type)
 {
 	sizeToContent = false;
-	image = CreateComponent<MeshComponent>(_data);
+	image = CreateDefaultSubobject<UStaticMeshComponent>(_data);
 	initialSize = GetSize();
 	gradient = VertexArray(PrimitiveType::TriangleStrip, 4);
 	colorGradient = ImageGradient();
@@ -19,7 +19,7 @@ UI::ImageWidget::ImageWidget(Level* _level, const CircleShapeData& _data, const 
 						   : Widget(_level, _name, _type)
 {
 	sizeToContent = false;
-	image = CreateComponent<MeshComponent>(_data);
+	image = CreateDefaultSubobject<UStaticMeshComponent>(_data);
 	initialSize = GetSize();
 	gradient = VertexArray(PrimitiveType::TriangleStrip, 4);
 	colorGradient = ImageGradient();
@@ -40,14 +40,14 @@ UI::ImageWidget::ImageWidget(const ImageWidget& _other) : Widget(_other)
 	if (_type == SOT_CIRCLE)
 	{
 		const CircleShapeData* _circleData = _data.data.circleData;
-		image = CreateComponent<MeshComponent>(*_circleData);
+		image = CreateDefaultSubobject<UStaticMeshComponent>(*_circleData);
 		SetTexture(_circleData->path);
 	}
 
 	else if (_type == SOT_RECTANGLE)
 	{
 		const RectangleShapeData* _rectangleData = _data.data.rectangleData;
-		image = CreateComponent<MeshComponent>(*_rectangleData);
+		image = CreateDefaultSubobject<UStaticMeshComponent>(*_rectangleData);
 		SetTexture(_rectangleData->path);
 	}
 

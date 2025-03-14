@@ -4,18 +4,18 @@
 
 using namespace Input;
 
-CUSTOMPawn::CUSTOMPawn(Level* _level, const string& _name) : Pawn(_level, _name)
+CUSTOMPawn::CUSTOMPawn(Level* _level, const string& _name) : APawn(_level, _name)
 {
-	mesh = CreateComponent<MeshComponent>(RectangleShapeData(Vector2f(50.0f, 50.0f)));
+	mesh = CreateDefaultSubobject<UStaticMeshComponent>(RectangleShapeData(Vector2f(50.0f, 50.0f)));
 
-	camera = CreateComponent<CameraComponent>(_level->GetWindowSize() / 2.0f, _level->GetWindowSize());
+	camera = CreateDefaultSubobject<UCameraComponent>(_level->GetWindowSize() / 2.0f, _level->GetWindowSize());
 	_level->GetCameraManager().Register(camera);
 }
 
-CUSTOMPawn::CUSTOMPawn(const CUSTOMPawn& _other) : Pawn(_other)
+CUSTOMPawn::CUSTOMPawn(const CUSTOMPawn& _other) : APawn(_other)
 {
-	mesh = CreateComponent<MeshComponent>(*_other.mesh);
-	camera = CreateComponent<CameraComponent>(*_other.camera);
+	mesh = CreateDefaultSubobject<UStaticMeshComponent>(*_other.mesh);
+	camera = CreateDefaultSubobject<UCameraComponent>(*_other.camera);
 }
 
 

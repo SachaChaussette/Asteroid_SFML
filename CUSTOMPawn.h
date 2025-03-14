@@ -1,14 +1,14 @@
 #pragma once
 #include "Pawn.h"
-#include "MeshComponent.h"
+#include "StaticMeshComponent.h"
 #include "CameraComponent.h"
 
 class InputManager;
 
-class CUSTOMPawn : public Pawn
+class CUSTOMPawn : public APawn
 {
-	MeshComponent* mesh;
-	Camera::CameraComponent* camera;
+	UStaticMeshComponent* mesh;
+	Camera::UCameraComponent* camera;
 
 public:
 	CUSTOMPawn(Level* _level, const string& _name = "CUSTOM Pawn");
