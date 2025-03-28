@@ -9,7 +9,6 @@ class UCameraComponent;
 class APlayerPawn : public APawn
 {
 	UStaticMeshComponent* mesh;
-	UStaticMeshComponent* mesh1;
 	UMovementComponent* movement;
 	Camera::UCameraComponent* camera;
 public:

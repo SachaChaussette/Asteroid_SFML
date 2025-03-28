@@ -10,15 +10,11 @@ using namespace Camera;
 APlayerPawn::APlayerPawn(Level* _level, const string& _name) : APawn(_level, _name)
 {
 	mesh = CreateDefaultSubobject<UStaticMeshComponent>(RectangleShapeData(Vector2f(50.0f, 50.0f)));
-
-	mesh1 = CreateDefaultSubobject<UStaticMeshComponent>(CircleShapeData(20.0f));
-
 	movement = CreateDefaultSubobject<UMovementComponent>();
 	camera = CreateDefaultSubobject<Camera::UCameraComponent>();
 
 	mesh->SetupAttachment(root);
 	camera->SetupAttachment(root);
-
 }
 
 APlayerPawn::APlayerPawn(const APlayerPawn& _other) : APawn(_other)
