@@ -4,11 +4,14 @@
 
 class UStaticMeshComponent;
 class UMovementComponent;
+class UCameraComponent;
 
 class APlayerPawn : public APawn
 {
 	UStaticMeshComponent* mesh;
+	UStaticMeshComponent* mesh1;
 	UMovementComponent* movement;
+	Camera::UCameraComponent* camera;
 public:
 	APlayerPawn(Level* _level, const string& _name = "APawn");
 	APlayerPawn(const APlayerPawn& _other);

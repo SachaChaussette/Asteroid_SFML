@@ -1,5 +1,6 @@
 #include "CameraComponent.h"
 #include "Level.h"
+#include "CameraManager.h"
 
 Camera::UCameraComponent::UCameraComponent(AActor* _owner) : UComponent(_owner)
 {
@@ -30,4 +31,23 @@ Camera::UCameraComponent::UCameraComponent(AActor* _owner, const UCameraComponen
 Camera::UCameraComponent::~UCameraComponent()
 {
 	delete view;
+}
+
+void Camera::UCameraComponent::BeginPlay()
+{
+	Super::BeginPlay();
+
+	owner->GetLevel()->GetCameraManager().Register(this);
+	LOG(Warning, "BeginPlay");
+}
+
+void Camera::UCameraComponent::Tick(const float _deltaTime)
+{
+	Super::Tick(_deltaTime);
+
+	if (!attachmentComponent || !attachmentComponent->GetOwner()) return;
+
+	LOG(Warning, "Tick");
+
+	//SetCenter(attachmentComponent->GetOwner()->GetPosition());
 }
