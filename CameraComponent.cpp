@@ -38,7 +38,6 @@ void Camera::UCameraComponent::BeginPlay()
 	Super::BeginPlay();
 
 	owner->GetLevel()->GetCameraManager().Register(this);
-	LOG(Warning, "BeginPlay");
 }
 
 void Camera::UCameraComponent::Tick(const float _deltaTime)
@@ -46,8 +45,5 @@ void Camera::UCameraComponent::Tick(const float _deltaTime)
 	Super::Tick(_deltaTime);
 
 	if (!attachmentComponent || !attachmentComponent->GetOwner()) return;
-
-	LOG(Warning, "Tick");
-
-	//SetCenter(attachmentComponent->GetOwner()->GetPosition());
+	SetCenter(attachmentComponent->GetOwner()->GetPosition());
 }

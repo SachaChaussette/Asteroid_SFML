@@ -5,7 +5,7 @@
 class UMovementComponent : public UComponent
 {
 	float moveSpeed = 200.0f;
-	float speedFactor = 30.0f;
+	float speedFactor = 100.0f;
 	float deltaTime = 0.0f;
 
 
